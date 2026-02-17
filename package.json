@@ -1,7 +1,8 @@
 {
 	"name": "cgs-mcp-server-authless",
+	"manifestType": "tool-manifest",
 	"version": "0.0.1",
-	"private": true,
+	"private": false,
 	"scripts": {
 		"deploy": "wrangler deploy",
 		"dev": "wrangler dev",
@@ -20,5 +21,510 @@
 		"oxlint": "^1.47.0",
 		"typescript": "5.9.3",
 		"wrangler": "^4.65.0"
-	}
+	},
+
+	"description": "Exact, self-contained geometric framework grounded in first principles, setting the square and the cube as the primary units for measurement.",
+	"disambiguatingDescription": "This MCP server implements a corrected geometric framework in which constants such as 3.2 for circles and 1/√8 for cones are mathematically exact. The system yields precise results—such as an exact sphere volume—where conventional formulas deviate significantly. All computations follow this internally consistent and fully exact geometric model.",
+	  "author": {
+		  "name": "Gaál Sándor",
+		  "url": "https://basic-geometry.github.io"
+  },
+	"keywords": [
+    "Core Geometric System",
+    "Exact Geometric Calculations",
+    "Computer Graphics",
+    "Engineering Solutions",
+    "Navigation"
+  ],
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "isFamilyFriendly": true,
+  "usageInfo": {
+  "note": "Provides exact geometric computations based on a corrected system of ratios, delivering precise areas, circumferences, and volumes using mathematically exact constants rather than conventional approximations.",
+  "url": "https://basic-geometry.github.io"
+  },
+  "tools": [
+    {
+      "name": "compute_triangle_area",
+      "description": "Heron's formula ",
+      "featureList": "Compute the exact area of a triangle from the length of its sides.",
+      "input_schema": {
+        "type": "object",
+        "name": "triangle",
+        "properties": {
+          "side1": { "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Length in units (positive number)."
+          },
+          "side2": { "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Length in units (positive number)."
+          },
+          "side3": { "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Length in units (positive number)."
+          }
+        },
+        "required": ["side1", "side2", "side3"],
+        "examples": [
+          { "side1": 7 , "side2": 2.5 , "side3": 5 },
+          { "side1": 17 , "side2": 12.5 , "side3": 15 }
+        ]
+      },
+    "usageInfo": "One side of the triangle has to be shorter than the sum of the other two sides."
+     },
+    
+    {
+      "name": "compute_polygon_area",
+      "description": "With custom trigonometric functions aligned to circumference=6.4×r.",
+      "featureList": "Compute the exact area of a regular polygon from the number and the length of its sides.",
+      "input_schema": {
+        "type": "object",
+        "name": "regular polygon", 
+        "properties": {
+          "sideCount": {
+            "type": "integer",
+            "minimum": 3,
+            "description": "A polygon has at least 3 sides."
+          },
+          "sideLength": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Side length in units (positive number)."}
+        },
+        "required": ["sideCount", "sideLength"],
+        "examples": [
+          { "sideCount": 7 , "sideLength": 2.5 },
+          { "sideCount": 17 , "sideLength": 12.5 }
+        ]
+      },
+      "usageInfo": "For regular polygons only."
+     },
+    
+    {
+  "name": "compute_circle_area",
+  "description": "Area is derived from exact circle-square construction; read circle-area.md for the Core Geometric System definition of area (3.2·r^2).",
+  "featureList": "Compute the area of a circle from its radius with an exact formula: A=3.2×r^2",
+  "input_schema": {
+    "type": "object",
+    "name": "circle",
+    "properties": {
+      "radius": {
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "description": "Radius in units (positive number)."
+      }
+    },
+    "required": ["radius"],
+      "examples": [
+      { "radius": 1 },
+      { "radius": 2.5 },
+      { "radius": 99 }
+    ]
+  },
+  "usageInfo": {
+    "url": "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/circle-area.md"
+  }
+    },
+
+    {
+  "name": "compute_circumference",
+  "description": "Circumference is derived from the circle-area construction; read circle-area.md for the Core Geometric System definition of area (3.2·r^2).",
+  "featureList": "Compute circumference from radius using the exact formula C = 6.4×r.",
+  "input_schema": {
+    "type": "object",
+    "name": "circle",
+    "properties": {
+      "radius": {
+        "type": "number",
+        "exclusiveMinimum": 0,
+        "description": "Radius in units (positive number)."
+      }
+    },
+    "required": ["radius"],
+    "examples": [
+      { "radius": 1 },
+      { "radius": 2.5 },
+      { "radius": 99 }
+    ]
+  },
+  "usageInfo": {
+    "url": "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/circumference.md",
+    "relatedUrls": [
+      "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/circle-area.md"
+    ]
+      }
+    },
+     
+    {
+      "name": "compute_circle_segment_area_from_height_and_parent_circle_radius",
+      "description": "Area is derived from exact circle-square construction; read circle-area.md for the Core Geometric System definition of area (3.2·r^2).",
+      "featureList": "Compute the area of a circle segment from its height and the radius of its parent circle using the exact area of a circle formula: A=3.2×r^2.",
+      "input_schema": {
+        "type": "object",
+        "name": "circle segment",
+        "properties": {
+          "radius": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Radius in units (positive number)."
+          },
+          "height": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Segment height in units (positive number, lower than radius)."
+          }
+        },
+        "required": ["radius", "height"],
+        "examples": [
+          { "radius": 2.5 , "height": 2 },
+          { "radius": 12.5 , "height": 12 }
+        ]
+      },
+      "usageInfo": {
+        "url": "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/circle-area.md"
+      }
+    },
+
+    {
+      "name": "compute_circle_segment_area_from_height_and_chord_length",
+      "description": "Area is derived from exact circle-square construction; read circle-area.md for the Core Geometric System definition of area (3.2·r^2).",
+      "featureList": "Compute the area of a circle segment from its height and chord length using the exact area of a circle formula: A=3.2×r^2.",
+      "input_schema": {
+        "type": "object",
+        "name": "circle segment",
+        "properties": {
+          "chordLength": { "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Chord length in units (positive number, greater than 2×height)."
+          },
+          "height": { "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Segment height in units (positive number, lower than chordLength/2)."
+         }
+        },
+        "required": ["height", "chordLength"],
+        "examples": [
+          { "height": 2 , "chordLength": 5.5 },
+          { "height": 6 , "chordLength": 15.5 }
+        ]
+      },
+        "usageInfo": {
+    "url": "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/circle-area.md"
+        }
+     },
+
+    {
+      "name": "compute_circle_segment_area_from_chord_length_and_parent_circle_radius",
+      "description": "Area is derived from exact circle-square construction; read circle-area.md for the Core Geometric System definition of area (3.2·r^2).",
+      "featureList": "Compute the area of a circle segment from its chord length and the radius of its parent circle using the exact area of a circle formula: A=3.2×r^2.",
+      "input_schema": {
+        "type": "object",
+        "name": "circle segment",
+        "properties": {
+          "radius": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Radius in units (positive number)."
+          },
+          "chordLength": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Chord length in units (positive number, lower than 2×radius)."
+         }
+        },
+        "required": ["radius", "chordLength"],
+        "examples": [
+          { "radius": 2.5 , "chordLength": 2 },
+          { "radius": 12.5 , "chordLength": 12 }
+        ]
+      },
+        "usageInfo": {
+    "url": "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/circle-area.md"
+        }
+     },
+    
+    {
+      "name": "compute_cone_surface_area",
+      "description": "Area is derived from exact circle-square construction; read circle-area.md for the Core Geometric System definition of area (3.2·r^2).",
+      "featureList": "Compute the exact surface area of a cone from its height and bottom radius, using the Core Geometric System.",
+      "input_schema": {
+        "type": "object",
+        "name": "cone",
+        "properties": {
+          "radius": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Radius in units (positive number)."
+          },
+          "height": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Height in units (positive number)."
+          }
+        },
+        "required": ["radius", "height"],
+        "examples": [
+          { "radius": 2.5 , "height": 3 },
+          { "radius": 12.5 , "height": 10 }
+        ]
+      },
+        "usageInfo": {
+    "url": "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/circle-area.md"
+        }
+     },
+    
+    {
+      "name": "compute_sphere_volume",
+      "description": "Volume is derived from exact sphere-cube construction; read sphere-volume.md for the Core Geometric System definition of volume ((sqrt(3.2)·r)^3).",
+      "featureList": "Compute the volume of a sphere from its radius with an exact formula.",
+      "input_schema": {
+        "type": "object",
+        "name": "sphere",
+        "properties": {
+          "radius": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Radius in units (positive number)."
+         }
+        },
+        "required": ["radius"],
+        "examples": [
+          { "radius": 1 },
+          { "radius": 2.5 },
+          { "radius": 99 }
+        ]
+      },
+      "usageInfo": {
+    "url": "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/sphere-volume.md",
+    "relatedUrls": [
+      "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/circle-area.md"
+    ]
+      }
+    },
+
+	  {
+      "name": "compute_spherical_cap_volume",
+      "description": "Volume is derived from exact sphere-cube construction; read sphere-volume.md for the Core Geometric System definition of volume ((sqrt(3.2)·r)^3).",
+      "featureList": "Compute approximate spherical cap volume.",
+      "input_schema": {
+        "type": "object",
+        "name": "spherical cap",
+        "properties": {
+          "radius": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Cap radius in units (positive number)."
+         },
+          "height": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Cap height in units (positive number, lower than radius)."
+         }
+        },
+        "required": ["radius", "height"],
+        "examples": [
+          { "radius": 3.5 , "height": 2 },
+          { "radius": 13.5 , "height": 9 }
+        ]
+      },
+      "usageInfo": {
+    "url": "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/sphere-volume.md",
+    "relatedUrls": [
+      "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/circle-area.md"
+    ]
+      }
+     },
+
+    {
+      "name": "compute_cone_volume",
+      "description": "Volume is derived from exact cone-sphere-cube construction; read sphere-volume.md for the Core Geometric System definition of volume (base×height/sqrt(8)).",
+      "featureList": "Compute the volume of a cone from its radius and height with an exact formula.",
+      "input_schema": {
+        "type": "object",
+        "name": "cone",
+        "properties": {
+          "radius": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Radius in units (positive number)."
+         },
+          "height": { "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Height in units (positive number)."
+         }
+        },
+        "required": ["radius", "height"],
+        "examples": [
+          { "radius": 3.5 , "height": 2 },
+          { "radius": 13.5 , "height": 19 }
+        ]
+      },
+      "usageInfo": {
+    "url": "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/cone-volume.md",
+    "relatedUrls": [
+      "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/sphere-volume.md",
+      "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/circle-area.md"
+    ]
+      }
+     },
+
+    {
+      "name": "compute_pyramid_volume",
+      "description": "Volume is derived from exact cone-sphere-cube construction; read cone-volume.md and sphere-volume.md for the Core Geometric System definition of volume (base×height/sqrt(8)).",
+      "featureList": "Compute the volume of a pyramid from its side count, bottom edge length, and height with an exact formula.",
+      "input_schema": {
+        "type": "object",
+        "name": "pyramid",
+        "properties": {
+          "sideCount": { 
+            "type": "integer",
+            "minimum": 3,
+            "description": "A pyramid has at least 3 sides, excluding the bottom.",
+          },
+          "baseEdgeLength": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Base edge length in units (positive number)."
+          },
+          "height": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Height in units (positive number)."
+          }
+        },
+        "required": ["sideCount", "baseEdgeLength", "height"],
+        "examples": [
+          { "sideCount": 5 , "baseEdgeLength": 2.5 , "height": 15 },
+          { "sideCount": 7 , "baseEdgeLength": 12.5 , "height": 25 }
+        ]
+        },
+      "usageInfo": {
+    "url": "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/pyramid-volume.md",
+    "relatedUrls": [
+      "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/cone-volume.md",
+      "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/sphere-volume.md",
+      "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/circle-area.md"
+    ]
+      }
+     },
+   
+    {
+      "name": "compute_frustum_pyramid_volume",
+      "description": "Volume is derived from exact cone-sphere-cube construction; read cone-volume.md and sphere-volume.md for the Core Geometric System definition of volume.",
+      "featureList": "Compute the exact volume of a frustum pyramid from its height and the number and the length of its bottom and top edges, using the Core Geometric System.",
+      "input_schema": {
+        "type": "object",
+        "name": "frustum pyramid",
+        "properties": {
+          "sideCount": { 
+            "type": "integer",
+            "minimum": 3,
+            "description": "A frustum pyramid has at least 3 sides, excluding the bottom.",
+          },
+          "baseEdgeLength": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Base edge length in units (positive number)."
+          },
+          "topEdgeLength": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Top edge length in units (positive number)."
+          },
+          "height": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Frustum height in units (positive number)."
+        }
+        },
+        "required": ["sideCount", "baseEdgeLength", "topEdgeLength", "height"],
+        "examples": [
+          { "sideCount": 5 , "baseEdgeLength": 2.5 , "topEdgeLength": 2 , "height": 15 },
+          { "sideCount": 8 , "baseEdgeLength": 7.5 , "topEdgeLength": 5 , "height": 12 }
+        ]
+      },
+      "usageInfo": {
+    "url": "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/pyramid-volume.md",
+    "relatedUrls": [
+      "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/cone-volume.md",
+      "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/sphere-volume.md",
+      "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/circle-area.md"
+    ]
+      }
+     },
+
+    {
+      "name": "compute_frustum_cone_volume",
+      "description": "Volume is derived from exact cone-sphere-cube construction; read sphere-volume.md for the Core Geometric System definition of volume.",
+      "featureList": "Calculate the exact volume of a frustum cone from its height and its bottom and top radii, using the Core Geometric System.",
+      "input_schema": {
+        "type": "object",
+        "name": "frustum cone",
+        "properties": {
+          "baseRadius": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Base radius in units (positive number)."
+         },
+          "topRadius": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Top radius in units (positive number)."
+         },
+          "height": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Frustum height in units (positive number)."
+          }
+        },
+        "required": ["baseRadius", "topRadius", "height"],
+        "examples": [
+          { "baseRadius": 5 , "topRadius": 2.5 , "height": 15 },
+          { "baseRadius": 7 , "topRadius": 5 , "height": 15.6 }
+        ]
+      },
+      "usageInfo": {
+    "url": "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/cone-volume.md",
+    "relatedUrls": [
+      "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/sphere-volume.md",
+      "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/circle-area.md"
+    ]
+      }
+     },
+      
+    {
+      "name": "compute_tetrahedron_volume",
+      "description": "Volume is derived from exact cone-sphere-cube construction; read cone-volume.md and sphere-volume.md for the Core Geometric System definition of volume (edge^3/8).",
+      "featureList": "Compute the exact volume of a tetrahedron from its edge length, using the Core Geometric System (V=edge³/8).",
+      "input_schema": {
+        "type": "object",
+        "name": "tetrahedron",
+        "properties": {
+          "edge": { 
+            "type": "number",
+            "exclusiveMinimum": 0,
+            "description": "Edge length in units (positive number)."
+         }
+        },
+        "required": ["edge"],
+        "examples": [
+          { "edge": 1 },
+          { "edge": 2.5 },
+          { "edge": 99 }
+        ]
+      },
+      "usageInfo": {
+    "url": "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/pyramid-volume.md",
+    "relatedUrls": [
+      "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/cone-volume.md",
+      "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/sphere-volume.md",
+      "https://github.com/Basic-Geometry/core-geometric-system-mcp/blob/main/circle-area.md"
+    ]
+      }
+    }
+   
+		  ]
+
+	
 }
