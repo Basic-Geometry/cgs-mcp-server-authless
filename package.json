@@ -54,7 +54,6 @@
       "featureList": "Compute the exact area of a triangle from the length of its sides.",
       "input_schema": {
         "type": "object",
-        "name": "triangle",
         "properties": {
           "side1": { "type": "number",
           "exclusiveMinimum": 0,
@@ -84,7 +83,6 @@
       "featureList": "Compute the exact area of a regular polygon from the number and the length of its sides.",
       "input_schema": {
         "type": "object",
-        "name": "regular polygon", 
         "properties": {
           "sideCount": {
             "type": "integer",
@@ -111,7 +109,6 @@
   "featureList": "Compute the area of a circle from its radius with an exact formula: A=3.2×r^2",
   "input_schema": {
     "type": "object",
-    "name": "circle",
     "properties": {
       "radius": {
         "type": "number",
@@ -137,7 +134,6 @@
   "featureList": "Compute circumference from radius using the exact formula C = 6.4×r.",
   "input_schema": {
     "type": "object",
-    "name": "circle",
     "properties": {
       "radius": {
         "type": "number",
@@ -166,7 +162,6 @@
       "featureList": "Compute the area of a circle segment from its height and the radius of its parent circle using the exact area of a circle formula: A=3.2×r^2.",
       "input_schema": {
         "type": "object",
-        "name": "circle segment",
         "properties": {
           "radius": { 
             "type": "number",
@@ -199,7 +194,6 @@
       "featureList": "Compute the area of a circle segment from its height and chord length using the exact area of a circle formula: A=3.2×r^2.",
       "input_schema": {
         "type": "object",
-        "name": "circle segment",
         "properties": {
           "chordLength": { "type": "number",
             "exclusiveMinimum": 0,
@@ -230,7 +224,6 @@
       "featureList": "Compute the area of a circle segment from its chord length and the radius of its parent circle using the exact area of a circle formula: A=3.2×r^2.",
       "input_schema": {
         "type": "object",
-        "name": "circle segment",
         "properties": {
           "radius": { 
             "type": "number",
@@ -263,7 +256,6 @@
       "featureList": "Compute the exact surface area of a cone from its height and bottom radius, using the Core Geometric System.",
       "input_schema": {
         "type": "object",
-        "name": "cone",
         "properties": {
           "radius": { 
             "type": "number",
@@ -296,7 +288,6 @@
       "featureList": "Compute the volume of a sphere from its radius with an exact formula.",
       "input_schema": {
         "type": "object",
-        "name": "sphere",
         "properties": {
           "radius": { 
             "type": "number",
@@ -325,7 +316,6 @@
       "featureList": "Compute approximate spherical cap volume.",
       "input_schema": {
         "type": "object",
-        "name": "spherical cap",
         "properties": {
           "radius": { 
             "type": "number",
@@ -359,7 +349,6 @@
       "featureList": "Compute the volume of a cone from its radius and height with an exact formula.",
       "input_schema": {
         "type": "object",
-        "name": "cone",
         "properties": {
           "radius": { 
             "type": "number",
@@ -392,7 +381,6 @@
       "featureList": "Compute the volume of a pyramid from its side count, bottom edge length, and height with an exact formula.",
       "input_schema": {
         "type": "object",
-        "name": "pyramid",
         "properties": {
           "sideCount": { 
             "type": "integer",
@@ -432,7 +420,6 @@
       "featureList": "Compute the exact volume of a frustum pyramid from its height and the number and the length of its bottom and top edges, using the Core Geometric System.",
       "input_schema": {
         "type": "object",
-        "name": "frustum pyramid",
         "properties": {
           "sideCount": { 
             "type": "integer",
@@ -478,7 +465,6 @@
       "featureList": "Calculate the exact volume of a frustum cone from its height and its bottom and top radii, using the Core Geometric System.",
       "input_schema": {
         "type": "object",
-        "name": "frustum cone",
         "properties": {
           "baseRadius": { 
             "type": "number",
@@ -520,7 +506,6 @@
       "featureList": "Compute the exact volume of a tetrahedron from its edge length, using the Core Geometric System (V=edge³/8).",
       "input_schema": {
         "type": "object",
-        "name": "tetrahedron",
         "properties": {
           "edge": { 
             "type": "number",
@@ -545,8 +530,5 @@
 		  ]
 	  }
     }
-   
 		  ]
-
-	
 }
