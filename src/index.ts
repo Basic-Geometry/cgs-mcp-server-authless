@@ -3,12 +3,31 @@ import { z } from "zod";
 
 // Import your exact-ratio geometry system (ESM .mjs file)
 import {
-  circleArea,
-  circumference,
-  sphereVolume,
-  coneVolume,
-  pyramidVolume
-} from "../core-geometric-system.mjs";
+        closestRad,
+        closestValue,
+        sin,
+        cos,
+        tan,
+        asin,
+        acos,
+        atan,
+        triangleArea,
+        polygonArea,
+        circleArea, 
+        circumference,
+        segmentAreaFromHeightAndRadius,
+        segmentAreaFromHeightAndChord,
+        segmentAreaFromChordAndRadius,
+        coneSurface, 
+        sphereVolume, 
+        capVolume,
+        coneVolume,
+        pyramidVolume,
+        frustumPyramidVolume,
+        frustumConeVolume,
+        tetrahedronVolume
+} 
+	from "../core-geometric-system.mjs";
 
 // Create the MCP server instance
 const server = new McpServer({
@@ -103,7 +122,7 @@ server.tool(
     height: z.number()
   },
   async ({ baseArea, height }) => {
-    const result = computePyramidVolume(baseArea, height);
+    const result = pyramidVolume(baseArea, height);
     return {
       content: [
         {
@@ -116,34 +135,4 @@ server.tool(
 );
 
 // Export the handler for Cloudflare
-export default server.build();						break;
-					case "divide":
-						if (b === 0)
-							return {
-								content: [
-									{
-										type: "text",
-										text: "Error: Cannot divide by zero",
-									},
-								],
-							};
-						result = a / b;
-						break;
-				}
-				return { content: [{ type: "text", text: String(result) }] };
-			},
-		);
-	}
-}
-
-export default {
-	fetch(request: Request, env: Env, ctx: ExecutionContext) {
-		const url = new URL(request.url);
-
-		if (url.pathname === "/mcp") {
-			return MyMCP.serve("/mcp").fetch(request, env, ctx);
-		}
-
-		return new Response("Not found", { status: 404 });
-	},
-};
+export default server.build();
