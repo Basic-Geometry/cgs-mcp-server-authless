@@ -285,7 +285,7 @@ server.tool(
 	topEdgeLength: z.number().positive(),
     height: z.number().positive()
   },
-  async ({ sideCount, baseEdgeLength, height }) => {
+  async ({ sideCount, baseEdgeLength, topEdgeLength, height }) => {
     const result = frustumPyramidVolume(sideCount, baseEdgeLength, topEdgeLength, height);
     return {
       content: [
@@ -312,7 +312,7 @@ server.tool(
       content: [
         {
           type: "text",
-          text: `Exact frustum cone volume (base adius=${baseRadius}, top radius=${topRadius}, h=${height}): ${result}`
+          text: `Exact frustum cone volume (base radius=${baseRadius}, top radius=${topRadius}, h=${height}): ${result}`
         }
       ]
     };
