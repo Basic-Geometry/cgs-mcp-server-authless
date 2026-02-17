@@ -385,7 +385,7 @@
           "sideCount": { 
             "type": "integer",
             "minimum": 3,
-            "description": "A pyramid has at least 3 sides, excluding the bottom.",
+            "description": "A pyramid has at least 3 sides, excluding the bottom."
           },
           "baseEdgeLength": { 
             "type": "number",
