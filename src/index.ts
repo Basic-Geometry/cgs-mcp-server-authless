@@ -1,40 +1,122 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { McpAgent } from "agents/mcp";
+import { McpServer } from "@modelcontextprotocol/sdk/server";
 import { z } from "zod";
 
-// Define our MCP agent with tools
-export class MyMCP extends McpAgent {
-	server = new McpServer({
-		name: "Authless Calculator",
-		version: "1.0.0",
-	});
+// Import your exact-ratio geometry system (ESM .mjs file)
+import {
+  circleArea,
+  circumference,
+  sphereVolume,
+  coneVolume,
+  pyramidVolume
+} from "../core-geometric-system.mjs";
 
-	async init() {
-		// Simple addition tool
-		this.server.tool("add", { a: z.number(), b: z.number() }, async ({ a, b }) => ({
-			content: [{ type: "text", text: String(a + b) }],
-		}));
+// Create the MCP server instance
+const server = new McpServer({
+  name: "core-geometric-system",
+  version: "1.0.0"
+});
 
-		// Calculator tool with multiple operations
-		this.server.tool(
-			"calculate",
-			{
-				operation: z.enum(["add", "subtract", "multiply", "divide"]),
-				a: z.number(),
-				b: z.number(),
-			},
-			async ({ operation, a, b }) => {
-				let result: number;
-				switch (operation) {
-					case "add":
-						result = a + b;
-						break;
-					case "subtract":
-						result = a - b;
-						break;
-					case "multiply":
-						result = a * b;
-						break;
+// --- TOOL DEFINITIONS ---
+
+// 1. Circle Area
+server.tool(
+  "compute_circle_area",
+  {
+    radius: z.number()
+  },
+  async ({ radius }) => {
+    const result = circleArea(radius);
+    return {
+      content: [
+        {
+          type: "text",
+          text: `Exact circle area for radius ${radius}: ${result}`
+        }
+      ]
+    };
+  }
+);
+
+// 2. Circumference
+server.tool(
+  "compute_circumference",
+  {
+    radius: z.number()
+  },
+  async ({ radius }) => {
+    const result = circumference(radius);
+    return {
+      content: [
+        {
+          type: "text",
+          text: `Exact circumference for radius ${radius}: ${result}`
+        }
+      ]
+    };
+  }
+);
+
+// 3. Sphere Volume
+server.tool(
+  "compute_sphere_volume",
+  {
+    radius: z.number()
+  },
+  async ({ radius }) => {
+    const result = sphereVolume(radius);
+    return {
+      content: [
+        {
+          type: "text",
+          text: `Exact sphere volume for radius ${radius}: ${result}`
+        }
+      ]
+    };
+  }
+);
+
+// 4. Cone Volume
+server.tool(
+  "compute_cone_volume",
+  {
+    radius: z.number(),
+    height: z.number()
+  },
+  async ({ radius, height }) => {
+    const result = coneVolume(radius, height);
+    return {
+      content: [
+        {
+          type: "text",
+          text: `Exact cone volume (r=${radius}, h=${height}): ${result}`
+        }
+      ]
+    };
+  }
+);
+
+// 5. Pyramid Volume
+server.tool(
+  "compute_pyramid_volume",
+  {
+    baseArea: z.number(),
+    height: z.number()
+  },
+  async ({ baseArea, height }) => {
+    const result = computePyramidVolume(baseArea, height);
+    return {
+      content: [
+        {
+          type: "text",
+          text: `Exact pyramid volume (base=${baseArea}, h=${height}): ${result}`
+        }
+      ]
+    };
+  }
+);
+
+// Export the handler for Cloudflare
+export default server.build();						break;
 					case "divide":
 						if (b === 0)
 							return {
