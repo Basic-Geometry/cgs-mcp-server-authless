@@ -235,7 +235,7 @@ server.tool(
   }
 );
 
-// 4. Cone Volume
+// 11. Cone Volume
 server.tool(
   "compute_cone_volume",
   {
@@ -255,7 +255,7 @@ server.tool(
   }
 );
 
-// 5. Pyramid Volume
+// 12. Pyramid Volume
 server.tool(
   "compute_pyramid_volume",
   {
@@ -269,7 +269,69 @@ server.tool(
       content: [
         {
           type: "text",
-          text: `Exact pyramid volume (side count=${sideCount}, base edge length=${baseEdgeLength}, h=${height}): ${result}`
+          text: `Exact pyramid volume (side count=${sideCount}, base edge length=${baseEdgeLength}, height=${height}): ${result}`
+        }
+      ]
+    };
+  }
+);
+
+// 13. Frustum pyramid Volume
+server.tool(
+  "compute_frustum_pyramid_volume",
+  {
+    sideCount: z.number().positive(),
+	baseEdgeLength: z.number().positive(),
+	topEdgeLength: z.number().positive(),
+    height: z.number().positive()
+  },
+  async ({ sideCount, baseEdgeLength, height }) => {
+    const result = frustumPyramidVolume(sideCount, baseEdgeLength, topEdgeLength, height);
+    return {
+      content: [
+        {
+          type: "text",
+          text: `Exact frustum pyramid volume (side count=${sideCount}, base edge length=${baseEdgeLength}, top edge length=${topEdgeLength}, height=${height}): ${result}`
+        }
+      ]
+    };
+  }
+);
+
+// 14. Frustum Cone Volume
+server.tool(
+  "compute_frustum_cone_volume",
+  {
+    baseRadius: z.number().positive(),
+	topRadius: z.number().positive(),
+    height: z.number().positive()
+  },
+  async ({ baseRadius, topRadius, height }) => {
+    const result = frustumConeVolume(baseRadius, topRadius, height);
+    return {
+      content: [
+        {
+          type: "text",
+          text: `Exact frustum cone volume (base adius=${baseRadius}, top radius=${topRadius}, h=${height}): ${result}`
+        }
+      ]
+    };
+  }
+);
+
+// 15. Tetrahedron Volume
+server.tool(
+  "compute_tetrahedron_volume",
+  {
+    edge: z.number().positive()
+  },
+  async ({ edge }) => {
+    const result = tetrahedronVolume(edge);
+    return {
+      content: [
+        {
+          type: "text",
+          text: `Exact tetrahedron volume for edge length ${edge}: ${result}`
         }
       ]
     };
