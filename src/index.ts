@@ -46,15 +46,27 @@ server.tool(
     side3: z.number().positive()
   },
   async ({ side1, side2, side3 }) => {
-    const result = triangleArea(side1, side2, side3);
-    return {
-      content: [
-        {
-          type: "text",
-          text: `Exact triangle area (side 1=${side1}, side 2=${side2}, side 3=${side3}): ${result}`
-        }
-      ]
-    };
+    try {
+      const result = triangleArea(side1, side2, side3);
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Exact triangle area (side1=${side1}, side2=${side2}, side3=${side3}): ${result}`
+          }
+        ]
+      };
+    } 
+	catch (_) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Error"
+          }
+        ]
+      };
+    }
   }
 );
 
@@ -67,7 +79,8 @@ server.tool(
   },
   async ({ sideCount, sideLength }) => {
     const result = polygonArea(sideCount, sideLength);
-    return {
+    try {
+	return {
       content: [
         {
           type: "text",
@@ -75,6 +88,17 @@ server.tool(
         }
       ]
     };
+  }
+catch (_) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Error"
+          }
+        ]
+      };
+    }
   }
 );
 
@@ -85,7 +109,8 @@ server.tool(
     radius: z.number().positive()
   },
   async ({ radius }) => {
-    const result = circleArea(radius);
+    try {
+	const result = circleArea(radius);
     return {
       content: [
         {
@@ -94,6 +119,17 @@ server.tool(
         }
       ]
     };
+  }
+catch (_) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Error"
+          }
+        ]
+      };
+    }
   }
 );
 
@@ -104,7 +140,8 @@ server.tool(
     radius: z.number().positive()
   },
   async ({ radius }) => {
-    const result = circumference(radius);
+    try {
+	const result = circumference(radius);
     return {
       content: [
         {
@@ -113,6 +150,17 @@ server.tool(
         }
       ]
     };
+  }
+catch (_) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Error"
+          }
+        ]
+      };
+    }
   }
 );
 
@@ -124,7 +172,8 @@ server.tool(
     radius: z.number().positive()
   },
   async ({ height, radius }) => {
-    const result = segmentAreaFromHeightAndRadius(height, radius);
+    try {
+	const result = segmentAreaFromHeightAndRadius(height, radius);
     return {
       content: [
         {
@@ -133,6 +182,17 @@ server.tool(
         }
       ]
     };
+  }
+catch (_) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Error"
+          }
+        ]
+      };
+    }
   }
 );
 
@@ -144,7 +204,8 @@ server.tool(
     chordLength: z.number().positive()
   },
   async ({ height, chordLength }) => {
-    const result = segmentAreaFromHeightAndChord(height, chordLength);
+    try {
+	const result = segmentAreaFromHeightAndChord(height, chordLength);
     return {
       content: [
         {
@@ -153,6 +214,17 @@ server.tool(
         }
       ]
     };
+  }
+catch (_) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Error"
+          }
+        ]
+      };
+    }
   }
 );
 
@@ -164,7 +236,8 @@ server.tool(
     radius: z.number().positive()
   },
   async ({ chordLength, radius }) => {
-    const result = segmentAreaFromChordAndRadius(chordLength, radius);
+    try {
+	const result = segmentAreaFromChordAndRadius(chordLength, radius);
     return {
       content: [
         {
@@ -173,6 +246,17 @@ server.tool(
         }
       ]
     };
+  }
+catch (_) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Error"
+          }
+        ]
+      };
+    }
   }
 );
 
@@ -184,7 +268,8 @@ server.tool(
     height: z.number().positive()
   },
   async ({ radius, height }) => {
-    const result = coneSurface(radius, height);
+    try {
+	const result = coneSurface(radius, height);
     return {
       content: [
         {
@@ -193,6 +278,17 @@ server.tool(
         }
       ]
     };
+  }
+catch (_) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Error"
+          }
+        ]
+      };
+    }
   }
 );
 
@@ -203,7 +299,8 @@ server.tool(
     radius: z.number().positive()
   },
   async ({ radius }) => {
-    const result = sphereVolume(radius);
+    try {
+	const result = sphereVolume(radius);
     return {
       content: [
         {
@@ -212,6 +309,17 @@ server.tool(
         }
       ]
     };
+  }
+catch (_) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Error"
+          }
+        ]
+      };
+    }
   }
 );
 
@@ -223,7 +331,8 @@ server.tool(
     height: z.number().positive()
   },
   async ({ radius, height }) => {
-    const result = capVolume(radius, height);
+    try {
+	const result = capVolume(radius, height);
     return {
       content: [
         {
@@ -232,6 +341,17 @@ server.tool(
         }
       ]
     };
+  }
+catch (_) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Error"
+          }
+        ]
+      };
+    }
   }
 );
 
@@ -243,7 +363,8 @@ server.tool(
     height: z.number().positive()
   },
   async ({ radius, height }) => {
-    const result = coneVolume(radius, height);
+    try {
+	const result = coneVolume(radius, height);
     return {
       content: [
         {
@@ -252,6 +373,17 @@ server.tool(
         }
       ]
     };
+  }
+catch (_) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Error"
+          }
+        ]
+      };
+    }
   }
 );
 
@@ -264,7 +396,8 @@ server.tool(
     height: z.number().positive()
   },
   async ({ sideCount, baseEdgeLength, height }) => {
-    const result = pyramidVolume(sideCount, baseEdgeLength, height);
+    try {
+	const result = pyramidVolume(sideCount, baseEdgeLength, height);
     return {
       content: [
         {
@@ -273,6 +406,17 @@ server.tool(
         }
       ]
     };
+  }
+catch (_) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Error"
+          }
+        ]
+      };
+    }
   }
 );
 
@@ -286,7 +430,8 @@ server.tool(
     height: z.number().positive()
   },
   async ({ sideCount, baseEdgeLength, topEdgeLength, height }) => {
-    const result = frustumPyramidVolume(sideCount, baseEdgeLength, topEdgeLength, height);
+    try {
+	const result = frustumPyramidVolume(sideCount, baseEdgeLength, topEdgeLength, height);
     return {
       content: [
         {
@@ -295,6 +440,17 @@ server.tool(
         }
       ]
     };
+  }
+catch (_) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Error"
+          }
+        ]
+      };
+    }
   }
 );
 
@@ -307,7 +463,8 @@ server.tool(
     height: z.number().positive()
   },
   async ({ baseRadius, topRadius, height }) => {
-    const result = frustumConeVolume(baseRadius, topRadius, height);
+    try {
+	const result = frustumConeVolume(baseRadius, topRadius, height);
     return {
       content: [
         {
@@ -316,6 +473,17 @@ server.tool(
         }
       ]
     };
+  }
+catch (_) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Error"
+          }
+        ]
+      };
+    }
   }
 );
 
@@ -326,7 +494,8 @@ server.tool(
     edge: z.number().positive()
   },
   async ({ edge }) => {
-    const result = tetrahedronVolume(edge);
+    try {
+	const result = tetrahedronVolume(edge);
     return {
       content: [
         {
@@ -335,6 +504,17 @@ server.tool(
         }
       ]
     };
+  }
+catch (_) {
+      return {
+        content: [
+          {
+            type: "text",
+            text: "Error"
+          }
+        ]
+      };
+    }
   }
 );
 
