@@ -1,5 +1,4 @@
 {
-  
 	"$schema": "./node_modules/wrangler/config-schema.json",
 	"name": "cgs-mcp-server-authless",
 	"manifestType": "tool-manifest",
@@ -424,7 +423,7 @@
           "sideCount": { 
             "type": "integer",
             "minimum": 3,
-            "description": "A frustum pyramid has at least 3 sides, excluding the bottom.",
+            "description": "A frustum pyramid has at least 3 sides, excluding the bottom."
           },
           "baseEdgeLength": { 
             "type": "number",
