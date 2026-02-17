@@ -39,9 +39,50 @@ const server = new McpServer({
 
 // 1. Circle Area
 server.tool(
+  "compute_triangle_area",
+  {
+    side1: z.number().positive(),
+    side2: z.number().positive(),
+    side3: z.number().positive()
+  },
+  async ({ side1, side2, side3 }) => {
+    const result = triangleArea(side1, side2, side3);
+    return {
+      content: [
+        {
+          type: "text",
+          text: `Exact triangle area: ${result}`
+        }
+      ]
+    };
+  }
+);
+
+// 1. Circle Area
+server.tool(
+  "compute_polygon_area",
+  {
+    sideCount: z.number().positive(),
+    sideLength: z.number().positive()
+  },
+  async ({ sideCount, sideLength }) => {
+    const result = polygonArea(sideCount, sideLength);
+    return {
+      content: [
+        {
+          type: "text",
+          text: `Exact triangle area: ${result}`
+        }
+      ]
+    };
+  }
+);
+
+// 3. Circle Area
+server.tool(
   "compute_circle_area",
   {
-    radius: z.number()
+    radius: z.number().positive()
   },
   async ({ radius }) => {
     const result = circleArea(radius);
@@ -56,11 +97,11 @@ server.tool(
   }
 );
 
-// 2. Circumference
+// 4. Circumference
 server.tool(
   "compute_circumference",
   {
-    radius: z.number()
+    radius: z.number().positive()
   },
   async ({ radius }) => {
     const result = circumference(radius);
@@ -75,11 +116,11 @@ server.tool(
   }
 );
 
-// 3. Sphere Volume
+// . Sphere Volume
 server.tool(
   "compute_sphere_volume",
   {
-    radius: z.number()
+    radius: z.number().positive()
   },
   async ({ radius }) => {
     const result = sphereVolume(radius);
@@ -98,8 +139,8 @@ server.tool(
 server.tool(
   "compute_cone_volume",
   {
-    radius: z.number(),
-    height: z.number()
+    radius: z.number().positive(),
+    height: z.number().positive()
   },
   async ({ radius, height }) => {
     const result = coneVolume(radius, height);
