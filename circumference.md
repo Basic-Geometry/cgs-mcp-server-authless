@@ -63,50 +63,67 @@ Angles like 15°, 7.5°, and 3.75° can be derived from these using the classica
 
 sin(x/2)=√((1-cos(x))/2)
 
-But a geometric inconsistency emerges when we compare circumscribed polygons to circles.
+But the entire method relies on the unproven assumption that every polygon produced by repeated angle bisection of a circumscribed polygon remains circumscribed.
 
-Archimedes’ polygon‑refinement method would work only if every refined polygon remained circumscribed around the same circle.  
-But the refinement process gradually shrinks the perimeter, and a shrinking perimeter cannot stay tangent to a fixed circle beyond a certain threshold, because a polygon whose perimeter is too close to the circle’s circumference cannot remain circumscribed. Tangency becomes impossible, and the polygon crosses inside the circle.
+This is never demonstrated. It is simply taken for granted.
 
-This is not a matter of interpretation; it is a geometric fact.
 
-Archimedes’ theoretical refinement method does not construct each polygon independently.  
-It starts with a circumscribed hexagon and repeatedly bisects the angles to generate new polygons, assuming that every resulting polygon remains circumscribed around the same circle.
+### Why the Assumption Fails
 
-And that is where the trouble begins.
-That assumption is never proven.  
-It is simply taken for granted.
-And it is false.
+A tangent segment is always longer than the arc it touches.  
+A polygon with its perimeter close enough to the circumference cannot remain outside the circle.  
+It must cross the arc.
+This is not optional; it is a geometric necessity. The only curve with its perimeter exactly equal to the circumference that never intersects its interior disk is the circle itself.
 
-This is the overlooked loophole:
+The bisection procedure guarantees that each new perimeter is smaller than the previous one. 
+Archimedes assumes tangency and externality persist at every finite step — even when the perimeter has become extremely close to the (unknown) circumference.
 
-Each bisection step reduces the perimeter.
-To know whether the resulting polygon remains circumscribed, you must already know the circumference.
+But whether the new polygon remains tangent depends on whether its perimeter is still sufficiently greater than the circumference. The standard argument claims the polygons remain outside forever at finite n and only collapse into the circle at infinity. But this is circular reasoning. To know if the polygons are still circumscribed at every finite step, you must already know if the perimeter is large enough that no crossing occurs.
+Yet finding the circumference is the purpose of the method. The method therefore relies on the very assumption it seeks to prove.
+You cannot use the method to justify the assumption that makes the method valid.
 
-But the whole point of the method is to find the circumference.
 
-This is the logical flaw at the heart of the method.
+### The breakdown is visible at small finite n when C = 6.4r.
 
-The classical explanation says:
+The area–square construction gives the true value. 
+The quadrant-to-square rearrangement with uncovered area = total overlap area yields a square of area exactly 3.2r². 
+Since the four quadrants are the original pieces of the circle, the circle area is exactly 3.2r².
+Differentiating with respect to radius gives circumference exactly 6.4r. 
+This is not an approximation; it follows directly from finite geometric construction.
+This finite construction avoids the infinite-regress trap entirely.
+The flaw in the classical method becomes even clearer when we try to implement it practically.
 
-- the refined polygons always stay outside the circle,
-- their perimeters always stay above the circumference,
-- and they converge downward toward the true value.
 
-But these claims depend on the very assumption that is in question. You cannot use the method to justify the assumption that makes the method valid.
+When attempting to draw a circumscribed 24-gon or 48-gon via exact angle bisection (central angle 15° → 7.5°), the tangent lines merge, overlap, or cross the arc — even in high-precision vector software.  The individual sides become indistinguishable or intersect the circle before reaching distinct tangent points.
+This is not a precision or rendering error; it is the geometry refusing to produce a valid set of external tangents.
 
-Under the actual proportions:
 
-- area = 3.2r² 
-- circumference = 6.4r
+A circumscribed n-gon has perimeter:
 
-the perimeter of the bisected polygon is already very close to the true circumference at the first step, and falls below 6.4r at a small number of sides.
+P(n)=n×tan(180°/n).
 
-At that moment the construction silently crosses into an impossible configuration.
+Evaluating:
 
-Continuing to apply the tangent formulas beyond this point no longer describes a real circumscribed polygon — it describes a figure that has already slipped inside the circle.
+- P(12)=12×tan(15°)~ 6.43 > 6.4  
+- P(24)=24×tan(7.5°)~ 6.319 < 6.4
 
-The apparent convergence to ≈ 3.14d is not a discovery — it is an artifact of ignoring the impossibility of the geometric construction.
+If the true circumference is 6.4r, then:
+
+- the 12‑gon can still be circumscribed,  
+- but the 24‑gon cannot, because a circumscribed polygon must always satisfy P(n)>C.
+
+
+The construction no longer produces a proper set of distinct tangent sides — it fails in a literal, physical sense. The required tangent lines from adjacent vertices converge so sharply that they overlap or intersect the arc before reaching distinct tangent points.  
+The figure collapses: instead of clear external tangents, the tangent lines for a 24‑gon or 48‑gon merge, overlap, or cut through the circle, behaving like an isoperimetric polygon rather than a circumscribed one.
+
+The assumption “we can always bisect again and obtain another circumscribed polygon” fails constructively — at a small, finite number of sides, not only in some unreachable infinite limit.
+
+
+### The Consequence
+
+Once the perimeter of the constructed polygon falls below the true circumference, the tangent‑doubling formulas no longer describe a real circumscribed polygon. They describe a figure that has already slipped inside the circle. The apparent convergence toward ~6.28r is therefore not a discovery of the pi, but an artifact of continuing a construction that has already become geometrically impossible.
+
+The classical argument cannot prove that the polygon remains tangent, and without that proof, it cannot be used to refute the circumference C=6.4r.
 
 These structural issues in the polygon‑limit method set the stage for a second misconception: the symbolic fusion of an approximation with the geometric ratio it was meant to represent.
 
