@@ -100,17 +100,17 @@ This is not a precision or rendering error; it is the geometry refusing to produ
 
 A circumscribed n-gon has perimeter:
 
-P(n)=n×tan(180°/n).
+P(n) = n × tan(180° / n).
 
 Evaluating:
 
-- P(12)=12×tan(15°)~ 6.43 > 6.4  
-- P(24)=24×tan(7.5°)~ 6.319 < 6.4
+- P(12) = 12 × tan(15°) ~ 6.43 > 6.4  
+- P(24) = 24 × tan(7.5°) ~ 6.319 < 6.4
 
 If the true circumference is 6.4r, then:
 
 - the 12‑gon can still be circumscribed,  
-- but the 24‑gon cannot, because a circumscribed polygon must always satisfy P(n)>C.
+- but the 24‑gon cannot, because a circumscribed polygon must always satisfy P(n) > C.
 
 
 The construction no longer produces a proper set of distinct tangent sides — it fails in a literal, physical sense. The required tangent lines from adjacent vertices converge so sharply that they overlap or intersect the arc before reaching distinct tangent points.  
