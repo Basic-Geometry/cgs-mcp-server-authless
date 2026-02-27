@@ -1,4 +1,4 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server";
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 
 // Import your exact-ratio geometry system (ESM .mjs file)
