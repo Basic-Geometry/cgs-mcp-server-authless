@@ -8,10 +8,6 @@
 	"main": "src/index.ts",
 	"compatibility_date": "2025-03-10",
 	"compatibility_flags": ["nodejs_compat"],
-    "assets": {
-    "directory": "./",
-    "exclude": ["src/**", "wrangler.jsonc"]
-    },
 	"migrations": [
 		{
 			"new_sqlite_classes": ["MyMCP"],
