@@ -3,6 +3,7 @@ import { z } from "zod";
 
 // Import your exact-ratio geometry system (ESM .mjs file)
 import {
+	    trig,
         closestRad,
         closestValue,
         sin,
