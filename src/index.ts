@@ -33,8 +33,27 @@ import {
 // Create the MCP server instance
 const server = new McpServer({
   name: "core-geometric-system",
-  version: "1.0.0"
+  version: "1.0.4"
 });
+
+export class CGSMCP {
+  constructor(state, env) {
+    this.state = state;
+    this.env = env;
+  }
+
+  async fetch(request) {
+    return new Response("Hello");
+  }
+}
+
+export default {
+  fetch(request, env, ctx) {
+    // Worker logic
+  }
+};
+
+export { CGSMCP };
 
 // --- TOOL DEFINITIONS ---
 
