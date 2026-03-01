@@ -36,7 +36,7 @@ const server = new McpServer({
   version: "1.0.4"
 });
 
-export class CGSMCP {
+export class MyMCP {
   constructor(state, env) {
     this.state = state;
     this.env = env;
@@ -53,7 +53,7 @@ export default {
   }
 };
 
-export { CGSMCP };
+export { MyMCP };
 
 // --- TOOL DEFINITIONS ---
 
