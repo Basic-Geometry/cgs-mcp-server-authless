@@ -47,13 +47,8 @@ export class MyMCP {
   }
 }
 
-export default {
-  fetch(request, env, ctx) {
-    // Worker logic
-  }
-};
-
 export { MyMCP };
+
 
 // --- TOOL DEFINITIONS ---
 
