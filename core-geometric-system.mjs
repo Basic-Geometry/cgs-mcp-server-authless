@@ -3,7 +3,7 @@
 
 // Lookup-based approximate trigonometric values
 
-const trig = {
+export const trig = {
 
 "rad(1.59680)": {
   "sin": 0.999995,
