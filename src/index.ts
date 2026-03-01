@@ -47,8 +47,6 @@ export class MyMCP {
   }
 }
 
-export { MyMCP };
-
 
 // --- TOOL DEFINITIONS ---
 
@@ -535,6 +533,3 @@ catch (_) {
 
 // Export the handler for Cloudflare
 export default server.build();
-
-//Prevent tree-shaking by referencing it 
-;(globalThis as any).KEEP_DURABLE_OBJECT = (globalThis as any).KEEP_DURABLE_OBJECT || {}; ;(globalThis as any).KEEP_DURABLE_OBJECT.MyMCP = MyMCP;
