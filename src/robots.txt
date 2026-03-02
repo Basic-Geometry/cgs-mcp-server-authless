@@ -1,4 +1,4 @@
-User-agent:Googlebot
-Allow:/
+User-agent:*
+Allow:/src
 
-Sitemap: https://basic-geometey.pages.dev/sitemap.xml
+Sitemap: https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/sitemap.xml
