@@ -6,12 +6,6 @@
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "cgs-mcp-server-authless",
 	"main": "src/index.ts",
-    "assets": {
-    "directory": "./",
-    "binding": "ASSETS",
-    "run_worker_first": true,
-    "exclude": ["src/**", "wrangler.jsonc"]
-  },
 	"compatibility_date": "2026-03-02",
 	"compatibility_flags": ["nodejs_compat"],
 	"migrations": [
