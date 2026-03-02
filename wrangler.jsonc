@@ -22,7 +22,7 @@
 		"bindings": [
 			{
 				"class_name": "MyMCP",
-				"name": "Core_Geometric_System"
+				"name": "MCP_OBJECT"
 			}
 		]
 	},
