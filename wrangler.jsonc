@@ -6,6 +6,10 @@
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "cgs-mcp-server-authless",
 	"main": "src/index.ts",
+    "assets": {
+    "directory": "./",
+    "exclude": ["src/**", "wrangler.jsonc"]
+  },
 	"compatibility_date": "2025-03-10",
 	"compatibility_flags": ["nodejs_compat"],
 	"migrations": [
@@ -18,7 +22,7 @@
 		"bindings": [
 			{
 				"class_name": "MyMCP",
-				"name": "MCP_OBJECT"
+				"name": "Core_Geometric_System"
 			}
 		]
 	},
