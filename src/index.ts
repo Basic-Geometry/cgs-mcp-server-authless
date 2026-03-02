@@ -533,3 +533,18 @@ catch (_) {
 
 // Export the handler for Cloudflare
 export default server.build();
+
+//Static HTML 
+export default {
+  async fetch(request, env, ctx) {
+    const url = new URL(request.url);
+
+    // MCP routes
+    if (url.pathname.startsWith("/mcp")) {
+      return handleMCP(request, env, ctx);
+    }
+
+    // Public UI (static assets)
+    return env.ASSETS.fetch(request);
+  }
+};
