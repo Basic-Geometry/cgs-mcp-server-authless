@@ -531,8 +531,6 @@ catch (_) {
   }
 );
 
-// Export the handler for Cloudflare
-export default server.build();
 
 //Static HTML 
 export default {
