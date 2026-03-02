@@ -2,9 +2,9 @@
 	"$schema": "./node_modules/wrangler/config-schema.json",
 	"name": "cgs-mcp-server-authless",
 	"manifestType": "tool-manifest",
-	"version": "1.0.0",
+	"version": "1.0.4",
 	"main": "src/index.ts",
-	"compatibility_date": "2026-02-13",
+	"compatibility_date": "2026-03-02",
 	"workers_dev": true,
 	"private": false,
 	"scripts": {
@@ -30,7 +30,7 @@
 	"disambiguatingDescription": "This MCP server implements a corrected geometric framework in which constants such as 3.2 for circles and 1/√8 for cones are mathematically exact. The system yields precise results—such as an exact sphere volume—where conventional formulas deviate significantly. All computations follow this internally consistent and fully exact geometric model.",
 	  "author": {
 		  "name": "Gaál Sándor",
-		  "url": "https://basic-geometry.pages.dev"
+		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev"
 	  },
 	"keywords": [
     "Core Geometric System",
@@ -44,7 +44,7 @@
   "isFamilyFriendly": true,
   "usageInfo": {
   "note": "Provides exact geometric computations based on a corrected system of ratios, delivering precise areas, circumferences, and volumes using mathematically exact constants rather than conventional approximations.",
-  "url": "https://basic-geometry.pages.dev"
+  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev"
   },
   "tools": [
     {
@@ -123,7 +123,7 @@
     ]
   },
   "usageInfo": {
-    "url": "https://basic-geometry.pages.dev#circle"
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
   }
     },
 
@@ -150,7 +150,7 @@
   "usageInfo": {
     "url": "https://basic-geometry.pages.dev#circumference",
     "relatedUrls": [
-      "https://basic-geometry.pages.dev#circle"
+      "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
     ]
       }
     },
@@ -182,7 +182,7 @@
       "usageInfo": {
 		  "url": "https://basic-geometry.pages.dev#circle-segment",
 		  "relatedUrls": [
-			  "https://basic-geometry.pages.dev#circle"
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
     ]
 	  }
     },
@@ -210,9 +210,9 @@
         ]
       },
         "usageInfo": {
-		  "url": "https://basic-geometry.pages.dev#circle-segment",
+		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle-segment",
 		  "relatedUrls": [
-			  "https://basic-geometry.pages.dev#circle"
+			  "https://https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
     ]
 		}
      },
@@ -242,9 +242,9 @@
         ]
       },
         "usageInfo": {
-		  "url": "https://basic-geometry.pages.dev#circle-segment",
+		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle-segment",
 		  "relatedUrls": [
-			  "https://basic-geometry.pages.dev#circle"
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
     ]
 	  }
      },
@@ -274,9 +274,9 @@
         ]
       },
         "usageInfo": {
-		  "url": "https://basic-geometry.pages.dev#cone",
+		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone",
 		  "relatedUrls": [
-			  "https://basic-geometry.pages.dev#circle"
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
     ]
 	  }
      },
@@ -302,9 +302,9 @@
         ]
       },
       "usageInfo": {
-		  "url": "https://basic-geometry.pages.dev#sphere",
+		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere",
 		  "relatedUrls": [
-			  "https://basic-geometry.pages.dev#circle"
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
 		  ]
 	  }
     },
@@ -334,10 +334,10 @@
         ]
       },
       "usageInfo": {
-		  "url": "https://basic-geometry.pages.dev#spherical_cap",
+		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#spherical_cap",
 		  "relatedUrls": [
-			  "https://basic-geometry.pages.dev#sphere",
-			  "https://basic-geometry.pages.dev#circle"
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere",
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
 		  ]
 		  }
      },
@@ -366,10 +366,10 @@
         ]
       },
       "usageInfo": {
-		  "url": "https://basic-geometry.pages.dev#cone",
+		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone",
 		  "relatedUrls": [
-			  "https://basic-geometry.pages.dev#sphere",
-			  "https://basic-geometry.pages.dev#circle"
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere",
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
 		  ]
 		  }
      },
@@ -404,11 +404,11 @@
         ]
         },
       "usageInfo": {
-		  "url": "https://basic-geometry.pages.dev#pyramid",
+		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pyramid",
 		  "relatedUrls": [
-			  "https://basic-geometry.pages.dev#cone",
-			  "https://basic-geometry.pages.dev#sphere",
-			  "https://basic-geometry.pages.dev#circle"
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone",
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere",
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
 		  ]
 	  }
      },
@@ -448,12 +448,12 @@
         ]
       },
       "usageInfo": {
-		  "url": "https://basic-geometry.pages.dev#frustum_pyramid",
+		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#frustum_pyramid",
 		  "relatedUrls": [
-			  "https://basic-geometry.pages.dev#pyramid",
-			  "https://basic-geometry.pages.dev#cone",
-			  "https://basic-geometry.pages.dev#sphere",
-			  "https://basic-geometry.pages.dev#circle"
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pyramid",
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone",
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere",
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
 		  ]
 	  }
      },
@@ -488,13 +488,13 @@
         ]
       },
       "usageInfo": {
-		  "url": "https://basic-geometry.pages.dev#frustum_cone",
+		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#frustum_cone",
 		  "relatedUrls": [
-			  "https://basic-geometry.pages.dev#frustum_pyramid",
-			  "https://basic-geometry.pages.dev#pyramid",
-			  "https://basic-geometry.pages.dev#cone",
-			  "https://basic-geometry.pages.dev#sphere",
-			  "https://basic-geometry.pages.dev#circle"
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#frustum_pyramid",
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pyramid",
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone",
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere",
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
 		  ]
 	  }
      },
@@ -520,12 +520,12 @@
         ]
       },
       "usageInfo": {
-		  "url": "https://basic-geometry.pages.dev#tetrahedron",
+		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#tetrahedron",
 		  "relatedUrls": [
-			  "https://basic-geometry.pages.dev#pyramid",
-			  "https://basic-geometry.pages.dev#cone",
-			  "https://basic-geometry.pages.dev#sphere",
-			  "https://basic-geometry.pages.dev#circle"
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pyramid",
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone",
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere",
+			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
 		  ]
 	  }
     }
