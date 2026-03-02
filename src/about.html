@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset="UTF-8">
+<title>About Basic Geometry Formulas</title>
+<link rel="icon" type="image/png" sizes="256x256" href="android-chrome-256x256.png">
+<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="mask-icon" href="safari-pinned-tab.svg" color="#000000">
+<link href="https://fonts.googleapis.com/css2?family=OpenDyslexic&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The story behind the best-established and most accurate framework to calculate area and volume">
+<meta name="author" content="Gaál Sándor">
+<meta name="keywords" content="Core Geometric System, Accurate Geometric Calculations, Engineering Design Solutions, Computer Graphics Rendering, Algorithm Optimization, Navigation">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@gmac4247">
+<meta name="twitter:title" content="About the Core Geometric System ™">
+<meta name="twitter:description" content="The story behind the best-established and most accurate framework to calculate area and volume">
+<meta name="twitter:image" content="android-chrome-256x256.png">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="theme-color" content="#000000">
+<style>
+	
+        * {
+            margin: 0;
+            padding: 0;
+        }
+	
+        .imgbox {
+            display: grid;
+            height: 100%;
+        }
+	
+        .center-fit {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+	
+		#cookie-notice {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			background-color: #f2f2f2;
+			padding: 10px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+			z-index: 1;
+		}
+
+		#cookie-notice-text {
+			margin-right: 20px;
+		}
+
+		#cookie-notice-buttons {
+			display: flex;
+			align-items: center;
+		}
+
+		#cookie-notice-buttons button {
+			margin-left: 10px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			padding: 10px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		#cookie-notice-buttons button:hover {
+			background-color: #3e8e41;
+		}
+	    body {
+            font-family: 'OpenDyslexic', sans-serif;
+	    }
+
+</style>
+</head>
+<body>
+<div id="cookie-notice">
+		<div id="cookie-notice-text">
+			This website uses cookies to ensure you get the best experience on our website. Love it, or leave it.
+		</div>
+		<div id="cookie-notice-buttons">
+			<button onclick="document.getElementById('cookie-notice').style.display = 'none';">Accept</button>
+			<button onclick="location.replace('about:blank')">Leave</button>
+	
+		</div>
+</div>
+<h1 style="font-size:160%;margin:7px">About the Core Geometric System ™</h1>
+<br><br>
+<article>
+<h2 style="margin:12px">Once around 2018 I was wondering how to calculate the area of a circle.</h2>
+<section style="margin:12px" itemscope itemtype="http://schema.org/Article">
+<h2 itemprop="disambiguatingDescription">I remembered the number 3.14 called the pi, but I was interested in the logic of comparing the circle to a square, because the square is the basis of area calculation. That is why we use square units.</h2>
+<br>
+<p itemprop="text">The only problem with that was that the circle is not square. I have figured that the circle can be cut in four and then I get four right angles that can be aligned with the vertices of a square.
+<br>
+There was a different problem with that: The quadrant circles overlap at some places but the middle of the square is uncovered.
+<br>
+I was trying to match the overlapping area with the uncovered by eye. 
+When it looked quite close I did all kinds of complicated calculations. 
+I didn't have a routine in that and I wanted to calculate all aspects of it. 
+<br>
+I calculated quite intensively and my calculations were quite extensive. When a backcheck resulted in an error I felt quite tired of it and just laid the figure face down.
+<br><br>
+About a month later I had a look at it and I realized at the first glimpse that the area of the circle equals the area of the square when the arcs of the quadrant circles intersect at the quarters of the centerlines.
+<br>
+Maybe that doesn't sound very scientific at first, but somehow I instantly realized that it is the only way.
+<br>
+Then I worked out the relationship between the radius and the side of the square algebraically via the Pythagorean theorem.
+<br><br>
+The result is that the area of a circle is exactly 3.2radius².</p>
+<br>
+<div itemscope itemtype="http://schema.org/VideoObject">
+<iframe title="Geometry puzzle" width="420" height="315" src="https://youtube.com/embed/-gvXLaLFXuM">
+</iframe>
+</div>
+<br>
+<p itemprop="text">That got me excited for obvious reasons, but also confused. Nobody thought of that before? Why is the pi so different?
+<br>
+For about a year I just kept thinking and calculating all aspects of that, and I shared my discovery just with a few friends. They didn't share my excitement. 
+<br>
+Some of them didn't really care about math at all, those who did were sticking to the pi, just because it's an old and highly hyped convention.</p>
+<br><br><br>
+<h2 itemprop="description">Meanwhile I figured that by extending the area of a circle to 3D, the volume of a sphere equals the cubed value of the square root of its cross-sectional area, just like a cube.</h2>
+<br>
+<p itemprop="text">It's quite hard to physically accurately measure the volume of a ball, but there's a significant difference between the result of my V=(√(3.2)r)³ formula and the conventional " 4 / 3 × pi × r³ ". 
+<br><br>
+I conducted some experiments with the resources that I had. I could not provide the accuracy that the subject deserves, but the results aligned better with my V=(√(3.2)r)³ formula.</p>
+<br>
+<div itemscope itemtype="http://schema.org/VideoObject">
+ <iframe title="The sphere experiment" width="420" height="315" src="https://youtube.com/embed/7uxyLfh2B38">
+ </iframe>
+</div>
+<br>
+<p itemprop="text">The subject of the sphere experiment was a standard golf ball. That is not a perfect sphere because there are dimples on its surface. That can be compensated by calculating with a slightly shorter radius. 
+<br>
+The measuring bottle had a nominal volume of 4 cl (40 ml ~ 4 / 3 US ounce). That is not perfectly precise either because the nominal volume indicates the guaranteed amount of the fluid in it in commerce. They come with an air gap atop the fluid so the total capacity of the bottle is somewhat larger.</p>
+<br>
+<div itemscope itemtype="http://schema.org/VideoObject">
+ <iframe title="The sphere experiment 2" width="420" height="315" src="https://youtube.com/embed/rXcJhFLLP0Y">
+ </iframe>
+</div>
+<br>
+<p itemprop="text">The second sphere experiment was done with the same ball and a nominal 5 ml syringe. The nominal volume of a syringe should be its real volume. However, I have measured its length and width to make sure and I found that its real volume is about 10% larger. I took that into account in the calculations.</p>
+<br><br><br>
+<h2 itemprop="description">I have derived the volume of a cone by comparing a vertical quadrant of a cone to an octant of a sphere.</h2>
+<br>
+<p itemprop="text">First I made a mistake in that. I knew that the height has to be divided by 2, not 3 as they usually do it, but I confused the vertical height with the slant height and I divided it by 2 only once, instead of twice. That resulted in an error.</p>
+<br><br><br>
+<h2 itemprop="description">In early 2020 there were news about that online education was introduced because of the pandemic.</h2>
+<br>
+<p itemprop="text">I thought it was time to share my discoveries online, so I went to the local public library to publish them on a webpage. My volume formula for a cone and a pyramid was undeveloped and I didn't have much web development skills but I had to start somewhere. My attention was divided by lots of details in both geometry and IT.
+<br><br>
+I received some criticism regarding my formulas. Those included the lack of rigorous proof, and the alleged rigorous proofs of the conventional formulas.
+<br>
+Obviously I wasn't happy about those, but I felt like there's not much I can do about that. I derived my formulas from first principles, what should I prove about those?
+<br>
+Also I didn't see how the so-called "proofs" of the conventional formulas prove anything. They are superficial, exaggerated and nonsensical. Only I see that?
+<br><br>
+Then I realized that it is about something else. It's the old "We have a diploma, so we are right." thing.
+<br>
+I'm not buying that. I got thinking way before I started all this, who issued the first diploma in history?
+<br>
+That is something to think about for a moment.
+<br><br>
+Years have passed without significant development. I was working on improving my online presence and solved geometry puzzles on social media. You can find my favorites on X in the replies of @BasicGeometry. Solving puzzles is fun, and helps to learn and develop some routine.</p>
+<br>
+<p itemprop="disambiguatingDescription">Eventually I have realized that through my formulas I have created a logically interconnected, consistent geometric framework. 
+<br>
+Something that the one would assume of the conventional geometry. There are several geometry concepts, but there's a popular one that they teach in schools and online.
+<br>
+That starts with that "a point is a zero-dimensional entity", "the line has no thickness" and states that "the ratio between the circumference and the diameter of a circle is pi", "the volume of a sphere is 4 / 3 × pi × r³", "the volume of a cone and a pyramid is base × height / 3", and all that is "rigorously proven via calculus".
+<br>
+They call that Euclidean geometry. I primarily regard my framework as a fix of the conventional one. 
+<br>
+It's quite similar to the Euclidean, but apparently the key differences are that I don't define the point is as zero-dimensional and a line can have a thickness. These two make a big difference, especially in case of 3 dimensional solids. 
+<br><br>
+Since conventional geometry is associated with the zero-dimensional point and Archimedes' flawed formulas, I figured that it's the best to start with a clear sheet.</p>
+<br>
+<div itemscope itemtype="http://schema.org/VideoObject">
+<iframe title="Introduction to basic geometry" width="420" height="315" src="https://youtube.com/embed/U5eHkmmVVEA"></iframe>
+</div>
+<br>
+<p itemprop="description">Exactly determining the properties of different shapes is in the scope.</p>
+<br><br><br>
+<h2 itemprop="description">I named my framework the Core Geometric System ™ and put the trademark symbol on it to indicate that this not just another abstract geometric system.</h2>
+<br>
+<p itemprop="text">The name reflects that my logic is built in accordance with the core principles of elementary mathematics. That is something that people assume of the conventional one and they have no idea how badly it deviated from that.
+<br><br>
+The expression was unique back then. I came up with it. I never read it anywhere else before. Back then I searched for it to find out if anyone else is using it, and there were no results for that term. 
+<br>
+Interestingly, now language models explain it like some generic term without even referencing my work. 
+<br>
+The trademark symbol indicates that it's not to be confused with some generic term. While it might be surprising in the 21st century, this is the first and only geometric system in accordance with the core principles of elementary mathematics.</p>
+<br><br><br>
+<h2 itemprop="description">In 2024 I fixed the numeric value for my cone and pyramid volume formula. </h2>
+<br>
+<p itemprop="text">I'm sorry about that I had presented a wrong number for such a long time, but at least my logic was closer to reality.
+<br><br>
+Later that year I got access to AI language models.
+<br>
+That got things going. One generated me great figures, another one helped to develop the proof for my circle area formula, and they helped me to get my phrasing and the technical part of my website in shape. 
+<br><br>
+They also helped to disprove the conventional formulas by summarizing their key points.
+<br>
+It wasn't easy because they acted just like the academic wise guys defending their diplomas, insisting that the conventional formulas are well-established and rigorously proven, and called my ones deviations. 
+<br>
+It was very disturbing. But I was able to spot their recurring arguments. And I questioned them until they revealed all the inconsistent details they were trying to hide. 
+<br>
+Those are the logical flaws in conventional geometry.</p>
+<br><br><br>
+<h2 itemprop="usageInfo">While trying to explain it to others, I have found that different people have different levels of education.</h2>
+<br>
+<p itemprop="text">I thought I can't just start the explanation with the numbers and basic operations.
+<br>
+Then I realized that I can.
+<br>
+Of course that takes a lot of learning and exercise for the reader, but language models can help with that. The basic math section is therefore presented quite briefly. 
+It's not in the scope of this website to teach basic math, but with the help of a teacher or a language model one can learn the basics that are required for understanding basic geometry.
+<br><br>
+The basic math, my geometry, its proofs, and the analysis of the conventional formulas together form the Basic Geometry Curriculum.
+<br>
+If you are familiar with basic math, just skip to the geometry content.
+<br>
+Either way, expanding on the content with Copilot is fun.
+<br>
+The link to the homepage is at the bottom of this one.
+<br><br>
+Thank you for reading this and thanks to everyone making it possible.</p>
+<br><br><br><br>
+  <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+    <p><span itemprop="familyName">Gaál</span> <span itemprop="givenName">Sándor</span></p>
+  </div>
+	<p itemprop="copyrightNotice">® All rights reserved</p>
+	<p itemprop="copyrightYear">2025</p>
+</section>
+</article>
+<br><br><br><br>
+<footer>
+<a style="margin:9px" href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">Home</a>
+<br>
+<br>
+  <a style="margin:9px" href="privacy-policy">Do Not Sell My Personal Information</a>
+ <br>
+ <br>
+</footer>
+</body>
+</html>
