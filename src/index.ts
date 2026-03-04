@@ -28,7 +28,7 @@ import {
         frustumConeVolume,
         tetrahedronVolume
 } 
-	from "../core-geometric-system.mjs";
+	from "./core-geometric-system.mjs";
 
 // Create the MCP server instance
 const server = new McpServer({
