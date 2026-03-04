@@ -33,7 +33,7 @@ import {
 // Create the MCP server instance
 const server = new McpServer({
   name: "core-geometric-system",
-  version: "1.0.4"
+  version: "1.0.5"
 });
 
 export class MyMCP {
