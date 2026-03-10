@@ -154,11 +154,22 @@
 <br><br>
 <section itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="circle">
 <meta itemprop="eduQuestionType" content="Circle area calculation">
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="radius">
+<meta itemprop="minValue" content="0">
+</div>
 <meta itemprop="target" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={circle_radius=1_area=?}">
 <div itemprop="actionProcess" itemscope itemtype="https://schema.org/HowTo">
 <div itemprop="estimatedCost" itemscope itemtype="https://schema.org/MonetaryAmount">
 <meta itemprop="currency" content="USD">
 <meta itemprop="value" content="0">
+</div>
+<div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
+<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="description" content="Exact circle area formula">
+<meta itemprop="name" content="Area of a circle">
+<meta itemprop="value" content="3.2 × radius^2">
+</div>
 </div>
 <meta itemprop="totalTime" content="PT30M">
 <h2 itemprop="name" style="margin:7px">Area of a Circle</h2>
@@ -372,11 +383,22 @@ The ratio between the radius and the side length is calculable.</p>
 <br><br><br>
 <section itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="circumference">
 <meta itemprop="eduQuestionType" content="Circumference calculation">
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="radius">
+<meta itemprop="minValue" content="0">
+</div>
 <meta itemprop="target" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={circle_radius=1_circumference=?}">
 <div itemprop="actionProcess" itemscope itemtype="https://schema.org/HowTo">
 <div itemprop="estimatedCost" itemscope itemtype="https://schema.org/MonetaryAmount">
 <meta itemprop="currency" content="USD">
 <meta itemprop="value" content="0">
+</div>
+<div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
+<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="description" content="Exact circle circumference formula">
+<meta itemprop="name" content="Circumference of a circle">
+<meta itemprop="value" content="6.4 × radius">
+</div>
 </div>
 <meta itemprop="totalTime" content="PT30M">
 <h3 itemprop="name" style="margin:7px">Circumference of a Circle</h3>
@@ -626,7 +648,58 @@ The length of the two longer sides is the area of the resulting ring divided by 
   </mrow>
 </math>		  
 </div>
+</div><br><br><br>
+<div style="margin:12px">
+<p>In calculus terms:</p>
+<br><br>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+        <mi>C</mi>
+    <mo>=</mo>
+       <mrow>
+		<munder>
+      <mo>lim</mo>
+      <mrow>
+        <mi>x</mi>
+        <mo>→</mo>
+        <mn>0</mn>
+      </mrow>
+    </munder>
+        <mfrac>
+            <mrow>
+        <mn>3.2</mn> 
+        <mo>&#x2062;</mo> <!-- invisible times -->
+		<mo>(</mo> 
+        <msup>
+          <mi>r</mi>
+          <mn>2</mn> 
+        </msup>
+        <mo>-</mo> 
+        <msup>
+          <mrow>
+            <mo>(</mo> 
+            <mi>r</mi>
+            <mo>-</mo>
+            <mi>x</mi>
+            <mo>)</mo>
+          </mrow>
+          <mn>2</mn>
+        </msup>
+        <mo>)</mo>
+      </mrow>
+      <mi>x</mi>
+    </mfrac>
+	   </mrow>
+		<mo>=</mo>
+<mrow>
+<mn>6.4</mn>
+<mo>&#x2062;</mo> <!-- invisible times -->
+<mi>r</mi>
+	</mrow>
+	   </mrow>
+</math>
 </div>
+<br><br>
 </details>
 </div>
 <br>
@@ -687,11 +760,22 @@ The length of the two longer sides is the area of the resulting ring divided by 
 <br><br><br>
 <section itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="sphere">
 <meta itemprop="eduQuestionType" content="Sphere volume calculation">
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="radius">
+<meta itemprop="minValue" content="0">
+</div>
 <meta itemprop="target" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={sphere_radius=1_volume=?}">
 <div itemprop="actionProcess" itemscope itemtype="https://schema.org/HowTo">
 <div itemprop="estimatedCost" itemscope itemtype="https://schema.org/MonetaryAmount">
 <meta itemprop="currency" content="USD">
 <meta itemprop="value" content="0">
+</div>
+<div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
+<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="description" content="Exact sphere volume formula">
+<meta itemprop="name" content="Volume of a Sphere">
+<meta itemprop="value" content="( 4 × radius / 5^(1/2) )^3">
+</div>
 </div>
 <meta itemprop="totalTime" content="PT30M">
 <h3 itemprop="name" style="margin:7px">Volume of a Sphere</h3>
@@ -877,11 +961,26 @@ Unlock the true formula to calculate the surface area of a sphere.</strong></p>
 <br><br><br><br>
 <section itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="cone">
 <meta itemprop="eduQuestionType" content="Cone volume calculation">
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="radius">
+<meta itemprop="minValue" content="0">
+</div>
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="height">
+<meta itemprop="minValue" content="0">
+</div>
 <meta itemprop="target" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={cone_radius=1_height=2_volume=?}">
 <div itemprop="actionProcess" itemscope itemtype="https://schema.org/HowTo">
 <div itemprop="estimatedCost" itemscope itemtype="https://schema.org/MonetaryAmount">
 <meta itemprop="currency" content="USD">
 <meta itemprop="value" content="0">
+</div>
+<div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
+<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="description" content="Exact cone volume formula">
+<meta itemprop="name" content="Volume of a Cone">
+<meta itemprop="value" content="3.2 × radius^2 / 8^(1/2)">
+</div>
 </div>
 <meta itemprop="totalTime" content="PT30M">
 <h3 itemprop="name" style="margin:7px">Volume of a Cone</h3>
@@ -2073,12 +2172,27 @@ function Atan(x) {
 </section>
 <br><br><br><br>
 <section itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="triangle">
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="base">
+<meta itemprop="minValue" content="0">
+</div>
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="height">
+<meta itemprop="minValue" content="0">
+</div>
 <meta itemprop="eduQuestionType" content="Triangle area calculation">
 <meta itemprop="target" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={triangle_base=3_height=2_area=?}">
 <div itemprop="actionProcess" itemscope itemtype="https://schema.org/HowTo">
 <div itemprop="estimatedCost" itemscope itemtype="https://schema.org/MonetaryAmount">
 <meta itemprop="currency" content="USD">
 <meta itemprop="value" content="0">
+</div>
+<div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
+<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="description" content="Exact triangle area formula">
+<meta itemprop="name" content="Area of a triangle">
+<meta itemprop="value" content="base × height / 2">
+</div>
 </div>
 <meta itemprop="totalTime" content="PT30M">
 <h3 style="margin:7px" itemprop="name">Area of a Triangle</h3>
