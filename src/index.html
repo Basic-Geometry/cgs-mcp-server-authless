@@ -2173,7 +2173,20 @@ function Atan(x) {
 <br><br><br><br>
 <section itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="triangle">
 <div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="side1">
+<meta itemprop="minValue" content="0">
+</div>
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="side2">
+<meta itemprop="minValue" content="0">
+</div>
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="side3">
+<meta itemprop="minValue" content="0">
+</div>
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
 <meta itemprop="name" content="base">
+<meta itemprop="description" content="The side perpendicular to the height">
 <meta itemprop="minValue" content="0">
 </div>
 <div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
@@ -2365,11 +2378,28 @@ const area = triangleArea(product);
 <br><br><br>
 <section itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="polygon">
 <meta itemprop="eduQuestionType" content="Polygon area calculation">
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="side count">
+<meta itemprop="description" content="Number of sides">
+<meta itemprop="minValue" content="0">
+</div>
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="side length">
+<meta itemprop="description" content="Length of a side">
+<meta itemprop="minValue" content="0">
+</div>
 <meta itemprop="target" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={polygon_sideCount=8_sideLength=4_area=?}">
 <div itemprop="actionProcess" itemscope itemtype="https://schema.org/HowTo">
 <div itemprop="estimatedCost" itemscope itemtype="https://schema.org/MonetaryAmount">
 <meta itemprop="currency" content="USD">
 <meta itemprop="value" content="0">
+</div>
+<div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
+<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="description" content="Exact regular polygon area formula">
+<meta itemprop="name" content="Area of a regular polygon">
+<meta itemprop="value" content="sideCount / 4 × ctg( 180deg. / sideCount ) × sideLength / 2">
+</div>
 </div>
 <meta itemprop="totalTime" content="PT30M">
 <h3 itemprop="name" style="margin:7px">Area of a regular Polygon</h3>
@@ -2557,11 +2587,33 @@ function updatePolygonArea() {
 <br><br><br><br>
 <section itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="circle-segment">
 <meta itemprop="eduQuestionType" content="Circle segment area calculation">
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="height">
+<meta itemprop="description" content="segment height">
+<meta itemprop="minValue" content="0">
+</div>
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="length">
+<meta itemprop="description" content="chord length">
+<meta itemprop="minValue" content="2×height">
+</div>
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="radius">
+<meta itemprop="description" content="radius of the parent circle">
+<meta itemprop="minValue" content="0">
+</div>
 <meta itemprop="target" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={circle_segment_height=1_length=3_radius=4_area=?}">
 <div itemprop="actionProcess" itemscope itemtype="https://schema.org/HowTo">
 <div itemprop="estimatedCost" itemscope itemtype="https://schema.org/MonetaryAmount">
 <meta itemprop="currency" content="USD">
 <meta itemprop="value" content="0">
+</div>
+<div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
+<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="description" content="Exact circle segment area formula">
+<meta itemprop="name" content="Area of a circle segment">
+<meta itemprop="value" content="Acos( ( radius - height ) / radius ) × radius^2 - sin( Acos( ( radius - height ) / radius ) × radius ) × ( radius - height ) × radius">
+</div>
 </div>
 <meta itemprop="totalTime" content="PT30M">
 <h3 itemprop="name" style="margin:7px">Area of a Circle Segment</h3>
@@ -2844,11 +2896,26 @@ document.getElementById('parent-radius').addEventListener('input', segmentArea);
 <br><br><br>
 <section itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="cone_surface">
 <meta itemprop="eduQuestionType" content="Cone surface area calculation">
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="radius">
+<meta itemprop="minValue" content="0">
+</div>
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="height">
+<meta itemprop="minValue" content="0">
+</div>
 <meta itemprop="target" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={cone_radius=1_height=2_area=?}">
 <div itemprop="actionProcess" itemscope itemtype="https://schema.org/HowTo">
 <div itemprop="estimatedCost" itemscope itemtype="https://schema.org/MonetaryAmount">
 <meta itemprop="currency" content="USD">
 <meta itemprop="value" content="0">
+</div>
+<div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
+<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="description" content="Exact surface area of the cone formula including the bottom">
+<meta itemprop="name" content="Surface area of a circle">
+<meta itemprop="value" content="3.2 × radius × ( radius + ( radius^2 + height^2 )^(1/2) )">
+</div>
 </div>
 <meta itemprop="totalTime" content="PT30M">
 <h3 itemprop="name" style="margin:7px">Surface Area of a Cone</h3>
@@ -3899,11 +3966,23 @@ document.getElementById('frustum-cone-height').addEventListener('input', updateF
 <br><br><br>
 <section itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="tetrahedron">
 <meta itemprop="eduQuestionType" content="Tetrahedron volume calculation">
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="edge">
+<meta itemprop="description" content="Edge length of the tetrahedron">
+<meta itemprop="minValue" content="0">
+</div>
 <meta itemprop="target" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={tetrahedron_edge=2_volume=?}">
 <div itemprop="actionProcess" itemscope itemtype="https://schema.org/HowTo">
 <div itemprop="estimatedCost" itemscope itemtype="https://schema.org/MonetaryAmount">
 <meta itemprop="currency" content="USD">
 <meta itemprop="value" content="0">
+</div>
+<div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
+<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="description" content="Exact tetrahedron volume formula">
+<meta itemprop="name" content="Volume of a tetrahedron">
+<meta itemprop="value" content="edge^3 / 8">
+</div>
 </div>
 <meta itemprop="totalTime" content="PT30M">
 <h3 itemprop="name" style="margin:7px">Volume of a Tetrahedron</h3>
@@ -4631,8 +4710,16 @@ That makes the arc value of 360° = 6.4radian, and trigonometric functions that 
 </section>
 </section>
 <br><br><br>
-<section style="margin:12px" itemprop="about" itemscope itemtype="https://schema.org/HowToSection">
-    <meta itemprop="position" content="1" id="circle_area_proof">
+<section itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="circle_area_proof">
+<meta itemprop="eduQuestionType" content="Proof of that the Area of a Circle equals exactly 3.2×radius^2">
+<div itemprop="actionProcess" itemscope itemtype="https://schema.org/HowTo">
+<div itemprop="estimatedCost" itemscope itemtype="https://schema.org/MonetaryAmount">
+<meta itemprop="currency" content="USD">
+<meta itemprop="value" content="0">
+</div>
+<meta itemprop="totalTime" content="PT30M">
+<h3 itemprop="name" style="margin:7px">Proof of the Area of a Circle Formula</h3>
+<br>
 <h4 itemprop="disambiguatingDescription">The widely used formula " A = pi × r² " is not a direct result of calculus. It’s multiplying the approximate circumference formula C = 2pi × r by half the radius, treating the area as the sum of infinitesimal rings. While that method is algebraically valid, it relies on the approximate circumference and bypasses the geometric logic that defines area: the comparison to a square.</h4>
 <br><br>
 <p itemprop="description">In the quadrant layout when the overlapping area equals to the uncovered area in the middle, the sum of the areas of the quadrants is equal to the area of the square. That square represents the area of the circle in square units.</p>
@@ -5240,6 +5327,7 @@ The vertices are the most obvious examples, but the same is true for the edges, 
 <br><br>
 Thus, the "V = base × height / 3" formula, and its so-called "calculus-based proofs" are invalid.</p>
 </section>
+<br><br><br>
 <div style="margin:12px">
 <p itemprop="disambiguatingDescription"><strong>By replacing the abstract, zero‑dimensional point with the square and the cube as the primary, physically relevant units of measurement, this framework defines the properties of shapes like the circle and sphere not through limits or approximations, but through their direct, rational relationship to these foundational units.
 <br><br>
@@ -5760,7 +5848,7 @@ Dividing by a fraction means multiplying by the reciprocal of that fraction.</p>
 <section id="square">
 <h3 style="margin:7px">Area of a Square</h3>
 <br>
-<figure itemprop="image">
+<figure class="imgbox">
     <img class="center-fit" src="square.png" alt="A square is a 2 dimensional plane shape with 2 perpendicular pairs of parallel straight sides. Area = side × side = side²">
 </figure>
 <br>
@@ -5796,7 +5884,7 @@ A square is a rectangle with equal sides.</p>
 <section id="cube">
 <h3 style="margin:7px">Volume of a Cube</h3>
 <br>
-<figure itemprop="image" class="imgbox">
+<figure class="imgbox">
     <img class="center-fit" src="cube.jpeg" alt="A cube is a 3 dimensional solid shape with 3 equal perpendicular pairs of parallel straight edges. V = edge × edge × edge = edge³">
     </figure>
 <br>
