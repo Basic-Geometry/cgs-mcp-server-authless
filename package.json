@@ -309,39 +309,6 @@
 	  }
     },
 
-	  {
-      "name": "compute_spherical_cap_volume",
-      "description": "Volume is derived from exact sphere-cube construction; read sphere-volume.md for the Core Geometric System definition of volume ((sqrt(3.2)·r)^3).",
-      "featureList": "Compute approximate spherical cap volume.",
-      "input_schema": {
-        "type": "object",
-        "properties": {
-          "radius": { 
-            "type": "number",
-            "exclusiveMinimum": 0,
-            "description": "Cap radius in units (positive number)."
-         },
-          "height": { 
-            "type": "number",
-            "exclusiveMinimum": 0,
-            "description": "Cap height in units (positive number, lower than radius)."
-         }
-        },
-        "required": ["radius", "height"],
-        "examples": [
-          { "radius": 3.5 , "height": 2 },
-          { "radius": 13.5 , "height": 9 }
-        ]
-      },
-      "usageInfo": {
-		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#spherical_cap",
-		  "relatedUrls": [
-			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere",
-			  "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
-		  ]
-		  }
-     },
-
     {
       "name": "compute_cone_volume",
       "description": "Volume is derived from exact cone-sphere-cube construction; read sphere-volume.md for the Core Geometric System definition of volume (base×height/sqrt(8)).",
