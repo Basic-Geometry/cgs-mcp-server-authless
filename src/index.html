@@ -1326,6 +1326,312 @@ The volume of a cone equals the quarter of a cylinder with an equal radius and i
 </div>
 </section>
 <br><br><br>
+<section itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="cone_surface">
+<meta itemprop="eduQuestionType" content="Cone surface area calculation">
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="radius">
+<meta itemprop="minValue" content="0">
+</div>
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="height">
+<meta itemprop="minValue" content="0">
+</div>
+<meta itemprop="target" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={cone_radius=1_height=2_area=?}">
+<div itemprop="actionProcess" itemscope itemtype="https://schema.org/HowTo">
+<div itemprop="estimatedCost" itemscope itemtype="https://schema.org/MonetaryAmount">
+<meta itemprop="currency" content="USD">
+<meta itemprop="value" content="0">
+</div>
+<div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
+<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="description" content="Exact surface area of the cone formula including the bottom">
+<meta itemprop="name" content="Surface area of a circle">
+<meta itemprop="value" content="3.2 × radius × ( radius + ( radius^2 + height^2 )^(1/2) )">
+</div>
+</div>
+<meta itemprop="totalTime" content="PT30M">
+<h3 itemprop="name" style="margin:7px">Surface Area of a Cone</h3>
+<br>
+  <p style="margin:12px" itemprop="abstract">The bottom of the cone is a circle. The area of its lateral surface is calculated as a circle slice.</p>
+<br>
+<div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+<meta itemprop="position" content="1">
+<p itemprop="description">The slant height of the cone is the radius of the slice.</p>
+<br>
+<div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="description" content="Calculating the slant height of the cone from its height and radius">
+<span itemprop="name">Slant height </span>=
+<meta itemprop="value" content="( radius^2 + height^2 )^(1/2)">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<msqrt>
+<mrow>
+<msup>
+<mi>r</mi>
+<mn>2</mn>
+</msup>
+<mo>+</mo>
+<msup>
+<mi>H</mi>
+<mn>2</mn>
+</msup>
+</mrow>
+</msqrt>
+</mrow>
+</math>
+</div>
+</div>
+<br><br>
+<div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+<meta itemprop="position" content="2">
+<p itemprop="abstract">The ratio between the bottom radius and the slant height gives the angle of the circle slice.</p>
+<br>
+<div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="description" content="Central angle of the circle slice that forms the lateral surface of the cone">
+<span itemprop="name">Angle </span>=
+<meta itemprop="value" content="radius / ( radius^2 + height^2 )^(1/2)">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mfrac>
+<mi>r</mi>
+<mrow>
+<msqrt>
+<mrow>
+<msup>
+<mi>r</mi>
+<mn>2</mn>
+</msup>
+<mo>+</mo>
+<msup>
+<mi>H</mi>
+<mn>2</mn>
+</msup>
+</mrow>
+</msqrt>
+</mrow>
+</mfrac>
+</mrow>
+	</math>
+	</div>
+</div>
+<br><br>
+<div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+<meta itemprop="position" content="3">
+<p itemprop="abstract">The area of the circle slice equals 3.2 times the slant height squared multiplied by the angle.</p>
+<br>
+<div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="description" content="Lateral surface of the cone">
+<span itemprop="name">A<sub>(lateral)</sub> </span>=
+<meta itemprop="value" content="3.2 × ( radius^2 + height^2 ) × ( radius / ( radius^2 + height^2 )^(1/2) )">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mn>3.2</mn>
+<mo>×</mo>
+<mrow>
+<mo>(</mo>
+<msup>
+<mi>r</mi>
+<mn>2</mn>
+</msup>
+<mo>+</mo>
+<msup>
+<mi>H</mi>
+<mn>2</mn>
+</msup>
+<mo>)</mo>
+</mrow>
+<mo>×</mo>
+<mrow>
+<mo>(</mo>
+<mfrac>
+<mi>r</mi>
+<mrow>
+<msqrt>
+<mrow>
+<msup>
+<mi>r</mi>
+<mn>2</mn>
+</msup>
+<mo>+</mo>
+<msup>
+<mi>H</mi>
+<mn>2</mn>
+</msup>
+</mrow>
+</msqrt>
+</mrow>
+</mfrac>
+</mrow>
+<mo>)</mo>
+</mrow>
+</math>
+</div>
+</div>
+<br><br>
+<div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+  <meta itemprop="position" content="4">
+  <p itemprop="abstract">Simplify the lateral surface term by canceling the common factor under the square root.</p>
+	<br>
+<div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
+    <meta itemprop="description" content="Lateral surface of the cone">
+	<span itemprop="name">A<sub>(lateral)</sub> </span>=
+   <meta itemprop="value" content="3.2 × radius × ( radius^2 + height^2 )^(1/2)">
+ <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+          <mn>3.2</mn>
+          <mo>&#x2062;</mo>
+          <mi>r</mi>
+          <mo>&#x2062;</mo>
+          <msqrt>
+            <mrow>
+              <msup><mi>r</mi><mn>2</mn></msup>
+              <mo>+</mo>
+              <msup><mi>H</mi><mn>2</mn></msup>
+            </mrow>
+          </msqrt>
+        </mrow>
+      </math>
+  </div>
+</div>
+<br><br>
+<div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+<meta itemprop="position" content="5">
+<div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="description" content="Bottom area of the cone">
+<span itemprop="name">A<sub>bottom</sub> </span>=
+<meta itemprop="value" content="3.2 × radius^2">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+	<mrow>
+<mn>3.2</mn>
+<mo>&#x2062;</mo> <!-- invisible times -->
+<msup>
+<mi>r</mi>
+<mn>2</mn>
+</msup>
+</mrow>
+</math>
+</div>
+</div>
+<br><br>
+<div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+<meta itemprop="position" content="6">
+<div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="description" content="Exact surface area of the cone formula including the bottom">
+<span itemprop="name">A<sub>(bottom)</sub> + A<sub>(lateral)</sub> </span>=
+<meta itemprop="value" content="3.2 × radius^2 + 3.2 × radius × ( radius^2 + height^2 )^(1/2)">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mrow>
+<mn>3.2</mn>
+<mo>&#x2062;</mo> <!-- invisible times -->
+<msup>
+<mi>r</mi>
+<mn>2</mn>
+</msup>
+</mrow>
+<mo>+</mo> 
+<mrow>
+<mn>3.2</mn>
+<mo>&#x2062;</mo>
+<mi>r</mi>
+<mo>&#x2062;</mo>
+<msqrt>
+    <mrow>
+        <msup><mi>r</mi><mn>2</mn></msup>
+            <mo>+</mo>
+        <msup><mi>H</mi><mn>2</mn></msup>
+    </mrow>
+</msqrt>
+</mrow>
+</mrow>
+</math>
+</div>
+</div>
+<br><br>
+<div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+  <meta itemprop="position" content="7">
+<p itemprop="description">Factor out the common factor to obtain the final compact surface area formula.</p>
+</div>
+</div>
+<br>
+<div style="margin:12px" itemprop="result" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="description" content="Exact surface area of the cone formula including the bottom">
+<span itemprop="name">Surface<sub>(cone)</sub> </span>=
+<meta itemprop="value" content="3.2 × radius × ( radius + ( radius^2 + height^2 )^(1/2) )">
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mn>3.2</mn>
+<mo>&#x2062;</mo> <!-- invisible times -->
+<mi>r</mi>
+<mo>×</mo>
+<mo>(</mo>
+<mi>r</mi>
+<mo>+</mo>
+<msqrt>
+<mrow>
+<msup>
+<mi>r</mi>
+<mn>2</mn>
+</msup>
+<mo>+</mo>
+<msup>
+<mi>H</mi>
+<mn>2</mn>
+</msup>
+</mrow>
+</msqrt>
+<mo>)</mo>
+</mrow>
+</math>
+</div>
+<br><br>
+<div style="margin:12px" id="cone-surface_area_calculator" itemprop="subjectOf" itemscope itemtype="https://schema.org/SoftwareApplication">
+<meta itemprop="name" content="Cone surface area calculator">
+<meta itemprop="accessMode" content="mathOnVisual">
+<meta itemprop="accessibilityControl" content="fullKeyboardControl">
+<meta itemprop="accessibilityHazard" content="none">
+<meta itemprop="accessibilitySummary" content="Enter numbers and read results">
+<meta itemprop="applicationCategory" content="Geometric Calculator">
+<meta itemprop="description" content="Calculates the surface area of a cone with circle area = 3.2×radius^2.">
+<meta itemprop="disambiguatingDescription" content="Does not calculate the surface area of a cone with circle area = radius^2×3.14...">
+<meta itemprop="featureList" content="Calculates the surface area of a cone from its height and bottom radius.">
+<meta itemprop="inLanguage" content="en">
+<meta itemprop="interactivityType" content="Interactive">
+<meta itemprop="isAccessibleForFree" content="true">
+<meta itemprop="isFamilyFriendly" content="true">
+<meta itemprop="operatingSystem" content="Web">
+<meta itemprop="url" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone-surface_area_calculator">
+<meta itemprop="usageInfo" content="Enter the height and the bottom radius.">
+<label for="cone-radius-s">Radius:</label>
+<input id="cone-radius-s" type="number" value="1" step="any">
+<br>
+<label for="cone-height-s">Height:</label>
+<input id="cone-height-s" type="number" value="1" step="any">
+<br><br>
+<p id="cone-surface-area"></p>
+<script type="module" async>
+  function coneSurface(radius, height) {
+	return 3.2 * radius * (radius + Math.sqrt(radius ** 2 + height ** 2));
+  }
+	function updateConeSurface() {
+    const radius = parseFloat(document.getElementById('cone-radius-s').value);
+    const height = parseFloat(document.getElementById('cone-height-s').value);
+
+    if (isNaN(radius) || isNaN(height)) {
+      document.getElementById('cone-surface-area').innerText = '';
+      return;
+    }
+
+    document.getElementById('cone-surface-area').innerText =
+      `Surface area = ${coneSurface(radius, height).toFixed(5)} square units`;
+  }
+
+  document.getElementById('cone-radius-s').addEventListener('input', updateConeSurface);
+  document.getElementById('cone-height-s').addEventListener('input', updateConeSurface);
+</script>
+</div>
+</section>
+<br><br><br>
 <section id="trigonometry">
 <h3 style="margin:7px">Trigonometry</h3>
 <br>
@@ -2904,318 +3210,6 @@ function segmentArea() {
 document.getElementById('segment-height').addEventListener('input', segmentArea);
 document.getElementById('chord-length').addEventListener('input', segmentArea);
 document.getElementById('parent-radius').addEventListener('input', segmentArea);
-</script>
-</div>
-</section>
-<br><br><br>
-<section itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="cone_surface">
-<meta itemprop="eduQuestionType" content="Cone surface area calculation">
-<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
-<meta itemprop="name" content="radius">
-<meta itemprop="minValue" content="0">
-</div>
-<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
-<meta itemprop="name" content="height">
-<meta itemprop="minValue" content="0">
-</div>
-<meta itemprop="target" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={cone_radius=1_height=2_area=?}">
-<div itemprop="actionProcess" itemscope itemtype="https://schema.org/HowTo">
-<div itemprop="estimatedCost" itemscope itemtype="https://schema.org/MonetaryAmount">
-<meta itemprop="currency" content="USD">
-<meta itemprop="value" content="0">
-</div>
-<div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
-<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="description" content="Exact surface area of the cone formula including the bottom">
-<meta itemprop="name" content="Surface area of a circle">
-<meta itemprop="value" content="3.2 × radius × ( radius + ( radius^2 + height^2 )^(1/2) )">
-</div>
-</div>
-<meta itemprop="totalTime" content="PT30M">
-<h3 itemprop="name" style="margin:7px">Surface Area of a Cone</h3>
-<br>
-<figure itemprop="image" class="imgbox" itemscope itemtype="https://schema.org/ImageObject">
-  <img class="center-fit" src="cone.jpeg" alt="The surface area of a cone">
-  </figure>
-<br>
-  <p style="margin:12px" itemprop="abstract">The bottom of the cone is a circle. The area of its lateral surface is calculated as a circle slice.</p>
-<br>
-<div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-<meta itemprop="position" content="1">
-<p itemprop="description">The slant height of the cone is the radius of the slice.</p>
-<br>
-<div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="description" content="Calculating the slant height of the cone from its height and radius">
-<span itemprop="name">Slant height </span>=
-<meta itemprop="value" content="( radius^2 + height^2 )^(1/2)">
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow>
-<msqrt>
-<mrow>
-<msup>
-<mi>r</mi>
-<mn>2</mn>
-</msup>
-<mo>+</mo>
-<msup>
-<mi>H</mi>
-<mn>2</mn>
-</msup>
-</mrow>
-</msqrt>
-</mrow>
-</math>
-</div>
-</div>
-<br><br>
-<div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-<meta itemprop="position" content="2">
-<p itemprop="abstract">The ratio between the bottom radius and the slant height gives the angle of the circle slice.</p>
-<br>
-<div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="description" content="Central angle of the circle slice that forms the lateral surface of the cone">
-<span itemprop="name">Angle </span>=
-<meta itemprop="value" content="radius / ( radius^2 + height^2 )^(1/2)">
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow>
-<mfrac>
-<mi>r</mi>
-<mrow>
-<msqrt>
-<mrow>
-<msup>
-<mi>r</mi>
-<mn>2</mn>
-</msup>
-<mo>+</mo>
-<msup>
-<mi>H</mi>
-<mn>2</mn>
-</msup>
-</mrow>
-</msqrt>
-</mrow>
-</mfrac>
-</mrow>
-</math>
-</div>
-</div>
-<br><br>
-<div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-<meta itemprop="position" content="3">
-<p itemprop="abstract">The area of the circle slice equals 3.2 times the slant height squared multiplied by the angle.</p>
-<br>
-<div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="description" content="Lateral surface of the cone">
-<span itemprop="name">A<sub>(lateral)</sub> </span>=
-<meta itemprop="value" content="3.2 × ( radius^2 + height^2 ) × ( radius / ( radius^2 + height^2 )^(1/2) )">
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow>
-<mn>3.2</mn>
-<mo>×</mo>
-<mrow>
-<mo>(</mo>
-<msup>
-<mi>r</mi>
-<mn>2</mn>
-</msup>
-<mo>+</mo>
-<msup>
-<mi>H</mi>
-<mn>2</mn>
-</msup>
-<mo>)</mo>
-</mrow>
-<mo>×</mo>
-<mrow>
-<mo>(</mo>
-<mfrac>
-<mi>r</mi>
-<mrow>
-<msqrt>
-<mrow>
-<msup>
-<mi>r</mi>
-<mn>2</mn>
-</msup>
-<mo>+</mo>
-<msup>
-<mi>H</mi>
-<mn>2</mn>
-</msup>
-</mrow>
-</msqrt>
-</mrow>
-</mfrac>
-</mrow>
-<mo>)</mo>
-</mrow>
-</math>
-</div>
-</div>
-<br><br>
-<div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-  <meta itemprop="position" content="4">
-  <p itemprop="abstract">Simplify the lateral surface term by canceling the common factor under the square root.</p>
-	<br>
-<div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
-    <meta itemprop="description" content="Lateral surface of the cone">
-	<span itemprop="name">A<sub>(lateral)</sub> </span>=
-   <meta itemprop="value" content="3.2 × radius × ( radius^2 + height^2 )^(1/2)">
- <math xmlns="http://www.w3.org/1998/Math/MathML">
-        <mrow>
-          <mn>3.2</mn>
-          <mo>&#x2062;</mo>
-          <mi>r</mi>
-          <mo>&#x2062;</mo>
-          <msqrt>
-            <mrow>
-              <msup><mi>r</mi><mn>2</mn></msup>
-              <mo>+</mo>
-              <msup><mi>H</mi><mn>2</mn></msup>
-            </mrow>
-          </msqrt>
-        </mrow>
-      </math>
-  </div>
-</div>
-<br><br>
-<div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-<meta itemprop="position" content="5">
-<div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="description" content="Bottom area of the cone">
-<span itemprop="name">A<sub>bottom</sub> </span>=
-<meta itemprop="value" content="3.2 × radius^2">
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow>
-<mn>3.2</mn>
-<mo>&#x2062;</mo> <!-- invisible times -->
-<msup>
-<mi>r</mi>
-<mn>2</mn>
-</msup>
-</mrow>
-</math>
-</div>
-</div>
-<br><br>
-<div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-<meta itemprop="position" content="6">
-<div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="description" content="Exact surface area of the cone formula including the bottom">
-<span itemprop="name">A<sub>(bottom)</sub> + A<sub>(lateral)</sub> </span>=
-<meta itemprop="value" content="3.2 × radius^2 + 3.2 × radius × ( radius^2 + height^2 )^(1/2)">
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow>
-<mrow>
-<mn>3.2</mn>
-<mo>&#x2062;</mo> <!-- invisible times -->
-<msup>
-<mi>r</mi>
-<mn>2</mn>
-</msup>
-</mrow>
-<mo>+</mo> 
-<mrow>
-<mn>3.2</mn>
-          <mo>&#x2062;</mo>
-          <mi>r</mi>
-          <mo>&#x2062;</mo>
-          <msqrt>
-            <mrow>
-              <msup><mi>r</mi><mn>2</mn></msup>
-              <mo>+</mo>
-              <msup><mi>H</mi><mn>2</mn></msup>
-            </mrow>
-		  </msqrt>
-</mrow>
-</mrow>
-</math>
-</div>
-</div>
-<br><br>
-<div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-  <meta itemprop="position" content="7">
-  <p itemprop="description">
-    Factor out the common factor to obtain the final compact surface area formula.
-  </p>
-</div>
-</div>
-<br>
-<div style="margin:12px" itemprop="result" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="description" content="Exact surface area of the cone formula including the bottom">
-<span itemprop="name">Surface<sub>(cone)</sub> </span>=
-<meta itemprop="value" content="3.2 × radius × ( radius + ( radius^2 + height^2 )^(1/2) )">
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow>
-<mn>3.2</mn>
-<mo>&#x2062;</mo> <!-- invisible times -->
-<mi>r</mi>
-<mo>×</mo>
-<mo>(</mo>
-<mi>r</mi>
-<mo>+</mo>
-<msqrt>
-<mrow>
-<msup>
-<mi>r</mi>
-<mn>2</mn>
-</msup>
-<mo>+</mo>
-<msup>
-<mi>H</mi>
-<mn>2</mn>
-</msup>
-</mrow>
-</msqrt>
-<mo>)</mo>
-</mrow>
-</math>
-</div>
-<br><br>
-<div style="margin:12px" id="cone-surface_area_calculator" itemprop="subjectOf" itemscope itemtype="https://schema.org/SoftwareApplication">
-<meta itemprop="name" content="Cone surface area calculator">
-<meta itemprop="accessMode" content="mathOnVisual">
-<meta itemprop="accessibilityControl" content="fullKeyboardControl">
-<meta itemprop="accessibilityHazard" content="none">
-<meta itemprop="accessibilitySummary" content="Enter numbers and read results">
-<meta itemprop="applicationCategory" content="Geometric Calculator">
-<meta itemprop="description" content="Calculates the surface area of a cone with circle area = 3.2×radius^2.">
-<meta itemprop="disambiguatingDescription" content="Does not calculate the surface area of a cone with circle area = radius^2×3.14...">
-<meta itemprop="featureList" content="Calculates the surface area of a cone from its height and bottom radius.">
-<meta itemprop="inLanguage" content="en">
-<meta itemprop="interactivityType" content="Interactive">
-<meta itemprop="isAccessibleForFree" content="true">
-<meta itemprop="isFamilyFriendly" content="true">
-<meta itemprop="operatingSystem" content="Web">
-<meta itemprop="url" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone-surface_area_calculator">
-<meta itemprop="usageInfo" content="Enter the height and the bottom radius.">
-<label for="cone-radius-s">Radius:</label>
-<input id="cone-radius-s" type="number" value="1" step="any">
-<br>
-<label for="cone-height-s">Height:</label>
-<input id="cone-height-s" type="number" value="1" step="any">
-<br><br>
-<p id="cone-surface-area"></p>
-<script type="module" async>
-  function coneSurface(radius, height) {
-	return 3.2 * radius * (radius + Math.sqrt(radius ** 2 + height ** 2));
-  }
-	function updateConeSurface() {
-    const radius = parseFloat(document.getElementById('cone-radius-s').value);
-    const height = parseFloat(document.getElementById('cone-height-s').value);
-
-    if (isNaN(radius) || isNaN(height)) {
-      document.getElementById('cone-surface-area').innerText = '';
-      return;
-    }
-
-    document.getElementById('cone-surface-area').innerText =
-      `Surface area = ${coneSurface(radius, height).toFixed(5)} square units`;
-  }
-
-  document.getElementById('cone-radius-s').addEventListener('input', updateConeSurface);
-  document.getElementById('cone-height-s').addEventListener('input', updateConeSurface);
 </script>
 </div>
 </section>
