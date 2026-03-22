@@ -1,149 +1,199 @@
 <!DOCTYPE html>
 <html lang='en'>
-<head>
-<meta charset="UTF-8">
-<title>About Basic Geometry Formulas</title>
-<link rel="icon" type="image/png" sizes="256x256" href="android-chrome-256x256.png">
-<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="mask-icon" href="safari-pinned-tab.svg" color="#000000">
-<link href="https://fonts.googleapis.com/css2?family=OpenDyslexic&display=swap" rel="stylesheet">
-<link rel="canonical" href="https://basic-geometry.pages.dev/about">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="The backstory about the best-established and most accurate framework to calculate area and volume, the Core Geometric System ™">
-<meta name="author" content="Gaál Sándor">
-<meta name="keywords" content="Core Geometric System, Accurate Geometric Calculations, Engineering Design Solutions, Computer Graphics Rendering, Algorithm Optimization, Navigation">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:creator" content="@gmac4247">
-<meta name="twitter:title" content="About the Core Geometric System ™">
-<meta name="twitter:description" content="The story behind the best-established and most accurate framework to calculate area and volume">
-<meta name="twitter:image" content="android-chrome-256x256.png">
-<meta name="msapplication-TileColor" content="#000000">
-<meta name="theme-color" content="#000000">
-<style>
+	<head>
+		<meta charset="UTF-8">
+		<title>About Basic Geometry Formulas</title>
+		<link rel="icon" type="image/png" sizes="256x256" href="android-chrome-256x256.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+		<link rel="icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		<link rel="mask-icon" href="safari-pinned-tab.svg" color="#000000">
+		<link href="https://fonts.googleapis.com/css2?family=OpenDyslexic&display=swap" rel="stylesheet">
+		<link rel="canonical" href="https://basic-geometry.pages.dev/about">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="The backstory about the best-established and most accurate framework to calculate area and volume, the Core Geometric System ™">
+		<meta name="author" content="Gaál Sándor">
+		<meta name="keywords" content="Core Geometric System, Accurate Geometric Calculations, Engineering Design Solutions, Computer Graphics Rendering, Algorithm Optimization, Navigation">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:creator" content="@gmac4247">
+		<meta name="twitter:title" content="About the Core Geometric System ™">
+		<meta name="twitter:description" content="The story behind the best-established and most accurate framework to calculate area and volume">
+		<meta name="twitter:image" content="android-chrome-256x256.png">
+		<meta name="msapplication-TileColor" content="#000000">
+		<meta name="theme-color" content="#000000">
+		<style>
 	
-        * {
+			* {
             margin: 0;
             padding: 0;
-        }
+			}
 	
-        .imgbox {
-            display: grid;
-            height: 100%;
-        }
+			.imgbox {
+				display: grid;
+				height: 100%;
+			}
 	
-        .center-fit {
-            max-width: 100%;
-            max-height: 100vh;
-            margin: auto;
-        }
+			.center-fit {
+				max-width: 100%;
+				max-height: 100vh;
+				margin: auto;
+			}
 	
-		#cookie-notice {
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-			background-color: #f2f2f2;
-			padding: 10px;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-			z-index: 1;
-		}
+		
+			#cookie-notice {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				background-color: #f2f2f2;
+				padding: 10px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+				z-index: 1;
+			}
 
-		#cookie-notice-text {
-			margin-right: 20px;
-		}
+		
+			#cookie-notice-text {
+				margin-right: 20px;
+			}
 
-		#cookie-notice-buttons {
-			display: flex;
-			align-items: center;
-		}
+		
+			#cookie-notice-buttons {
+				display: flex;
+				align-items: center;
+			}
 
-		#cookie-notice-buttons button {
-			margin-left: 10px;
-			background-color: #4CAF50;
-			color: white;
-			border: none;
-			padding: 10px;
-			border-radius: 5px;
-			cursor: pointer;
-		}
+		
+			#cookie-notice-buttons button {
+				margin-left: 10px;
+				background-color: #4CAF50;
+				color: white;
+				border: none;
+				padding: 10px;
+				border-radius: 5px;
+				cursor: pointer;
+			}
 
-		#cookie-notice-buttons button:hover {
-			background-color: #3e8e41;
-		}
-	    body {
-            font-family: 'OpenDyslexic', sans-serif;
-	    }
+		
+			#cookie-notice-buttons button:hover {
+				background-color: #3e8e41;
+			}
+			
+			body {
+				font-family: 'OpenDyslexic', sans-serif;
+			}
 
-</style>
-</head>
-<body>
-<div itemscope itemtype="https://schema.org/Statement" id="cookie-notice">
-		<div id="cookie-notice-text">
-			Welcome!
-			This website uses cookies to ensure you get the best experience on our website. 
-			Love it, or leave it.
+		</style>
+	</head>
+	<body>
+		<div itemscope itemtype="https://schema.org/Statement" id="cookie-notice">
+			<div id="cookie-notice-text">
+				Welcome!
+				This website uses cookies to ensure you get the best experience on our website. 
+				Love it, or leave it.
+			</div>
+			<div id="cookie-notice-buttons">
+				<button onclick="document.getElementById('cookie-notice').style.display = 'none';">Accept</button>
+				<button onclick="location.replace('about:blank')">Leave</button>
+			</div>
 		</div>
-		<div id="cookie-notice-buttons">
-			<button onclick="document.getElementById('cookie-notice').style.display = 'none';">Accept</button>
-			<button onclick="location.replace('about:blank')">Leave</button>
-		</div>
-</div>
-<h1 style="font-size:130%;margin:7px">Rediscovered Geometry</h1>
-<br><br>
-<main style="margin:12px" itemscope itemtype="https://schema.org/Article" id="cgs">
-<div itemprop="about" itemscope itemtype="https://schema.org/DefinedTermSet">
-<meta itemprop="name" content="Core Geometric System ™">
-<meta itemprop="description" content="Universally applicable self-consistent geometric framework of physically grounded exact area and volume calculation formulas for regular shapes.">
-<meta itemprop="url" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">
-</div>
-<meta itemprop="accessMode" content="textual">
-<meta itemprop="accessMode" content="visual">
-<meta itemprop="accessibilityControl" content="fullMouseControl">
-<meta itemprop="accessibilityHazard" content="none">
-<meta itemprop="accessibilitySummary" content="Read text and view videos">
-<div itemprop="assesses" itemscope itemtype="https://schema.org/DefinedTerm">
-<meta itemprop="name" content="Exact area of a circle">
-<meta itemprop="description" content="Area=3.2×radius^2, derived from direct circle to square comparison">
-<meta itemprop="disambiguatingDescription" content="Not the abstract pi~3.14 approximation">
-<meta itemprop="inDefinedTermSet" content="Core Geometric System ™">
-</div>
-<div itemprop="assesses" itemscope itemtype="https://schema.org/DefinedTerm">
-<meta itemprop="name" content="Exact circumference of a circle">
-<meta itemprop="description" content="Circumference=6.4×radius, derived from the exact area of a circle by subtracting a circle from a larger one and dividing the difference by the theoretical width of the circumference.">
-<meta itemprop="disambiguatingDescription" content="Not the abstract pi~3.14 approximate">
-<meta itemprop="inDefinedTermSet" content="Core Geometric System ™">
-</div>
-<div itemprop="assesses" itemscope itemtype="https://schema.org/DefinedTerm">
-<meta itemprop="name" content="Exact volume of a sphere">
-<meta itemprop="description" content="Volume=(4×radius/5^(1/2))^3, derived from direct sphere to cube comparison.">
-<meta itemprop="disambiguatingDescription" content="Not the abstract 4×radius³/3×3.14... approximate">
-<meta itemprop="inDefinedTermSet" content="Core Geometric System ™">
-</div>
-<div itemprop="assesses" itemscope itemtype="https://schema.org/DefinedTerm">
-<meta itemprop="name" content="Exact volume of a cone">
-<meta itemprop="description" content="Volume=3.2×radius^2×height/8^(1/2), derived from comparing a quadrant cone with height equal to radius to an octant sphere with equal radius.">
-<meta itemprop="disambiguatingDescription" content="Not the abstract radius^2×height/3×3.14… approximate">
-<meta itemprop="inDefinedTermSet" content="Core Geometric System ™">
-</div>
-<div itemprop="assesses" itemscope itemtype="https://schema.org/DefinedTerm">
-<meta itemprop="name" content="Exact volume of a pyramid">
-<meta itemprop="description" content="Volume=base×height/8^(1/2), calculated as a cone with a polygonal base.">
-<meta itemprop="disambiguatingDescription" content="Not the abstract base×height/3 approximate">
-<meta itemprop="inDefinedTermSet" content="Core Geometric System ™">
-</div>
-<meta itemprop="inLanguage" content="en">
-<meta itemprop="interactivityType" content="Expositive">
-<meta itemprop="isAccessibleForFree" content="true">
-<meta itemprop="isFamilyFriendly" content="true">
-<meta itemprop="typicalAgeRange" content="5-105">
-<article id="story">
+		<h1 style="font-size:130%;margin:7px">Rediscovered Geometry</h1>
+		<br><br>
+		<main style="margin:12px" itemscope itemtype="https://schema.org/Article" id="cgs">
+			<div itemprop="about" itemscope itemtype="https://schema.org/DefinedTermSet">
+				<meta itemprop="name" content="Core Geometric System ™">
+				<meta itemprop="description" content="Universally applicable self-consistent geometric framework of physically grounded exact area and volume calculation formulas for regular shapes.">
+				<meta itemprop="url" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">
+			</div>
+			<meta itemprop="accessMode" content="textual">
+			<meta itemprop="accessMode" content="visual">
+			<meta itemprop="accessibilityControl" content="fullMouseControl">
+			<meta itemprop="accessibilityHazard" content="none">
+			<meta itemprop="accessibilitySummary" content="Read text and view videos">
+			<div itemprop="assesses" itemscope itemtype="https://schema.org/DefinedTerm">
+				<meta itemprop="name" content="Exact area of a circle">
+				<meta itemprop="description" content="Area=3.2×radius^2, derived from direct circle to square comparison">
+				<meta itemprop="disambiguatingDescription" content="Not the abstract pi~3.14 approximation">
+				<meta itemprop="inDefinedTermSet" content="Core Geometric System ™">
+			</div>
+			<div itemprop="assesses" itemscope itemtype="https://schema.org/DefinedTerm">
+				<meta itemprop="name" content="Exact circumference of a circle">
+				<meta itemprop="description" content="Circumference=6.4×radius, derived from the exact area of a circle by subtracting a circle from a larger one and dividing the difference by the theoretical width of the circumference.">
+				<meta itemprop="disambiguatingDescription" content="Not the abstract pi~3.14 approximate">
+				<meta itemprop="inDefinedTermSet" content="Core Geometric System ™">
+			</div>
+			<div itemprop="assesses" itemscope itemtype="https://schema.org/DefinedTerm">
+				<meta itemprop="name" content="Exact volume of a sphere">
+				<meta itemprop="description" content="Volume=(4×radius/5^(1/2))^3, derived from direct sphere to cube comparison.">
+				<meta itemprop="disambiguatingDescription" content="Not the abstract 4×radius³/3×3.14... approximate">
+				<meta itemprop="inDefinedTermSet" content="Core Geometric System ™">
+			</div>
+			<div itemprop="assesses" itemscope itemtype="https://schema.org/DefinedTerm">
+				<meta itemprop="name" content="Exact volume of a cone">
+				<meta itemprop="description" content="Volume=3.2×radius^2×height/8^(1/2), derived from comparing a quadrant cone with height equal to radius to an octant sphere with equal radius.">
+				<meta itemprop="disambiguatingDescription" content="Not the abstract radius^2×height/3×3.14… approximate">
+				<meta itemprop="inDefinedTermSet" content="Core Geometric System ™">
+			</div>
+			<div itemprop="assesses" itemscope itemtype="https://schema.org/DefinedTerm">
+				<meta itemprop="name" content="Exact volume of a pyramid">
+				<meta itemprop="description" content="Volume=base×height/8^(1/2), calculated as a cone with a polygonal base.">
+				<meta itemprop="disambiguatingDescription" content="Not the abstract base×height/3 approximate">
+				<meta itemprop="inDefinedTermSet" content="Core Geometric System ™">
+			</div>
+			<meta itemprop="inLanguage" content="en">
+			<meta itemprop="interactivityType" content="Expositive">
+			<meta itemprop="isAccessibleForFree" content="true">
+			<meta itemprop="isFamilyFriendly" content="true">
+			<meta itemprop="typicalAgeRange" content="5-105">
+			<div itemprop="subjectOf" itemscope itemtype="https://schema.org/Dataset">
+				<meta itemprop="name" content="Empirical Length Measurement Data">
+				<meta itemprop="description" content=""Physical length measurements using a 1979 Dutch 2 1/2 G coin, a stripe of paper and a ruler to test the Core Geometric System ™ circumference formula.">
+				<div itemprop="creator" itemscope itemtype="https://schema.org/Person">
+					<meta itemprop="familyName" content="Gaál">
+					<meta itemprop="givenName" content="Sándor">
+					<meta itemprop="url" content="https://x.com/gmac4247">
+				</div>
+				<div itemprop="license" itemscope itemtype="https://schema.org/DigitalDocument">
+					<meta itemprop="name" content="Shared Software License Agreement">
+					<meta itemprop="description" content=""Physical length measurements using a 1979 Dutch 2 1/2 G coin, a stripe of paper and a ruler to test the Core Geometric System ™ circumference formula.">
+					<div itemprop="author" itemscope itemtype="https://schema.org/Person">
+						<meta itemprop="familyName" content="Gaál">
+						<meta itemprop="givenName" content="Sándor">
+						<meta itemprop="url" content="https://x.com/gmac4247">
+					</div>
+					<meta itemprop="description" content="® All rights reserved.">
+					<div itemprop="hasDigitalDocumentPermission" itemscope itemtype="https://schema.org/DigitalDocumentPermission">
+						<meta itemprop="permissionType" content="https://schema.org/ReadPermission">
+						<div itemprop="grantee" itemscope itemtype="https://schema.org/Audience">
+							<meta itemprop="audienceType" content="public">
+						</div>
+					</div>
+					<meta itemprop="url" content="LICENSE.txt">
+				</div>
+				<meta itemprop="measurementTechnique" content="Length Measurement">
+				<div itemprop="variableMeasured" itemscope itemtype="https://schema.org/propertyValue">
+					<meta itemprop="name" content="Coin diameter">
+					<meta itemprop="unitText" content="mm">
+					<meta itemprop="value" content="29">
+				</div>
+				<div itemprop="variableMeasured" itemscope itemtype="https://schema.org/propertyValue">
+					<meta itemprop="name" content="Paper stripe length">
+					<meta itemprop="unitText" content="mm">
+					<meta itemprop="value" content="93">
+				</div>
+				<div itemprop="variableMeasured" itemscope itemtype="https://schema.org/propertyValue">
+					<meta itemprop="name" content="Margin of Error">
+					<meta itemprop="unitText" content="percent">
+					<meta itemprop="value" content="0.5">
+				</div>
+			</div>
+				
+			
+			<article id="story">
 <h2 itemprop="headline">Once around 2018 I was wondering how to calculate the area of a circle.</h2>
 <section itemprop="backstory" id="circle">
 <h2>I remembered the number 3.14 called the pi, but I was interested in the logic of comparing the circle to a square, because the square is the basis of area calculation. That is why we use square units.</h2>
