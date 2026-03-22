@@ -1,0 +1,53 @@
+Shared Software License Agreement
+
+
+This software, the Core Geometric System ™ including the formulas, figures, text and user interface, is offered to you (the "User") for use under the following terms and conditions:
+
+**1. Ownership and Copyright:**
+
+The App, excluding the open source elements, is owned and copyrighted by Gaál Sándor (the "Licensor"). 
+
+**2. Grant of License:**
+
+The Licensor grants the User a non-exclusive, non-transferable, royalty-free license to:
+
+* Download and use the App solely for personal, non-commercial purposes.
+
+**3. Restrictions:**
+
+The User is expressly prohibited from:
+
+* Distributing the App, whether in its original form or modified. This includes, but is not limited to, uploading the App to app stores, file-sharing websites, or any other distribution platform.
+* Modifying the App and distributing any such modifications. This restriction applies specifically to modifications that include the formulas and figures provided by the Licensor.  While you may use the formulas and figures for your own purposes, distributing applications containing them is prohibited.
+* Reverse engineering, decompiling, or disassembling the App, except to the extent expressly permitted by applicable law.
+* Using the App for any commercial purpose without the prior written consent of the Licensor.
+
+**4. Disclaimer of Warranty:**
+
+The App is provided "as is" without any warranty of any kind, either express or implied, including, but not limited to, the implied warranties of merchantability, fitness for a particular purpose, and non-infringement. The Licensor does not warrant that the App will be error-free or that any defects will be corrected.  The User assumes all risks associated with the use of the App.
+
+**5. Limitation of Liability:**
+
+In no event shall the Licensor be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising out of or related to the use or inability to use the App, even if the Licensor has been advised of the possibility of such damages.
+
+**6. User Responsibility:**
+
+The User acknowledges and agrees that they are solely responsible for any use they make of the App. The user is responsible for verifying the results of any calculations performed by the App. The Licensor shall not be held responsible for any inaccuracies or errors in the calculations.
+
+**7. Governing Law:**
+
+This Agreement shall be governed by and construed in accordance with the laws of the United States of America.
+
+**8. Entire Agreement:**
+
+This Agreement constitutes the entire agreement between the Licensor and the User concerning the App and supersedes all prior or contemporaneous communications and agreements, whether oral or written.
+
+**9. Contact Information:**
+
+For any questions regarding this license, please contact gmac4247@yahoo.com .
+
+**By downloading and using the App, the User agrees to be bound by the terms and conditions of this License Agreement.**
+
+Gaál Sándor 
+® All rights reserved. 
+2026
