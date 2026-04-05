@@ -539,8 +539,8 @@ export default {
 
     // Route MCP requests to Durable Object
     if (url.pathname.startsWith("/mcp")) {
-      const id = env.MCP_DO.idFromName("default");
-      const stub = env.MCP_DO.get(id);
+      const id = env.MCP_OBJECT.idFromName("default");
+      const stub = env.MCP_OBJECT.get(id);
       return stub.fetch(request);
     }
 
