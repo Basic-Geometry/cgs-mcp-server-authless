@@ -544,14 +544,7 @@ export default {
       return stub.fetch(request);
     }
 
-    // Chat endpoint (existing code)
-    if (url.pathname === "/chat" && request.method === "POST") {
-      // ... existing code
-    }
-
-    return env.ASSETS.fetch(request);
-  }
-};
+  
 
     // New CGS Chat endpoint
     if (url.pathname === "/chat" && request.method === "POST") {
