@@ -34,6 +34,66 @@ const server = new McpServer({
   version: "1.0.5"
 });
 
+// --- DURABLE OBJECT: MCP Server Handler ---
+
+export class MyMCP {
+  state: DurableObjectState;
+  env: Env;
+
+  constructor(state: DurableObjectState, env: Env) {
+    this.state = state;
+    this.env = env;
+  }
+
+  async fetch(request: Request): Promise<Response> {
+    try {
+      const url = new URL(request.url);
+
+      // Handle MCP protocol requests (SSE, JSON-RPC, or transport-specific)
+      if (request.method === "POST" && url.pathname === "/mcp") {
+        const body = await request.text();
+        
+        // If it's a JSON-RPC request, parse and handle it
+        try {
+          const message = JSON.parse(body);
+          
+          // Handle MCP messages (initialize, call tool, etc.)
+          if (message.method === "tools/list") {
+            return new Response(JSON.stringify({
+              tools: server._tools || []
+            }), {
+              headers: { "Content-Type": "application/json" }
+            });
+          }
+          
+          if (message.method === "tools/call") {
+            const toolName = message.params.name;
+            const toolArgs = message.params.arguments;
+            
+            // Execute the tool via the server
+            const result = await server.callTool(toolName, toolArgs);
+            return new Response(JSON.stringify(result), {
+              headers: { "Content-Type": "application/json" }
+            });
+          }
+        } catch (e) {
+          return new Response(JSON.stringify({ error: "Invalid JSON" }), {
+            status: 400,
+            headers: { "Content-Type": "application/json" }
+          });
+        }
+      }
+
+      // Default response
+      return new Response("MCP Durable Object Ready", {
+        headers: { "Content-Type": "text/plain" }
+      });
+    } catch (err) {
+      return new Response(`Error: ${err}`, { status: 500 });
+    }
+  }
+}
+
 // --- TOOL DEFINITIONS ---
 
 // 1. Triangle Area
