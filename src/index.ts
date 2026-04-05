@@ -472,5 +472,3 @@ Answer in a friendly, educational tone that invites understanding rather than de
     MCP_OBJECT: MyMCP
   }
 };
-
-export { MyMCP };
