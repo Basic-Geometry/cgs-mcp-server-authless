@@ -111,6 +111,164 @@
                         <button onclick="location.replace('about:blank')">Leave</button>
 				</div>
 </div>
+<!-- CGS Chat Widget -->
+<div id="cgs-chat-widget">
+  <!-- Floating Button -->
+  <button id="cgs-chat-button" 
+          style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; 
+                 border-radius: 50%; background: #0ea5e9; color: white; border: none; 
+                 font-size: 28px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2); 
+                 z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    💬
+  </button>
+
+  <!-- Chat Modal -->
+  <div id="cgs-chat-modal" style="display: none; position: fixed; bottom: 90px; right: 20px; 
+                                  width: 380px; height: 520px; background: white; border-radius: 12px; 
+                                  box-shadow: 0 10px 30px rgba(0,0,0,0.25); overflow: hidden; 
+                                  z-index: 1001; flex-direction: column;">
+    
+    <!-- Header -->
+    <div style="background: #0ea5e9; color: white; padding: 12px 16px; font-weight: bold; 
+                display: flex; justify-content: space-between; align-items: center;">
+      <span>Chat about Core Geometric System (CGS)</span>
+      <button id="cgs-close-button" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer;">✕</button>
+    </div>
+
+    <!-- Messages Area -->
+    <div id="cgs-messages" style="flex: 1; padding: 16px; overflow-y: auto; background: #f8fafc; 
+                                  display: flex; flex-direction: column; gap: 12px;">
+      <!-- Messages will appear here -->
+    </div>
+
+    <!-- Input Area -->
+    <div style="padding: 12px; border-top: 1px solid #e2e8f0; background: white;">
+      <form id="cgs-chat-form" style="display: flex; gap: 8px;">
+        <input id="cgs-input" 
+               type="text" 
+               placeholder="Ask about CGS geometry..." 
+               style="flex: 1; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 15px;">
+        <button type="submit" 
+                style="padding: 0 20px; background: #0ea5e9; color: white; border: none; 
+                       border-radius: 8px; cursor: pointer;">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript for the Chat Widget -->
+<script>
+  const chatButton = document.getElementById('cgs-chat-button');
+  const chatModal = document.getElementById('cgs-chat-modal');
+  const closeButton = document.getElementById('cgs-close-button');
+  const messagesContainer = document.getElementById('cgs-messages');
+  const chatForm = document.getElementById('cgs-chat-form');
+  const inputField = document.getElementById('cgs-input');
+
+  let conversationHistory = [];
+
+  // Toggle modal
+  function toggleChat() {
+    if (chatModal.style.display === 'flex') {
+      chatModal.style.display = 'none';
+    } else {
+      chatModal.style.display = 'flex';
+      inputField.focus();
+    }
+  }
+
+  chatButton.addEventListener('click', toggleChat);
+  closeButton.addEventListener('click', () => { chatModal.style.display = 'none'; });
+
+  // Add a message to the UI
+  function addMessage(role, content) {
+    const div = document.createElement('div');
+    div.style.padding = '10px 14px';
+    div.style.borderRadius = '10px';
+    div.style.maxWidth = '85%';
+    div.style.alignSelf = role === 'user' ? 'flex-end' : 'flex-start';
+    div.style.background = role === 'user' ? '#0ea5e9' : '#e2e8f0';
+    div.style.color = role === 'user' ? 'white' : 'black';
+    div.textContent = content;
+    messagesContainer.appendChild(div);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+
+  // Send message to your Worker
+  async function sendMessage(userMessage) {
+    addMessage('user', userMessage);
+    conversationHistory.push({ role: 'user', content: userMessage });
+
+    const thinkingDiv = document.createElement('div');
+    thinkingDiv.id = 'thinking';
+    thinkingDiv.style.padding = '10px 14px';
+    thinkingDiv.style.color = '#64748b';
+    thinkingDiv.style.fontStyle = 'italic';
+    thinkingDiv.textContent = 'Thinking...';
+    messagesContainer.appendChild(thinkingDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+    try {
+      const response = await fetch('/chat', {   // Change this if your Worker is on a different domain
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: conversationHistory })
+      });
+
+      if (!response.ok) throw new Error('Network error');
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let assistantMessage = '';
+      const assistantDiv = document.createElement('div');
+      assistantDiv.style.padding = '10px 14px';
+      assistantDiv.style.borderRadius = '10px';
+      assistantDiv.style.maxWidth = '85%';
+      assistantDiv.style.alignSelf = 'flex-start';
+      assistantDiv.style.background = '#e2e8f0';
+      messagesContainer.appendChild(assistantDiv);
+      messagesContainer.removeChild(thinkingDiv);
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        const chunk = decoder.decode(value);
+        // Simple SSE parsing (most Workers AI streaming returns text chunks)
+        assistantMessage += chunk;
+        assistantDiv.textContent = assistantMessage;
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }
+
+      conversationHistory.push({ role: 'assistant', content: assistantMessage });
+
+    } catch (err) {
+      console.error(err);
+      addMessage('assistant', 'Sorry, something went wrong. Please try again.');
+    }
+  }
+
+  // Form submit
+  chatForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const message = inputField.value.trim();
+    if (message) {
+      sendMessage(message);
+      inputField.value = '';
+    }
+  });
+
+  // Optional: Welcome message on first open
+  let firstOpen = true;
+  chatButton.addEventListener('click', () => {
+    if (firstOpen) {
+      setTimeout(() => {
+        addMessage('assistant', 'Hello! Ask me anything about the Core Geometric System (CGS). I explain using the exact constructive framework on this site.');
+      }, 300);
+      firstOpen = false;
+    }
+  });
+</script>
+	
 <main itemscope itemtype="https://schema.org/LearningResource https://schema.org/MathSolver" id="cgs">
 <meta itemprop="name" content="Core Geometric System ™">
 <meta itemprop="accessMode" content="mathOnVisual">
