@@ -605,3 +605,5 @@ Answer in a friendly, educational tone that invites understanding rather than de
     return env.ASSETS.fetch(request);
   }
 };
+
+export { MyMCP };
