@@ -537,10 +537,21 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const url = new URL(request.url);
 
-    // MCP routes
+    // Route MCP requests to Durable Object
     if (url.pathname.startsWith("/mcp")) {
-      return handleMCP(request, env, ctx);
+      const id = env.MCP_DO.idFromName("default");
+      const stub = env.MCP_DO.get(id);
+      return stub.fetch(request);
     }
+
+    // Chat endpoint (existing code)
+    if (url.pathname === "/chat" && request.method === "POST") {
+      // ... existing code
+    }
+
+    return env.ASSETS.fetch(request);
+  }
+};
 
     // New CGS Chat endpoint
     if (url.pathname === "/chat" && request.method === "POST") {
