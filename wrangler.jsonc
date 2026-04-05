@@ -29,5 +29,8 @@
 	},
 	"observability": {
 		"enabled": true
-	}
+	},
+"build": {
+  "no_bundle": true
+}
 }
