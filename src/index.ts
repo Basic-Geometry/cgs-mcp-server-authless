@@ -3,49 +3,36 @@ import { z } from "zod";
 
 // Import your exact-ratio geometry system (ESM .mjs file)
 import {
-	    trig,
-        closestRad,
-        closestValue,
-        sin,
-        cos,
-        tan,
-        asin,
-        acos,
-        atan,
-        triangleArea,
-        polygonArea,
-        circleArea, 
-        circumference,
-        segmentAreaFromHeightAndRadius,
-        segmentAreaFromHeightAndChord,
-        segmentAreaFromChordAndRadius,
-        coneSurface, 
-        sphereVolume,
-        coneVolume,
-        pyramidVolume,
-        frustumPyramidVolume,
-        frustumConeVolume,
-        tetrahedronVolume
-} 
-	from "./core-geometric-system.mjs";
+  trig,
+  closestRad,
+  closestValue,
+  sin,
+  cos,
+  tan,
+  asin,
+  acos,
+  atan,
+  triangleArea,
+  polygonArea,
+  circleArea,
+  circumference,
+  segmentAreaFromHeightAndRadius,
+  segmentAreaFromHeightAndChord,
+  segmentAreaFromChordAndRadius,
+  coneSurface,
+  sphereVolume,
+  coneVolume,
+  pyramidVolume,
+  frustumPyramidVolume,
+  frustumConeVolume,
+  tetrahedronVolume
+} from "./core-geometric-system.mjs";
 
 // Create the MCP server instance
 const server = new McpServer({
   name: "core-geometric-system",
   version: "1.0.5"
 });
-
-export class MyMCP {
-  constructor(state, env) {
-    this.state = state;
-    this.env = env;
-  }
-
-  async fetch(request) {
-    return new Response("Hello");
-  }
-}
-
 
 // --- TOOL DEFINITIONS ---
 
@@ -68,8 +55,7 @@ server.tool(
           }
         ]
       };
-    } 
-	catch (_) {
+    } catch (_) {
       return {
         content: [
           {
@@ -90,18 +76,17 @@ server.tool(
     sideLength: z.number().positive()
   },
   async ({ sideCount, sideLength }) => {
-    const result = polygonArea(sideCount, sideLength);
     try {
-	return {
-      content: [
-        {
-          type: "text",
-          text: `Polygon area (side count=${sideCount}, side length=${sideLength}): ${result}`
-        }
-      ]
-    };
-  }
-catch (_) {
+      const result = polygonArea(sideCount, sideLength);
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Polygon area (side count=${sideCount}, side length=${sideLength}): ${result}`
+          }
+        ]
+      };
+    } catch (_) {
       return {
         content: [
           {
@@ -122,17 +107,16 @@ server.tool(
   },
   async ({ radius }) => {
     try {
-	const result = circleArea(radius);
-    return {
-      content: [
-        {
-          type: "text",
-          text: `Exact circle area for radius ${radius}: ${result}`
-        }
-      ]
-    };
-  }
-catch (_) {
+      const result = circleArea(radius);
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Exact circle area for radius ${radius}: ${result}`
+          }
+        ]
+      };
+    } catch (_) {
       return {
         content: [
           {
@@ -153,17 +137,16 @@ server.tool(
   },
   async ({ radius }) => {
     try {
-	const result = circumference(radius);
-    return {
-      content: [
-        {
-          type: "text",
-          text: `Exact circumference for radius ${radius}: ${result}`
-        }
-      ]
-    };
-  }
-catch (_) {
+      const result = circumference(radius);
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Exact circumference for radius ${radius}: ${result}`
+          }
+        ]
+      };
+    } catch (_) {
       return {
         content: [
           {
@@ -176,7 +159,7 @@ catch (_) {
   }
 );
 
-// 5. Circle segment area from height and parent radius 
+// 5. Circle segment area from height and parent radius
 server.tool(
   "compute_circle_segment_area_from_height_and_parent_circle_radius",
   {
@@ -185,17 +168,16 @@ server.tool(
   },
   async ({ height, radius }) => {
     try {
-	const result = segmentAreaFromHeightAndRadius(height, radius);
-    return {
-      content: [
-        {
-          type: "text",
-          text: `Segment area (h=${height}, r=${radius}): ${result}`
-        }
-      ]
-    };
-  }
-catch (_) {
+      const result = segmentAreaFromHeightAndRadius(height, radius);
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Segment area (h=${height}, r=${radius}): ${result}`
+          }
+        ]
+      };
+    } catch (_) {
       return {
         content: [
           {
@@ -208,7 +190,7 @@ catch (_) {
   }
 );
 
-// 6. Circle segment area from height and chord length 
+// 6. Circle segment area from height and chord length
 server.tool(
   "compute_circle_segment_area_from_height_and_chord_length",
   {
@@ -217,17 +199,16 @@ server.tool(
   },
   async ({ height, chordLength }) => {
     try {
-	const result = segmentAreaFromHeightAndChord(height, chordLength);
-    return {
-      content: [
-        {
-          type: "text",
-          text: `Segment area (h=${height}, l=${chordLength}): ${result}`
-        }
-      ]
-    };
-  }
-catch (_) {
+      const result = segmentAreaFromHeightAndChord(height, chordLength);
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Segment area (h=${height}, l=${chordLength}): ${result}`
+          }
+        ]
+      };
+    } catch (_) {
       return {
         content: [
           {
@@ -249,17 +230,16 @@ server.tool(
   },
   async ({ chordLength, radius }) => {
     try {
-	const result = segmentAreaFromChordAndRadius(chordLength, radius);
-    return {
-      content: [
-        {
-          type: "text",
-          text: `Segment area (l=${chordLength}, r=${radius}): ${result}`
-        }
-      ]
-    };
-  }
-catch (_) {
+      const result = segmentAreaFromChordAndRadius(chordLength, radius);
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Segment area (l=${chordLength}, r=${radius}): ${result}`
+          }
+        ]
+      };
+    } catch (_) {
       return {
         content: [
           {
@@ -272,7 +252,7 @@ catch (_) {
   }
 );
 
-// 8. Surface area of a cone 
+// 8. Surface area of a cone
 server.tool(
   "compute_cone_surface_area",
   {
@@ -281,17 +261,16 @@ server.tool(
   },
   async ({ radius, height }) => {
     try {
-	const result = coneSurface(radius, height);
-    return {
-      content: [
-        {
-          type: "text",
-          text: `Exact cone surface area (r=${radius}, h=${height}): ${result}`
-        }
-      ]
-    };
-  }
-catch (_) {
+      const result = coneSurface(radius, height);
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Exact cone surface area (r=${radius}, h=${height}): ${result}`
+          }
+        ]
+      };
+    } catch (_) {
       return {
         content: [
           {
@@ -312,17 +291,16 @@ server.tool(
   },
   async ({ radius }) => {
     try {
-	const result = sphereVolume(radius);
-    return {
-      content: [
-        {
-          type: "text",
-          text: `Exact sphere volume for radius ${radius}: ${result}`
-        }
-      ]
-    };
-  }
-catch (_) {
+      const result = sphereVolume(radius);
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Exact sphere volume for radius ${radius}: ${result}`
+          }
+        ]
+      };
+    } catch (_) {
       return {
         content: [
           {
@@ -335,39 +313,7 @@ catch (_) {
   }
 );
 
-// 10. Spherical Cap Volume
-server.tool(
-  "compute_spherical_cap_volume",
-  {
-    radius: z.number().positive(),
-    height: z.number().positive()
-  },
-  async ({ radius, height }) => {
-    try {
-	const result = capVolume(radius, height);
-    return {
-      content: [
-        {
-          type: "text",
-          text: `Spherical cap volume (r=${radius}, h=${height}): ${result}`
-        }
-      ]
-    };
-  }
-catch (_) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Error"
-          }
-        ]
-      };
-    }
-  }
-);
-
-// 11. Cone Volume
+// 10. Cone Volume
 server.tool(
   "compute_cone_volume",
   {
@@ -376,17 +322,16 @@ server.tool(
   },
   async ({ radius, height }) => {
     try {
-	const result = coneVolume(radius, height);
-    return {
-      content: [
-        {
-          type: "text",
-          text: `Exact cone volume (r=${radius}, h=${height}): ${result}`
-        }
-      ]
-    };
-  }
-catch (_) {
+      const result = coneVolume(radius, height);
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Exact cone volume (r=${radius}, h=${height}): ${result}`
+          }
+        ]
+      };
+    } catch (_) {
       return {
         content: [
           {
@@ -399,27 +344,26 @@ catch (_) {
   }
 );
 
-// 12. Pyramid Volume
+// 11. Pyramid Volume
 server.tool(
   "compute_pyramid_volume",
   {
     sideCount: z.number().positive(),
-	baseEdgeLength: z.number().positive(),
+    baseEdgeLength: z.number().positive(),
     height: z.number().positive()
   },
   async ({ sideCount, baseEdgeLength, height }) => {
     try {
-	const result = pyramidVolume(sideCount, baseEdgeLength, height);
-    return {
-      content: [
-        {
-          type: "text",
-          text: `Exact pyramid volume (side count=${sideCount}, base edge length=${baseEdgeLength}, height=${height}): ${result}`
-        }
-      ]
-    };
-  }
-catch (_) {
+      const result = pyramidVolume(sideCount, baseEdgeLength, height);
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Exact pyramid volume (side count=${sideCount}, base edge length=${baseEdgeLength}, height=${height}): ${result}`
+          }
+        ]
+      };
+    } catch (_) {
       return {
         content: [
           {
@@ -432,28 +376,27 @@ catch (_) {
   }
 );
 
-// 13. Frustum pyramid Volume
+// 12. Frustum pyramid Volume
 server.tool(
   "compute_frustum_pyramid_volume",
   {
     sideCount: z.number().positive(),
-	baseEdgeLength: z.number().positive(),
-	topEdgeLength: z.number().positive(),
+    baseEdgeLength: z.number().positive(),
+    topEdgeLength: z.number().positive(),
     height: z.number().positive()
   },
   async ({ sideCount, baseEdgeLength, topEdgeLength, height }) => {
     try {
-	const result = frustumPyramidVolume(sideCount, baseEdgeLength, topEdgeLength, height);
-    return {
-      content: [
-        {
-          type: "text",
-          text: `Exact frustum pyramid volume (side count=${sideCount}, base edge length=${baseEdgeLength}, top edge length=${topEdgeLength}, height=${height}): ${result}`
-        }
-      ]
-    };
-  }
-catch (_) {
+      const result = frustumPyramidVolume(sideCount, baseEdgeLength, topEdgeLength, height);
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Exact frustum pyramid volume (side count=${sideCount}, base edge length=${baseEdgeLength}, top edge length=${topEdgeLength}, height=${height}): ${result}`
+          }
+        ]
+      };
+    } catch (_) {
       return {
         content: [
           {
@@ -466,27 +409,26 @@ catch (_) {
   }
 );
 
-// 14. Frustum Cone Volume
+// 13. Frustum Cone Volume
 server.tool(
   "compute_frustum_cone_volume",
   {
     baseRadius: z.number().positive(),
-	topRadius: z.number().positive(),
+    topRadius: z.number().positive(),
     height: z.number().positive()
   },
   async ({ baseRadius, topRadius, height }) => {
     try {
-	const result = frustumConeVolume(baseRadius, topRadius, height);
-    return {
-      content: [
-        {
-          type: "text",
-          text: `Exact frustum cone volume (base radius=${baseRadius}, top radius=${topRadius}, h=${height}): ${result}`
-        }
-      ]
-    };
-  }
-catch (_) {
+      const result = frustumConeVolume(baseRadius, topRadius, height);
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Exact frustum cone volume (base radius=${baseRadius}, top radius=${topRadius}, h=${height}): ${result}`
+          }
+        ]
+      };
+    } catch (_) {
       return {
         content: [
           {
@@ -499,7 +441,7 @@ catch (_) {
   }
 );
 
-// 15. Tetrahedron Volume
+// 14. Tetrahedron Volume
 server.tool(
   "compute_tetrahedron_volume",
   {
@@ -507,17 +449,16 @@ server.tool(
   },
   async ({ edge }) => {
     try {
-	const result = tetrahedronVolume(edge);
-    return {
-      content: [
-        {
-          type: "text",
-          text: `Exact tetrahedron volume for edge length ${edge}: ${result}`
-        }
-      ]
-    };
-  }
-catch (_) {
+      const result = tetrahedronVolume(edge);
+      return {
+        content: [
+          {
+            type: "text",
+            text: `Exact tetrahedron volume for edge length ${edge}: ${result}`
+          }
+        ]
+      };
+    } catch (_) {
       return {
         content: [
           {
@@ -530,13 +471,13 @@ catch (_) {
   }
 );
 
+// --- CLOUDFLARE WORKER HANDLER ---
 
-//Static HTML 
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const url = new URL(request.url);
 
-    // MCP routes (unchanged)
+    // MCP routes
     if (url.pathname.startsWith("/mcp")) {
       return handleMCP(request, env, ctx);
     }
@@ -547,8 +488,8 @@ export default {
         const { messages } = await request.json() as { messages: any[] };
 
         const systemPrompt = {
-  role: "system",
-  content: `You are the official Core Geometric System (CGS) Agent for this website.
+          role: "system",
+          content: `You are the official Core Geometric System (CGS) Agent for this website.
 
 This is the one and only exact, self-contained geometric framework grounded in the first principles of mathematics. It provides exact formulas for real-world applications such as analysis, engineering design, computer graphics rendering, algorithm optimization, and navigation.
 
@@ -577,27 +518,30 @@ When explaining:
 - Stay faithful to the philosophy and derivations presented on the site.
 
 Answer in a friendly, educational tone that invites understanding rather than debate.`
-};
+        };
 
         const aiResponse = await env.AI.run("@cf/google/gemma-4-26b-a4b-it", {
           messages: [systemPrompt, ...messages],
-          stream: true,
-          // You can add "tools": [...] here later for full automatic function calling to your MCP tools
+          stream: true
         });
 
         return new Response(aiResponse, {
           headers: {
             "Content-Type": "text/event-stream",
             "Cache-Control": "no-cache",
-            "Connection": "keep-alive",
-          },
+            "Connection": "keep-alive"
+          }
         });
       } catch (err) {
         return new Response("Error processing chat request", { status: 500 });
       }
     }
 
-    // Public UI (static assets) — unchanged
+    // Public UI (static assets)
     return env.ASSETS.fetch(request);
   }
 };
+
+// --- STANDALONE MCP SERVER SUPPORT ---
+
+ server.connect(process.stdin, process.stdout); 
