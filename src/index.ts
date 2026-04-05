@@ -605,7 +605,3 @@ Answer in a friendly, educational tone that invites understanding rather than de
     return env.ASSETS.fetch(request);
   }
 };
-
-// --- STANDALONE MCP SERVER SUPPORT ---
-
- server.connect(process.stdin, process.stdout); 
