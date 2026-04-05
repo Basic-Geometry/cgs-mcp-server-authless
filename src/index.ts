@@ -443,7 +443,7 @@ When explaining:
 Answer in a friendly, educational tone that invites understanding rather than debate.`
 };
 
-        const aiResponse = await env.AI.run("@cf/google/gemma-4-26b-a4b-it", {
+        const aiResponse = await env.AI.run("@cf/google/gemma-3-12b-it", {
           messages: [systemPrompt, ...messages],
           stream: true
         });
