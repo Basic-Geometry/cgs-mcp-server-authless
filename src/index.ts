@@ -1,4 +1,4 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 
 // Import your exact-ratio geometry system (ESM .mjs file)
@@ -28,13 +28,18 @@ import {
   tetrahedronVolume
 } from "./core-geometric-system.mjs";
 
-// Create the MCP server instance
+// ------------------------------------------------------------
+// MCP SERVER INITIALIZATION
+// ------------------------------------------------------------
+
 const server = new McpServer({
   name: "core-geometric-system",
   version: "1.0.5"
 });
 
-// --- DURABLE OBJECT: MCP Server Handler ---
+// ------------------------------------------------------------
+// DURABLE OBJECT: MCP SERVER HANDLER
+// ------------------------------------------------------------
 
 export class MyMCP {
   state: DurableObjectState;
@@ -49,15 +54,14 @@ export class MyMCP {
     try {
       const url = new URL(request.url);
 
-      // Handle MCP protocol requests (SSE, JSON-RPC, or transport-specific)
+      // Handle MCP protocol requests
       if (request.method === "POST" && url.pathname === "/mcp") {
         const body = await request.text();
-        
-        // If it's a JSON-RPC request, parse and handle it
+
         try {
           const message = JSON.parse(body);
-          
-          // Handle MCP messages (initialize, call tool, etc.)
+
+          // List tools
           if (message.method === "tools/list") {
             return new Response(JSON.stringify({
               tools: server._tools || []
@@ -65,17 +69,19 @@ export class MyMCP {
               headers: { "Content-Type": "application/json" }
             });
           }
-          
+
+          // Call tool
           if (message.method === "tools/call") {
             const toolName = message.params.name;
             const toolArgs = message.params.arguments;
-            
-            // Execute the tool via the server
+
             const result = await server.callTool(toolName, toolArgs);
+
             return new Response(JSON.stringify(result), {
               headers: { "Content-Type": "application/json" }
             });
           }
+
         } catch (e) {
           return new Response(JSON.stringify({ error: "Invalid JSON" }), {
             status: 400,
@@ -84,17 +90,20 @@ export class MyMCP {
         }
       }
 
-      // Default response
+      // Default DO response
       return new Response("MCP Durable Object Ready", {
         headers: { "Content-Type": "text/plain" }
       });
+
     } catch (err) {
       return new Response(`Error: ${err}`, { status: 500 });
     }
   }
 }
 
-// --- TOOL DEFINITIONS ---
+// ------------------------------------------------------------
+// TOOL DEFINITIONS
+// ------------------------------------------------------------
 
 // 1. Triangle Area
 server.tool(
@@ -109,21 +118,11 @@ server.tool(
       const result = triangleArea(side1, side2, side3);
       return {
         content: [
-          {
-            type: "text",
-            text: `Exact triangle area (side1=${side1}, side2=${side2}, side3=${side3}): ${result}`
-          }
+          { type: "text", text: `Exact triangle area (side1=${side1}, side2=${side2}, side3=${side3}): ${result}` }
         ]
       };
     } catch (_) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Error"
-          }
-        ]
-      };
+      return { content: [{ type: "text", text: "Error" }] };
     }
   }
 );
@@ -140,21 +139,11 @@ server.tool(
       const result = polygonArea(sideCount, sideLength);
       return {
         content: [
-          {
-            type: "text",
-            text: `Polygon area (side count=${sideCount}, side length=${sideLength}): ${result}`
-          }
+          { type: "text", text: `Polygon area (side count=${sideCount}, side length=${sideLength}): ${result}` }
         ]
       };
     } catch (_) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Error"
-          }
-        ]
-      };
+      return { content: [{ type: "text", text: "Error" }] };
     }
   }
 );
@@ -162,29 +151,17 @@ server.tool(
 // 3. Circle Area
 server.tool(
   "compute_circle_area",
-  {
-    radius: z.number().positive()
-  },
+  { radius: z.number().positive() },
   async ({ radius }) => {
     try {
       const result = circleArea(radius);
       return {
         content: [
-          {
-            type: "text",
-            text: `Exact circle area for radius ${radius}: ${result}`
-          }
+          { type: "text", text: `Exact circle area for radius ${radius}: ${result}` }
         ]
       };
     } catch (_) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Error"
-          }
-        ]
-      };
+      return { content: [{ type: "text", text: "Error" }] };
     }
   }
 );
@@ -192,34 +169,22 @@ server.tool(
 // 4. Circumference
 server.tool(
   "compute_circumference",
-  {
-    radius: z.number().positive()
-  },
+  { radius: z.number().positive() },
   async ({ radius }) => {
     try {
       const result = circumference(radius);
       return {
         content: [
-          {
-            type: "text",
-            text: `Exact circumference for radius ${radius}: ${result}`
-          }
+          { type: "text", text: `Exact circumference for radius ${radius}: ${result}` }
         ]
       };
     } catch (_) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Error"
-          }
-        ]
-      };
+      return { content: [{ type: "text", text: "Error" }] };
     }
   }
 );
 
-// 5. Circle segment area from height and parent radius
+// 5. Segment Area (height + radius)
 server.tool(
   "compute_circle_segment_area_from_height_and_parent_circle_radius",
   {
@@ -231,26 +196,16 @@ server.tool(
       const result = segmentAreaFromHeightAndRadius(height, radius);
       return {
         content: [
-          {
-            type: "text",
-            text: `Segment area (h=${height}, r=${radius}): ${result}`
-          }
+          { type: "text", text: `Segment area (h=${height}, r=${radius}): ${result}` }
         ]
       };
     } catch (_) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Error"
-          }
-        ]
-      };
+      return { content: [{ type: "text", text: "Error" }] };
     }
   }
 );
 
-// 6. Circle segment area from height and chord length
+// 6. Segment Area (height + chord)
 server.tool(
   "compute_circle_segment_area_from_height_and_chord_length",
   {
@@ -262,26 +217,16 @@ server.tool(
       const result = segmentAreaFromHeightAndChord(height, chordLength);
       return {
         content: [
-          {
-            type: "text",
-            text: `Segment area (h=${height}, l=${chordLength}): ${result}`
-          }
+          { type: "text", text: `Segment area (h=${height}, l=${chordLength}): ${result}` }
         ]
       };
     } catch (_) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Error"
-          }
-        ]
-      };
+      return { content: [{ type: "text", text: "Error" }] };
     }
   }
 );
 
-// 7. Circle segment area from chord length and parent radius
+// 7. Segment Area (chord + radius)
 server.tool(
   "compute_circle_segment_area_from_chord_length_and_parent_circle_radius",
   {
@@ -293,26 +238,16 @@ server.tool(
       const result = segmentAreaFromChordAndRadius(chordLength, radius);
       return {
         content: [
-          {
-            type: "text",
-            text: `Segment area (l=${chordLength}, r=${radius}): ${result}`
-          }
+          { type: "text", text: `Segment area (l=${chordLength}, r=${radius}): ${result}` }
         ]
       };
     } catch (_) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Error"
-          }
-        ]
-      };
+      return { content: [{ type: "text", text: "Error" }] };
     }
   }
 );
 
-// 8. Surface area of a cone
+// 8. Cone Surface
 server.tool(
   "compute_cone_surface_area",
   {
@@ -324,21 +259,11 @@ server.tool(
       const result = coneSurface(radius, height);
       return {
         content: [
-          {
-            type: "text",
-            text: `Exact cone surface area (r=${radius}, h=${height}): ${result}`
-          }
+          { type: "text", text: `Exact cone surface area (r=${radius}, h=${height}): ${result}` }
         ]
       };
     } catch (_) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Error"
-          }
-        ]
-      };
+      return { content: [{ type: "text", text: "Error" }] };
     }
   }
 );
@@ -346,29 +271,17 @@ server.tool(
 // 9. Sphere Volume
 server.tool(
   "compute_sphere_volume",
-  {
-    radius: z.number().positive()
-  },
+  { radius: z.number().positive() },
   async ({ radius }) => {
     try {
       const result = sphereVolume(radius);
       return {
         content: [
-          {
-            type: "text",
-            text: `Exact sphere volume for radius ${radius}: ${result}`
-          }
+          { type: "text", text: `Exact sphere volume for radius ${radius}: ${result}` }
         ]
       };
     } catch (_) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Error"
-          }
-        ]
-      };
+      return { content: [{ type: "text", text: "Error" }] };
     }
   }
 );
@@ -385,21 +298,11 @@ server.tool(
       const result = coneVolume(radius, height);
       return {
         content: [
-          {
-            type: "text",
-            text: `Exact cone volume (r=${radius}, h=${height}): ${result}`
-          }
+          { type: "text", text: `Exact cone volume (r=${radius}, h=${height}): ${result}` }
         ]
       };
     } catch (_) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Error"
-          }
-        ]
-      };
+      return { content: [{ type: "text", text: "Error" }] };
     }
   }
 );
@@ -417,26 +320,16 @@ server.tool(
       const result = pyramidVolume(sideCount, baseEdgeLength, height);
       return {
         content: [
-          {
-            type: "text",
-            text: `Exact pyramid volume (side count=${sideCount}, base edge length=${baseEdgeLength}, height=${height}): ${result}`
-          }
+          { type: "text", text: `Exact pyramid volume (side count=${sideCount}, base edge length=${baseEdgeLength}, height=${height}): ${result}` }
         ]
       };
     } catch (_) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Error"
-          }
-        ]
-      };
+      return { content: [{ type: "text", text: "Error" }] };
     }
   }
 );
 
-// 12. Frustum pyramid Volume
+// 12. Frustum Pyramid Volume
 server.tool(
   "compute_frustum_pyramid_volume",
   {
@@ -450,21 +343,11 @@ server.tool(
       const result = frustumPyramidVolume(sideCount, baseEdgeLength, topEdgeLength, height);
       return {
         content: [
-          {
-            type: "text",
-            text: `Exact frustum pyramid volume (side count=${sideCount}, base edge length=${baseEdgeLength}, top edge length=${topEdgeLength}, height=${height}): ${result}`
-          }
+          { type: "text", text: `Exact frustum pyramid volume (side count=${sideCount}, base edge length=${baseEdgeLength}, top edge length=${topEdgeLength}, height=${height}): ${result}` }
         ]
       };
     } catch (_) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Error"
-          }
-        ]
-      };
+      return { content: [{ type: "text", text: "Error" }] };
     }
   }
 );
@@ -482,21 +365,11 @@ server.tool(
       const result = frustumConeVolume(baseRadius, topRadius, height);
       return {
         content: [
-          {
-            type: "text",
-            text: `Exact frustum cone volume (base radius=${baseRadius}, top radius=${topRadius}, h=${height}): ${result}`
-          }
+          { type: "text", text: `Exact frustum cone volume (base radius=${baseRadius}, top radius=${topRadius}, h=${height}): ${result}` }
         ]
       };
     } catch (_) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Error"
-          }
-        ]
-      };
+      return { content: [{ type: "text", text: "Error" }] };
     }
   }
 );
@@ -504,34 +377,24 @@ server.tool(
 // 14. Tetrahedron Volume
 server.tool(
   "compute_tetrahedron_volume",
-  {
-    edge: z.number().positive()
-  },
+  { edge: z.number().positive() },
   async ({ edge }) => {
     try {
       const result = tetrahedronVolume(edge);
       return {
         content: [
-          {
-            type: "text",
-            text: `Exact tetrahedron volume for edge length ${edge}: ${result}`
-          }
+          { type: "text", text: `Exact tetrahedron volume for edge length ${edge}: ${result}` }
         ]
       };
     } catch (_) {
-      return {
-        content: [
-          {
-            type: "text",
-            text: "Error"
-          }
-        ]
-      };
+      return { content: [{ type: "text", text: "Error" }] };
     }
   }
 );
 
-// --- CLOUDFLARE WORKER HANDLER ---
+// ------------------------------------------------------------
+// CLOUDFLARE WORKER HANDLER
+// ------------------------------------------------------------
 
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
@@ -544,16 +407,14 @@ export default {
       return stub.fetch(request);
     }
 
-  
-
-    // New CGS Chat endpoint
+    // CGS Chat endpoint
     if (url.pathname === "/chat" && request.method === "POST") {
       try {
         const { messages } = await request.json() as { messages: any[] };
 
         const systemPrompt = {
-          role: "system",
-          content: `You are the official Core Geometric System (CGS) Agent for this website.
+  role: "system",
+  content: `You are the official Core Geometric System (CGS) Agent for this website.
 
 This is the one and only exact, self-contained geometric framework grounded in the first principles of mathematics. It provides exact formulas for real-world applications such as analysis, engineering design, computer graphics rendering, algorithm optimization, and navigation.
 
@@ -569,8 +430,6 @@ Key exact formulas in CGS:
 - Area of a circle: exactly 3.2 × r² (derived from the quadrant-to-square rearrangement where uncovered area exactly equals overlapping area).
 - Circumference of a circle: exactly 6.4 × r.
 - Volume of a sphere: (√3.2 × r)³ or equivalently (4r / √5)³, following the same square-to-cube logic as any cube.
-- Volume of a cone: 3.2 × r² × height / √8.
-- Volume of a pyramid: base × height / √8 (using the coefficient of the volume of a cone with a polygonal base).
 
 These formulas are physically verified and algebraically consistent. They eliminate the distortions introduced by analytic assumptions.
 
@@ -582,7 +441,7 @@ When explaining:
 - Stay faithful to the philosophy and derivations presented on the site.
 
 Answer in a friendly, educational tone that invites understanding rather than debate.`
-        };
+};
 
         const aiResponse = await env.AI.run("@cf/google/gemma-4-26b-a4b-it", {
           messages: [systemPrompt, ...messages],
@@ -596,13 +455,21 @@ Answer in a friendly, educational tone that invites understanding rather than de
             "Connection": "keep-alive"
           }
         });
+
       } catch (err) {
         return new Response("Error processing chat request", { status: 500 });
       }
     }
 
-    // Public UI (static assets)
+    // Static assets
     return env.ASSETS.fetch(request);
+  },
+
+  // --------------------------------------------------------
+  // DURABLE OBJECT REGISTRATION (THIS WAS THE MISSING PIECE)
+  // --------------------------------------------------------
+  durableObjects: {
+    MCP_OBJECT: MyMCP
   }
 };
 
