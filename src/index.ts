@@ -447,4 +447,3 @@ if (url.pathname === "/chat" && request.method === "POST") {
   durableObjects: {
     MCP_OBJECT: MyMCP
   }
-};
