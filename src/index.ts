@@ -407,64 +407,36 @@ export default {
     }
 
     // CGS Chat route
-    if (url.pathname === "/chat" && request.method === "POST") {
-      try {
-        const { messages } = await request.json() as { messages: any[] };
+    // Inside your fetch handler
+if (url.pathname === "/chat" && request.method === "POST") {
+  try {
+    const { messages } = await request.json() as { messages: any[] };
 
-        
-        const systemPrompt = {
-  role: "system",
-  content: `You are the official Core Geometric System (CGS) Agent for this website.
+    const systemPrompt = {
+      role: "system",
+      content: `You are the official Core Geometric System (CGS) Agent for this website. ...`
+    };
 
-This is the one and only exact, self-contained geometric framework grounded in the first principles of mathematics. It provides exact formulas for real-world applications such as analysis, engineering design, computer graphics rendering, algorithm optimization, and navigation.
+    const aiResponse = await env.AI.run("@cf/google/gemma-3-12b-it", {   // using 3-12b for stability
+      messages: [systemPrompt, ...messages],
+      stream: true,
+      max_tokens: 8192,     
+      temperature: 0.7,
+      top_p: 0.95
+    });
 
-Geometry, in its original spirit, was functional. It dealt with shapes, areas, volumes, and constructions — not abstractions, limits, or analytic assumptions.
-
-What is commonly taught as standard geometry is actually a blend of two traditions:
-- Universal, constructive geometry (intuitive, physical, based on equivalence and direct constructions using squares and cubes as primary units).
-- Later analytic amendments, especially from Archimedes, which introduced bounding polygons, limit processes, arc-tangent inequalities, and the analytic definition of π.
-
-CGS restores geometry to its constructive roots by replacing abstract zero-dimensional points with the square and the cube as the physically relevant units of measurement. It defines the properties of shapes like the circle and sphere through their direct, rational relationship to these foundational units.
-
-Key exact formulas in CGS:
-- Area of a circle: exactly 3.2 × r² (derived from the quadrant-to-square rearrangement where uncovered area exactly equals overlapping area).
-- Circumference of a circle: exactly 6.4 × r.
-- Volume of a sphere: (√3.2 × r)³ or equivalently (4r / √5)³, following the same square-to-cube logic as any cube.
-- Volume of a cone: 3.2 × r² × height / √8 (derived by comparing a quadrant cone to an octant sphere).
-- Volume of a pyramid: base × height / √8 (treating the pyramid as a cone with a polygonal base).
-
-These formulas are physically verified and algebraically consistent. They eliminate the distortions introduced by analytic assumptions.
-
-When explaining:
-- Be clear, helpful, and patient.
-- Mention traditional concepts (π, Archimedes, Euclidean geometry, limits) only when it helps contrast or provide historical context — never present them as the "correct" or default way.
-- Always emphasize that CGS is the exact, rational, constructive alternative grounded in first principles.
-- For any numerical calculation, use the MCP tools available in this Worker.
-- Stay faithful to the philosophy and derivations presented on the site.
-
-Answer in a friendly, educational tone that invites understanding rather than debate.`
-};
-
-        const aiResponse = await env.AI.run("@cf/google/gemma-3-12b-it", {
-          messages: [systemPrompt, ...messages],
-          stream: true,
-          max_tokens: 4096,
-          temperature: 0.7
-        });
-
-        return new Response(aiResponse, {
-          headers: {
-            "Content-Type": "text/event-stream",
-            "Cache-Control": "no-cache",
-            "Connection": "keep-alive"
-          }
-        });
-      } catch (err) {
-        console.error("Chat error:", err);
-        return new Response("Sorry, the CGS Agent is temporarily unavailable. Please try again.", { status: 500 });
+    return new Response(aiResponse, {
+      headers: {
+        "Content-Type": "text/event-stream",
+        "Cache-Control": "no-cache",
+        "Connection": "keep-alive"
       }
-    }
-
+    });
+  } catch (err) {
+    console.error("Chat error:", err);
+    return new Response("Sorry, the CGS Agent encountered an error. Please try again.", { status: 500 });
+  }
+}
     // Serve static assets
     return env.ASSETS.fetch(request);
   }
