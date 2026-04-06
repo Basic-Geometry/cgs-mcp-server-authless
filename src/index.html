@@ -6421,8 +6421,9 @@ A cube is a cuboid with equal edges.</p>
     </div>
   </div>
 </div>
+
 <script>
-const chatButton = document.getElementById('cgs-chat-button');
+  const chatButton = document.getElementById('cgs-chat-button');
   const modal = document.getElementById('cgs-chat-modal');
   const closeBtn = document.getElementById('cgs-close-button');
   const messages = document.getElementById('cgs-messages');
@@ -6451,7 +6452,7 @@ const chatButton = document.getElementById('cgs-chat-button');
   chatButton.addEventListener('click', toggleModal);
   closeBtn.addEventListener('click', () => modal.style.display = 'none');
 
-     async function sendMessage(userText) {
+  async function sendMessage(userText) {
     addMessage('user', userText);
     history.push({ role: 'user', content: userText });
 
@@ -6486,26 +6487,25 @@ const chatButton = document.getElementById('cgs-chat-button');
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
-
         const chunk = decoder.decode(value, { stream: true });
-        const lines = chunk.split('\n');
 
+        // Clean SSE parsing for Workers AI
+        const lines = chunk.split('\n');
         for (const line of lines) {
           if (line.startsWith('data: ')) {
-            let dataStr = line.slice(6).trim();
-            if (dataStr === '[DONE]' || !dataStr) continue;
-
+            const data = line.slice(6).trim();
+            if (data === '[DONE]') continue;
             try {
-              const parsed = JSON.parse(dataStr);
+              const parsed = JSON.parse(data);
               if (parsed.response) {
                 assistantText += parsed.response;
                 assistantDiv.textContent = assistantText;
                 messages.scrollTop = messages.scrollHeight;
               }
             } catch (e) {
-              // Fallback for raw text or malformed chunks
-              if (dataStr.length > 0) {
-                assistantText += dataStr;
+              // fallback for raw text chunks
+              if (data) {
+                assistantText += data;
                 assistantDiv.textContent = assistantText;
                 messages.scrollTop = messages.scrollHeight;
               }
@@ -6514,16 +6514,14 @@ const chatButton = document.getElementById('cgs-chat-button');
         }
       }
 
-      // Final cleanup - ensure we have the complete response
-      if (assistantText.trim()) {
-        history.push({ role: 'assistant', content: assistantText });
-      }
+      history.push({ role: 'assistant', content: assistantText });
 
     } catch (err) {
       console.error(err);
-      addMessage('assistant', 'Sorry, there was an error. Please try again.');
+      addMessage('assistant', 'Sorry, the chat ran into an error. Try again.');
     }
-	 }
+  }
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const text = input.value.trim();
@@ -6543,8 +6541,6 @@ const chatButton = document.getElementById('cgs-chat-button');
       firstTime = false;
     }
   });
-
-
 </script>
 </body>
 </html>
