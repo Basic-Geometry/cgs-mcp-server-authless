@@ -396,7 +396,7 @@ server.tool(
 // CLOUDFLARE WORKER HANDLER
 // ------------------------------------------------------------
 
-export default {
+
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const url = new URL(request.url);
