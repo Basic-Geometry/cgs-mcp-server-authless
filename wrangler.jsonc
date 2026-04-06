@@ -6,8 +6,6 @@
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "cgs-mcp-server-authless",
 	"main": "src/index.ts",
-    "ai": {
-    "binding": "AI"},
     "assets": {
     "directory": "./src",
     "binding": "ASSETS",
