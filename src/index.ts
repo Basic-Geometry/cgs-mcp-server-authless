@@ -1,8 +1,7 @@
- import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 
-// Import your exact-ratio geometry system (ESM .mjs file)
-import {
+// Import functions 
   trig,
   closestRad,
   closestValue,
@@ -419,8 +418,8 @@ export default {
     return new Response("Not found", { status: 404 });
   },
 
-  // Durable Object registration — must be at this level, not inside fetch
+  // Durable Object registration 
   durableObjects: {
-    MCP_OBJECT: "MyMCP"   // Make sure the string matches your actual class name
+    MCP_OBJECT: "MyMCP"
   }
 };
