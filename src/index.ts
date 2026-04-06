@@ -397,21 +397,21 @@ server.tool(
 // ------------------------------------------------------------
 
 export default {
+export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const url = new URL(request.url);
 
-    // Route MCP requests to Durable Object
+    // Your existing MCP routes
     if (url.pathname.startsWith("/mcp")) {
-      const id = env.MCP_OBJECT.idFromName("default");
-      const stub = env.MCP_OBJECT.get(id);
-      return stub.fetch(request);
+      return handleMCP(request, env, ctx);
     }
 
-    // CGS Chat endpoint
+    // CGS Chat route
     if (url.pathname === "/chat" && request.method === "POST") {
       try {
         const { messages } = await request.json() as { messages: any[] };
 
+        
         const systemPrompt = {
   role: "system",
   content: `You are the official Core Geometric System (CGS) Agent for this website.
@@ -445,14 +445,13 @@ When explaining:
 Answer in a friendly, educational tone that invites understanding rather than debate.`
 };
 
-        const aiResponse = await env.AI.run("@cf/google/gemma-4-26b-a4b-it", {  
-  messages: [systemPrompt, ...messages],
-  stream: true,
-  max_tokens: 4096,        
-  temperature: 0.7,  
-  top_p: 0.95  
-});
-       
+        const aiResponse = await env.AI.run("@cf/google/gemma-3-12b-it", {
+          messages: [systemPrompt, ...messages],
+          stream: true,
+          max_tokens: 4096,
+          temperature: 0.7
+        });
+
         return new Response(aiResponse, {
           headers: {
             "Content-Type": "text/event-stream",
@@ -460,18 +459,18 @@ Answer in a friendly, educational tone that invites understanding rather than de
             "Connection": "keep-alive"
           }
         });
-
       } catch (err) {
-        return new Response("Error processing chat request", { status: 500 });
+        console.error("Chat error:", err);
+        return new Response("Sorry, the CGS Agent is temporarily unavailable. Please try again.", { status: 500 });
       }
     }
 
-    // Static assets
+    // Serve static assets
     return env.ASSETS.fetch(request);
-  },
-
+  }
+};
   // --------------------------------------------------------
-  // DURABLE OBJECT REGISTRATION (THIS WAS THE MISSING PIECE)
+  // DURABLE OBJECT REGISTRATION
   // --------------------------------------------------------
   durableObjects: {
     MCP_OBJECT: MyMCP
