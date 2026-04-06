@@ -410,50 +410,58 @@ export default {
       return handleMCP(request, env, ctx);
     }
 
-    // 2. CGS Chat route
-    if (path === "/chat" && request.method === "POST") {
-      if (!env.AI) {
-        console.error("CRITICAL: env.AI is undefined at runtime!");
-        return new Response("AI binding not available. Please redeploy after checking Settings → Bindings.", { status: 500 });
-      }
+    
+if (url.pathname === "/chat" && request.method === "POST") {
+  console.log("Chat request received. Bindings available:", Object.keys(env || {}));
 
-      try {
-        const { messages } = await request.json() as { messages: any[] };
-
-        const systemPrompt = {
-          role: "system",
-          content: `You are the official Core Geometric System (CGS) Agent...` // ← paste your full prompt here
-        };
-
-        const aiResponse = await env.AI.run("@cf/google/gemma-3-12b-it", {
-          messages: [systemPrompt, ...messages],
-          stream: true,
-          max_tokens: 8192,
-          temperature: 0.7
-        });
-
-        return new Response(aiResponse, {
-          headers: {
-            "Content-Type": "text/event-stream",
-            "Cache-Control": "no-cache",
-            "Connection": "keep-alive"
-          }
-        });
-      } catch (err: any) {
-        console.error("Chat error:", err.message || err);
-        return new Response("Sorry, the chat ran into an error. Please try again in a moment.", { status: 500 });
-      }
-    }
-
-    // 3. Serve static assets (this must catch everything else, including favicon.ico)
-    if (env.ASSETS) {
-      return env.ASSETS.fetch(request);
-    }
-
-    // 4. Fallback (should almost never reach here)
-    return new Response("Not found", { status: 404 });
+  if (!env.AI) {
+    console.error("CRITICAL: env.AI is undefined at runtime!");
+    return new Response("AI binding missing at runtime. Please re-add the binding in Settings and deploy again.", { status: 500 });
   }
-};
+
+  try {
+    const body = await request.json();
+    const { messages } = body as { messages: any[] };
+
+    if (!messages || !Array.isArray(messages)) {
+      return new Response("Invalid messages format", { status: 400 });
+    }
+
+    const systemPrompt = {
+      role: "system",
+      content: `You are the official Core Geometric System (CGS) Agent for this website.
+
+This is the one and only exact, self-contained geometric framework grounded in first principles. 
+Area of a circle is exactly 3.2 × r². Circumference is exactly 6.4 × r. 
+Sphere volume is (√3.2 × r)³ following the square-to-cube logic.
+Always explain using the constructive philosophy on the site. Never present traditional π-based formulas as the default.`
+    };
+
+    console.log("Calling Gemma with", messages.length, "messages");
+
+    const aiResponse = await env.AI.run("@cf/google/gemma-3-12b-it", {
+      messages: [systemPrompt, ...messages],
+      stream: true,
+      max_tokens: 8192,
+      temperature: 0.7
+    });
+
+    console.log("Gemma call succeeded, streaming response");
+
+    return new Response(aiResponse, {
+      headers: {
+        "Content-Type": "text/event-stream",
+        "Cache-Control": "no-cache",
+        "Connection": "keep-alive"
+      }
+    });
+  } catch (err: any) {
+    console.error("Full exception in /chat:", err);
+    console.error("Error name:", err.name);
+    console.error("Error message:", err.message);
+    return new Response("Sorry, the chat ran into an error. Please try again in a moment.", { status: 500 });
+  }
+}
   // --------------------------------------------------------
   // DURABLE OBJECT REGISTRATION
   // --------------------------------------------------------
