@@ -412,7 +412,8 @@ export default {
 
     // 2. CGS Chat route
     if (path === "/chat" && request.method === "POST") {
-      console.log("Chat request received. Bindings available:", Object.keys(env || {}));
+      console.log("=== CHAT REQUEST START ===");
+      console.log("Bindings available:", Object.keys(env || {}));
 
       if (!env.AI) {
         console.error("CRITICAL: env.AI is undefined at runtime!");
@@ -456,14 +457,14 @@ Always explain using the constructive philosophy on the site. Never present trad
           }
         });
       } catch (err: any) {
-        console.error("Full exception in /chat:", err);
-        console.error("Error name:", err.name);
-        console.error("Error message:", err.message);
+        console.error("=== CHAT ERROR ===");
+        console.error("Name:", err.name);
+        console.error("Message:", err.message);
         return new Response("Sorry, the chat ran into an error. Please try again in a moment.", { status: 500 });
       }
     }
 
-    // 3. Serve static assets (including favicon.ico, CSS, images, etc.)
+    // 3. Serve static assets (favicon.ico, CSS, JS, images, etc.)
     if (env.ASSETS) {
       return env.ASSETS.fetch(request);
     }
@@ -472,8 +473,8 @@ Always explain using the constructive philosophy on the site. Never present trad
     return new Response("Not found", { status: 404 });
   },
 
-  // DURABLE OBJECT REGISTRATION — This must be at the top level, NOT inside fetch
+  // Durable Object registration — must be at this level, not inside fetch
   durableObjects: {
-    MCP_OBJECT: "MyMCP"   // Make sure this matches your actual Durable Object class name
+    MCP_OBJECT: "MyMCP"   // Make sure the string matches your actual class name
   }
 };
