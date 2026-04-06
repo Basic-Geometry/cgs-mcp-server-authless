@@ -405,66 +405,12 @@ export default {
     // Debug logging
     console.log(`Request received: ${request.method} ${path}`);
 
-    // 1. MCP routes
+    // MCP routes
     if (path.startsWith("/mcp")) {
       return handleMCP(request, env, ctx);
     }
 
-        // 2. CGS Chat route
-    if (path === "/chat" && request.method === "POST") {
-      console.log("=== CHAT REQUEST START ===");
-      console.log("Available bindings:", Object.keys(env || {}));
-
-      if (!env.AI) {
-        console.error("CRITICAL: env.AI is undefined at runtime!");
-        return new Response("AI binding is missing at runtime.", { status: 500 });
-      }
-
-      try {
-        const body = await request.json();
-        const { messages } = body as { messages: any[] };
-
-        if (!messages || !Array.isArray(messages)) {
-          console.error("Invalid messages format");
-          return new Response("Invalid messages format", { status: 400 });
-        }
-
-        const systemPrompt = {
-          role: "system",
-          content: `You are the official Core Geometric System (CGS) Agent for this website.
-
-This is the one and only exact, self-contained geometric framework grounded in first principles. 
-Area of a circle is exactly 3.2 × r². Circumference is exactly 6.4 × r. 
-Sphere volume is (√3.2 × r)³ following the square-to-cube logic.
-Always explain using the constructive philosophy on the site.`
-        };
-
-        console.log("Starting AI.run() call...");
-
-        const aiResponse = await env.AI.run("@cf/google/gemma-3-12b-it", {
-          messages: [systemPrompt, ...messages],
-          stream: true,
-          max_tokens: 4096,
-          temperature: 0.7
-        });
-
-        console.log("AI.run() succeeded - returning stream");
-        return new Response(aiResponse, {
-          headers: {
-            "Content-Type": "text/event-stream",
-            "Cache-Control": "no-cache",
-            "Connection": "keep-alive"
-          }
-        });
-      } catch (err: any) {
-        console.error("=== CHAT EXCEPTION CAUGHT ===");
-        console.error("Error name:", err.name);
-        console.error("Error message:", err.message);
-        if (err.stack) console.error("Stack:", err.stack);
-        return new Response("Sorry, the chat ran into an error. Please try again in a moment.", { status: 500 });
-      }
-    }
-    // 3. Serve static assets (favicon.ico, CSS, JS, images, etc.)
+    // Serve static assets (favicon.ico, CSS, JS, images, etc.)
     if (env.ASSETS) {
       return env.ASSETS.fetch(request);
     }
