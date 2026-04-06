@@ -408,21 +408,26 @@ export default {
 
     // CGS Chat route
     // Inside your fetch handler
+// CGS Chat route
 if (url.pathname === "/chat" && request.method === "POST") {
+  if (!env.AI) {
+    console.error("AI binding is missing at runtime!");
+    return new Response("AI binding is not available. Please check Worker Settings → Bindings and redeploy.", { status: 500 });
+  }
+
   try {
     const { messages } = await request.json() as { messages: any[] };
 
     const systemPrompt = {
       role: "system",
-      content: `You are the official Core Geometric System (CGS) Agent for this website. ...`
+      content: `You are the official Core Geometric System (CGS) Agent...` // your full prompt here
     };
 
-    const aiResponse = await env.AI.run("@cf/google/gemma-3-12b-it", {   // using 3-12b for stability
+    const aiResponse = await env.AI.run("@cf/google/gemma-3-12b-it", {
       messages: [systemPrompt, ...messages],
       stream: true,
-      max_tokens: 8192,     
-      temperature: 0.7,
-      top_p: 0.95
+      max_tokens: 4096,        // safe starting value for Gemma 3
+      temperature: 0.7
     });
 
     return new Response(aiResponse, {
@@ -433,8 +438,8 @@ if (url.pathname === "/chat" && request.method === "POST") {
       }
     });
   } catch (err) {
-    console.error("Chat error:", err);
-    return new Response("Sorry, the CGS Agent encountered an error. Please try again.", { status: 500 });
+    console.error("Chat error details:", err);
+    return new Response("Sorry, the chat ran into an error. Please try again in a moment.", { status: 500 });
   }
 }
     // Serve static assets
