@@ -461,7 +461,7 @@ Always explain using the constructive philosophy on the site. Never present trad
     console.error("Error message:", err.message);
     return new Response("Sorry, the chat ran into an error. Please try again in a moment.", { status: 500 });
   }
-}
+};
   // --------------------------------------------------------
   // DURABLE OBJECT REGISTRATION
   // --------------------------------------------------------
