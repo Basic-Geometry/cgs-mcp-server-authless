@@ -6421,7 +6421,6 @@ A cube is a cuboid with equal edges.</p>
     </div>
   </div>
 </div>
-
 <script>
   const chatButton = document.getElementById('cgs-chat-button');
   const modal = document.getElementById('cgs-chat-modal');
@@ -6452,7 +6451,6 @@ A cube is a cuboid with equal edges.</p>
   chatButton.addEventListener('click', toggleModal);
   closeBtn.addEventListener('click', () => modal.style.display = 'none');
 
-
   async function sendMessage(userText) {
     addMessage('user', userText);
     history.push({ role: 'user', content: userText });
@@ -6472,7 +6470,7 @@ A cube is a cuboid with equal edges.</p>
       });
 
       if (!res.ok) {
-        throw new Error(`HTTP error! status: ${res.status}`);
+        throw new Error(`HTTP error: ${res.status}`);
       }
 
       const reader = res.body.getReader();
@@ -6496,20 +6494,20 @@ A cube is a cuboid with equal edges.</p>
 
         for (const line of lines) {
           if (line.startsWith('data: ')) {
-            let data = line.slice(6).trim();
-            if (data === '[DONE]' || !data) continue;
+            let dataStr = line.slice(6).trim();
+            if (dataStr === '[DONE]' || !dataStr) continue;
 
             try {
-              const parsed = JSON.parse(data);
+              const parsed = JSON.parse(dataStr);
               if (parsed.response) {
                 assistantText += parsed.response;
                 assistantDiv.textContent = assistantText;
                 messages.scrollTop = messages.scrollHeight;
               }
             } catch (e) {
-              // Fallback for any raw text
-              if (data.length > 0) {
-                assistantText += data;
+              // Fallback: append raw data if not valid JSON
+              if (dataStr.length > 0) {
+                assistantText += dataStr;
                 assistantDiv.textContent = assistantText;
                 messages.scrollTop = messages.scrollHeight;
               }
@@ -6518,13 +6516,13 @@ A cube is a cuboid with equal edges.</p>
         }
       }
 
-      if (assistantText) {
+      if (assistantText.trim()) {
         history.push({ role: 'assistant', content: assistantText });
       }
 
     } catch (err) {
-      console.error("Chat error:", err);
-      messages.removeChild(loading);
+      console.error("Chat error details:", err);
+      if (loading.parentNode) messages.removeChild(loading);
       addMessage('assistant', 'Sorry, the chat ran into an error. Please try again in a moment.');
     }
   }
@@ -6538,7 +6536,7 @@ A cube is a cuboid with equal edges.</p>
     }
   });
 
-  // Optional welcome message on first open
+  // Welcome message
   let firstTime = true;
   chatButton.addEventListener('click', () => {
     if (firstTime) {
