@@ -406,13 +406,17 @@ export default {
       return handleMCP(request, env, ctx);
     }
 
-    // CGS Chat route
-    // Inside your fetch handler
-// CGS Chat route
+// CGS Chat route with strong guards
 if (url.pathname === "/chat" && request.method === "POST") {
+  // Log available bindings for debugging
+  console.log("Available bindings at runtime:", Object.keys(env || {}));
+
   if (!env.AI) {
-    console.error("AI binding is missing at runtime!");
-    return new Response("AI binding is not available. Please check Worker Settings → Bindings and redeploy.", { status: 500 });
+    console.error("CRITICAL: env.AI is undefined at runtime!");
+    return new Response(
+      "AI binding is not available. The binding may have disconnected. Please redeploy the Worker.", 
+      { status: 500 }
+    );
   }
 
   try {
@@ -420,13 +424,13 @@ if (url.pathname === "/chat" && request.method === "POST") {
 
     const systemPrompt = {
       role: "system",
-      content: `You are the official Core Geometric System (CGS) Agent...` // your full prompt here
+      content: `You are the official Core Geometric System (CGS) Agent...` // ← your full prompt here
     };
 
     const aiResponse = await env.AI.run("@cf/google/gemma-3-12b-it", {
       messages: [systemPrompt, ...messages],
       stream: true,
-      max_tokens: 4096,        // safe starting value for Gemma 3
+      max_tokens: 8192,      // generous but safe for detailed CGS explanations
       temperature: 0.7
     });
 
@@ -437,15 +441,13 @@ if (url.pathname === "/chat" && request.method === "POST") {
         "Connection": "keep-alive"
       }
     });
-  } catch (err) {
-    console.error("Chat error details:", err);
+  } catch (err: any) {
+    console.error("Chat runtime error:", err.message || err);
     return new Response("Sorry, the chat ran into an error. Please try again in a moment.", { status: 500 });
   }
 }
-    // Serve static assets
-    return env.ASSETS.fetch(request);
   }
-};
+     }
   // --------------------------------------------------------
   // DURABLE OBJECT REGISTRATION
   // --------------------------------------------------------
