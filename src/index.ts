@@ -445,11 +445,14 @@ When explaining:
 Answer in a friendly, educational tone that invites understanding rather than debate.`
 };
 
-        const aiResponse = await env.AI.run("@cf/google/gemma-3-12b-it", {  
+        const aiResponse = await env.AI.run("@cf/google/gemma-4-26b-a4b-it", {  
   messages: [systemPrompt, ...messages],
-  stream: true
+  stream: true,
+  max_tokens: 4096,        
+  temperature: 0.7,  
+  top_p: 0.95  
 });
-
+       
         return new Response(aiResponse, {
           headers: {
             "Content-Type": "text/event-stream",
