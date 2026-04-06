@@ -6452,6 +6452,7 @@ A cube is a cuboid with equal edges.</p>
   chatButton.addEventListener('click', toggleModal);
   closeBtn.addEventListener('click', () => modal.style.display = 'none');
 
+
   async function sendMessage(userText) {
     addMessage('user', userText);
     history.push({ role: 'user', content: userText });
@@ -6470,7 +6471,9 @@ A cube is a cuboid with equal edges.</p>
         body: JSON.stringify({ messages: history })
       });
 
-      if (!res.ok) throw new Error('Failed');
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
 
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
@@ -6487,14 +6490,15 @@ A cube is a cuboid with equal edges.</p>
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
-        const chunk = decoder.decode(value, { stream: true });
 
-        // Clean SSE parsing for Workers AI
+        const chunk = decoder.decode(value, { stream: true });
         const lines = chunk.split('\n');
+
         for (const line of lines) {
           if (line.startsWith('data: ')) {
-            const data = line.slice(6).trim();
-            if (data === '[DONE]') continue;
+            let data = line.slice(6).trim();
+            if (data === '[DONE]' || !data) continue;
+
             try {
               const parsed = JSON.parse(data);
               if (parsed.response) {
@@ -6503,8 +6507,8 @@ A cube is a cuboid with equal edges.</p>
                 messages.scrollTop = messages.scrollHeight;
               }
             } catch (e) {
-              // fallback for raw text chunks
-              if (data) {
+              // Fallback for any raw text
+              if (data.length > 0) {
                 assistantText += data;
                 assistantDiv.textContent = assistantText;
                 messages.scrollTop = messages.scrollHeight;
@@ -6514,11 +6518,14 @@ A cube is a cuboid with equal edges.</p>
         }
       }
 
-      history.push({ role: 'assistant', content: assistantText });
+      if (assistantText) {
+        history.push({ role: 'assistant', content: assistantText });
+      }
 
     } catch (err) {
-      console.error(err);
-      addMessage('assistant', 'Sorry, the chat ran into an error. Try again.');
+      console.error("Chat error:", err);
+      messages.removeChild(loading);
+      addMessage('assistant', 'Sorry, the chat ran into an error. Please try again in a moment.');
     }
   }
 
