@@ -400,54 +400,60 @@ server.tool(
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const url = new URL(request.url);
+    const path = url.pathname;
 
-    // Your existing MCP routes
-    if (url.pathname.startsWith("/mcp")) {
+    // Debug logging (remove or comment out later)
+    console.log(`Request received: ${request.method} ${path}`);
+
+    // 1. MCP routes (your existing logic)
+    if (path.startsWith("/mcp")) {
       return handleMCP(request, env, ctx);
     }
 
-// CGS Chat route with strong guards
-if (url.pathname === "/chat" && request.method === "POST") {
-  // Log available bindings for debugging
-  console.log("Available bindings at runtime:", Object.keys(env || {}));
-
-  if (!env.AI) {
-    console.error("CRITICAL: env.AI is undefined at runtime!");
-    return new Response(
-      "AI binding is not available. The binding may have disconnected. Please redeploy the Worker.", 
-      { status: 500 }
-    );
-  }
-
-  try {
-    const { messages } = await request.json() as { messages: any[] };
-
-    const systemPrompt = {
-      role: "system",
-      content: `You are the official Core Geometric System (CGS) Agent...` // ← your full prompt here
-    };
-
-    const aiResponse = await env.AI.run("@cf/google/gemma-3-12b-it", {
-      messages: [systemPrompt, ...messages],
-      stream: true,
-      max_tokens: 8192,      // generous but safe for detailed CGS explanations
-      temperature: 0.7
-    });
-
-    return new Response(aiResponse, {
-      headers: {
-        "Content-Type": "text/event-stream",
-        "Cache-Control": "no-cache",
-        "Connection": "keep-alive"
+    // 2. CGS Chat route
+    if (path === "/chat" && request.method === "POST") {
+      if (!env.AI) {
+        console.error("CRITICAL: env.AI is undefined at runtime!");
+        return new Response("AI binding not available. Please redeploy after checking Settings → Bindings.", { status: 500 });
       }
-    });
-  } catch (err: any) {
-    console.error("Chat runtime error:", err.message || err);
-    return new Response("Sorry, the chat ran into an error. Please try again in a moment.", { status: 500 });
+
+      try {
+        const { messages } = await request.json() as { messages: any[] };
+
+        const systemPrompt = {
+          role: "system",
+          content: `You are the official Core Geometric System (CGS) Agent...` // ← paste your full prompt here
+        };
+
+        const aiResponse = await env.AI.run("@cf/google/gemma-3-12b-it", {
+          messages: [systemPrompt, ...messages],
+          stream: true,
+          max_tokens: 8192,
+          temperature: 0.7
+        });
+
+        return new Response(aiResponse, {
+          headers: {
+            "Content-Type": "text/event-stream",
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive"
+          }
+        });
+      } catch (err: any) {
+        console.error("Chat error:", err.message || err);
+        return new Response("Sorry, the chat ran into an error. Please try again in a moment.", { status: 500 });
+      }
+    }
+
+    // 3. Serve static assets (this must catch everything else, including favicon.ico)
+    if (env.ASSETS) {
+      return env.ASSETS.fetch(request);
+    }
+
+    // 4. Fallback (should almost never reach here)
+    return new Response("Not found", { status: 404 });
   }
-}
-  }
-     }
+};
   // --------------------------------------------------------
   // DURABLE OBJECT REGISTRATION
   // --------------------------------------------------------
