@@ -6422,8 +6422,36 @@ A cube is a cuboid with equal edges.</p>
   </div>
 </div>
 <script>
+const chatButton = document.getElementById('cgs-chat-button');
+  const modal = document.getElementById('cgs-chat-modal');
+  const closeBtn = document.getElementById('cgs-close-button');
+  const messages = document.getElementById('cgs-messages');
+  const form = document.getElementById('cgs-chat-form');
+  const input = document.getElementById('cgs-input');
 
-  async function sendMessage(userText) {
+  let history = [];
+
+  function addMessage(role, text) {
+    const div = document.createElement('div');
+    div.style.padding = '10px 14px';
+    div.style.borderRadius = '10px';
+    div.style.maxWidth = '85%';
+    div.style.alignSelf = role === 'user' ? 'flex-end' : 'flex-start';
+    div.style.background = role === 'user' ? '#0ea5e9' : '#e2e8f0';
+    div.style.color = role === 'user' ? '#fff' : '#000';
+    div.textContent = text;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function toggleModal() {
+    modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
+  }
+
+  chatButton.addEventListener('click', toggleModal);
+  closeBtn.addEventListener('click', () => modal.style.display = 'none');
+
+     async function sendMessage(userText) {
     addMessage('user', userText);
     history.push({ role: 'user', content: userText });
 
@@ -6495,9 +6523,28 @@ A cube is a cuboid with equal edges.</p>
       console.error(err);
       addMessage('assistant', 'Sorry, there was an error. Please try again.');
     }
-  }
+	 }
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const text = input.value.trim();
+    if (text) {
+      sendMessage(text);
+      input.value = '';
+    }
+  });
 
-  // ... rest of the script (form submit, welcome message, etc.) remains the same
-	  </script>
+  // Optional welcome message on first open
+  let firstTime = true;
+  chatButton.addEventListener('click', () => {
+    if (firstTime) {
+      setTimeout(() => {
+        addMessage('assistant', 'Hi! Ask me anything about the Core Geometric System. I explain using the exact constructive framework on this site.');
+      }, 400);
+      firstTime = false;
+    }
+  });
+
+
+</script>
 </body>
 </html>
