@@ -3,7 +3,6 @@
 declare namespace Cloudflare {
 	export interface Env {
 		OAUTH_KV: KVNamespace;
-		AI: Ai; 
 		MCP_OBJECT: DurableObjectNamespace<import("./src/index").MyMCP>;
 		ASSETS: Fetcher;
 	}
