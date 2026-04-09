@@ -28,7 +28,7 @@ import {
   tetrahedronVolume
 } from "./core-geometric-system.mjs";
 
-import package from '../package.json' assert { type: 'json' };
+import manifest from './manifest.json' assert { type: 'json' };
 
 
 // ------------------------------------------------------------
@@ -412,8 +412,8 @@ export default {
     }
 
     // 2. Serve the MCP manifest
-    if (path === "/package.json") {
-      return new Response(JSON.stringify(package, null, 2), {
+    if (path === "/manifest.json") {
+      return new Response(JSON.stringify(manifest, null, 2), {
         headers: {
           "Content-Type": "application/mcp+json",
           "Access-Control-Allow-Origin": "*"
