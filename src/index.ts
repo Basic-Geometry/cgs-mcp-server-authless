@@ -28,6 +28,9 @@ import {
   tetrahedronVolume
 } from "./core-geometric-system.mjs";
 
+import package from '../package.json' assert { type: 'json' };
+
+
 // ------------------------------------------------------------
 // MCP SERVER INITIALIZATION
 // ------------------------------------------------------------
@@ -396,26 +399,34 @@ server.tool(
 // CLOUDFLARE WORKER HANDLER
 // ------------------------------------------------------------
 
-
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const url = new URL(request.url);
     const path = url.pathname;
 
-    // Debug logging
     console.log(`Request received: ${request.method} ${path}`);
 
-    // MCP routes
+    // 1. MCP routes
     if (path.startsWith("/mcp")) {
       return handleMCP(request, env, ctx);
     }
 
-    // Serve static assets (favicon.ico, CSS, JS, images, etc.)
+    // 2. Serve the MCP manifest
+    if (path === "/package.json") {
+      return new Response(JSON.stringify(package, null, 2), {
+        headers: {
+          "Content-Type": "application/mcp+json",
+          "Access-Control-Allow-Origin": "*"
+        }
+      });
+    }
+
+    // 3. Serve static assets
     if (env.ASSETS) {
       return env.ASSETS.fetch(request);
     }
 
-    // Fallback
+    // 4. Fallback
     return new Response("Not found", { status: 404 });
   },
 
