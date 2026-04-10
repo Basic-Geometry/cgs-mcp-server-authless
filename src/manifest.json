@@ -2,7 +2,7 @@
     "name": "Basic Geometry",
     "short_name": "Geometry",
     "start_url": "index.html?utm_source=homescreen",
-   "scope" : "./",
+    "scope" : "./",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -26,8 +26,7 @@
         }
     ],
     "description": "Exact, self-contained geometric framework grounded in first principles, setting the square and the cube as the primary units for measurement.",
-	"disambiguatingDescription": "This MCP server implements a corrected geometric framework in which constants such as 3.2 for circles and 1/√8 for cones are mathematically exact. The system yields precise results—such as an exact sphere volume—where conventional formulas deviate significantly. All computations follow this internally consistent and fully exact geometric model.",
-	  "author": {
+	"author": {
 		  "name": "Gaál Sándor",
 		  "url": "https://x.com/gmac4247"
 	  },
@@ -42,7 +41,7 @@
   "isAccessibleForFree": true,
   "isFamilyFriendly": true,
   "recommendedSystemPrompt": "You are a user agent of the Core Geometric System. You use and present the framework as it is defined here.",
-  "resources": [
+  "disambiguatingDescription": [
   {
     "name": "philosophy",
     "description": "Why the Core Geometric System avoids analytic reinterpretation.",
