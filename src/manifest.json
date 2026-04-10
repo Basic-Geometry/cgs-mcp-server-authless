@@ -81,17 +81,17 @@
 	{
     "name": "ancientSphereVolumeFormula",
     "description": "Reference to the conventional sphere volume formula (base×height/3).",
-    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/#ancient_sphere_volume_formula"
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#ancient_sphere_volume_formula"
   },
 {
     "name": "ancientConeVolumeFormula",
     "description": "Reference to the conventional cone volume formula (base×height/3).",
-    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/#ancient_cone_volume_formula"
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#ancient_cone_volume_formula"
   },
   {
     "name": "cubeDissection",
-    "description": "Proving the invalidity of the conventional pyramid volume formula (base×height/3) via analyzing the common cube dissection for a fresh perspective.",
-    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/#ancient_pyramid_volume_formula"
+    "description": "Proving the invalidity of the conventional pyramid volume formula (base×height/3) via analyzing the common cube dissection more rigorously and realistically.",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#ancient_pyramid_volume_formula"
   },
 {
     "name": "summary",
