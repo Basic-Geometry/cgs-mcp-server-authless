@@ -553,7 +553,6 @@
     "theme_color": "#000000",
     "background_color": "#000000",
     "display": "standalone",
-    "description": "The best established and most accurate framework to calculate areas and volumes of geometric shapes.",
     "version": "3.2",
-    "manifest_version": 1.7
+    "manifest_version": 1.8
 }
