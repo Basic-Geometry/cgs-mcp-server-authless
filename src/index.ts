@@ -54,55 +54,23 @@ export class MyMCP {
   }
 
   async fetch(request: Request): Promise<Response> {
-    try {
-      const url = new URL(request.url);
+  try {
+    const url = new URL(request.url);
 
-      // Handle MCP protocol requests
-      if (request.method === "POST" && url.pathname === "/mcp") {
-        const body = await request.text();
-
-        try {
-          const message = JSON.parse(body);
-
-          // List tools
-          if (message.method === "tools/list") {
-            return new Response(JSON.stringify({
-              tools: server._tools || []
-            }), {
-              headers: { "Content-Type": "application/json" }
-            });
-          }
-
-          // Call tool
-          if (message.method === "tools/call") {
-            const toolName = message.params.name;
-            const toolArgs = message.params.arguments;
-
-            const result = await server.callTool(toolName, toolArgs);
-
-            return new Response(JSON.stringify(result), {
-              headers: { "Content-Type": "application/json" }
-            });
-          }
-
-        } catch (e) {
-          return new Response(JSON.stringify({ error: "Invalid JSON" }), {
-            status: 400,
-            headers: { "Content-Type": "application/json" }
-          });
-        }
-      }
-
-      // Default DO response
-      return new Response("MCP Durable Object Ready", {
-        headers: { "Content-Type": "text/plain" }
-      });
-
-    } catch (err) {
-      return new Response(`Error: ${err}`, { status: 500 });
+    // MCP endpoint — all logic centralized
+    if (url.pathname === "/mcp") {
+      return this.handleMCP(request);
     }
+
+    // Default DO response
+    return new Response("MCP Durable Object Ready", {
+      headers: { "Content-Type": "text/plain" }
+    });
+
+  } catch (err) {
+    return new Response(`Error: ${err}`, { status: 500 });
   }
-}
+  }
 
 // ------------------------------------------------------------
 // TOOL DEFINITIONS
@@ -407,8 +375,8 @@ export default {
     console.log(`Request received: ${request.method} ${path}`);
 
     // 1. MCP routes
-    if (path.startsWith("/mcp")) {
-      return handleMCP(request, env, ctx);
+    if (url.pathname === "/mcp") {
+      return this.handleMCP(request);
     }
 
     // 2. Serve the MCP manifest
@@ -434,4 +402,79 @@ export default {
   durableObjects: {
     MCP_OBJECT: "MyMCP"
   }
+
+  async handleMCP(request: Request): Promise<Response> {
+    if (request.method !== "POST") {
+      return new Response("MCP endpoint. POST JSON-RPC only.", {
+        headers: { "Content-Type": "text/plain" }
+      });
+    }
+
+    let message;
+    try {
+      message = await request.json();
+    } catch {
+      return new Response(JSON.stringify({ error: "Invalid JSON" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" }
+      });
+    }
+
+    // MCP handshake
+    if (message.method === "mcp/initialize") {
+      return new Response(JSON.stringify({
+        jsonrpc: "2.0",
+        id: message.id,
+        result: {
+          protocolVersion: "1.0",
+          capabilities: {
+            tools: {
+              list: true,
+              call: true
+            }
+          }
+        }
+      }), {
+        headers: { "Content-Type": "application/json" }
+      });
+    }
+
+    // List tools
+    if (message.method === "tools/list") {
+      return new Response(JSON.stringify({
+        jsonrpc: "2.0",
+        id: message.id,
+        result: {
+          tools: this.server._tools || []
+        }
+      }), {
+        headers: { "Content-Type": "application/json" }
+      });
+    }
+
+    // Call tool
+    if (message.method === "tools/call") {
+      const toolName = message.params.name;
+      const toolArgs = message.params.arguments;
+
+      const result = await this.server.callTool(toolName, toolArgs);
+
+      return new Response(JSON.stringify({
+        jsonrpc: "2.0",
+        id: message.id,
+        result
+      }), {
+        headers: { "Content-Type": "application/json" }
+      });
+    }
+
+    // Unknown method
+    return new Response(JSON.stringify({
+      jsonrpc: "2.0",
+      id: message.id,
+      error: { code: -32601, message: "Method not found" }
+    }), {
+      headers: { "Content-Type": "application/json" }
+    });
+}
 };
