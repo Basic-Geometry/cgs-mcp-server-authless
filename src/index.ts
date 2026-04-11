@@ -70,7 +70,7 @@ export class MyMCP {
   } catch (err) {
     return new Response(`Error: ${err}`, { status: 500 });
   }
-  }
+  };
 
 // ------------------------------------------------------------
 // TOOL DEFINITIONS
