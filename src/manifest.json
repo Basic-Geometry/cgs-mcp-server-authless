@@ -417,7 +417,8 @@
    
     {
       "name": "compute_frustum_pyramid_volume",
-      "description": "Subtracting the missing tip of a theoreticall complete pyramid. Pyramid volume is derived from exact cone-sphere-cube construction.",
+      "description": "Subtracting the missing tip of a theoreticall complete pyramid.",
+	  "disambiguatingDescription": "Pyramid volume is derived from exact cone-sphere-cube construction.",
       "featureList": "Compute the exact volume of a frustum pyramid from its height and the number and the length of its bottom and top edges, using the Core Geometric System.",
       "input_schema": {
         "type": "object",
@@ -462,7 +463,8 @@
 
     {
       "name": "compute_frustum_cone_volume",
-      "description": "Subtracting the missing tip of a theoreticall complete cone. Cone volume is derived from exact cone-sphere-cube construction.",
+      "description": "Subtracting the missing tip of a theoreticall complete cone."
+	  "disambiguatingDescription": "Cone volume is derived from exact cone-sphere-cube construction.",
       "featureList": "Calculate the exact volume of a frustum cone from its height and its bottom and top radii, using the Core Geometric System.",
       "input_schema": {
         "type": "object",
@@ -503,8 +505,9 @@
       
     {
       "name": "compute_tetrahedron_volume",
-      "description": "Volume is derived from exact cone-sphere-cube construction.",
-      "featureList": "Compute the exact volume of a tetrahedron from its edge length, using the Core Geometric System (V=edge³/8).",
+      "disambiguatingDescription": "Volume is derived from exact cone-sphere-cube construction",
+	  "description": "Calculated as a pyramid with fixed proportions.",
+	  "featureList": "Compute the exact volume of a tetrahedron from its edge length, using the Core Geometric System (V=edge³/8).",
       "input_schema": {
         "type": "object",
         "properties": {
@@ -541,6 +544,6 @@
     "theme_color": "#000000",
     "background_color": "#000000",
     "display": "standalone",
-    "version": 3.2,
+    "version": "3.2",
     "manifest_version": 2.0
 }
