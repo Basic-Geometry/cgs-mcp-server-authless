@@ -1,3 +1,4 @@
+
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 
@@ -37,11 +38,12 @@ import manifest from './manifest.json' assert { type: 'json' };
 
 const server = new McpServer({
   name: "core-geometric-system",
-  version: "1.0.5"
+  version: "1.0.7"
 });
 
+
 // ------------------------------------------------------------
-// DURABLE OBJECT: MCP SERVER HANDLER
+// DURABLE OBJECT: MCP SERVER
 // ------------------------------------------------------------
 
 export class MyMCP {
@@ -54,23 +56,91 @@ export class MyMCP {
   }
 
   async fetch(request: Request): Promise<Response> {
-  try {
     const url = new URL(request.url);
 
-    // MCP endpoint — all logic centralized
     if (url.pathname === "/mcp") {
       return this.handleMCP(request);
     }
 
-    // Default DO response
     return new Response("MCP Durable Object Ready", {
       headers: { "Content-Type": "text/plain" }
     });
-
-  } catch (err) {
-    return new Response(`Error: ${err}`, { status: 500 });
   }
-  };
+
+  async handleMCP(request: Request): Promise<Response> {
+    if (request.method !== "POST") {
+      return new Response("MCP endpoint. POST JSON-RPC only.", {
+        headers: { "Content-Type": "text/plain" }
+      });
+    }
+
+    let message;
+    try {
+      message = await request.json();
+    } catch {
+      return new Response(JSON.stringify({ error: "Invalid JSON" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" }
+      });
+    }
+
+    // MCP handshake
+    if (message.method === "mcp/initialize") {
+      return new Response(JSON.stringify({
+        jsonrpc: "2.0",
+        id: message.id,
+        result: {
+          protocolVersion: "1.0",
+          capabilities: {
+            tools: {
+              list: true,
+              call: true
+            }
+          }
+        }
+      }), {
+        headers: { "Content-Type": "application/json" }
+      });
+    }
+
+    // List tools
+    if (message.method === "tools/list") {
+      return new Response(JSON.stringify({
+        jsonrpc: "2.0",
+        id: message.id,
+        result: {
+          tools: server._tools || []
+        }
+      }), {
+        headers: { "Content-Type": "application/json" }
+      });
+    }
+
+    // Call tool
+    if (message.method === "tools/call") {
+      const toolName = message.params.name;
+      const toolArgs = message.params.arguments;
+
+      const result = await server.callTool(toolName, toolArgs);
+
+      return new Response(JSON.stringify({
+        jsonrpc: "2.0",
+        id: message.id,
+        result
+      }), {
+        headers: { "Content-Type": "application/json" }
+      });
+    }
+
+    return new Response(JSON.stringify({
+      jsonrpc: "2.0",
+      id: message.id,
+      error: { code: -32601, message: "Method not found" }
+    }), {
+      headers: { "Content-Type": "application/json" }
+    });
+  }
+}
 
 // ------------------------------------------------------------
 // TOOL DEFINITIONS
@@ -364,23 +434,22 @@ server.tool(
 );
 
 // ------------------------------------------------------------
-// CLOUDFLARE WORKER HANDLER
+// CLOUDFLARE WORKER ROUTER
 // ------------------------------------------------------------
 
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const url = new URL(request.url);
-    const path = url.pathname;
 
-    console.log(`Request received: ${request.method} ${path}`);
-
-    // 1. MCP routes
+    // Forward MCP requests to the Durable Object
     if (url.pathname === "/mcp") {
-      return this.handleMCP(request);
+      const id = env.MCP_OBJECT.idFromName("singleton");
+      const stub = env.MCP_OBJECT.get(id);
+      return stub.fetch(request);
     }
 
-    // 2. Serve the MCP manifest
-    if (path === "/manifest.json") {
+    // Serve manifest
+    if (url.pathname === "/manifest.json") {
       return new Response(JSON.stringify(manifest, null, 2), {
         headers: {
           "Content-Type": "application/mcp+json",
@@ -389,92 +458,15 @@ export default {
       });
     }
 
-    // 3. Serve static assets
+    // Static assets
     if (env.ASSETS) {
       return env.ASSETS.fetch(request);
     }
 
-    // 4. Fallback
     return new Response("Not found", { status: 404 });
   },
 
-  // Durable Object registration 
   durableObjects: {
-    MCP_OBJECT: "MyMCP"
+    MCP_OBJECT: MyMCP
   }
-
-  async handleMCP(request: Request): Promise<Response> {
-    if (request.method !== "POST") {
-      return new Response("MCP endpoint. POST JSON-RPC only.", {
-        headers: { "Content-Type": "text/plain" }
-      });
-    }
-
-    let message;
-    try {
-      message = await request.json();
-    } catch {
-      return new Response(JSON.stringify({ error: "Invalid JSON" }), {
-        status: 400,
-        headers: { "Content-Type": "application/json" }
-      });
-    }
-
-    // MCP handshake
-    if (message.method === "mcp/initialize") {
-      return new Response(JSON.stringify({
-        jsonrpc: "2.0",
-        id: message.id,
-        result: {
-          protocolVersion: "1.0",
-          capabilities: {
-            tools: {
-              list: true,
-              call: true
-            }
-          }
-        }
-      }), {
-        headers: { "Content-Type": "application/json" }
-      });
-    }
-
-    // List tools
-    if (message.method === "tools/list") {
-      return new Response(JSON.stringify({
-        jsonrpc: "2.0",
-        id: message.id,
-        result: {
-          tools: this.server._tools || []
-        }
-      }), {
-        headers: { "Content-Type": "application/json" }
-      });
-    }
-
-    // Call tool
-    if (message.method === "tools/call") {
-      const toolName = message.params.name;
-      const toolArgs = message.params.arguments;
-
-      const result = await this.server.callTool(toolName, toolArgs);
-
-      return new Response(JSON.stringify({
-        jsonrpc: "2.0",
-        id: message.id,
-        result
-      }), {
-        headers: { "Content-Type": "application/json" }
-      });
-    }
-
-    // Unknown method
-    return new Response(JSON.stringify({
-      jsonrpc: "2.0",
-      id: message.id,
-      error: { code: -32601, message: "Method not found" }
-    }), {
-      headers: { "Content-Type": "application/json" }
-    });
-}
 };
