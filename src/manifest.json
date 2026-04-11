@@ -25,6 +25,10 @@
             "type": "image/png"
         }
     ],
+	"api": {
+		"type": "mcp",
+		"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/mcp"
+	},
     "description": "Universally applicable self-consistent geometric framework of physically grounded exact area and volume calculation formulas for regular shapes.",
     "disambiguatingDescription": "Defining the properties of shapes like the circle and sphere through the square and the cube as the primary, physically relevant units of measurement, instead of approximations based on abstract limits, or zero‑dimensional points.",	
 	"educationalAlignment": {
@@ -545,5 +549,5 @@
     "background_color": "#000000",
     "display": "standalone",
     "version": "3.2",
-    "manifest_version": 2.0
+    "manifest_version": 2.1
 }
