@@ -463,7 +463,7 @@
 
     {
       "name": "compute_frustum_cone_volume",
-      "description": "Subtracting the missing tip of a theoreticall complete cone."
+      "description": "Subtracting the missing tip of a theoreticall complete cone.",
 	  "disambiguatingDescription": "Cone volume is derived from exact cone-sphere-cube construction.",
       "featureList": "Calculate the exact volume of a frustum cone from its height and its bottom and top radii, using the Core Geometric System.",
       "input_schema": {
