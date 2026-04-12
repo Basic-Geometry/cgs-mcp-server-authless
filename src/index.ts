@@ -1,4 +1,3 @@
-
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 
@@ -125,11 +124,12 @@ export class MyMCP {
 
   <p>
     Visit the home page for step‑by‑step geometric explanations:<br>
-    <a href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">Local home page with Microdata markup</a>
-    <br><br>
-    <a href="https://basic-geometry.pages.dev">External home page with JSON markup</a>
+    <ul>
+      <li><a href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">Local home page with Microdata markup</a></li>
+      <li><a href="https://basic-geometry.pages.dev">External home page with JSON markup</a></li>
+    </ul>
   </p>
-
+<br><br>
   <div class="note">
     <p><strong>For AI agents:</strong></p>
     <ul>
