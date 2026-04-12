@@ -122,15 +122,7 @@ export class MyMCP {
 
   <img src="/circle.png" alt="Basic Geometry construction">
 
-  <p>
-    Visit the home page for step‑by‑step geometric explanations:<br>
-    <ul>
-      <li><a href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">Local home page with Microdata markup</a></li>
-      <li><a href="https://basic-geometry.pages.dev">External home page with JSON markup</a></li>
-    </ul>
-  </p>
-<br><br>
-  <div class="note">
+<div class="note">
     <p><strong>For AI agents:</strong></p>
     <ul>
       <li>This endpoint accepts <code>POST</code> requests using JSON‑RPC 2.0.</li>
@@ -138,15 +130,24 @@ export class MyMCP {
       <li>The home page contains structured, machine‑readable learning resources.</li>
     </ul>
   </div>
-  <br><br><br><br>
-<div style="margin:12px">
+  
+  <p>
+    Visit the home page for step‑by‑step geometric explanations:<br>
+    <ul>
+      <li><a href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">Local home page with Microdata markup</a></li>
+      <li><a href="https://basic-geometry.pages.dev">External home page with JSON markup</a></li>
+    </ul>
+  </p>
+
+<div>
 <p>Gaál Sándor</p>
 <p>® All rights reserved</p>
 <p>2026</p>
 </div>
 <br>
 <footer>
-<a style="margin:9px" href="about">About</a>  <a href="LICENSE.txt">Terms</a>  <a href="privacy-policy">Do Not Sell My Personal Information</a>
+<a href="about">About</a>  <a href="LICENSE.txt">Terms</a>  <a href="privacy-policy">Do Not Sell My Personal Information</a>
+</footer>
 </body>
 </html>
     `.trim(),
