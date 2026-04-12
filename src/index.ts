@@ -126,6 +126,7 @@ export class MyMCP {
   <p>
     Visit the home page for step‑by‑step geometric explanations:<br>
     <a href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">Local home page with Microdata markup</a>
+    <br><br>
     <a href="https://basic-geometry.pages.dev">External home page with JSON markup</a>
   </p>
 
