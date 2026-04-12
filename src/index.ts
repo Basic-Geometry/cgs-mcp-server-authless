@@ -69,9 +69,90 @@ export class MyMCP {
 
   async handleMCP(request: Request): Promise<Response> {
     if (request.method !== "POST") {
-      return new Response("MCP endpoint. POST JSON-RPC only.", {
-        headers: { "Content-Type": "text/plain" }
-      });
+  return new Response(
+    `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Basic Geometry MCP Server</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      max-width: 640px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.6;
+      color: #222;
+      text-align: center;
+    }
+    h1 {
+      font-size: 1.9rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      margin: 0.4rem 0;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin: 1.2rem 0;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    .note {
+      margin-top: 1.2rem;
+      padding: 0.75rem 1rem;
+      background: #f5f5f5;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+    a {
+      color: #0645ad;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Basic Geometry MCP Server</h1>
+  <p>Exact, rational geometry tools exposed via the Model Context Protocol.</p>
+
+  <img src="/circle.png" alt="Basic Geometry construction">
+
+  <p>
+    Visit the home page for step‑by‑step geometric explanations:<br>
+    <a href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">Local home page with Microdata markup</a>
+    <a href="https://basic-geometry.pages.dev">External home page with JSON markup</a>
+  </p>
+
+  <div class="note">
+    <p><strong>For AI agents:</strong></p>
+    <ul>
+      <li>This endpoint accepts <code>POST</code> requests using JSON‑RPC 2.0.</li>
+      <li>The full MCP manifest is available at <a href="/manifest.json">/manifest.json</a>.</li>
+      <li>The home page contains structured, machine‑readable learning resources.</li>
+    </ul>
+  </div>
+  <br><br><br><br>
+<div style="margin:12px">
+<p>Gaál Sándor</p>
+<p>® All rights reserved</p>
+<p>2026</p>
+</div>
+<br>
+<footer>
+<a style="margin:9px" href="about">About</a>  <a href="LICENSE.txt">Terms</a>  <a href="privacy-policy">Do Not Sell My Personal Information</a>
+</body>
+</html>
+    `.trim(),
+    {
+      headers: { "Content-Type": "text/html; charset=UTF-8" }
+    }
+  );
     }
 
     let message;
