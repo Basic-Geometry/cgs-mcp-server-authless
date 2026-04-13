@@ -126,7 +126,7 @@ export class MyMCP {
     {
       name: "compute_circle_segment_area_from_height_and_chord_length",
       description: "Area is derived from exact circle-square construction; read circle-area.md for the Core Geometric System definition of area (3.2·r^2).",
-    input_schema": {
+    input_schema: {
         type: "object",
         properties: {
           chordLength: { "type": "number" },
