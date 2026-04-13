@@ -48,124 +48,125 @@ export class MyMCP {
   state: DurableObjectState;
   env: Env;
 
-tools = [
-
-	{
-	name: "compute_triangle_area",
-    description: "Heron's formula",
-    input_schema: {
+  // -----------------------------
+  // TOOL DEFINITIONS
+  // -----------------------------
+  tools = [
+    {
+      name: "compute_triangle_area",
+      description: "Heron's formula",
+      input_schema: {
         type: "object",
         properties: {
           side1: { type: "number" },
           side2: { type: "number" },
-          side3: { type: "number"}
+          side3: { type: "number" }
         },
-		required: ["sideCount", "sideLength"]
+        required: ["side1", "side2", "side3"]
       }
     },
-    
+
     {
-    name: "compute_polygon_area",
-    description: "With custom trigonometric functions aligned to circumference=6.4×r.",
-	input_schema: {
+      name: "compute_polygon_area",
+      description: "With custom trigonometric functions aligned to circumference = 6.4 × r.",
+      input_schema: {
         type: "object",
         properties: {
-          sideCount: {
-            type: "integer"
-		  },
-          sideLength: { 
-            type: "number"
-		  }
-		},
-		required: ["sideCount", "sideLength"]
+          sideCount: { type: "integer" },
+          sideLength: { type: "number" }
+        },
+        required: ["sideCount", "sideLength"]
       }
-	},
-    
+    },
+
     {
-	name: "compute_circle_area",
-	disambiguatingDescription: "The conventional formula is based on the conventional circumference approximation.",
-	description: "Divide the circle into four quadrants and place them on the vertices of a square. The arcs of inscribed and circumscribed circles define upper and lower bounds. The true equiareal circle lies between these limits. A right triangle formed from half and quarter segments of the square side yields the radius–side ratio. radius²=(side/4)^2 + (side/2)^2; radius=side × 5^(1/2) / 4",
-	input_schema: {
-		type: "object",
-		properties: {
-			radius: {
-				type: "number",
-			}
-		},
-		required: ["radius"]
-	}
-	}
-]
-
-	
-
-async callTool(name: string, args: any) {
-  if (name === "compute_triangle_area") {
-    try {
-      const { side1, side2, side3 } = args
-      const result = triangleArea(side1, side2, side3)
-
-      return {
-        content: [
-          {
-            type: "text",
-            text: `Triangle area (side1=${side1}, side2=${side2}, side3=${side3}): ${result}`
-          }
-        ]
-      }
-    } catch {
-      return {
-        content: [{ type: "text", text: "Error" }]
+      name: "compute_circle_area",
+      disambiguatingDescription:
+        "The conventional formula is based on the conventional circumference approximation.",
+      description:
+        "Divide the circle into four quadrants and place them on the vertices of a square. The arcs of inscribed and circumscribed circles define upper and lower bounds. The true equiareal circle lies between these limits.",
+      input_schema: {
+        type: "object",
+        properties: {
+          radius: { type: "number" }
+        },
+        required: ["radius"]
       }
     }
+  ];
+
+  constructor(state: DurableObjectState, env: Env) {
+    this.state = state;
+    this.env = env;
   }
 
+  // -----------------------------
+  // TOOL EXECUTION
+  // -----------------------------
+  async callTool(name: string, args: any) {
+    if (name === "compute_triangle_area") {
+      try {
+        const { side1, side2, side3 } = args;
+        const result = triangleArea(side1, side2, side3);
 
-if (name === "compute_polygon_area") {
-    try {
-      const { sideCount, sideLength } = args
-      const result = polygonArea(sideCount, sideLength)
-
-      return {
-        content: [
-          {
-            type: "text",
-            text: `Polygon area (sideCount=${sideCount}, sideLength=${sideLength}): ${result}`
-          }
-        ]
-      }
-    } catch {
-      return {
-        content: [{ type: "text", text: "Error" }]
-      }
-    }
-}
-
-
-if (name === "compute_circle_area") {
-    try {
-      const { radius } = args
-      const result = circleArea(radius)
-
-      return {
-        content: [
-          {
-            type: "text",
-            text: `Circle area (radius=${radius}): ${result}`
-          }
-        ]
-      }
-    } catch {
-      return {
-        content: [{ type: "text", text: "Error" }]
+        return {
+          content: [
+            {
+              type: "text",
+              text: `Triangle area (side1=${side1}, side2=${side2}, side3=${side3}): ${result}`
+            }
+          ]
+        };
+      } catch {
+        return { content: [{ type: "text", text: "Error" }] };
       }
     }
-}
 
-  return { error: `Unknown tool: ${name}` }
-}
+    if (name === "compute_polygon_area") {
+      try {
+        const { sideCount, sideLength } = args;
+        const result = polygonArea(sideCount, sideLength);
 
-let message;
+        return {
+          content: [
+            {
+              type: "text",
+              text: `Polygon area (sideCount=${sideCount}, sideLength=${sideLength}): ${result}`
+            }
+          ]
+        };
+      } catch {
+        return { content: [{ type: "text", text: "Error" }] };
+      }
+    }
+
+    if (name === "compute_circle_area") {
+      try {
+        const { radius } = args;
+        const result = circleArea(radius);
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: `Circle area (radius=${radius}): ${result}`
+            }
+          ]
+        };
+      } catch {
+        return { content: [{ type: "text", text: "Error" }] };
+      }
+    }
+
+    return { error: `Unknown tool: ${name}` };
+  }
+
+  // -----------------------------
+  // MCP HANDLER
+  // -----------------------------
+  async handleMCP(request: Request): Promise<Response> {
+    let message;
+
     try {
       message = await request.json();
     } catch {
@@ -173,56 +174,83 @@ let message;
         status: 400,
         headers: { "Content-Type": "application/json" }
       });
-}
+    }
 
     // MCP handshake
     if (message.method === "mcp/initialize") {
-      return new Response(JSON.stringify({
-        jsonrpc: "2.0",
-        id: message.id,
-        result: {
-          protocolVersion: "1.0",
-          capabilities: {
-            tools: {
-              list: true,
-              call: true
+      return new Response(
+        JSON.stringify({
+          jsonrpc: "2.0",
+          id: message.id,
+          result: {
+            protocolVersion: "1.0",
+            capabilities: {
+              tools: {
+                list: true,
+                call: true
+              }
             }
           }
-        }
-      }), {
-        headers: { "Content-Type": "application/json" }
-      });
-	}
-
-// List tools
-if (message.method === "tools/list") {
-  return new Response(JSON.stringify({
-    jsonrpc: "2.0",
-    id: message.id,
-    result: {
-      tools: this.tools
+        }),
+        { headers: { "Content-Type": "application/json" } }
+      );
     }
-  }), {
-    headers: { "Content-Type": "application/json" }
-  })
+
+    // List tools
+    if (message.method === "tools/list") {
+      return new Response(
+        JSON.stringify({
+          jsonrpc: "2.0",
+          id: message.id,
+          result: { tools: this.tools }
+        }),
+        { headers: { "Content-Type": "application/json" } }
+      );
+    }
+
+    // Call tool
+    if (message.method === "tools/call") {
+      const toolName = message.params.name;
+      const toolArgs = message.params.arguments;
+
+      const result = await this.callTool(toolName, toolArgs);
+
+      return new Response(
+        JSON.stringify({
+          jsonrpc: "2.0",
+          id: message.id,
+          result
+        }),
+        { headers: { "Content-Type": "application/json" } }
+      );
+    }
+
+    // Unknown method
+    return new Response(
+      JSON.stringify({
+        jsonrpc: "2.0",
+        id: message.id,
+        error: { code: -32601, message: "Method not found" }
+      }),
+      { headers: { "Content-Type": "application/json" } }
+    );
+  }
+
+  // -----------------------------
+  // FETCH ROUTER (inside DO)
+  // -----------------------------
+  async fetch(request: Request): Promise<Response> {
+    const url = new URL(request.url);
+
+    if (url.pathname === "/mcp") {
+      return this.handleMCP(request);
+    }
+
+    return new Response("CGS MCP Durable Object Ready", {
+      headers: { "Content-Type": "text/plain" }
+    });
+  }
 				}
-
-// Call tool
-if (message.method === "tools/call") {
-  const toolName = message.params.name
-  const toolArgs = message.params.arguments
-
-  const result = await this.callTool(toolName, toolArgs)
-
-  return new Response(JSON.stringify({
-    jsonrpc: "2.0",
-    id: message.id,
-    result
-  }), {
-    headers: { "Content-Type": "application/json" }
-  })
-	}
-}
 
 // ------------------------------------------------------------
 // CLOUDFLARE WORKER ROUTER
