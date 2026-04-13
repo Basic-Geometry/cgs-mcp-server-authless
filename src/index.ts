@@ -187,7 +187,125 @@ export class MyMCP {
         },
         required: ["radius", "height"]
 	  }
-	}
+	},
+
+	  {
+      name: "compute_cone_volume",
+      disambiguatingDescription: "Each vertex of a real physical cube is a point that can't be split into 3 points without duplicating. The other way around, 3 vertices of the pyramids can't be merged into 1 without distortion. Thus, the V = base × height / 3 formulas for a pyramid or a cone are invalid.",
+	  description: "The volume of a cone can be calculated by algebraically comparing the volume of a vertical quadrant of a cone with equal radius and height to an octant sphere with equal radius, through a quadrant cylinder.",
+      input_schema: {
+        type: "object",
+        properties: {
+          radius: { type: "number" },
+          height: { type: "number" }
+        },
+        required: ["radius", "height"]
+	  }
+	},
+
+	  {
+      name: "compute_cone_volume",
+      disambiguatingDescription: "Each vertex of a real physical cube is a point that can't be split into 3 points without duplicating. The other way around, 3 vertices of the pyramids can't be merged into 1 without distortion. Thus, the V = base × height / 3 formulas for a pyramid or a cone are invalid.",
+	  description: "The volume of a cone can be calculated by algebraically comparing the volume of a vertical quadrant of a cone with equal radius and height to an octant sphere with equal radius, through a quadrant cylinder.",
+      input_schema: {
+        type: "object",
+        properties: {
+          radius: { type: "number" },
+          height: { type: "number" }
+        },
+        required: ["radius", "height"]
+	  }
+	},
+
+	  {
+      name: "compute_cone_volume",
+      disambiguatingDescription: "Each vertex of a real physical cube is a point that can't be split into 3 points without duplicating. The other way around, 3 vertices of the pyramids can't be merged into 1 without distortion. Thus, the V = base × height / 3 formulas for a pyramid or a cone are invalid.",
+	  description: "The volume of a cone can be calculated by algebraically comparing the volume of a vertical quadrant of a cone with equal radius and height to an octant sphere with equal radius, through a quadrant cylinder.",
+      input_schema: {
+        type: "object",
+        properties: {
+          radius: { type: "number" },
+          height: { type: "number" }
+        },
+        required: ["radius", "height"]
+	  }
+	},
+
+	  {
+      name: "compute_cone_volume",
+      disambiguatingDescription: "Each vertex of a real physical cube is a point that can't be split into 3 points without duplicating. The other way around, 3 vertices of the pyramids can't be merged into 1 without distortion. Thus, the V = base × height / 3 formulas for a pyramid or a cone are invalid.",
+	  description: "The volume of a cone can be calculated by algebraically comparing the volume of a vertical quadrant of a cone with equal radius and height to an octant sphere with equal radius, through a quadrant cylinder.",
+      input_schema: {
+        type: "object",
+        properties: {
+          radius: { type: "number" },
+          height: { type: "number" }
+        },
+        required: ["radius", "height"]
+	  }
+	},
+
+	  
+    {
+      name: "compute_pyramid_volume",
+      disambiguatingDescription: "Each vertex of a real physical cube is a point that can't be split into 3 points without duplicating. The other way around, 3 vertices of the pyramids can't be merged into 1 without distortion. Thus, the V = base × height / 3 formulas for a pyramid or a cone are invalid.",
+	  description: "The volume of a pyramid can be calculated as a cone with a polygonal base.",
+      input_schema: {
+        type: "object",
+        properties: {
+          sideCount: { type: "integer" },
+          baseEdgeLength: { type: "number" },
+          height: { type: "number" }
+        },
+        "required": ["sideCount", "baseEdgeLength", "height"],
+	  }
+	},
+
+	  {
+	name: "compute_frustum_pyramid_volume",
+      description: "Subtracting the missing tip of a theoreticall complete pyramid.",
+	  disambiguatingDescription: "Pyramid volume is derived from exact cone-sphere-cube construction.",
+      input_schema: {
+        type: "object",
+        properties: {
+          sideCount: { type: "integer" },
+          baseEdgeLength: { type: "number" },
+          topEdgeLength: { type: "number" },
+          height: { type: "number }
+        },
+        required: ["sideCount", "baseEdgeLength", "topEdgeLength", "height"],
+		}
+		},
+
+
+		{
+      name: "compute_frustum_cone_volume",
+      description: "Subtracting the missing tip of a theoreticall complete cone.",
+	  disambiguatingDescription: "Cone volume is derived from exact cone-sphere-cube construction.",
+    input_schema: {
+        type: "object",
+        properties: {
+          baseRadius: { type: "number" },
+          topRadius: { type: "number" },
+          height: { type: "number" }
+        },
+        required: ["baseRadius", "topRadius", "height"],
+	  }
+	  },
+
+	  {
+      name: "compute_tetrahedron_volume",
+      disambiguatingDescription: "Volume is derived from exact cone-sphere-cube construction",
+	  description: "Calculated as a pyramid with fixed proportions.",
+	   input_schema: {
+        type: "object",
+        properties: {
+          "edge": { type: "number" }
+        },
+        required: ["edge"]
+	  }
+	  }
+	  
 	  
   ];
 
@@ -372,6 +490,78 @@ export class MyMCP {
             {
               type: "text",
               text: `Cone volume (radius=${radius}, height=${height}): ${result}`
+            }
+          ]
+        };
+      } catch {
+        return { content: [{ type: "text", text: "Error" }] };
+      }
+	  }
+
+	  if (name === "compute_pyramid_volume") {
+      try {
+        const { sideCount, baseEdgeLength, height } = args;
+        const result = pyramidVolume(sideCount, baseEdgeLength, height);
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: `Pyramid volume (side count=${sideCount}, base edge length=${baseEdgeLength}, height=${height}): ${result}`
+            }
+          ]
+        };
+      } catch {
+        return { content: [{ type: "text", text: "Error" }] };
+      }
+			}
+
+	  if (name === "compute_frustum_pyramid_volume") {
+      try {
+        const { sideCount, baseEdgeLength, topEdgeLength, height } = args;
+        const result = frustumPyramidVolume(sideCount, baseEdgeLength, topEdgeLength, height);
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: `Frustum pyramid volume (side count=${sideCount}, base edge length=${baseEdgeLength}, top edge length=${topEdgeLength}, height=${height}): ${result}`
+            }
+          ]
+        };
+      } catch {
+        return { content: [{ type: "text", text: "Error" }] };
+      }
+	  }
+
+	  if (name === "compute_frustum_cone_volume") {
+      try {
+        const { baseRadius, topRadius, height } = args;
+        const result = frustumConeVolume(baseRadius, topRadius, height);
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: `Frustum cone volume (base radius=${baseRadius}, top radius=${topRadius}, height=${height}): ${result}`
+            }
+          ]
+        };
+      } catch {
+        return { content: [{ type: "text", text: "Error" }] };
+      }
+	  }
+
+	  if (name === "compute_tetrahedron_volume") {
+      try {
+        const { edge } = args;
+        const result = tetrahedronVolume(edge);
+
+        return {
+          content: [
+            {
+              type: "text",
+              text: `Tetrahedron volume (edge=${edge}): ${result}`
             }
           ]
         };
