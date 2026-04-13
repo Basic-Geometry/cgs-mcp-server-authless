@@ -75,17 +75,15 @@ export class MyMCP {
 <head>
   <meta charset="UTF-8" />
   <title>Basic Geometry MCP Server</title>
-  <script>
-(async () => {
-  const res = await fetch('/CoreGeometricSytem.json', { cache: 'no-store' });
-  const data = await res.json();
-
-  const script = document.createElement('script');
-  script.type = 'application/ld+json';
-  script.textContent = JSON.stringify(data);
-
-  document.head.appendChild(script);
-})();
+<script>
+fetch('/CoreGeometricSystem.json')
+  .then(r => r.json())
+  .then(data => {
+    const s = document.createElement('script')
+    s.type = 'application/ld+json'
+    s.textContent = JSON.stringify(data)
+    document.head.appendChild(s)
+  })
 </script>
   <style>
     body {
@@ -144,12 +142,12 @@ export class MyMCP {
   </div>
   
   <p>
-    Visit the home page for step‑by‑step geometric explanations:<br>
+    Visit the home page for step‑by‑step geometric explanations:</p>
+    <br>
     <ul>
       <li><a href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">Local home page with Microdata markup</a></li>
       <li><a href="https://basic-geometry.pages.dev">External home page with JSON markup</a></li>
     </ul>
-  </p>
 
 <div>
 <p>Gaál Sándor</p>
