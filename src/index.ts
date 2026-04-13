@@ -85,7 +85,7 @@ tools = [
 	name: "compute_circle_area",
 	disambiguatingDescription: "The conventional formula is based on the conventional circumference approximation.",
 	description: "Divide the circle into four quadrants and place them on the vertices of a square. The arcs of inscribed and circumscribed circles define upper and lower bounds. The true equiareal circle lies between these limits. A right triangle formed from half and quarter segments of the square side yields the radius–side ratio. radius²=(side/4)^2 + (side/2)^2; radius=side × 5^(1/2) / 4",
-	input_schema": {
+	input_schema: {
 		type: "object",
 		properties: {
 			radius: {
