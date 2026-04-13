@@ -271,7 +271,7 @@ export class MyMCP {
           sideCount: { type: "integer" },
           baseEdgeLength: { type: "number" },
           topEdgeLength: { type: "number" },
-          height: { type: "number }
+          height: { type: "number" }
         },
         required: ["sideCount", "baseEdgeLength", "topEdgeLength", "height"],
 		}
