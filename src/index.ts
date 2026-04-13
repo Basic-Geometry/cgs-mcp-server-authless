@@ -77,7 +77,7 @@ tools = [
             type: "number"
 		  }
 		},
-		required": ["sideCount", "sideLength"]
+		required: ["sideCount", "sideLength"]
       }
 	},
     
