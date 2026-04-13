@@ -629,7 +629,7 @@
   "minValue": 0
   }
 	],
-"target": "https://basic-geometry.pages.dev?q={cone_radius=1_height=2_volume=?}",
+"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={cone_radius=1_height=2_volume=?}",
   "actionProcess": {
     "@type": "HowTo",
     "name": "Derive the volume of a cone",
@@ -771,14 +771,14 @@
     "accessibilityHazard": "none",
     "accessibilitySummary": "Enter numbers and read results",
     "operatingSystem": "Web",
-    "url": "https://basic-geometry.pages.dev#cone_volume_calculator",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone_volume_calculator",
     "usageInfo": "Enter the bottom radius and the height."
   }
 },
 
 	{
   "@type": "SolveMathAction",
-  "@id": "https://basic-geometry.pages.dev#cone-surface",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone-surface",
   "name": "Surface Area of a Cone",
   "eduQuestionType": "Cone surface area calculation",
 "object": [
@@ -793,7 +793,7 @@
   "minValue": 0
   }
 	],
-"target": "https://basic-geometry.pages.dev?q={cone_radius=1_height=2_area=?}",
+"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={cone_radius=1_height=2_area=?}",
   "actionProcess": {
     "@type": "HowTo",
     "name": "Derive the surface area of a cone",
@@ -968,14 +968,14 @@
     "accessibilityHazard": "none",
     "accessibilitySummary": "Enter numbers and read results",
     "operatingSystem": "Web",
-    "url": "https://basic-geometry.pages.dev#cone-surface_area_calculator",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone-surface_area_calculator",
     "usageInfo": "Enter the height and the bottom radius."
   }
 },
 
 	{
   "@type": "SolveMathAction",
-  "@id": "https://basic-geometry.pages.dev#triangle",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#triangle",
   "name": "Area of a Triangle",
   "eduQuestionType": "Triangle area calculation",
   "object": [
@@ -1006,7 +1006,7 @@
   "minValue": 0
   }
 	],
-"target": "https://basic-geometry.pages.dev?q={triangle_base=3_height=2_area=?}",
+"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={triangle_base=3_height=2_area=?}",
   "actionProcess": {
     "@type": "HowTo",
     "name": "Derive the area of a triangle",
@@ -1084,14 +1084,14 @@
     "accessibilityHazard": "none",
     "accessibilitySummary": "Enter numbers and read results",
     "operatingSystem": "Web",
-    "url": "https://basic-geometry.pages.dev#triangle_area_calculator",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#triangle_area_calculator",
     "usageInfo": "Enter the length of each side"
   }
 },
 
 	{
   "@type": "SolveMathAction",
-  "@id": "https://basic-geometry.pages.dev#polygon",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#polygon",
   "name": "Area of a Regular Polygon",
   "eduQuestionType": "Polygon area calculation",
   "object": [
@@ -1107,7 +1107,7 @@
 	"description": "length of a side of the polygon",
   "minValue": 0
   }
-	],"target": "https://basic-geometry.pages.dev?q={polygon_sideCount=8_sideLength=4_area=?}",
+	],"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={polygon_sideCount=8_sideLength=4_area=?}",
   "actionProcess": {
     "@type": "HowTo",
     "name": "Derive the area of a regular polygon",
@@ -1197,14 +1197,14 @@
     "accessibilityHazard": "none",
     "accessibilitySummary": "Enter numbers and read result",
     "operatingSystem": "Web",
-    "url": "https://basic-geometry.pages.dev#polygon_area_calculator",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#polygon_area_calculator",
     "usageInfo": "Enter the side count and the length of a side"
   }
 },
 
 	{
   "@type": "SolveMathAction",
-  "@id": "https://basic-geometry.pages.dev#circle-segment",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle-segment",
   "name": "Area of a Circle Segment",
   "eduQuestionType": "Circle segment area calculation",
   "object": [
@@ -1227,7 +1227,7 @@
   "minValue": "height"
   }
 	],
-"target": "https://basic-geometry.pages.dev?q={circle_segment_height=1_length=3_radius=4_area=?}",
+"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={circle_segment_height=1_length=3_radius=4_area=?}",
   "actionProcess": {
     "@type": "HowTo",
     "name": "Derive the area of a circle segment",
@@ -1345,14 +1345,14 @@
     "accessibilityHazard": "none",
     "accessibilitySummary": "Enter numbers and read results",
     "operatingSystem": "Web",
-    "url": "https://basic-geometry.pages.dev#circle_segment_area_calculator",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle_segment_area_calculator",
     "usageInfo": "Enter any two of: segment height, parent radius, chord length."
   }
 },
 
 	{
   "@type": "SolveMathAction",
-  "@id": "https://basic-geometry.pages.dev#pyramid",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pyramid",
   "name": "Volume of a Pyramid",
   "eduQuestionType": "Pyramid volume calculation",
   "object": [
@@ -1374,7 +1374,7 @@
   "minValue": 0
   }
 	],
-"target": "https://basic-geometry.pages.dev?q={pyramid_bottom_edge_number=5_length=3_height=2_volume=?}",
+"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={pyramid_bottom_edge_number=5_length=3_height=2_volume=?}",
   "actionProcess": {
     "@type": "HowTo",
     "name": "Derive the volume of a pyramid",
@@ -1517,17 +1517,17 @@
     "accessibilityHazard": "none",
     "accessibilitySummary": "Enter numbers and read results",
     "operatingSystem": "Web",
-    "url": "https://basic-geometry.pages.dev#pyramid_volume_calculator",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pyramid_volume_calculator",
     "usageInfo": "Enter the height, the side count, and the length of the bottom edge."
   }
 },
 
 	{
   "@type": "SolveMathAction",
-  "@id": "https://basic-geometry.pages.dev#frustum_pyramid",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#frustum_pyramid",
   "name": "Volume of a Frustum Pyramid",
   "eduQuestionType": "Horizontal frustum pyramid volume calculation",
-  "target": "https://basic-geometry.pages.dev?q={frustum_pyramid_height=3_edge_length_top=1_bottom=2_number=5_volume=?}",
+  "target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={frustum_pyramid_height=3_edge_length_top=1_bottom=2_number=5_volume=?}",
   "actionProcess": {
     "@type": "HowTo",
     "name": "Derive the volume of a frustum pyramid",
@@ -1664,7 +1664,7 @@
       "accessibilityHazard": "none",
       "accessibilitySummary": "Enter numbers and read results",
       "operatingSystem": "Web",
-      "url": "https://basic-geometry.pages.dev#frustum_pyramid_volume_calculator",
+      "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#frustum_pyramid_volume_calculator",
       "usageInfo": "Enter the height, the side count, and the lengths of the top and bottom edges."
     }
   ]
@@ -1672,10 +1672,10 @@
 
 	{
   "@type": "SolveMathAction",
-  "@id": "https://basic-geometry.pages.dev#frustum_cone",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#frustum_cone",
   "name": "Volume of a Frustum Cone",
   "eduQuestionType": "Horizontal frustum cone volume calculation",
-  "target": "https://basic-geometry.pages.dev?q={frustum_cone_radius_top=1_bottom=2_height=3_volume=?}",
+  "target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={frustum_cone_radius_top=1_bottom=2_height=3_volume=?}",
   "actionProcess": {
     "@type": "HowTo",
     "name": "Derive the volume of a frustum cone",
@@ -1772,7 +1772,7 @@
       "accessibilityHazard": "none",
       "accessibilitySummary": "Enter numbers and read results",
       "operatingSystem": "Web",
-      "url": "https://basic-geometry.pages.dev#frustum_cone_volume_calculator",
+      "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#frustum_cone_volume_calculator",
       "usageInfo": "Enter the height and the top and bottom radii."
     }
   ]
@@ -1780,7 +1780,7 @@
 
 	{
   "@type": "SolveMathAction",
-  "@id": "https://basic-geometry.pages.dev#tetrahedron",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#tetrahedron",
   "name": "Volume of a Tetrahedron",
   "eduQuestionType": "Tetrahedron volume calculation",
   "object":
@@ -1789,7 +1789,7 @@
   "name": "edge length",
   "minValue": 0
   },
-"target": "https://basic-geometry.pages.dev?q={tetrahedron_edge=2_volume=?}",
+"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={tetrahedron_edge=2_volume=?}",
   "actionProcess": {
     "@type": "HowTo",
     "name": "Derive the volume of a tetrahedron",
@@ -1919,16 +1919,16 @@
     "accessibilityHazard": "none",
     "accessibilitySummary": "Enter numbers and read results",
     "operatingSystem": "Web",
-    "url": "https://basic-geometry.pages.dev#tetrahedron_volume_calculator",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#tetrahedron_volume_calculator",
     "usageInfo": "Enter the length of the edge."
 	}
 	}
 	],
 	"offers": {
 	"@type": "Offer",
-	"@id": "https://basic-geometry.pages.dev#sphere-surface",
+	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere-surface",
 	"name": "Surface Area of a Sphere",
-	"url": "https://basic-geometry.pages.dev#sphere-surface",
+	"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere-surface",
 	"image": {
     "@type": "ImageObject",
 	"creator": {
@@ -1955,7 +1955,7 @@
 	"subjectOf": {
 	"@type": "DefinedTermSet",
 	"name": "Core Geometric System ™",
-	"@id": "https://basic-geometry.pages.dev#cgs",
+	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
 	"description": "Universally applicable self-consistent geometric framework of physically grounded exact area and volume calculation formulas for regular shapes.",
     "disambiguatingDescription": "Comparing the properties of shapes directly to the square and the cube as the primary, physically relevant units of measurement via first principles instead of limits, approximations, or abstract, zero‑dimensional points.",
 	"creator": {
@@ -2169,7 +2169,7 @@
 	],
 	"about": {
 	"@type": "BreadcrumbList",
-	"@id": "https://basic-geometry.pages.dev#breadcrumbs",
+	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#breadcrumbs",
 	"name": "Key points",
 	"itemListElement": [
 	{
@@ -2179,7 +2179,7 @@
 	"name": "Exact area of a circle",
 	"description": "Area=3.2×radius^2, derived from direct circle to square comparison",
     "disambiguatingDescription": "Not the abstract pi~3.14 approximation",
-	"@id": "https://basic-geometry.pages.dev#circle"
+	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
 	}
 	},
 
@@ -2190,7 +2190,7 @@
 	"name": "Exact circumference of a circle",
 	"description": "Circumference=6.4×radius, derived from the exact area of a circle by subtracting a circle from a larger one and dividing the difference by the theoretical width of the circumference.",
     "disambiguatingDescription": "Not the abstract pi~3.14 approximate",
-	"@id": "https://basic-geometry.pages.dev#circumference"
+	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circumference"
 	}
 	},
 
@@ -2201,7 +2201,7 @@
 	"name": "Exact volume of a sphere",
 	"description": "Volume=(4×radius/5^(1/2))^3, derived from direct sphere to cube comparison",
     "disambiguatingDescription": "Not the abstract 4×radius³/3×3.14... approximate",
-	"@id": "https://basic-geometry.pages.dev#sphere"
+	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere"
 	}
 	},
 
@@ -2212,10 +2212,10 @@
 	"name": "Exact volume of a cone",
     "description": "Volume=3.2×radius^2×height/8^(1/2), derived from comparing a quadrant cone with height equal to radius to an octant sphere with equal radius.",
 	"disambiguatingDescription": "Not the abstract radius^2×height/3×3.14… approximate",
-	"@id": "https://basic-geometry.pages.dev#cone"
+	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone"
 	}
 	}
 	],
-	"url": "https://basic-geometry.pages.dev#breadcrumbs"
+	"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#breadcrumbs"
 }
 }
