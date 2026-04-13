@@ -26,7 +26,7 @@ import {
   frustumPyramidVolume,
   frustumConeVolume,
   tetrahedronVolume
-} from "./core-geometric-system.mjs";
+} from "./CoreGeometricSystem.mjs";
 
 import manifest from './manifest.json' assert { type: 'json' };
 
@@ -36,7 +36,7 @@ import manifest from './manifest.json' assert { type: 'json' };
 // ------------------------------------------------------------
 
 const server = new McpServer({
-  name: "core-geometric-system",
+  name: "Core_Geometric_System",
   version: "1.0.8"
 });
 
@@ -164,17 +164,8 @@ if (name === "compute_circle_area") {
 
   return { error: `Unknown tool: ${name}` }
 }
-}
 
-	let message;
-    try {
-      message = await request.json();
-    } catch {
-      return new Response(JSON.stringify({ error: "Invalid JSON" }), {
-        status: 400,
-        headers: { "Content-Type": "application/json" }
-      });
-    }
+
 
     // MCP handshake
     if (message.method === "mcp/initialize") {
@@ -223,6 +214,7 @@ if (message.method === "tools/call") {
     headers: { "Content-Type": "application/json" }
   })
 	}
+}
 
 // ------------------------------------------------------------
 // CLOUDFLARE WORKER ROUTER
@@ -232,14 +224,26 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const url = new URL(request.url);
 
-    // Forward MCP requests to the Durable Object
-    if (url.pathname === "/mcp") {
-      const id = env.MCP_OBJECT.idFromName("singleton");
-      const stub = env.MCP_OBJECT.get(id);
-      return stub.fetch(request);
-    }
+    // 1. MCP endpoint
+if (url.pathname === "/mcp") {
+  const id = env.MCP_OBJECT.idFromName("singleton");
+  const stub = env.MCP_OBJECT.get(id);
+  return stub.fetch(request);
+}
 
-    // Serve manifest
+// 2. Tools endpoint (redirect to MCP)
+if (url.pathname.startsWith("/tools")) {
+  const id = env.MCP_OBJECT.idFromName("singleton");
+  const stub = env.MCP_OBJECT.get(id);
+
+  const mcpUrl = new URL("/mcp", request.url);
+  const mcpRequest = new Request(mcpUrl.toString(), request);
+
+  return stub.fetch(mcpRequest);
+}
+
+
+    // 3. Serve manifest
     if (url.pathname === "/manifest.json") {
       return new Response(JSON.stringify(manifest, null, 2), {
         headers: {
@@ -249,7 +253,7 @@ export default {
       });
     }
 
-    
+    // 4. Serve structured data 
     if (url.pathname === "/CoreGeometricSystem.json") {
       return new Response(JSON.stringify(env.CoreGeometricSystem), {
         headers: { "Content-Type": "application/json" }
@@ -258,7 +262,7 @@ export default {
 
 
 
-    // Static assets
+    // 5. HTML fallback
     if (env.ASSETS) {
       return env.ASSETS.fetch(request);
     }
