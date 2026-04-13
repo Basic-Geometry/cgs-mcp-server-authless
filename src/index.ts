@@ -165,7 +165,15 @@ if (name === "compute_circle_area") {
   return { error: `Unknown tool: ${name}` }
 }
 
-
+let message;
+    try {
+      message = await request.json();
+    } catch {
+      return new Response(JSON.stringify({ error: "Invalid JSON" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" }
+      });
+}
 
     // MCP handshake
     if (message.method === "mcp/initialize") {
