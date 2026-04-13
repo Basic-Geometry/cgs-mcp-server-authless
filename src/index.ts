@@ -30,6 +30,8 @@ import {
 
 import manifest from './manifest.json' assert { type: 'json' };
 
+import context from './CoreGeometricSystem.json' assert { type: 'json' };
+
 
 // ------------------------------------------------------------
 // MCP SERVER INITIALIZATION
@@ -260,7 +262,7 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const url = new URL(request.url);
 
-    // 1. MCP endpoint
+// 1. MCP endpoint
 if (url.pathname === "/mcp") {
   const id = env.MCP_OBJECT.idFromName("singleton");
   const stub = env.MCP_OBJECT.get(id);
@@ -289,13 +291,15 @@ if (url.pathname.startsWith("/tools")) {
       });
     }
 
-    // 4. Serve structured data 
+	// 4. Serve manifest
     if (url.pathname === "/CoreGeometricSystem.json") {
-      return new Response(JSON.stringify(env.CoreGeometricSystem), {
-        headers: { "Content-Type": "application/json" }
-      })
-    }
-
+      return new Response(JSON.stringify(context, null, 2), {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*"
+        }
+      });
+	}
 
 
     // 5. HTML fallback
