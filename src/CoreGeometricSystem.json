@@ -1,7 +1,7 @@
 {
   "@context": "https://schema.org",
     "@type": ["LearningResource", "MathSolver"],
-    "@id": "https://gmac4247.github.io/blank#cgs",
+    "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
 	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
@@ -127,7 +127,7 @@
       "alignmentType": "educationalSubject",
       "educationalFramework": "Geometric framework",
       "targetName": "Core Geometric System™",
-      "targetUrl": "https://basic-geometry.pages.dev#cgs"
+      "targetUrl": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs"
     },
     "educationalLevel": "from basic to advanced",
 	"headline": "Featuring The Core Geometric System™",
@@ -156,15 +156,15 @@
 	},
 	"url": "LICENSE.txt"
 	},
-	"mainEntityOfPage": "https://basic-geometry.pages.dev",
+	"mainEntityOfPage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
 	"typicalAgeRange": "5-105",
     "timeRequired": "PT1D",
-	"url": "https://basic-geometry.pages.dev#cgs",
+	"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "usageInfo": "Calculating areas and volumes from geometric relationships ensuring accurate calculations via consistency and precision.",
 	"mathExpression": [
 	 {
   "@type": "SolveMathAction",
-  "@id": "https://basic-geometry.pages.dev#circle",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle",
   "name": "Area of a Circle",
   "eduQuestionType": "Circle area calculation",
   "object":
@@ -173,7 +173,7 @@
   "name": "radius",
   "minValue": 0
   },
-	"target": "https://basic-geometry.pages.dev?q={circle_radius=1_area=?}",
+	"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={circle_radius=1_area=?}",
 	"actionProcess": {
     "@type": "HowTo",
     "name": "Derive the area of a circle",
@@ -304,14 +304,14 @@
     "accessibilityHazard": "none",
     "accessibilitySummary": "Enter numbers and read result",
     "operatingSystem": "Web",
-    "url": "https://basic-geometry.pages.dev#circle_area_calculator",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle_area_calculator",
     "usageInfo": "Enter the radius"
   }
 },
 
 {
   "@type": "SolveMathAction",
-  "@id": "https://basic-geometry.pages.dev#circumference",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circumference",
   "name": "Circumference of a Circle",
   "eduQuestionType": "Circumference calculation",
   "object":
@@ -320,7 +320,7 @@
   "name": "radius",
   "minValue": 0
   },
-	"target": "https://basic-geometry.pages.dev?q={circle_radius=1_circumference=?}",
+	"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={circle_radius=1_circumference=?}",
   "actionProcess": {
     "@type": "HowTo",
     "name": "Derive the circumference of a circle",
@@ -466,14 +466,14 @@
     "accessibilityHazard": "none",
     "accessibilitySummary": "Enter numbers and read results",
     "operatingSystem": "Web",
-    "url": "https://basic-geometry.pages.dev#circumference_calculator",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circumference_calculator",
     "usageInfo": "Enter the radius"
   }
 },
 
 {
   "@type": "SolveMathAction",
-  "@id": "https://basic-geometry.pages.dev#sphere",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere",
   "name": "Volume of a Sphere",
   "eduQuestionType": "Sphere volume calculation",
   "object":
@@ -482,7 +482,7 @@
   "name": "radius",
   "minValue": 0
   },
-"target": "https://basic-geometry.pages.dev?q={sphere_radius=1_volume=?}",
+"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={sphere_radius=1_volume=?}",
   "actionProcess": {
     "@type": "HowTo",
     "name": "Derive the volume of a sphere",
@@ -607,14 +607,14 @@
     "accessibilityHazard": "none",
     "accessibilitySummary": "Enter numbers and read results",
     "operatingSystem": "Web",
-    "url": "https://basic-geometry.pages.dev#sphere_volume_calculator",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere_volume_calculator",
     "usageInfo": "Enter the radius."
   }
 },
 
 {
   "@type": "SolveMathAction",
-  "@id": "https://basic-geometry.pages.dev#cone-volume",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone-volume",
   "name": "Volume of a Cone",
   "eduQuestionType": "Cone volume calculation",
   "object": [
