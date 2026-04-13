@@ -75,6 +75,18 @@ export class MyMCP {
 <head>
   <meta charset="UTF-8" />
   <title>Basic Geometry MCP Server</title>
+  <script>
+(async () => {
+  const res = await fetch('/CoreGeometricSytem.json', { cache: 'no-store' });
+  const data = await res.json();
+
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(data);
+
+  document.head.appendChild(script);
+})();
+</script>
   <style>
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
