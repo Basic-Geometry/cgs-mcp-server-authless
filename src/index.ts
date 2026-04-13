@@ -256,10 +256,6 @@ export default {
       })
     }
 
-    return new Response(HTML_STRING, {
-      headers: { "Content-Type": "text/html; charset=UTF-8" }
-    })
-  
 
 
     // Static assets
