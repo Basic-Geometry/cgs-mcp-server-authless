@@ -1,0 +1,64 @@
+{
+  "type": "SolveMathAction",
+  "name": "Volume of a Sphere",
+  "eduQuestionType": "Sphere volume calculation",
+  "object":
+  {  
+  "type": "QuantitativeValue", 
+  "name": "radius",
+  "minValue": 0
+  },
+  "actionProcess": {
+    "type": "HowTo",
+    "name": "Derive the volume of a sphere",
+    "tool": 
+    {
+    "type": "HowToTool",
+    "name": "Exact sphere volume formula",
+    "item":
+    {
+    "type": "PropertyValue",
+    "name": "Volume of a sphere",
+	"description": "Exact formula derived from direct sphere to cube comparison",
+    "disambiguatingDescription": "Not the abstract 4×radius³/3×3.14... approximation",
+    "value": "(4×radius/5^(1/2))^3"
+    }
+    },
+	"totalTime": "PT30M",
+    "estimatedCost": {
+      "type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "description": "The volume of a sphere is defined by comparing it to a cube, since the cube is the base unit of volume.",
+    "step": [
+      {
+        "type": "HowToStep",
+        "position": 1,
+        "about": {
+          "type": "PropertyValue",
+          "name": "Cross-sectional area",
+          "description": "Cross-sectional area of the sphere",
+          "value": "3.2×radius^2"
+        }
+      },
+      {
+        "type": "HowToStep",
+        "position": 2,
+        "description": "Take the square root of the cross-sectional area.",
+        "about": {
+          "type": "PropertyValue",
+          "name": "Square root of the cross-sectional area",
+          "description": "Square root of the sphere's cross-sectional area",
+          "value": "(3.2)^(1/2)×radius=4×radius/5^(1/2)"
+        }
+      }
+    ]
+	},
+    "result": {
+      "type": "PropertyValue",
+      "name": "Volume of a sphere",
+      "description": "Exact sphere volume formula",
+      "value": "(4 × radius / 5^(1/2))^3"
+    }
+}
