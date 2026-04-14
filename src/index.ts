@@ -30,6 +30,8 @@ import {
 
 import manifest from './manifest.json' assert { type: 'json' };
 
+import context from './CoreGeometricSystem.json' assert { type: 'json' };
+
 
 // ------------------------------------------------------------
 // MCP SERVER INITIALIZATION
@@ -1105,7 +1107,7 @@ if (url.pathname.startsWith("/tools")) {
       });
     }
 
-	// 4. Serve manifest
+	// 4. Serve structured data 
     if (url.pathname === "/CoreGeometricSystem.json") {
       return new Response(JSON.stringify(context, null, 2), {
         headers: {
