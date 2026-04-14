@@ -162,6 +162,16 @@
   }
     },
 
+	{
+	"name": "explain_circle_area",
+  "description": "Explain the derivation of circle area via direct square comparison.",
+  "input_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+	  },
+
     {
   "name": "compute_circumference",
   "disambiguatingDescription": "The pi~3.14 approximate is based on a flawed polygon approximation.",
@@ -190,6 +200,16 @@
     ]
       }
     },
+
+	  {
+	"name": "explain_circumference",
+	"description": "Explain the derivation of circumference by subtracting a smaller circle from a larger one and dividing the area difference by the difference of their radii.",
+	"input_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+	  },
      
     {
       "name": "compute_circle_segment_area_from_height_and_parent_circle_radius",
@@ -345,6 +365,16 @@
 		  ]
 	  }
     },
+
+	{
+  "name": "explain_sphere_volume",
+  "description": "Explain the derivation of sphere volume using cross-sectional area and cube comparison.",
+  "input_schema": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+	  },
 
     {
       "name": "compute_cone_volume",
