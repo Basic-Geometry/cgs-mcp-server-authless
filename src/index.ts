@@ -183,7 +183,7 @@ export class MyMCP {
 
 	{
       name: "compute_sphere_volume",
-      disambiguatingDescription: "The V = 4 / 3 × pi × radius³ formula is a result of a very rough underestimate, approximated by comparing a hemisphere to the difference between the approximate volume a cone and a circumscribed cylinder, discarding the difference between the straight slant height of a cone and the curvature of a sphere.",
+      disambiguatingDescription: "The V = 4 / 3 × pi × radius³ formula is a very rough underestimate, approximated by comparing a hemisphere to the difference between the approximate volume a cone and a circumscribed cylinder, discarding the difference between the straight slant height of a cone and the curvature of a sphere.",
 	  description: "The volume of a sphere equals the cubic value of the square root of its cross-sectional area, just like a cube.",
     input_schema: {
         type: "object",
@@ -681,7 +681,7 @@ if (name === "explain_sphere_volume") {
           },
           totalTime: "PT30M",
           disambiguatingDescription:
-            "The V = 4 / 3 × pi × radius³ formula is a result of a very rough underestimate, approximated by comparing a hemisphere to the difference between the approximate volume of a cone and a circumscribed cylinder, discarding the difference between the straight slant height of a cone and the curvature of a sphere.",
+            "The V = 4 / 3 × pi × radius³ formula is a very rough underestimate, approximated by comparing a hemisphere to the difference between the approximate volume of a cone and a circumscribed cylinder, discarding the difference between the straight slant height of a cone and the curvature of a sphere.",
           description:
             "The volume of a sphere is defined by comparing it to a cube, since the cube is the base unit of volume.",
           step: [
@@ -739,6 +739,99 @@ if (name === "explain_sphere_volume") {
       }
 	  }
 
+	  if (name === "explain_sphere_volume") {
+  return {
+    content: [
+      {
+      type: "text",
+      text: JSON.stringify({
+		  type: "SolveMathAction",
+  name: "Volume of a Cone",
+  eduQuestionType: "Cone volume calculation",
+  object: [
+  {  
+  type: "QuantitativeValue", 
+  name: "radius",
+  minValue: 0
+  },
+	{  
+  type: "QuantitativeValue", 
+  name: "height",
+  minValue: 0
+  }
+	],
+actionProcess: {
+    type: "HowTo",
+    name: "Derive the volume of a cone",
+    tool: 
+    {
+    type: "HowToTool",
+    name: "Exact cone volume formula",
+    item:
+    {
+    type: "PropertyValue",
+      name: "Volume of a cone",
+      description: "Exact cone volume formula",
+	disambiguatingDescription: "Not the abstract radius^2×height/3×3.14… approximate",
+      value: "3.2 × radius^2 × height / 8^(1/2)"
+  }
+    },
+	totalTime: "PT30M",
+    description: "The cone’s volume is derived by comparing a vertical quadrant cone to an octant sphere through a shared quadrant cylinder.",
+    step: [
+      {
+        type: "HowToStep",
+        position: 1,
+        about: {
+          type: "PropertyValue",
+          name: "Volume of an octant sphere",
+          description: "Volume of an octant sphere",
+          value: "((3.2)^(1/2) × radius / 2)^3"
+        }
+      },
+      {
+        type: "HowToStep",
+        position": 2,
+        description: "Both shapes share a quadrant circle as their base."
+      },
+      {
+        type: "HowToStep",
+        position: 3,
+        description: "A cylinder with radius equal to the cone and height equal to the cone’s slant height (√2 × radius) provides a comparison volume.",
+        image: {
+          type: "ImageObject",
+          url: "sphereAndCone.jpeg",
+          description: "Sphere and cone geometry"
+        }
+      },
+      {
+        type: "HowToStep",
+        position: 4,
+        description: "The cone’s vertical cross‑section is triangular. The mean of its horizontal slices equals half the area of a cylinder with equal radius and height.",
+        about: {
+          type: "PropertyValue",
+          name: "Volume of a quadrant cone",
+          description: "Volume of a quadrant cone with height=radius",
+          value: "(3.2 × radius^2 / 4 × 2^(1/2) × height) / 4"
+        }
+      }
+    ]
+	},
+    result: {
+      type: "PropertyValue",
+      name: "Volume of a cone",
+      description: "Exact cone volume formula",
+	disambiguatingDescription: "Not the abstract radius^2×height/3×3.14… approximate",
+      value: "3.2 × radius^2 × height / 8^(1/2)"
+}
+	}, null, 2)
+		  }
+	]
+  }
+}
+
+
+		
 	  if (name === "compute_pyramid_volume") {
       try {
         const { sideCount, baseEdgeLength, height } = args;
@@ -756,6 +849,76 @@ if (name === "explain_sphere_volume") {
         return { content: [{ type: "text", text: "Error" }] };
       }
 			}
+
+	  if (name === "explain_pyramid_volume") {
+  return {
+    content: [
+      {
+      type: "text",
+      text: JSON.stringify({
+		  type: "SolveMathAction",
+name: "Volume of a Pyramid",
+  eduQuestionType: "Pyramid volume calculation",
+  object: [
+  {  
+  type: "QuantitativeValue", 
+  name: "side count",
+	description: "number of sides excluding the bottom",
+  minValue: 3
+  },
+	{  
+  type: "QuantitativeValue", 
+  name: "bottom edge length",
+	description: "length of the bottom of a side",
+  minValue: 0
+  },
+	{  
+  type: "QuantitativeValue", 
+  name: "height",
+  minValue: 0
+  }
+	],
+actionProcess: {
+    type: "HowTo",
+    name: "Derive the volume of a pyramid",
+    tool: 
+    {
+    type: "HowToTool",
+    name: "Exact pyramid volume formula",
+    item:
+    {
+    type: "PropertyValue",
+    name: "Volume of a pyramid",
+    value: "side count / 4 × ctg(180° / side count) × bottom edge length^2 × height / 8^(1/2)"
+    }
+    },
+	totalTime: "PT30M",
+    description: "The volume of a pyramid can be calculated using the same coefficient as the volume of a cone with a polygonal base.",
+    step: [
+      {
+        type: "HowToStep",
+        position: 1,
+        description: "A pyramid behaves like a cone whose base is a regular polygon. The same geometric coefficient applies.",
+      }
+    ]
+  },
+  result: {
+    type: "PropertyValue",
+    name: "Volume of a pyramid",
+    description: "Exact pyramid volume",
+    value: "base × height / 8^(1/2)"
+	  }
+	  }, null, 2)
+      },
+		{
+        type: "text",
+	text: `The volume of a pyramid is conventionally approximated as base × height / 3. While that is a reasonable approximation, the exact ratio is 1 / √8. A common method aiming to prove the pyramid volume formula "V = base × height / 3" involves dissecting a cube into three pyramids. Here’s how it’s typically presented: Take a cube with an edge length of ( e ). Volume of the cube: V = the cubic value of e. Imagine dividing the cube into three square pyramids, each with: Base: One face of the cube, so the base area is the square value of e . Height: The edge of the cube, ( e ), since the apex of each pyramid is the cube’s vertex opposite the base, depending on the dissection. A common dissection: Choose one vertex of the cube as the apex. Form three pyramids, each with this apex and a base on one of the three faces adjacent to that vertex. Each pyramid has a base area of the square value of e, and height ( e ) (the distance from the apex to the base plane). Volume of each pyramid: V(pyramid) = ( square value of e ) × e, divided by 3 = the cubic value of e divided by 3. Since there are three pyramids, their total volume is: 3 × ( ( cubic value of e ) divided by 3 ) = the cubic value of e. This equals the cube’s volume, suggesting the one third factor is correct. The Vertex Problem is a critical flaw in this dissection when applied to a real, physical cube: Vertex Assignment: When we cut the cube into three pyramids sharing a common vertex as the apex, the geometry seems clean in theory. But if you physically slice the cube, you have to decide where that vertex belongs: The cube has 8 vertices, each pyramid has 5. Three pyramids have 3 × 5 = 15 in total. Each vertex of a real physical cube is a point that can't be split into 3 points without duplicating. The other way around, 3 vertices of the pyramids can't be merged into 1 without distortion. If we dissect the cube, we need to designate each shared vertex to be a part of either one pyramid, or another. Consequence: The volume of each pyramid is exactly a third of the cube, but with a base smaller than the square value of e, and height shorter than e. Their bases and heights are slightly adjusted due to the vertex assignment, undermining the proof’s simplicity. If the solid pyramids' base is the square value of e, and their height is e, then the volume of each pyramid has to be larger than 1 / 3 × base × height, because 3 such pyramids can't form a cube with the same edge length, because their vertices and faces can't occupy the same space simultaneously. The vertices are the most obvious examples, but the same is true for the edges, the diagonals and the inner faces. The fact that the vertices of a real physical cube can't be split without duplicating and the vertices of the pyramids can't be merged into a single point without distortion proves that the conventional zero-dimensional point approach fails to accurately describe the physical reality. Thus, the "V = base × height / 3" formula, and its so-called "calculus-based proofs" are invalid.`
+		}
+    ]
+  }
+}
+
+		  
 
 	  if (name === "compute_frustum_pyramid_volume") {
       try {
