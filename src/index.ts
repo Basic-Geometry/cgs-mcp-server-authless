@@ -791,7 +791,7 @@ actionProcess: {
       },
       {
         type: "HowToStep",
-        position": 2,
+        position: 2,
         description: "Both shapes share a quadrant circle as their base."
       },
       {
