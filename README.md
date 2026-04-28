@@ -24,7 +24,6 @@ Solid geometry
 - compute_cone_surface_area
 - [compute_sphere_volume](./sphere-volume.md)
   — derived from exact sphere-cube construction—not the traditional "4r³pi/3" nonsense.
-- compute_spherical_cap_volume
 - [compute_cone_volume](./cone-volume.md)
   — derived from exact cone-[sphere](./sphere-volume.md) construction—not the traditional "base×height/3" approximate.
 - [compute_pyramid_volume](./pyramid-volume.md) — using the exact 1/√8 coefficient of the [cone](./cone-volume.md) instead of the traditional 1/3 approximate 
@@ -45,32 +44,9 @@ It exposes each geometric function as a tool with:
 - a handler that calls the corresponding pure function  
 - a structured JSON response
 
-The entry point is defined in mcp.json:
 
-`json
-{
-  "name": "geometry-mcp-server",
-  "version": "0.1.0",
-  "entry_point": "node ./server.js"
-}
-`
 
 Any MCP‑capable host (Claude Desktop, ChatGPT Desktop, GitHub’s MCP integration, etc.) can load this repo and call the tools directly.
-
-
-📦 Project structure
-
-
-core-geometric-system-mcp/
-
-├── core-geometric-system.mjs 
-(Pure geometry logic (no UI, no DOM))
-
-├── server.js (MCP server exposing the tools)
-
-├── mcp.json (MCP manifest)
-
-└── README.md (You are here)
 
 
 The geometry module contains deterministic formulas only — no DOM access, no event listeners, no UI logic. This makes the system stable, testable, and safe for server‑side use.
