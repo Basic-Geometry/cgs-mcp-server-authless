@@ -3758,7 +3758,45 @@ The bisection procedure guarantees that each new perimeter is smaller than the p
 Archimedes assumes tangency and externality persist at every finite step — even when the perimeter has become extremely close to the (unknown) circumference.
 <br><br>
 But whether the new polygon remains tangent depends on whether its perimeter is still sufficiently greater than the circumference. 
+<br><br>
+In conventional geometry, a line is called tangent to a circle if it touches the circle at exactly one point.  
 <br>
+However, this definition silently assumes something that is not guaranteed:  
+<br>
+that a line which touches the circle from the outside must touch it only at one point.</p>
+<br>
+<ul style="margin:6px">
+    <li>It works with a hexagon.</li>
+	<li>It still works with an octagon.</li>
+	<li>But as the number of sides increases, each side becomes shorter and shorter, and eventually the straight edges can no longer maintain true tangency. They begin to cut through the circle instead of just touching it.</li>
+</ul>
+<br><br>
+<p>Think of a honeycomb cell. 
+<br><br>
+The bees build a perfect hexagon, fill it, and later dig a circular hole inside it.  
+<br>
+If we treat the filled space as a perfect hexagon and the hole as a perfect inscribed circle, we get a very clear picture of what “circumscribed” and “inscribed” really mean in practice.</p>
+<br>
+<ul style="margin:6px">
+    <li>Bees can make a hexagon around a circle.</li>
+    <li>Bees could make an octagon around a circle.</li>
+	<li>But at some point — around 12 sides — the walls would collapse inward because the straight edges cannot maintain tangency.</li>
+</ul>
+<br>
+<p>This is why Archimedes’ method fails:  
+<br>
+it assumes that whenever a line touches the circle from the outside, it must touch it at exactly one point.  
+<br>
+But this is never proven — it is simply assumed.
+<br>
+And the assumption is false once the polygon has too many sides.  
+<br>
+A straight line can always be drawn, but that does not guarantee single-point contact. 
+<br>
+When the side becomes too short relative to the curvature of the circle, the line will either touch along a small arc or cut into the circle.  
+<br>
+The failure is not the existence of the line — the failure is the loss of single-point tangency.
+<br><br>
 The standard argument claims the polygons remain outside forever at finite n and only collapse into the circle at infinity. But this is circular reasoning. To know if the polygons are still circumscribed at every finite step, you must already know if the perimeter is large enough that no crossing occurs.
 <br>
 Yet finding the circumference is the purpose of the method. The method therefore relies on the very assumption it seeks to prove.
@@ -3781,29 +3819,28 @@ This finite construction avoids the infinite-regress trap entirely.
 <br>
 The flaw in the classical method becomes even clearer when we try to implement it practically.
 <br><br>
-When attempting to draw a circumscribed 24-gon or 48-gon via exact angle bisection (central angle 15° → 7.5°), the tangent lines merge, overlap, or cross the arc — even in high-precision vector software. The individual sides become indistinguishable or intersect the circle before reaching distinct tangent points.
-This is not a precision or rendering error; it is the geometry refusing to produce a valid set of external tangents.</p>
+When attempting to draw a circumscribed 24-gon or 48-gon via exact angle bisection (central angle 15° → 7.5°), the tangent lines merge, overlap, or cross the arc — even in high-precision vector software. The individual sides become indistinguishable or intersect the circle before reaching distinct tangent points. This is not a precision or rendering error; it is the geometry refusing to produce a valid set of external tangents.</p>
 <br>
 <figure class="imgbox">
     <img class="center-fit" src="polygonApproximation.png" alt="When attempting to draw a circumscribed 24-gon via exact angle bisection (central angle 15°), the tangent lines merge, overlap, or cross the arc. The individual sides become indistinguishable or intersect the circle before reaching distinct tangent points.">
 </figure>
 <br>
-<p>A circumscribed n-gon has perimeter:
+<p>A circumscribed n‑gon has perimeter:
 <br><br>
-P(n) = n × tan(180° / n).</p>
+P(n) = n × tan(180° / n) × r
 <br><br>
-<p>Evaluating:</p>
+Evaluating:</p>
 <br>
 <ul style="margin:6px">
-    <li>P(12) = 12 × tan(15°) ~ 6.43r</li>
-    <li>P(24) = 24 × tan(7.5°) ~ 6.319r</li>
+    <li>P(12) = 12 × tan(15°) × r ~ 6.43r</li>
+    <li>P(24) = 24 × tan(7.5°) × r ~ 6.319r</li>
 </ul>
 <br>
-If the true circumference is 6.4r, then:
-<br><br>
+<p>If the true circumference is 6.4r, then:</p>
+<br>
 <ul style="margin:6px">
-    <li>the 12‑gon can still be circumscribed,</li>
-    <li>but the 24‑gon cannot, because a circumscribed polygon must always satisfy P(n) > C.</li>
+    <li>The 12‑gon is a borderline case. Its perimeter is still slightly greater than 6.4r, so it may or may not maintain true tangency.</li>
+    <li>But the 24‑gon — and any polygon with more sides — cannot be circumscribed at all, because a circumscribed polygon must always satisfy P(n) > C. Once P(n) drops below 6.4r, the sides become too short to touch the circle at a single point. They inevitably cut through the arc instead of remaining outside it.</li>
 </ul>
 <br>
 <p>The construction no longer produces a proper set of distinct tangent sides — it fails in a literal, physical sense. The required tangent lines from adjacent vertices converge so sharply that they overlap or intersect the arc before reaching distinct tangent points.  
