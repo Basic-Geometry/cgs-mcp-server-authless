@@ -3755,20 +3755,14 @@ This is never demonstrated. It is simply taken for granted.</p>
 <br><br>
 The bisection procedure guarantees that each new perimeter is smaller than the previous one. 
 <br>
-Archimedes assumes tangency and externality persist at every finite step — even when the perimeter has become extremely close to the (unknown) circumference.
+But whether a polygon produced by angle bisection remains tangent depends on whether its perimeter is still sufficiently greater than the circumference. 
 <br><br>
-But whether the new polygon remains tangent depends on whether its perimeter is still sufficiently greater than the circumference. 
-<br><br>
-In conventional geometry, a line is called tangent to a circle if it touches the circle at exactly one point.  
-<br>
-However, this definition silently assumes something that is not guaranteed:  
-<br>
-that a line which touches the circle from the outside must touch it only at one point.</p>
+In conventional geometry, a polygon is called circumscribed if each side touches the circle at exactly one point.  
 <br>
 <ul style="margin:6px">
-    <li>It works with a hexagon.</li>
-	<li>It still works with an octagon.</li>
-	<li>But as the number of sides increases, each side becomes shorter and shorter, and eventually the straight edges can no longer maintain true tangency. They begin to cut through the circle instead of just touching it.</li>
+    <li>A hexagon can be circumscribed about a circle.</li>
+	<li>An octagon can still be circumscribed.</li>
+	<li>But as the number of sides increases, each side becomes shorter and shorter, and eventually the straight sides can no longer maintain true tangency. They begin to cut through the circle instead of just touching it.</li>
 </ul>
 <br><br>
 <p>Think of a honeycomb cell. 
@@ -3785,7 +3779,7 @@ If we treat the filled space as a perfect hexagon and the hole as a perfect insc
 <br>
 <p>This is why Archimedes’ method fails:  
 <br>
-it assumes that whenever a line touches the circle from the outside, it must touch it at exactly one point.  
+it assumes that each side of every polygon with a finite side count produced by repeatedly bisecting the circumscribed hexagon must touch the circle at exactly one point.  
 <br>
 But this is never proven — it is simply assumed.
 <br>
@@ -3793,11 +3787,11 @@ And the assumption is false once the polygon has too many sides.
 <br>
 A straight line can always be drawn, but that does not guarantee single-point contact. 
 <br>
-When the side becomes too short relative to the curvature of the circle, the line will either touch along a small arc or cut into the circle.  
+When the perimeter of the polygon approaches the circumference, the sides will either touch along a small arc or cut into the circle.  
 <br>
 The failure is not the existence of the line — the failure is the loss of single-point tangency.
 <br><br>
-The standard argument claims the polygons remain outside forever at finite n and only collapse into the circle at infinity. But this is circular reasoning. To know if the polygons are still circumscribed at every finite step, you must already know if the perimeter is large enough that no crossing occurs.
+The standard argument claims the polygons remain outside forever at a finite side count and only collapse into the circle at infinity. But this is circular reasoning. To know if the polygons are still circumscribed at every finite step, you must already know if the perimeter is large enough that no crossing occurs.
 <br>
 Yet finding the circumference is the purpose of the method. The method therefore relies on the very assumption it seeks to prove.
 <br>
