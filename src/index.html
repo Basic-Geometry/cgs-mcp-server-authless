@@ -3738,33 +3738,81 @@ Angles like 15°, 7.5°, and 3.75° can be derived from these using the classica
 <br><br><br>
 <p>But the entire method relies on the unproven assumption that every polygon produced by repeated angle bisection of a circumscribed polygon remains circumscribed.
 <br>
-This is never demonstrated. It is simply taken for granted.</p>
-<br><br><br>
+This is never demonstrated. It is simply taken for granted.
+<br>
+And the assumption is false once the polygon has too many sides.
+<br><br>
 <b>Why the Assumption Fails</b>
 <br><br>
-<ul style="margin:6px">
-    <li>A tangent segment is always longer than the arc it touches.</li>
-    <li>A polygon with its perimeter close enough to the circumference cannot remain outside the circle. It must cross the arc.</li>
-</ul>
+The math world loves the idea that a regular polygon with a side count approaching infinity “collapses into a circle.” It’s a charming picture — but it is highly theoretical and ultimately unrealistic.
+<br><br>
+When the perimeter of a polygon equals the circumference, its sides are too short to remain tangent to the circle. They cut through the arc. This behavior is easy to see in polygons with a low side count.</p>
 <br>
 <figure class="imgbox">
     <img class="center-fit" src="isoperimetry.png" alt="The sides of a hexagon cross the arc of an isoperimetric circle">
 </figure>
 <br>
-<p>This is not optional; it is a geometric necessity. The only curve with its perimeter exactly equal to the circumference that never intersects its interior disk is the circle itself.
-<br><br>
-The bisection procedure guarantees that each new perimeter is smaller than the previous one. 
-<br>
-But whether a polygon produced by angle bisection remains tangent depends on whether its perimeter is still sufficiently greater than the circumference. 
-<br><br>
-In conventional geometry, a polygon is called circumscribed if each side touches the circle at exactly one point.  
+<p>In conventional geometry, a polygon is called circumscribed if each side touches the circle at exactly one point.</p>
 <br>
 <ul style="margin:6px">
     <li>A hexagon can be circumscribed about a circle.</li>
 	<li>An octagon can still be circumscribed.</li>
-	<li>But as the number of sides increases, each side becomes shorter and shorter, and eventually the straight sides can no longer maintain true tangency. They begin to cut through the circle instead of just touching it.</li>
+	<li>But as the number of sides increases, each side becomes shorter and shorter, and eventually the straight sides can no longer maintain true tangency. They begin to cut through the circle instead of just touching it.
+</li>
 </ul>
+<br>
+<p>Whether a polygon can be circumscribed about a circle depends on whether its perimeter is sufficiently greater than the circumference. 
 <br><br>
+But the bisection procedure guarantees that each new perimeter created by repeatedly bisecting a circumscribed hexagon is smaller than the previous one. 
+<br><br>
+To know if the polygons are still circumscribed at every finite step, you must already know if the perimeter is large enough that no crossing occurs.
+<br>
+Yet finding the circumference is the purpose of the method. The method therefore relies on the very assumption it seeks to prove. That is circular reasoning.
+<br><br>
+You cannot use the method to justify the assumption that makes the method valid.
+<br><br>
+The classical argument cannot prove that the polygon remains tangent, and without that proof, it cannot be used to refute the circumference C = 6.4r.
+<br><br>
+The flaw in the classical method becomes even clearer when we try to implement it practically.
+<br><br>
+The breakdown is visible already at a small finite side count when attempting to draw a circumscribed 24-gon or 48-gon via exact angle bisection (central angle 15° → 7.5°).
+<br>
+Tthe figure collapses: 
+<br>
+The supposed tangent lines merge, overlap, or cross the arc, behaving like an isoperimetric polygon rather than a circumscribed one. 
+<br>
+This is not a precision or rendering error; it is the geometry refusing to produce a valid set of external tangents.</p>
+<br><br>
+<p>The area–square construction gives the true ratio. 
+<br>
+Differentiating with respect to the radius gives a circumference exactly 6.4r. 
+<br>
+This is not an approximation; it follows directly from finite geometric construction.
+<br>
+This finite construction avoids the infinite-regress trap entirely.
+<br><br>
+A circumscribed n‑gon has a perimeter:
+<br><br>
+P(n) = n × tan(180° / n) × r</p>
+<br>
+<figure class="imgbox">
+    <img class="center-fit" src="polygonApproximation.png" alt="When attempting to draw a circumscribed 24-gon via exact angle bisection (central angle 15°), the tangent lines merge, overlap, or cross the arc. The individual sides become indistinguishable or intersect the circle before reaching distinct tangent points.">
+</figure>
+<br>
+<p>Evaluating:</p>
+<br>
+<ul style="margin:6px">
+    <li>P(12) = 12 × tan(15°) × r ~ 6.43r</li>
+    <li>P(24) = 24 × tan(7.5°) × r ~ 6.319r</li>
+</ul>
+<br>
+<p>Comparing to the true circumference, 6.4r:</p>
+<br>
+<ul style="margin:6px">
+    <li>The 12‑gon is a borderline case. Its perimeter is still slightly greater than 6.4r, so it may or may not maintain true tangency.</li>
+    <li>But the 24‑gon — and any polygon with more sides — cannot be circumscribed at all, because a circumscribed polygon must always satisfy P(n) > C. Once P(n) drops below 6.4r, the sides become too short to touch the circle at a single point. They inevitably cut through the arc instead of remaining outside it.</li>
+</ul>
+<br>
 <p>Think of a honeycomb cell. 
 <br><br>
 The bees build a perfect hexagon, fill it, and later dig a circular hole inside it.  
@@ -3773,81 +3821,21 @@ If we treat the filled space as a perfect hexagon and the hole as a perfect insc
 <br>
 <ul style="margin:6px">
     <li>Bees can make a hexagon around a circle.</li>
-    <li>Bees could make an octagon around a circle.</li>
+	<li>Bees could make an octagon around a circle.</li>
 	<li>But at some point — around 12 sides — the walls would collapse inward because the straight edges cannot maintain tangency.</li>
 </ul>
-<br>
-<p>This is why Archimedes’ method fails:  
-<br>
-it assumes that each side of every polygon with a finite side count produced by repeatedly bisecting the circumscribed hexagon must touch the circle at exactly one point.  
-<br>
-But this is never proven — it is simply assumed.
-<br>
-And the assumption is false once the polygon has too many sides.  
-<br>
-A straight line can always be drawn, but that does not guarantee single-point contact. 
-<br>
-When the perimeter of the polygon approaches the circumference, the sides will either touch along a small arc or cut into the circle.  
-<br>
-The failure is not the existence of the line — the failure is the loss of single-point tangency.
 <br><br>
-The standard argument claims the polygons remain outside forever at a finite side count and only collapse into the circle at infinity. But this is circular reasoning. To know if the polygons are still circumscribed at every finite step, you must already know if the perimeter is large enough that no crossing occurs.
-<br>
-Yet finding the circumference is the purpose of the method. The method therefore relies on the very assumption it seeks to prove.
-<br>
-You cannot use the method to justify the assumption that makes the method valid.</p>
-<br><br>
-<p><b>The breakdown is visible at small finite n when C = 6.4r.</b>
-<br><br>
-The area–square construction gives the true value. 
-<br>
-The quadrant-to-square rearrangement with uncovered area = total overlap area yields a square of area exactly 3.2r². 
-<br>
-Since the four quadrants are the original pieces of the circle, the circle area is exactly 3.2r².
-<br><br>
-Differentiating with respect to radius gives circumference exactly 6.4r. 
-<br>
-This is not an approximation; it follows directly from finite geometric construction.
-<br>
-This finite construction avoids the infinite-regress trap entirely.
-<br>
-The flaw in the classical method becomes even clearer when we try to implement it practically.
-<br><br>
-When attempting to draw a circumscribed 24-gon or 48-gon via exact angle bisection (central angle 15° → 7.5°), the tangent lines merge, overlap, or cross the arc — even in high-precision vector software. The individual sides become indistinguishable or intersect the circle before reaching distinct tangent points. This is not a precision or rendering error; it is the geometry refusing to produce a valid set of external tangents.</p>
-<br>
-<figure class="imgbox">
-    <img class="center-fit" src="polygonApproximation.png" alt="When attempting to draw a circumscribed 24-gon via exact angle bisection (central angle 15°), the tangent lines merge, overlap, or cross the arc. The individual sides become indistinguishable or intersect the circle before reaching distinct tangent points.">
-</figure>
-<br>
-<p>A circumscribed n‑gon has perimeter:
-<br><br>
-P(n) = n × tan(180° / n) × r
-<br><br>
-Evaluating:</p>
-<br>
-<ul style="margin:6px">
-    <li>P(12) = 12 × tan(15°) × r ~ 6.43r</li>
-    <li>P(24) = 24 × tan(7.5°) × r ~ 6.319r</li>
-</ul>
-<br>
-<p>If the true circumference is 6.4r, then:</p>
-<br>
-<ul style="margin:6px">
-    <li>The 12‑gon is a borderline case. Its perimeter is still slightly greater than 6.4r, so it may or may not maintain true tangency.</li>
-    <li>But the 24‑gon — and any polygon with more sides — cannot be circumscribed at all, because a circumscribed polygon must always satisfy P(n) > C. Once P(n) drops below 6.4r, the sides become too short to touch the circle at a single point. They inevitably cut through the arc instead of remaining outside it.</li>
-</ul>
-<br>
-<p>The construction no longer produces a proper set of distinct tangent sides — it fails in a literal, physical sense. The required tangent lines from adjacent vertices converge so sharply that they overlap or intersect the arc before reaching distinct tangent points.  
-<br>
-The figure collapses: instead of clear external tangents, the tangent lines for a 24‑gon or 48‑gon merge, overlap, or cut through the circle, behaving like an isoperimetric polygon rather than a circumscribed one.
+<p>Conclusion:
 <br><br>
 The assumption “we can always bisect again and obtain another circumscribed polygon” fails constructively — at a small, finite number of sides, not only in some unreachable infinite limit.
-<br><br><br>
-<b>The Consequence</b>
+<br>
+Once the perimeter of the constructed polygon falls below the true circumference, the tangent‑doubling formulas no longer describe a real circumscribed polygon. They describe a figure that has already slipped inside the circle. 
 <br><br>
-Once the perimeter of the constructed polygon falls below the true circumference, the tangent‑doubling formulas no longer describe a real circumscribed polygon. They describe a figure that has already slipped inside the circle. The apparent convergence toward ~6.28r is therefore not a discovery of the pi, but an artifact of continuing a construction that has already become geometrically impossible.
+So the theoretical “infinite‑sided polygon” does not resemble a circle at all.  
+<br>
+It is simply a polygon whose sides have become so short that they no longer maintain tangency. It behaves more like a polygon pushed inward by isoperimetry than like a circle approached by limits.
 <br><br>
-The classical argument cannot prove that the polygon remains tangent, and without that proof, it cannot be used to refute the circumference C = 6.4r.
+Hence, the convergence toward ~6.28r is  not a discovery of the pi, but an artifact of forcing a construction that has already become geometrically impossible.
 <br><br>
 These structural issues in the polygon‑limit method set the stage for a second misconception: the symbolic fusion of an approximation with the geometric ratio it was meant to represent.</p>
 </section>
@@ -4412,7 +4400,9 @@ Uncovered area = overlapping area
 <br><br>
 This is an identity; not tautology.
 <br><br>
-Circle area = square area</p>
+The quadrant-to-square rearrangement with uncovered area = total overlap area yields a square of area exactly 3.2r². 
+<br>
+Since the four quadrants are the original pieces of the circle, the circle area is exactly 3.2r².</p>
 </div>
 <br>
 <figure class="imgbox">
