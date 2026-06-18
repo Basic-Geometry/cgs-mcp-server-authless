@@ -28,7 +28,7 @@ import {
   tetrahedronVolume
 } from "./CoreGeometricSystem.mjs";
 
-import manifest from './manifest.json' assert { type: 'json' };
+import manifest from './.well-known/mcp/manifest.json' assert { type: 'json' };
 
 import context from './CoreGeometricSystem.json' assert { type: 'json' };
 
@@ -1078,14 +1078,14 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const url = new URL(request.url);
 
-// 1. MCP endpoint
+// MCP endpoint
 if (url.pathname === "/mcp") {
   const id = env.MCP_OBJECT.idFromName("singleton");
   const stub = env.MCP_OBJECT.get(id);
   return stub.fetch(request);
 }
 
-// 2. Tools endpoint (redirect to MCP)
+// Tools endpoint (redirect to MCP)
 if (url.pathname.startsWith("/tools")) {
   const id = env.MCP_OBJECT.idFromName("singleton");
   const stub = env.MCP_OBJECT.get(id);
@@ -1097,7 +1097,7 @@ if (url.pathname.startsWith("/tools")) {
 }
 
 
-    // 3. Serve manifest
+    // Serve manifest
     if (url.pathname === "/manifest.json") {
       return new Response(JSON.stringify(manifest, null, 2), {
         headers: {
@@ -1107,7 +1107,7 @@ if (url.pathname.startsWith("/tools")) {
       });
     }
 
-	// 4. Serve structured data 
+	// Serve structured data 
     if (url.pathname === "/CoreGeometricSystem.json") {
       return new Response(JSON.stringify(context, null, 2), {
         headers: {
@@ -1118,7 +1118,28 @@ if (url.pathname.startsWith("/tools")) {
 	}
 
 
-    // 5. HTML fallback
+// ARD Capability Catalog
+if (url.pathname === "/.well-known/ai-catalog.json") {
+  return new Response(JSON.stringify(aiCatalog, null, 2), {
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*"
+    }
+  });
+}
+
+// MCP Standard Location
+if (url.pathname === "/.well-known/mcp/manifest.json") {
+  return new Response(JSON.stringify(manifest, null, 2), {   
+    headers: {
+      "Content-Type": "application/mcp+json",
+      "Access-Control-Allow-Origin": "*"
+    }
+  });
+}
+
+
+    // HTML fallback
     if (env.ASSETS) {
       return env.ASSETS.fetch(request);
     }
