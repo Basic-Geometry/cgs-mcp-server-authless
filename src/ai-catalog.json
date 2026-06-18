@@ -41,7 +41,18 @@
         "Area of a regular polygon",
         "Exact geometry calculations for engineering"
       ],
-      "updatedAt": "2026-06-18T15:14:00Z"
+      "trustManifest": {
+        "identity": "did:web:basic-geometry.pages.dev",
+        "identityType": "did",
+        "attestations": [
+          {
+            "type": "SelfAttested",
+            "uri": "https://basic-geometry.pages.dev/about",
+            "digest": "sha256:..."
+          }
+        ]
+      },
+      "updatedAt": "2026-06-18T16:38:00Z"
     }
   ]
 }
