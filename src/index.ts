@@ -28,12 +28,11 @@ import {
   tetrahedronVolume
 } from "./CoreGeometricSystem.mjs";
 
-import manifest from './.well-known/mcp/manifest.json' assert { type: 'json' };
-
-import aiCatalog from './.well-known/ai-catalog.json' assert { type: 'json' };
+import manifest from './manifest.json' assert { type: 'json' };
 
 import context from './CoreGeometricSystem.json' assert { type: 'json' };
 
+import aiCatalog from './ai-catalog.json' assert { type: 'json' };
 
 // ------------------------------------------------------------
 // MCP SERVER INITIALIZATION
