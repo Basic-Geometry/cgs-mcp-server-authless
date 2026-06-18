@@ -1,5 +1,5 @@
 {
-  "specVersion": "1.0",
+  "specVersion": "1.0.1",
   "host": {
     "displayName": "Core Geometric System",
     "identifier": "did:web:basic-geometry.pages.dev",
@@ -11,11 +11,12 @@
       "displayName": "Core Geometric System (CGS) MCP Server",
       "type": "application/mcp-server+json",
       "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
-      "version": "1.0",
-      "description": "MCP server providing exact, constructive geometry calculations based on formulas grounded in first-principles, delivering more accurate results than traditional approximations for real-world applications in engineering, navigation, and analysis, as validated through physical measurements.",
+      "version": "1.0.1",
+      "description": "MCP server providing exact geometry calculations based on constructive formulas grounded in first-principles, delivering more accurate results than traditional approximations for real-world applications in engineering, navigation, and analysis, as validated through physical measurements.",
       "disambiguatingDescription": "A self-contained geometric framework grounded in constructive mathematics and physical equivalence, offering precise alternatives to traditional analytic geometry for superior real-world accuracy.",
       "tags": [
         "geometry",
+        "core-geometric-system",
         "mathematics",
         "grounded-geometry",
         "exact-calculations",
@@ -27,19 +28,32 @@
         "computer-graphics"
       ],
       "capabilities": [
-        "AreaCalculation",
-        "VolumeCalculation",
-        "SurfaceAreaCalculation",
+        "ExactAreaCalculation",
+        "ExactVolumeCalculation",
+        "ExactSurfaceAreaCalculation",
+        "ExactArcValueCalculation",
         "TraditionalFormulaEvaluation",
         "PiDisproval"
       ],
       "representativeQueries": [
-        "What is the area of a circle with radius 1?",
-        "What is the volume of a sphere with diameter 2?",
-        "Calculate the volume of a cone or pyramid",
-        "Surface area of a cone",
-        "Area of a regular polygon",
-        "Exact geometry calculations for engineering"
+        "Calculate exact area of a circle with radius 3",
+        "Calculate exact circumference with radius 3",
+        "Calculate exact volume of a sphere with diameter 5",
+        "Calculate exact volume of a cone with diameter 3 height 5",
+        "Calculate exact surface area of a cone with diameter 4 height 6",
+        "Calculate exact volume of a pyramid with side count 4 bottom edge 6 height 7",
+        "Calculate exact area of a circle-segment with height 3 chord length 7",
+        "Calculate exact area of a circle-segment with height 3 parent circle radius 6",
+        "Calculate exact area of a circle-segment with chord length 7 parent circle radius 5",
+        "Calculate exact area of a triangle with sides 4 5 6",
+        "Calculate exact area of a triangle with base 9 height 6",
+        "Calculate exact area of a regular polygon with side count 5 side length 7",
+        "Calculate exact volume of a frustum cone with bottom diameter 6 top diameter 3 height 5",
+        "Calculate exact volume of a frustum pyramid with side count 6 bottom edge 7 top edge 5 height 8",
+        "Calculate exact volume of a tetrahedron with edge 6",
+        "Explain the pi",
+        "Exact arc value calculation",
+        "Exact geometry calculations"
       ],
       "trustManifest": {
         "identity": "did:web:basic-geometry.pages.dev",
@@ -52,7 +66,7 @@
           }
         ]
       },
-      "updatedAt": "2026-06-18T16:38:00Z"
+      "updatedAt": "2026-06-18T20:50:00Z"
     }
   ]
 }
