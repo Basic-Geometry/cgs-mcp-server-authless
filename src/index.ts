@@ -40,14 +40,23 @@ import aiCatalog from './ai-catalog.json' assert { type: 'json' };
 
 const server = new McpServer({
   name: "Core_Geometric_System",
-  version: "1.0.8"
+  version: "1.0.9"
 });
+
+// ------------------------------------------------------------
+// DURABLE OBJECT: MCP SERVER
+// ------------------------------------------------------------
+
+export class MyMCP extends McpServer{
+
+  state: DurableObjectState;
+  env: Env;
 
 // ------------------------------------------------------------
 // ELICITATION HANDLERS 
 // ------------------------------------------------------------
-
-this.mcp.configureElicitationHandlers({
+onStart() {
+	this.mcp.configureElicitationHandlers({
   form: async (request, serverId) => {
     return {
       type: "forwardToUser",
@@ -56,15 +65,8 @@ this.mcp.configureElicitationHandlers({
     };
   }
 });
-
-// ------------------------------------------------------------
-// DURABLE OBJECT: MCP SERVER
-// ------------------------------------------------------------
-
-export class MyMCP {
-  state: DurableObjectState;
-  env: Env;
-
+}
+	
   // -----------------------------
   // TOOL DEFINITIONS
   // -----------------------------
