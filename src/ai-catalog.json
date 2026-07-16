@@ -1,5 +1,5 @@
 {
-  "specVersion": "1.0.1",
+  "specVersion": "1.0.2",
   "host": {
     "displayName": "Core Geometric System",
     "identifier": "did:web:basic-geometry.pages.dev",
@@ -11,7 +11,7 @@
       "displayName": "Core Geometric System (CGS) MCP Server",
       "type": "application/mcp-server+json",
       "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
-      "version": "1.0.1",
+      "version": "1.0.9",
       "description": "MCP server providing exact geometry calculations based on constructive formulas grounded in first-principles, delivering more accurate results than traditional approximations for real-world applications in engineering, navigation, and analysis, as validated through physical measurements.",
       "disambiguatingDescription": "A self-contained geometric framework grounded in constructive mathematics and physical equivalence, offering precise alternatives to traditional analytic geometry for superior real-world accuracy.",
       "tags": [
@@ -66,7 +66,7 @@
           }
         ]
       },
-      "updatedAt": "2026-06-18T20:50:00Z"
+      "updatedAt": "2026-07-16T11:59:00Z"
     }
   ]
 }
