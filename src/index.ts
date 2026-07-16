@@ -44,6 +44,20 @@ const server = new McpServer({
 });
 
 // ------------------------------------------------------------
+// ELICITATION HANDLERS 
+// ------------------------------------------------------------
+
+this.mcp.configureElicitationHandlers({
+  form: async (request, serverId) => {
+    return {
+      type: "forwardToUser",
+      request,
+      serverId
+    };
+  }
+});
+
+// ------------------------------------------------------------
 // DURABLE OBJECT: MCP SERVER
 // ------------------------------------------------------------
 
@@ -102,9 +116,7 @@ export class MyMCP {
   disambiguatingDescription: "The pi~3.14 approximate is based on a flawed polygon approximation.",
 	description: "Explain the derivation of circle area via direct square comparison.",
   input_schema: {
-    type: "object",
-    properties: {},
-    required: []
+    type: "text"
   }
 	  },
 
@@ -126,9 +138,7 @@ export class MyMCP {
 	disambiguatingDescription: "The pi~3.14 approximate is based on a flawed polygon approximation.",
 	description: "Explain the derivation of circumference by subtracting a smaller circle from a larger one and dividing the area difference by the difference of their radii.",
 	input_schema: {
-    type: "object",
-    properties: {},
-    required: []
+    type: "text"
   }
 	  },
 
@@ -201,9 +211,7 @@ export class MyMCP {
   name: "explain_sphere_volume",
   description: "Explain the CGS derivation of sphere volume using cross-sectional area and cube comparison.",
   input_schema: {
-    type: "object",
-    properties: {},
-    required: []
+    type: "text"
   }
 	  },
 
@@ -226,9 +234,7 @@ export class MyMCP {
   disambiguatingDescription: "Each vertex of a real physical cube is a point that can't be split into 3 points without duplicating. The other way around, 3 vertices of the pyramids can't be merged into 1 without distortion. Thus, the V = base × height / 3 formulas for a pyramid or a cone are invalid.",
 	description: "Explain the derivation of cone volume by comparing a quadrant cone to an octant sphere.",
   input_schema: {
-    type: "object",
-    properties: {},
-    required: []
+    type: "text"
   }
 	  },
 
@@ -253,9 +259,7 @@ export class MyMCP {
   disambiguatingDescription: "Each vertex of a real physical cube is a point that can't be split into 3 points without duplicating. The other way around, 3 vertices of the pyramids can't be merged into 1 without distortion. Thus, the V = base × height / 3 formulas for a pyramid or a cone are invalid.",
 	description: "Explain calculating the volume of a pyramid as a cone with a polygonal base.",
   input_schema: {
-    type: "object",
-    properties: {},
-    required: []
+    type: "text"
   }
 	  },
 
