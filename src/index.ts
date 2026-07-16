@@ -335,9 +335,12 @@ onStart() {
             }
           ]
         };
-      } catch {
-        return { content: [{ type: "text", text: "Error" }] };
-      }
+      } catch (err) {
+  const message = err instanceof Error ? err.message : "Error";
+  return {
+    content: [{ type: "text", text: `Error: ${message}` }]
+  };
+	  }
     }
 
     if (name === "compute_polygon_area") {
@@ -353,9 +356,12 @@ onStart() {
             }
           ]
         };
-      } catch {
-        return { content: [{ type: "text", text: "Error" }] };
-      }
+      } catch (err) {
+  const message = err instanceof Error ? err.message : "Error";
+  return {
+    content: [{ type: "text", text: `Error: ${message}` }]
+  };
+}
     }
 
     if (name === "compute_circle_area") {
@@ -371,9 +377,12 @@ onStart() {
             }
           ]
         };
-      } catch {
-        return { content: [{ type: "text", text: "Error" }] };
-      }
+      } catch (err) {
+  const message = err instanceof Error ? err.message : "Error";
+  return {
+    content: [{ type: "text", text: `Error: ${message}` }]
+  };
+}
     }
 
 	  if (name === "explain_circle_area") {
@@ -469,9 +478,12 @@ name: "Area of a Circle",
             }
           ]
         };
-      } catch {
-        return { content: [{ type: "text", text: "Error" }] };
-      }
+      } catch (err) {
+  const message = err instanceof Error ? err.message : "Error";
+  return {
+    content: [{ type: "text", text: `Error: ${message}` }]
+  };
+}
 	  }
 
 	if (name === "explain_circumference") {
@@ -583,9 +595,12 @@ name: "Area of a Circle",
             }
           ]
         };
-      } catch {
-        return { content: [{ type: "text", text: "Error" }] };
-      }
+      } catch (err) {
+  const message = err instanceof Error ? err.message : "Error";
+  return {
+    content: [{ type: "text", text: `Error: ${message}` }]
+  };
+}
 	  }
 	  
 	  if (name === "compute_circle_segment_area_from_height_and_chord_length") {
@@ -601,9 +616,12 @@ name: "Area of a Circle",
             }
           ]
         };
-      } catch {
-        return { content: [{ type: "text", text: "Error" }] };
-      }
+      } catch (err) {
+  const message = err instanceof Error ? err.message : "Error";
+  return {
+    content: [{ type: "text", text: `Error: ${message}` }]
+  };
+}
 	  }
 
 	  if (name === "compute_circle_segment_area_from_chord_length_and_parent_circle_radius") {
@@ -619,9 +637,12 @@ name: "Area of a Circle",
             }
           ]
         };
-      } catch {
-        return { content: [{ type: "text", text: "Error" }] };
-      }
+      } catch (err) {
+  const message = err instanceof Error ? err.message : "Error";
+  return {
+    content: [{ type: "text", text: `Error: ${message}` }]
+  };
+}
 	  }
 
 	  if (name === "compute_cone_surface_area") {
@@ -637,9 +658,12 @@ name: "Area of a Circle",
             }
           ]
         };
-      } catch {
-        return { content: [{ type: "text", text: "Error" }] };
-      }
+      } catch (err) {
+  const message = err instanceof Error ? err.message : "Error";
+  return {
+    content: [{ type: "text", text: `Error: ${message}` }]
+  };
+}
 	  }
 
 	  if (name === "compute_sphere_volume") {
@@ -743,9 +767,12 @@ if (name === "explain_sphere_volume") {
             }
           ]
         };
-      } catch {
-        return { content: [{ type: "text", text: "Error" }] };
-      }
+      } catch (err) {
+  const message = err instanceof Error ? err.message : "Error";
+  return {
+    content: [{ type: "text", text: `Error: ${message}` }]
+  };
+}
 	  }
 
 	  if (name === "explain_sphere_volume") {
@@ -854,9 +881,12 @@ actionProcess: {
             }
           ]
         };
-      } catch {
-        return { content: [{ type: "text", text: "Error" }] };
-      }
+      } catch (err) {
+  const message = err instanceof Error ? err.message : "Error";
+  return {
+    content: [{ type: "text", text: `Error: ${message}` }]
+  };
+}
 			}
 
 	  if (name === "explain_pyramid_volume") {
@@ -942,9 +972,12 @@ actionProcess: {
             }
           ]
         };
-      } catch {
-        return { content: [{ type: "text", text: "Error" }] };
-      }
+      } catch (err) {
+  const message = err instanceof Error ? err.message : "Error";
+  return {
+    content: [{ type: "text", text: `Error: ${message}` }]
+  };
+}
 	  }
 
 	  if (name === "compute_frustum_cone_volume") {
@@ -960,9 +993,12 @@ actionProcess: {
             }
           ]
         };
-      } catch {
-        return { content: [{ type: "text", text: "Error" }] };
-      }
+      } catch (err) {
+  const message = err instanceof Error ? err.message : "Error";
+  return {
+    content: [{ type: "text", text: `Error: ${message}` }]
+  };
+}
 	  }
 
 	  if (name === "compute_tetrahedron_volume") {
@@ -978,9 +1014,12 @@ actionProcess: {
             }
           ]
         };
-      } catch {
-        return { content: [{ type: "text", text: "Error" }] };
-      }
+      } catch (err) {
+  const message = err instanceof Error ? err.message : "Error";
+  return {
+    content: [{ type: "text", text: `Error: ${message}` }]
+  };
+}
 	  }
 	  
     return { error: `Unknown tool: ${name}` };
