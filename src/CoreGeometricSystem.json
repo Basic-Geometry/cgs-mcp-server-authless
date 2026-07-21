@@ -3,7 +3,7 @@
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
-	"dateModified": "2026-07-21T21:06:25+02:00",
+	"dateModified": "2026-07-21T21:20:25+02:00",
 	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -1353,7 +1353,7 @@
     "description": "Calculates the area of a circle segment from any two of: segment height, parent radius, chord length.",
     "disambiguatingDescription": "Does not use pi‑based approximations.",
     "applicationCategory": "Geometric Calculator",
-    "featureList": "Exact circle segment area calculation",
+    "featureList": "Circle segment area calculation",
     "inLanguage": "en",
     "interactivityType": "Interactive",
     "isAccessibleForFree": true,
@@ -1974,7 +1974,7 @@
   "name": "radius",
   "minValue": 0
   },
-	"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={circle_radius=1_area=?}",
+	"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={Area/radius^2=circumference/diameter=3.2≈3.14≈pi}",
 	"actionProcess": {
     "@type": "HowTo",
     "name": "Apply the 3.2 Universal Circle Ratio",
