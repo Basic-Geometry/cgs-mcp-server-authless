@@ -3,7 +3,7 @@
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
-	"dateModified": "2026-07-21T21:20:25+02:00",
+	"dateModified": "2026-07-21T21:29:25+02:00",
 	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -2001,19 +2001,21 @@
       {
         "@type": "HowToStep",
         "position": 1,
-        "description": "Get the ratio between the area and the square value of the radius."
-		  "about": {
+        "description": "Get the ratio between the area and the square value of the radius.",
+		  "about": [
+			  {
           "@type": "PropertyValue",
           "name": "radius^2",
           "description": "Squared radius relative to an equiareal square",
           "value": "(side/4)^2 + (side/2)^2"
 		  },
-		  "about": {
+			  {
           "@type": "PropertyValue",
           "name": "Area to square value of radius ratio",
           "description": "Squared radius relative to an equiareal square",
           "value": "3.2"
 		  }
+		  ]
 	  },
       {
         "@type": "HowToStep",
