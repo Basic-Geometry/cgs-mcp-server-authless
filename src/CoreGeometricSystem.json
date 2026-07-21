@@ -1663,7 +1663,7 @@
     {
       "@type": "PropertyValue",
       "description": "Simplified frustum pyramid volume formula",
-      "name": "V",
+      "name": "Volume",
       "value": "frustumHeight × (bottomArea + topArea + bottomArea × topArea) / sqrt(8)"
     },
     {
@@ -1771,7 +1771,7 @@
     {
       "@type": "PropertyValue",
       "description": "Simplified frustum cone volume formula",
-      "name": "V",
+      "name": "Volume",
       "value": "3.2 × frustumHeight × ( bottomRadius^2 + topRadius^2 + bottomRadius × topRadius ) / sqrt(8)"
     },
     {
@@ -2002,20 +2002,13 @@
         "@type": "HowToStep",
         "position": 1,
         "description": "Get the ratio between the area and the square value of the radius.",
-		  "about": [
-			  {
-          "@type": "PropertyValue",
-          "name": "radius^2",
-          "description": "Squared radius relative to an equiareal square",
-          "value": "(side/4)^2 + (side/2)^2"
-		  },
+		  "about": 
 			  {
           "@type": "PropertyValue",
           "name": "Area to square value of radius ratio",
           "description": "Squared radius relative to an equiareal square",
           "value": "3.2"
 		  }
-		  ]
 	  },
       {
         "@type": "HowToStep",
@@ -2179,6 +2172,14 @@
 	"description": "adjacent / opposite",
 	"disambiguatingDescription": "Radians based on circumference=6.4×radius.",
 	"inDefinedTermSet": "Core Geometric System ™"
+	},
+
+	{
+    "@type": "DefinedTerm",
+    "name": "The 3.2 Universal Circle Ratio",
+    "description": "Area/radius^2=circumference/diameter=3.2≈3.14≈pi",
+	"disambiguatingDescription": "The mathematical constant named pi is an artifact of a fundamentally flawed theoretical approximate.",
+	"inDefinedTermSet": "Core Geometric System ™"
 	}
 	]
 	},
@@ -2280,6 +2281,14 @@
 	"name": "cotangent",
 	"description": "adjacent / opposite",
 	"disambiguatingDescription": "Radians based on circumference=6.4×radius.",
+	"inDefinedTermSet": "Core Geometric System ™"
+	},
+
+	{
+    "@type": "DefinedTerm",
+    "name": "The 3.2 Universal Circle Ratio",
+    "description": "Area/radius^2=circumference/diameter=3.2≈3.14≈pi",
+	"disambiguatingDescription": "The mathematical constant named pi is an artifact of a fundamentally flawed theoretical approximate.",
 	"inDefinedTermSet": "Core Geometric System ™"
 	}
 	],
