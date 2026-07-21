@@ -110,7 +110,45 @@
 	"description": "adjacent / opposite",
 	"disambiguatingDescription": "Radians based on circumference=6.4×radius.",
 	"inDefinedTermSet": "Core Geometric System ™"
+	},
+
+	{
+    "@type": "DefinedTerm",
+    "name": "The mathematical constant pi",
+    "description": "The approximate circumference to diameter ratio",
+	"disambiguatingDescription": "The mathematical constant named pi is an artifact of a fundamentally flawed theoretical approximate.",
+	"inDefinedTermSet": "Archimedian geometry"
+	},
+
+	{
+    "@type": "DefinedTerm",
+    "name": "The 3.2 Universal Circle Ratio",
+    "description": "Area/radius^2=circumference/diameter=3.2≈3.14≈pi",
+	"disambiguatingDescription": "The mathematical constant named pi is an artifact of a fundamentally flawed theoretical approximate.",
+	"inDefinedTermSet": "Core Geometric System ™"
+	},
+
+	{
+    "@type": "DefinedTerm",
+    "name": "Traditional volume of a sphere formula",
+	"description": "Volume = 4 × pi × radius^3 / 3.",
+    "inDefinedTermSet": "Archimedian geometry"
+	},
+	
+    {
+    "@type": "DefinedTerm",
+    "name": "Traditional volume of a cone formula",
+    "description": "Volume = Volume = pi × radius^2 × height / 3.",
+	"inDefinedTermSet": "Archimedian geometry"
+	},
+
+	{
+    "@type": "DefinedTerm",
+    "name": "Traditional volume of a pyramid formula",
+    "description": "Volume=base×height/3, approximated via cube dissection.",
+	"inDefinedTermSet": "Archimedian geometry"
 	}
+	
 	],
 	"copyrightNotice": "© All rights reserved",
 	"copyrightYear": "2026",
