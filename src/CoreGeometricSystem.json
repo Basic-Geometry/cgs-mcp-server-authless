@@ -149,16 +149,15 @@
     "description": "Volume=base×height/3, approximated via cube dissection.",
 	"inDefinedTermSet": "Archimedian geometry"
 	}
-	
 	],
-	"copyrightNotice": "© All rights reserved",
-	"copyrightYear": "2026",
 	"copyrightHolder": {
     "@type": "Person",
     "familyName": "Gaál",
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
   },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
 	"description": "Universally applicable self-consistent geometric framework of physically grounded exact area and volume calculation formulas for regular shapes.",
     "disambiguatingDescription": "Comparing the properties of shapes directly to the square and the cube as the primary, physically relevant units of measurement via first principles instead of limits, approximations, or abstract, zero‑dimensional points.",
 	"educationalAlignment": {
@@ -175,7 +174,7 @@
     "isFamilyFriendly": true,
 	"keywords": "Core Geometric System, Exact Geometric Calculations, Analysis, Engineering Design Solutions, Computer Graphics Rendering, Algorithm Optimization, Navigation",
     "license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
-	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
+	"acquireLicensePage": "https://https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
 	"mainEntityOfPage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
 	"schemaVersion": "https://schema.org/docs/releases.html#v30.0",
 	"typicalAgeRange": "5-105",
@@ -227,10 +226,17 @@
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
 	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
 	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
 	"creditText": "Made with the help of Vectorink.io",
 	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
-	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
     "description": "Circle area diagram"
     },
     "description": "The area of a circle is determined by comparing it to an equiareal square using constructive geometric relationships.",
@@ -294,7 +300,7 @@
     "priceCurrency": "USD"
 	},
 	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
-	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
 	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -349,10 +355,17 @@
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
 	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
 	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
 	"creditText": "Made with the help of Vectorink.io",
 	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
-	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
 	"description": "Circumference derivation diagram"
     },
     "description": "The circumference is derived algebraically by subtracting a smaller circle from a larger one and dividing the area difference by the difference of their radii.",
@@ -431,7 +444,7 @@
     "priceCurrency": "USD"
 	},
 	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
-	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
 	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -486,10 +499,18 @@
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
 	},
-	"creditText": "Image made with the help of Microsoft Copilot",
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
 	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
-	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
-    "description": "Sphere and isovolumic cube comparison"
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "description": "Sphere and isovolumic cube comparison figure"
     },
     "description": "The volume of a sphere is defined by comparing it to a cube, since the cube is the base unit of volume.",
     "step": [
@@ -546,7 +567,7 @@
     "priceCurrency": "USD"
 	},
 	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
-	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
 	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -607,11 +628,18 @@
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
 	},
-	"creditText": "Image made with the help of Microsoft Copilot",
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
 	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
 	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
-	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
-    "description": "Cone"
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "description": "Cone figure"
     },
     "description": "The cone’s volume is derived by comparing a vertical quadrant cone to an octant sphere through a shared quadrant cylinder.",
     "step": [
@@ -684,7 +712,7 @@
     "priceCurrency": "USD"
 	},
 	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
-	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
     "accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -744,30 +772,18 @@
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
 	},
-	"creditText": "Image made with the help of Microsoft Copilot",
-	"copyrightNotice": "© All rights reserved",
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
+	"copyrightHolder": {
     "@type": "Person",
     "familyName": "Gaál",
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
-	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
-	},
-	"url": "LICENSE.txt"
-	},
-	"description": "Cone"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+	"description": "Cone figure"
 	},
     "description": "The surface area of a cone consists of a circular base and a lateral surface that forms a circle slice.",
     "step": [
@@ -861,27 +877,20 @@
     "interactivityType": "Interactive",
     "isAccessibleForFree": true,
     "isFamilyFriendly": true,
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
-    "@type": "Person",
-    "familyName": "Gaál",
-	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
 	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": "0",
+    "priceCurrency": "USD"
 	},
-	"url": "LICENSE.txt"
-	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
     "accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -977,27 +986,20 @@
     "interactivityType": "Interactive",
     "isAccessibleForFree": true,
     "isFamilyFriendly": true,
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
-    "@type": "Person",
-    "familyName": "Gaál",
-	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
 	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": "0",
+    "priceCurrency": "USD"
 	},
-	"url": "LICENSE.txt"
-	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
     "accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -1058,7 +1060,18 @@
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
 	},
-      "description": "A regular polygon divided into isosceles triangles"
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Vectorink.io",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "description": "A regular polygon divided into isosceles triangles"
     },
     "description": "A regular polygon can be divided into as many congruent isosceles triangles as it has sides.",
     "step": [
@@ -1090,27 +1103,20 @@
     "interactivityType": "Interactive",
     "isAccessibleForFree": true,
     "isFamilyFriendly": true,
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
-    "@type": "Person",
-    "familyName": "Gaál",
-	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
 	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": "0",
+    "priceCurrency": "USD"
 	},
-	"url": "LICENSE.txt"
-	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
     "accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -1177,7 +1183,18 @@
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
 	},
-      "description": "Circle segment diagram"
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Vectorink.io",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "description": "Circle segment diagram"
     },
     "description": "A circle segment’s area is obtained by subtracting the area of a triangle from the area of a circular slice.",
     "step": [
@@ -1238,27 +1255,20 @@
     "interactivityType": "Interactive",
     "isAccessibleForFree": true,
     "isFamilyFriendly": true,
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
-    "@type": "Person",
-    "familyName": "Gaál",
-	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4",
+    "reviewCount": "1"
 	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": "0",
+    "priceCurrency": "USD"
 	},
-	"url": "LICENSE.txt"
-	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
     "accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -1324,30 +1334,18 @@
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
 	},
-	"creditText": "Image made with the help of Microsoft Copilot",
-	"copyrightNotice": "© All rights reserved",
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
+	"copyrightHolder": {
     "@type": "Person",
     "familyName": "Gaál",
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
-	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
-	},
-	"url": "LICENSE.txt"
-	},
-      "description": "Pyramid volume comparison with cone"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "description": "Pyramid volume comparison with cone"
     },
     "description": "The volume of a pyramid can be calculated using the same coefficient as the volume of a cone with a polygonal base.",
     "step": [
@@ -1365,30 +1363,19 @@
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
 	},
-"creditText": "Image made with the help of Microsoft Copilot",
-	"copyrightNotice": "© All rights reserved",
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
+	"copyrightHolder": {
     "@type": "Person",
     "familyName": "Gaál",
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
-	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
-	},
-	"url": "LICENSE.txt"
-	},
-          "description": "Pyramid volume analogy"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
+	"copyrightNotice": "© All rights reserved",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+        "description": "Pyramid volume analogy"
         }
       }
     ]
@@ -1410,27 +1397,20 @@
     "interactivityType": "Interactive",
     "isAccessibleForFree": true,
     "isFamilyFriendly": true,
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
-    "@type": "Person",
-    "familyName": "Gaál",
-	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
 	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": "0",
+    "priceCurrency": "USD"
 	},
-	"url": "LICENSE.txt"
-	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
     "accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -1466,30 +1446,18 @@
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
 	},
-	"creditText": "Image made with the help of Microsoft Copilot",
-	"copyrightNotice": "© All rights reserved",
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
+	"copyrightHolder": {
     "@type": "Person",
     "familyName": "Gaál",
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
-	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
-	},
-	"url": "LICENSE.txt"
-	},
-      "description": "Frustum pyramid geometry"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "description": "Frustum pyramid figure"
     },
     "description": "Subtracting the missing tip from a theoretical full pyramid gives the volume of a frustum.",
     "step": [
@@ -1557,27 +1525,20 @@
       "interactivityType": "Interactive",
       "isAccessibleForFree": true,
       "isFamilyFriendly": true,
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
-    "@type": "Person",
-    "familyName": "Gaál",
-	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
 	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": "0",
+    "priceCurrency": "USD"
 	},
-	"url": "LICENSE.txt"
-	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
       "accessMode": "mathOnVisual",
       "accessibilityControl": "fullKeyboardControl",
       "accessibilityHazard": "none",
@@ -1614,36 +1575,24 @@
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
 	},
-	"creditText": "Image made with the help of Microsoft Copilot",
-	"copyrightNotice": "© All rights reserved",
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
+	"copyrightHolder": {
     "@type": "Person",
     "familyName": "Gaál",
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
-	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
-	},
-	"url": "LICENSE.txt"
-	},
-      "description": "Frustum cone geometry"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "description": "Frustum cone figure"
     },
     "description": "The volume of a frustum cone is obtained by subtracting the missing tip from a theoretical full cone."
   },
   "result": {
     "@type": "PropertyValue",
-    "name": "V",
+    "name": "Volume",
     "description": "Exact volume of a frustum cone",
     "value": "3.2 × frustumHeight × ( bottomRadius^2 / (1 - topRadius / bottomRadius ) − ( topRadius^2 / (1 - topRadius / bottomRadius) − topRadius^2 ) ) / sqrt(8)"
   },
@@ -1665,27 +1614,20 @@
       "interactivityType": "Interactive",
       "isAccessibleForFree": true,
       "isFamilyFriendly": true,
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
-    "@type": "Person",
-    "familyName": "Gaál",
-	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
 	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": "0",
+    "priceCurrency": "USD"
 	},
-	"url": "LICENSE.txt"
-	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
       "accessMode": "mathOnVisual",
       "accessibilityControl": "fullKeyboardControl",
       "accessibilityHazard": "none",
@@ -1739,30 +1681,31 @@
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
 	},
-	"creditText": "Image made with the help of Microsoft Copilot",
-	"copyrightNotice": "© All rights reserved",
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
+	"copyrightHolder": {
     "@type": "Person",
     "familyName": "Gaál",
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
+	"copyrightNotice": "© All rights reserved",
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
 	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": "0",
+    "priceCurrency": "USD"
 	},
-	"url": "LICENSE.txt"
-	},
-      "description": "Tetrahedron geometry"
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+      "description": "Tetrahedron figure"
     },
     "description": "A tetrahedron is a pyramid with fixed proportions, bounded by four equilateral triangles forming six equal edges.",
     "step": [
@@ -1812,27 +1755,20 @@
     "interactivityType": "Interactive",
     "isAccessibleForFree": true,
     "isFamilyFriendly": true,
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
-    "@type": "Person",
-    "familyName": "Gaál",
-	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
 	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": "0",
+    "priceCurrency": "USD"
 	},
-	"url": "LICENSE.txt"
-	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
     "accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -1928,11 +1864,15 @@
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
 	},
-	"contributor": {
-	"@type": "Thing",
-	"name": "Microsoft Copilot",
-	"description": "Image made with the help of Microsoft Copilot"
-	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
     "url": "sphereSurface.jpeg",
     "description": "Sphere surface illustration"
 	},
