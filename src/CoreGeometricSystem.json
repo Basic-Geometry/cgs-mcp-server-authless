@@ -177,7 +177,7 @@
     "license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
 	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
 	"mainEntityOfPage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
-	"schemaVersion": "https://schema.org/docs/releases.html#v30.0"
+	"schemaVersion": "https://schema.org/docs/releases.html#v30.0",
 	"typicalAgeRange": "5-105",
     "timeRequired": "PT1D",
 	"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
