@@ -3,7 +3,7 @@
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
-	"dateModified": "2026-07-22T00:25:25+02:00",
+	"dateModified": "2026-07-26T00:25:25+02:00",
 	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -174,28 +174,10 @@
     "isAccessibleForFree": true,
     "isFamilyFriendly": true,
 	"keywords": "Core Geometric System, Exact Geometric Calculations, Analysis, Engineering Design Solutions, Computer Graphics Rendering, Algorithm Optimization, Navigation",
-    "license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
-    "@type": "Person",
-    "familyName": "Gaál",
-	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
-	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
-	},
-	"url": "LICENSE.txt"
-	},
+    "license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
 	"mainEntityOfPage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"schemaVersion": "https://schema.org/docs/releases.html#v30.0"
 	"typicalAgeRange": "5-105",
     "timeRequired": "PT1D",
 	"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
@@ -246,28 +228,10 @@
 	"url": "https://x.com/gmac4247"
 	},
 	"copyrightNotice": "© All rights reserved",
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
-    "@type": "Person",
-    "familyName": "Gaál",
-	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
-	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
-	},
-	"url": "LICENSE.txt"
-	},
-      "description": "Circle area diagram"
+	"creditText": "Made with the help of Vectorink.io",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
+    "description": "Circle area diagram"
     },
     "description": "The area of a circle is determined by comparing it to an equiareal square using constructive geometric relationships.",
     "step": [
@@ -311,34 +275,27 @@
     "name": "Circle area calculator",
     "description": "Calculates the area of a circle as 3.2×radius².",
     "disambiguatingDescription": "Does not use pi-based approximations.",
-    "applicationCategory": "Geometric Calculator",
+	"applicationCategory": "Geometric Calculator",
     "featureList": "Exact circle area calculation",
     "inLanguage": "en",
     "interactivityType": "Active",
     "isAccessibleForFree": true,
     "isFamilyFriendly": true,
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
-    "@type": "Person",
-    "familyName": "Gaál",
-	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
 	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": "0",
+    "priceCurrency": "USD"
 	},
-	"url": "LICENSE.txt"
-	},
-    "accessMode": "mathOnVisual",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
+	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
     "accessibilitySummary": "Enter numbers and read result",
@@ -393,28 +350,10 @@
 	"url": "https://x.com/gmac4247"
 	},
 	"copyrightNotice": "© All rights reserved",
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
-    "@type": "Person",
-    "familyName": "Gaál",
-	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
-	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
-	},
-	"url": "LICENSE.txt"
-	},
-      "description": "Circumference derivation diagram"
+	"creditText": "Made with the help of Vectorink.io",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
+	"description": "Circumference derivation diagram"
     },
     "description": "The circumference is derived algebraically by subtracting a smaller circle from a larger one and dividing the area difference by the difference of their radii.",
     "step": [
@@ -479,28 +418,21 @@
     "interactivityType": "Interactive",
     "isAccessibleForFree": true,
     "isFamilyFriendly": true,
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
-    "@type": "Person",
-    "familyName": "Gaál",
-	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
+    "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
 	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": "0",
+    "priceCurrency": "USD"
 	},
-	"url": "LICENSE.txt"
-	},
-    "accessMode": "mathOnVisual",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
+	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
     "accessibilitySummary": "Enter numbers and read results",
@@ -555,27 +487,8 @@
 	"url": "https://x.com/gmac4247"
 	},
 	"creditText": "Image made with the help of Microsoft Copilot",
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
-    "@type": "Person",
-    "familyName": "Gaál",
-	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
-	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
-	},
-	"url": "LICENSE.txt"
-	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
     "description": "Sphere and isovolumic cube comparison"
     },
     "description": "The volume of a sphere is defined by comparing it to a cube, since the cube is the base unit of volume.",
@@ -620,27 +533,20 @@
     "interactivityType": "Interactive",
     "isAccessibleForFree": true,
     "isFamilyFriendly": true,
-    "license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
-    "@type": "Person",
-    "familyName": "Gaál",
-	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
+    "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
 	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": "0",
+    "priceCurrency": "USD"
 	},
-	"url": "LICENSE.txt"
-	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
 	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -703,28 +609,9 @@
 	},
 	"creditText": "Image made with the help of Microsoft Copilot",
 	"copyrightNotice": "© All rights reserved",
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
-    "@type": "Person",
-    "familyName": "Gaál",
-	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
-	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
-	},
-	"url": "LICENSE.txt"
-	},
-      "description": "Cone"
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
+    "description": "Cone"
     },
     "description": "The cone’s volume is derived by comparing a vertical quadrant cone to an octant sphere through a shared quadrant cylinder.",
     "step": [
@@ -784,27 +671,20 @@
     "interactivityType": "Interactive",
     "isAccessibleForFree": true,
     "isFamilyFriendly": true,
-	"license": {
-	"@type": "DigitalDocument",
-	"name": "Shared Software License Agreement",
-	"author": {
-    "@type": "Person",
-    "familyName": "Gaál",
-	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1"
 	},
-	"description": "® All rights reserved.",
-	"hasDigitalDocumentPermission": 
-    {
-      "@type": "DigitalDocumentPermission",
-      "permissionType": "https://schema.org/ReadPermission",
-      "grantee": {
-        "@type": "Audience",
-        "audienceType": "public"
-     }
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": "0",
+    "priceCurrency": "USD"
 	},
-	"url": "LICENSE.txt"
-	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://basic-geometry.github.io/privacy-policy",
     "accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
