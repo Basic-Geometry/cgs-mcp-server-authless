@@ -1691,21 +1691,9 @@
 	"copyrightYear": "2026",
 	"creditText": "Made with the help of Microsoft Copilot",
 	"copyrightNotice": "© All rights reserved",
-	"aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "1"
-	},
-	"offers": {
-    "@type": "Offer",
-	"name": "Personal, non-commercial use",
-	"description": "Non-exclusive, non-transferable", 
-	"price": "0",
-    "priceCurrency": "USD"
-	},
 	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
 	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
-      "description": "Tetrahedron figure"
+    "description": "Tetrahedron figure"
     },
     "description": "A tetrahedron is a pyramid with fixed proportions, bounded by four equilateral triangles forming six equal edges.",
     "step": [
@@ -1873,7 +1861,9 @@
 	"copyrightNotice": "© All rights reserved",
 	"copyrightYear": "2026",
 	"creditText": "Made with the help of Microsoft Copilot",
-    "url": "sphereSurface.jpeg",
+    "license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+	"url": "sphereSurface.jpeg",
     "description": "Sphere surface illustration"
 	},
 	"disambiguatingDescription": "The conventional formula for the surface area of a sphere was allegedly developed from the conventional volume formula.",
