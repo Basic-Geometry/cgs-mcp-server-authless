@@ -3806,8 +3806,6 @@ Yet finding the circumference is the purpose of the method. The method therefore
 <br><br>
 You cannot use the method to justify the assumption that makes the method valid.
 <br><br>
-The classical argument cannot prove that the polygons remain tangent indefinitely, and without that proof, it cannot be used to refute the circumference C = 6.4r.
-<br><br>
 The flaw in the classical method becomes even clearer when we try to implement it practically.
 <br><br>
 The breakdown is visible already at a small finite side count when attempting to draw a circumscribed 24-gon or 48-gon via exact angle bisection (central angle 15° → 7.5°).
@@ -3821,6 +3819,46 @@ The figure collapses:</p>
 <p>The supposed tangent lines merge, overlap, or cross the arc, behaving like an isoperimetric polygon rather than a circumscribed one. 
 <br>
 This is not a precision error, nor only a rendering limitation. It is the geometry refusing to produce a valid set of external tangents.
+<br><br>
+According to traditional geometry, 
+<br>
+<ul style="margin:6px" itemprop="disambiguatingDescription">
+    <li>"a point is dimensionless, meaning it has no width, nor height — or width = 0, height = 0"</li> 
+	<li>"a line is a set of points, therefore, it has no thickness"</li>
+</ul>
+<br>
+Note that in these terms, even if the dimensions of the point are defined as 0, the thickness of the line is logically one point. 
+<br><br><br>
+Focus on the tangent point and the 2 adjacent points on the tangent line. They form a 3 point long section. 
+<br><br>
+Under classical rules, if the tangent point is P, the two adjacent points P(-1) and P(+1) are at distance 0 from P because points have no width. 
+<br>
+But if they have no width, P(-1), P, and P(+1) occupy the exact same spatial location! 
+<br>
+When we assign a minimal operational width to a point — calling it 1 point wide or 1 building block —, we force the system to confront physical spatial reality. 
+<br>
+If they occupy distinct spatial locations, they must have a non-zero distance between them. The moment that distance exists, the curvature of the arc between those points matters. 
+<br><br>
+When traditional geometry says the adjacent points must not coincide with the arc, it's implicitly talking about vertical separation — and that’s already a kind of thickness. 
+<br><br>
+The height of a circular arc over a chord is called the sagitta. 
+<br>
+One point of vertical separation along a 3 point long section required a sagitta to chord ratio of 2 points to 3 points = 2:3. 
+<br>
+That is impossible for such a small angle. 
+<br>
+In any large circle, the central angle subtended by 3 adjacent spatial points is effectively an infinitesimally small fraction of a degree. 
+<br>
+At an angle near 0°, the actual sagitta produced by the circle's curvature is near zero — billions of times smaller than the 1-unit spatial threshold. 
+<br>
+In contrast, an angle of 2 × arctan(4 ÷ 3) ≈ 106° is huge — it’s an obtuse triangle, wider than a right angle! That is the steep, drastic curve required if space has a minimal resolution threshold and the adjacent points must clear the arc by 1 unit of vertical separation.
+<br>
+Once the sagitta drops below the fundamental grid threshold required to separate the arc from the straight line, single-point tangency ceases to exist. The arc and the tangent line physically and logically coincide across that entire interval. 
+<br><br>
+Classical tangency is not physically or logically realizable under its own axioms. 
+<br><br>
+Without that, the classical argument that the polygons remain tangent indefinitely fails. 
+It cannot be used to refute the circumference C = 6.4r.
 <br><br>
 The area–square construction gives the true ratio. 
 <br>
@@ -3837,8 +3875,8 @@ P(n) = n × tan(180° / n) × r</p>
 <p>Evaluating:</p>
 <br>
 <ul style="margin:6px">
-    <li>P(12) = 12 × tan(15°) × r ~ 6.43r</li>
-    <li>P(24) = 24 × tan(7.5°) × r ~ 6.319r</li>
+    <li>P(12) = 12 × tan(15°) × r ≈ 6.43r</li>
+    <li>P(24) = 24 × tan(7.5°) × r ≈ 6.319r</li>
 </ul>
 <br>
 <p>Comparing to the true circumference, 6.4r:</p>
