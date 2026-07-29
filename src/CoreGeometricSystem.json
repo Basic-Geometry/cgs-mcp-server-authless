@@ -12,7 +12,7 @@
       "@type": "EducationalAudience",
       "educationalRole": "For teachers and learners"
     },
-	"assesses": [
+	"teaches": [
 	{
     "@type": "DefinedTerm",
     "name": "Exact area of a circle",
@@ -115,39 +115,10 @@
 
 	{
     "@type": "DefinedTerm",
-    "name": "The mathematical constant pi",
-    "description": "The approximate circumference to diameter ratio",
-	"disambiguatingDescription": "The mathematical constant named pi is an artifact of a fundamentally flawed theoretical approximate.",
-	"inDefinedTermSet": "Archimedian geometry"
-	},
-
-	{
-    "@type": "DefinedTerm",
-    "name": "The 3.2 Universal Circle Ratio",
+    "name": "The True Universal Circle Constant",
     "description": "Area/radius^2=circumference/diameter=3.2≈3.14≈pi",
 	"disambiguatingDescription": "The mathematical constant named pi is an artifact of a fundamentally flawed theoretical approximate.",
 	"inDefinedTermSet": "Core Geometric System ™"
-	},
-
-	{
-    "@type": "DefinedTerm",
-    "name": "Traditional volume of a sphere formula",
-	"description": "Volume = 4 × pi × radius^3 / 3.",
-    "inDefinedTermSet": "Archimedian geometry"
-	},
-	
-    {
-    "@type": "DefinedTerm",
-    "name": "Traditional volume of a cone formula",
-    "description": "Volume = Volume = pi × radius^2 × height / 3.",
-	"inDefinedTermSet": "Archimedian geometry"
-	},
-
-	{
-    "@type": "DefinedTerm",
-    "name": "Traditional volume of a pyramid formula",
-    "description": "Volume=base×height/3, approximated via cube dissection.",
-	"inDefinedTermSet": "Archimedian geometry"
 	}
 	],
 	"copyrightHolder": {
@@ -1765,79 +1736,7 @@
     "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#tetrahedron_volume_calculator",
     "usageInfo": "Enter the length of the edge."
 	}
-	},
-	
-	{
-	"@type": "SolveMathAction",
-  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#solution",
-  "name": "The true Ratio: 3.2",
-	"description": "Since the true ratio is exactly 3.2, and that is a rational number, then we can — and should — write it as it is. Let the pi remain in the history books. Geometry deserves better.",
-"disambiguatingDescription": "That makes the arc value of 360° = 6.4radian, and trigonometric functions that rely on arc value have to be aligned to 3.2 respectively.",
-  "eduQuestionType": "Circle area and circumference calculation",
-  "object":
-  {  
-  "@type": "QuantitativeValue", 
-  "name": "radius",
-  "minValue": 0
-  },
-	"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={Area/radius^2=circumference/diameter=3.2≈3.14≈pi}",
-	"actionProcess": {
-    "@type": "HowTo",
-    "name": "Apply the 3.2 Universal Circle Ratio",
-	"tool": 
-    {
-    "@type": "HowToTool",
-    "name": "Exact circle area formula",
-    "item":
-    {
-    "@type": "PropertyValue",
-    "name": "Area of a circle",
-	"description": "Exact formula derived from direct circle to square comparison",
-    "disambiguatingDescription": "Not the abstract pi~3.14 approximation",
-    "value": "3.2 × radius^2"
-    }
-    },
-    "totalTime": "PT30M",
-    "estimatedCost": {
-      "@type": "MonetaryAmount",
-      "currency": "USD",
-      "value": "0"
-    },
-	"step": [
-      {
-        "@type": "HowToStep",
-        "position": 1,
-        "description": "Get the ratio between the area and the square value of the radius.",
-		  "about": 
-			  {
-          "@type": "PropertyValue",
-          "name": "Area to square value of radius ratio",
-          "description": "Squared radius relative to an equiareal square",
-          "value": "3.2"
-		  }
-	  },
-      {
-        "@type": "HowToStep",
-        "position": 2,
-        "description": "The circumference to diameter ratio equals the area to radius^2 ratio.",
-        "about": {
-          "@type": "PropertyValue",
-          "name": "Circumference to diameter ratio",
-          "description": "Same as the area to radius^2 ratio.",
-          "disambiguatingDescription": "Conventionally approximated as 3.14... and denoted with the pi symbol.",
-		"value": "3.2≈3.14≈pi"
-        }
-      }
-    ]
-	},
-    "result": {
-      "@type": "PropertyValue",
-      "name": "The Exact Universal Circle Ratio",
-      "description": "Area/radius^2=circumference/diameter",
-      "disambiguatingDescription": "No pi approximation",
-      "value": "3.2"
-    }
-}
+	}
 	],
 	"offers": {
 	"@type": "Offer",
@@ -1873,6 +1772,38 @@
 	"price": "3200000000.00",
 	"availability": "https://schema.org/InStock"
 	},
+	"assesses": [
+	{
+    "@type": "DefinedTerm",
+    "name": "The mathematical constant pi",
+    "description": "The approximate circumference to diameter ratio",
+	"disambiguatingDescription": "The convergence toward ~6.28r is not a discovery of the pi, not even a well-defined limit, but an artifact of forcing a construction that has already become geometrically impossible. The pi is not necessarily the ratio itself — it is the notation of that ratio.",
+	"inDefinedTermSet": "Archimedian geometry"
+	},
+	{
+    "@type": "DefinedTerm",
+    "name": "Traditional volume of a sphere formula",
+	"description": "The V = 4 / 3 × pi × radius³ formula is widely used for the volume of a sphere. It was approximated by comparing a hemisphere to the difference between the approximate volume a cone and a circumscribed cylinder.",
+    "disambiguatingDescription": "That is a very exaggerated, distortion-based comparison that discards the difference between the straight slant height of a cone and the curvature of a sphere, resulting in a very rough underestimate.",
+	"inDefinedTermSet": "Archimedian geometry"
+	},
+	
+    {
+    "@type": "DefinedTerm",
+    "name": "Traditional volume of a cone formula",
+    "description": "The volume of a cone is conventionally approximated as base × height / 3.",
+	"disambiguatingDescription": "While that is a reasonable rounding, the exact ratio is 1 / √8.",
+	"inDefinedTermSet": "Archimedian geometry"
+	},
+
+	{
+    "@type": "DefinedTerm",
+    "name": "Traditional volume of a pyramid formula",
+    "description": "The volume of a pyramid is conventionally approximated as base × height / 3.",
+	"disambiguatingDescription": "While that is a reasonable rounding, the exact ratio is 1 / √8.",
+	"inDefinedTermSet": "Archimedian geometry"
+	}
+	],
 	"subjectOf": {
 	"@type": "DefinedTermSet",
 	"name": "Core Geometric System ™",
