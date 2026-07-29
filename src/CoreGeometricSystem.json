@@ -3,7 +3,7 @@
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
-	"dateModified": "2026-07-26T18:51:50+02:00",
+	"dateModified": "2026-07-26T19:06:50+02:00",
 	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -1794,8 +1794,8 @@
         "@type": "HowToStep",
         "position": 1,
         "description": "Calculate the area not covered by the quadrant circles.",
-		  "about": 
-			  {
+		"about": 
+		{
           "@type": "PropertyValue",
           "name": "Quarter of the uncovered area in the middle",
           "description": "Quarter of the middle of the square, uncovered by the quadrant circles",
@@ -1806,12 +1806,12 @@
         "@type": "HowToStep",
         "position": 2,
         "description": "Calculate the area where the quadrant circles overlap.",
-        "about": {
+        "about": 
+		  {
           "@type": "PropertyValue",
           "name": "The area of an overlapping section",
           "description": "Quarter of the total overlapping area.",
-          "disambiguatingDescription": "Conventionally approximated as 3.14... and denoted with the pi symbol.",
-		"value": "2 × ( 3.2 × r^2 × ( ( 90deg. - Atan( 1 / 2 ) ) / 360deg. ) - ( ( sqrt(3.2) / 4 ) × ( sqrt(3.2) / 2 ) / 2 ) )"
+          "value": "2 × ( 3.2 × r^2 × ( ( 90deg. - Atan( 1 / 2 ) ) / 360deg. ) - ( ( sqrt(3.2) / 4 ) × ( sqrt(3.2) / 2 ) / 2 ) )"
         }
       },
 		{
@@ -1819,7 +1819,7 @@
         "position": 3,
         "description": "Dividing both sides by 3.2r².",
       },
-	      {
+	    {
         "@type": "HowToStep",
         "position": 4,
         "description": "Simplifying further by adding 1/8 to both sides.",
@@ -1834,13 +1834,13 @@
         "position": 6,
         "description": "Simplifying further.",
       },
-	      {
+	    {
         "@type": "HowToTip",
         "position": 7,
         "description": "Uncovered area = overlapping area. This is an identity; not tautology. Since the four quadrants are the original pieces of the circle, the circle area is exactly 3.2r²"
         }
       }
-		}
+	}
 	],
 	"offers": {
 	"@type": "Offer",
