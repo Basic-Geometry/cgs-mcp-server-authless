@@ -3,7 +3,7 @@
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
-	"dateModified": "2026-07-29T19:16:50+02:00",
+	"dateModified": "2026-07-29T19:21:50+02:00",
 	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -1815,27 +1815,27 @@
 		{
         "@type": "HowToStep",
         "position": 3,
-        "description": "Dividing both sides by 3.2r².",
+        "description": "Dividing both sides by 3.2r²."
       },
 	    {
         "@type": "HowToStep",
         "position": 4,
-        "description": "Simplifying further by adding 1/8 to both sides.",
+        "description": "Simplifying further by adding 1/8 to both sides."
       },
 		{
         "@type": "HowToStep",
         "position": 5,
-        "description": "Substituting 90° / 360° for 1 / 4.",
+        "description": "Substituting 90° / 360° for 1 / 4."
       },
 		{
         "@type": "HowToStep",
         "position": 6,
-        "description": "Simplifying further.",
+        "description": "Simplifying further."
       },
 	    {
         "@type": "HowToTip",
         "position": 7,
-        "description": "Uncovered area = overlapping area. This is an identity; not tautology. Since the four quadrants are the original pieces of the circle, the circle area is exactly 3.2r²"
+        "description": "Uncovered area = overlapping area. This is an identity; not tautology. Since the four quadrants are the original pieces of the circle, the circle area is exactly 3.2r²."
         }
       }
 	}
