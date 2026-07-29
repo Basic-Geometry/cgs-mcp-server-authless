@@ -3,7 +3,7 @@
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
-	"dateModified": "2026-07-29T19:27:50+02:00",
+	"dateModified": "2026-07-29T21:38:50+02:00",
 	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -1831,15 +1831,15 @@
         "@type": "HowToStep",
         "position": 6,
         "description": "Simplifying further."
-      }
-	],
-	    "item": 
+		"item": 
 		{
         "@type": "HowToTip",
         "position": 7,
         "description": "Uncovered area = overlapping area. This is an identity; not tautology. Since the four quadrants are the original pieces of the circle, the circle area is exactly 3.2r²."
         }
       }
+	]
+	}
 	}
 	],
 	"offers": {
@@ -1930,6 +1930,7 @@
 	],
 	"inDefinedTermSet": "Archimedian geometry"
 	},
+		
 	{
     "@type": "DefinedTerm",
     "name": "Traditional volume of a sphere formula",
