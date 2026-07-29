@@ -3,7 +3,7 @@
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
-	"dateModified": "2026-07-26T19:06:50+02:00",
+	"dateModified": "2026-07-29T19:16:50+02:00",
 	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -1326,7 +1326,7 @@
         "description": "A pyramid behaves like a cone whose base is a regular polygon. The same geometric coefficient applies.",
         "image": {
           "@type": "ImageObject",
-	"caption": "Tetrahedral frame on a circular base",
+		"caption": "Tetrahedral frame on a circular base",
           "url": "tetraFrame.jpeg",
 	"creator": {
     "@type": "Person",
@@ -1343,7 +1343,6 @@
 	"copyrightNotice": "© All rights reserved",
 	"copyrightYear": "2026",
 	"creditText": "Made with the help of Microsoft Copilot",
-	"copyrightNotice": "© All rights reserved",
 	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
 	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
         "description": "Pyramid volume analogy"
@@ -1661,7 +1660,6 @@
 	"copyrightNotice": "© All rights reserved",
 	"copyrightYear": "2026",
 	"creditText": "Made with the help of Microsoft Copilot",
-	"copyrightNotice": "© All rights reserved",
 	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
 	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
     "description": "Tetrahedron figure"
