@@ -1830,7 +1830,7 @@
 		{
         "@type": "HowToStep",
         "position": 6,
-        "description": "Simplifying further."
+        "description": "Simplifying further.",
 		"item": 
 		{
         "@type": "HowToTip",
