@@ -3665,6 +3665,7 @@ The verse of 1. Kings 7:23 in the Holy Bible suggests that some estimated it as 
 Historical records suggest that ancient Babylonians initially calculated it as 3, later they used 3.125; Egyptians estimated it as ( 16 / 9 )² ~ 3.16.</p>
 <br><br><br>
 <section id="Archimedes">
+<div id="Archimedes-method">
 <h4>Archimedes and the Illusion of Limits</h4>
 <br><br>
 <p>Archimedes’ method marked a turning point: instead of calculating the properties of the circle directly, he introduced an analytic process that relied on polygonal limits.
@@ -3712,6 +3713,7 @@ is a geometric tautology arising from symmetry.
 <br><br>
 Angles like 15°, 7.5°, and 3.75° can be derived from these using the classical half‑angle formula:</p>
 <br>
+<div id="half-angle_formula">
 <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
     <mi>sin</mi>
@@ -3742,26 +3744,110 @@ Angles like 15°, 7.5°, and 3.75° can be derived from these using the classica
 	</msqrt>
   </mrow>
 </math>
+</div>
 <br><br><br>
-<p>With sine and cosine calculable,
+<p>With sine and cosine calculable,</p>
 <br><br>
-- a circumscribed n‑gon has a perimeter:
+<div id="circumscribed_polygon_perimeter">
+<span>the perimeter of a circumscribed n‑gon </span>=
 <br><br>
-P(n) = n × tan(180° / n) × r
+<math>
+  <mrow>
+    <mi>n</mi>
+    <mo>&#x00D7;</mo>
+    <mi>tan</mi>
+    <mo>(</mo>
+      <mfrac>
+        <mn>180</mn>
+        <mi>n</mi>
+      </mfrac>
+      <mo>&#x00B0;</mo>
+    <mo>)</mo>
+    <mo>&#x00D7;</mo>
+    <mi>diameter</mi>
+  </mrow>
+</math>
+</div>
 <br><br><br>
-- an inscribed n‑gon has a perimeter:
+<div id="inscribed_polygon_perimeter">
+<span>the perimeter of an inscribed n‑gon </span>=
 <br><br>
-P(n) = n × 2 × sin(180° / n) × r
+<math>
+  <mrow>
+    <mi>n</mi>
+    <mo>&#x00D7;</mo>
+    <mi>sin</mi>
+    <mo>(</mo>
+      <mfrac>
+        <mn>180</mn>
+        <mi>n</mi>
+      </mfrac>
+      <mo>&#x00B0;</mo>
+    <mo>)</mo>
+    <mo>&#x00D7;</mo>
+    <mi>diameter</mi>
+  </mrow>
+</math>
+</div>
 <br><br><br>
-Both approach 6.28...r as n approaches infinity.
-<br><br><br>
-But the entire method relies on unproven assumptions, that are never demonstrated; they're simply taken for granted.
+<div id="pi-approximation">
+<span>Both approach 3.14...d as n approaches infinity.</span>
+<br><br>
+<span>The approximate circumference to diameter ratio, based on the polygonal limits</span>:
+<br><br>
 <br>
-And those assumptions are false once the polygon has too many sides.
+<math>
+  <mrow>
+    <mi>n</mi>
+    <mo>&#x00D7;</mo>
+    <mi>sin</mi>
+    <mo>(</mo>
+      <mfrac>
+        <mn>180</mn>
+        <mi>n</mi>
+      </mfrac>
+      <mo>&#x00B0;</mo>
+    <mo>)</mo>
+    <mo>&lt;</mo>
+    <mi>pi</mi>
+    <mo>&lt;</mo>
+    <mi>n</mi>
+    <mo>&#x00D7;</mo>
+	<mfrac>
+	<mrow>
+    <mi>sin</mi>
+    <mo>(</mo>
+      <mfrac>
+        <mn>180</mn>
+        <mi>n</mi>
+      </mfrac>
+      <mo>&#x00B0;</mo>
+    <mo>)</mo>
+	</mrow>
+    <mrow>
+      <mi>cos</mi>
+      <mo>(</mo>
+        <mfrac>
+          <mn>180</mn>
+          <mi>n</mi>
+        </mfrac>
+        <mo>&#x00B0;</mo>
+      <mo>)</mo>
+	</mrow>
+    </mfrac>
+  </mrow>
+</math>
+</div>
 <br><br><br>
-<b>Why the Assumptions Fail</b>
+<p>But the entire method relies on unproven assumptions, that are never demonstrated; they're simply taken for granted.
+<br>
+And those assumptions are false once the polygon has too many sides.</p>
+</div>
+<br><br><br>
+<div id="Archimedes-method-refute">
+<h3>Why the Assumptions Fail</h3>
 <br><br>
-The math world loves the idea that a regular polygon with a side count approaching infinity “collapses into a circle.” It’s a charming picture — but it is highly theoretical and ultimately unrealistic for two main reasons:</p>
+<p>The math world loves the idea that a regular polygon with a side count approaching infinity “collapses into a circle.” It’s a charming picture — but it is highly theoretical and ultimately unrealistic for two main reasons:</p>
 <br>
 <ul style="margin:6px">
     <li>A polygon with an infinite side count is still oblong; not round. That distinguishes the polygon from the circle. Treating the two as interchangeable is a category error disguised as an approximate.</li>
@@ -3848,11 +3934,11 @@ Once the sagitta drops below the fundamental grid threshold required to separate
 Classical tangency is not physically or logically realizable under its own axioms. 
 <br><br>
 Without that, the classical argument that the polygons remain tangent indefinitely fails. 
-It cannot be used to refute the circumference C = 6.4r.
+It cannot be used to refute the circumference = 3.2diameter.
 <br><br>
 <strong>The area–square construction gives the true ratio. 
 <br>
-Differentiating with respect to the radius gives a circumference exactly 6.4r. 
+Differentiating with respect to the radius gives a circumference exactly 3.2diameter. 
 <br>
 This is not an approximation; it follows directly from finite geometric construction.</strong>
 <br>
@@ -3860,23 +3946,23 @@ This finite construction avoids the infinite-regress trap entirely.
 <br><br>
 A circumscribed n‑gon has a perimeter:
 <br><br>
-P(n) = n × tan(180° / n) × r</p>
+P(n) = n × tan(180° / n) × d</p>
 <br>
 <p>Evaluating:</p>
 <br>
 <ul style="margin:6px">
-    <li>P(12) = 12 × tan(15°) × r ≈ 6.43r</li>
-    <li>P(24) = 24 × tan(7.5°) × r ≈ 6.319r</li>
+    <li>P(12) = 12 × tan(15°) × r ≈ 3.2154d</li>
+    <li>P(24) = 24 × tan(7.5°) × r ≈ 3.16d</li>
 </ul>
 <br>
-<p>Comparing to the true circumference, 6.4r:</p>
+<p>Comparing to the true circumference, 3.2d:</p>
 <br>
 <ul style="margin:6px">
     <li>A hexagon can be circumscribed about a circle.</li>
 	<li>An octagon can still be circumscribed.</li>
 	<li>But as the number of sides increases, each side becomes shorter and shorter, and eventually the straight sides can no longer maintain true tangency. They begin to cut through the circle instead of just touching it.</li>
-	<li>The 12‑gon is a borderline case. Its perimeter is still slightly greater than 6.4r, so it may or may not maintain true tangency.</li>
-    <li>But the 24‑gon — and any polygon with more sides — cannot be circumscribed at all, because a circumscribed polygon must always satisfy P(n) > C. Once P(n) drops below 6.4r, the sides become too short to touch the circle at a single point. They inevitably cut through the arc instead of remaining outside it.</li>
+	<li>The 12‑gon is a borderline case. Its perimeter is still slightly greater than 3.2d, so it may or may not maintain true tangency.</li>
+    <li>But the 24‑gon — and any polygon with more sides — cannot be circumscribed at all, because a circumscribed polygon must always satisfy P(n) > C. Once P(n) drops below 3.2d, the sides become too short to touch the circle at a single point. They inevitably cut through the arc instead of remaining outside it.</li>
 </ul>
 <br>
 <p>Think of a honeycomb cell. 
@@ -3903,9 +3989,10 @@ It is simply a polygon whose sides have become so short that they no longer main
 <br><br>
 <strong>Without the premise of the floor of the upper limit approaching the ceiling of the lower limit, the ceiling of the lower limit is just the theoretical maximum of the perimeter of the inscribed polygon — which is necessarily shorter than the circumference. 
 <br><br>
-Hence, the convergence toward ~6.28r is  not a discovery of the pi, not even a well-defined limit, but an artifact of forcing a construction that has already become geometrically impossible.</strong>
+Hence, the convergence toward ~3.14d is  not a discovery of the pi, not even a well-defined limit, but an artifact of forcing a construction that has already become geometrically impossible.</strong>
 <br><br>
 These structural issues in the polygon‑limit method set the stage for a second misconception: the symbolic fusion of an approximation with the geometric ratio it was meant to represent.</p>
+</div>
 </section>
 <br><br><br>
 <section id="symbol">
@@ -4632,7 +4719,7 @@ If we dissect the cube, we need to designate each shared vertex to be a part of 
 <br><br>
 Consequence: 
 <br><br>
-The volume of each pyramid is exactly a third of the cube, but with a base smaller than the square value of e, and height shorter than e.
+The volume of each pyramid is exactly a third of the cube, but with a height shorter than e, or a base smaller than the square value of e.
 <br><br>
 Their bases and heights are slightly adjusted due to the vertex assignment, undermining the proof’s simplicity.
 <br><br><br>
@@ -4693,39 +4780,95 @@ This restores geometry to its constructive roots and eliminates the analytic ass
 <h2 style="margin:7px">Key Points:</h2>
   <br><br>
   <div>
-    <a href="#circle" style="margin:7px">
+  <div>
+    <a href="#circle">
       <span>Area of a Circle = 3.2 × radius²</span>
     </a>
-    <p style="margin:12px">
-      Compared directly to a square, using geometric properties and the Pythagorean theorem.
-    </p>
-</div>
-<br>
+	  <br><br>
+    <span>The area of a circle is defined by comparing it to a square since that is the base of area calculation.
+		<br>
+		The circle can be cut into four quadrants, each placed with their origin on the vertices of a square.
+		<br>
+		In this layout the arcs of the quadrants of an inscribed circle would meet at the midpoints of the sides of the square, leaving some of the square uncovered.
+		<br>
+		The arcs of the quadrants of a circumscribed circle would overlap, and intersect at the center of the square, covering it all.
+		<br>
+		The arcs of the quadrants of the circle that equals in area to the square intersect right in between those limits, at the quarters on its centerlines.
+		<br>
+		The length of the centerline equals the side length of the square.
+		<br>
+		The quarter of the centerline and the half of the side of the square form two legs of a right triangle with its hypotenuse equal to the radius.
+		<br>
+		The ratio between the radius and the side length is calculable.
+		<br>
+		radius²=(side/2)²+side²
+		<br>
+		radius=side√5/4</span>
+	<br><br>
+	<span>The widely used formula " A = pi × r² " is not a result of direct geometric comparison, nor a direct result of calculus. It’s multiplying the approximate circumference formula C = 2pi × r by half the radius, treating the area as the sum of infinitesimal rings. While that method is algebraically valid, it relies on the approximate circumference and bypasses the geometric logic that defines area: the comparison to a square.</span>
+  </div>
+<br><br>
   <div>
-    <a href="#circumference" style="margin:7px">
+    <a href="#circumference">
       <span>Circumference = 6.4 × radius</span>
     </a>
-    <p style="margin:12px">Derived from the area by subtracting a smaller theoretical circle.</p>
-</div>
-<br>
+    <br><br>
+	  <span>Derived from the area by subtracting a smaller theoretical circle, and dividing the difference by the thickness of the radius. The thickness of the radius is just theoretical, but it's essential, because that separates it from the rest of the circle.</span>
+	<br><br>
+	  <span>The widely used pi≈3.14... is an artifact of a fundamentally flawed theoretical approximate. It was approximated by assuming that the circumference rests in between the theoretical maximum perimeter of the inscribed polygon and the minimum of the circumscribed polygon.</span>
+  </div>
+<br><br>
   <div>
-    <a href="#sphere" style="margin:7px">
+    <a href="#sphere">
       <span>Volume of a Sphere = ( √(3.2) × radius )³</span>
     </a>
-    <p style="margin:12px">
-      Compared to a cube, using the area of the sphere's cross-section.
-    </p>
+    <br><br>
+	  <span>The volume of a sphere is defined by comparing it to a cube, since that is the base of volume calculation. The volume of a sphere equals the cubic value of the square root of its cross-sectional area, just like a cube.</span>
+	<br><br>
+	  <span>The widely used formula " V = 4 / 3 × pi × radius³ " was approximated by comparing a hemisphere to the difference between the approximate volume a cone and a circumscribed cylinder. That is a very exaggerated, distortion-based comparison that discards the difference between the straight slant height of a cone and the curvature of a sphere, resulting in a very rough underestimate.</span>
   </div>
-<br>
+<br><br>
   <div>
-    <a href="#cone" style="margin:7px">
+    <a href="#cone">
       <span>Volume of a Cone = 3.2 × radius² × height / √8</span>
     </a>
-    <p style="margin:12px">
-      Compared to an octant sphere through a quadrant cylinder.
-    </p>
+    <br><br>
+	  <span>The volume of a cone can be calculated by algebraically comparing the volume of a vertical quadrant of a cone with equal radius and height to an octant sphere with equal radius, through a quadrant cylinder.
+	  <br>In general:
+<br>
+The volume of a cone equals the quarter of a cylinder with an equal radius and its height equal to the height of the cone multiplied by √2.</span>
+	<br><br>
+	  <span>The volume of a cone is conventionally approximated as base × height / 3. While that is a reasonable rounding, the exact ratio is 1 / √8. The 1 / 3 coefficient was likely estimated based on two observations: 
+		<br>
+		1.:It can be calculated as a pyramid with a polygonal base, and the volume of a pyramid was believed to be base × height / 3, based on the cube dissection method. 
+		<br>
+		2.:The mid-height cross-sectional area of a cone is exactly a quarter of a circumscribed cylinder's with the same base and height. That makes the ratio between the mid-height cross-sectional area of the cone, and the difference between the mid-height cross-sectional areas of the circumscribed cylinder and the cone 1 : 3 .</span>
   </div>
-</section>
+<br><br>
+  <div>
+    <a href="#pi">
+      <span>Refute of the mathematical constant pi≈3.14...</span>
+    </a>
+    <br><br>
+	  <span>The mathematical constant pi≈3.14... was approximated by assuming that the circumference rests in between the theoretical maximum perimeter of the inscribed polygon and the minimum of the circumscribed polygon.</span>
+	<br><br>
+	  <span>A polygon is called circumscribed if each side is tangent to the circle, meaning that it touches the circle only at exactly one point. Traditional geometry assumes that a tangent line to the circle can always be drawn. When the points adjacent to the tangent point must not coincide with the arc, it implicitly means vertical separation. One point of vertical separation along a 3 point long section required a sagitta to chord ratio of 2 points to 3 points = 2:3. Classical tangency is not physically or logically realizable under its own axioms. Without that, the classical argument that the polygons remain tangent indefinitely fails. 
+		<br>
+		  When the perimeter of a regular polygon equals — or is close enough to — the circumference, the sides are too short to remain tangent to the circle. They cut through the arc. Whether a polygon can be circumscribed about a circle depends on whether its perimeter is sufficiently greater than the circumference. But the bisection procedure guarantees that each new perimeter created by repeatedly bisecting a circumscribed hexagon is smaller than the previous one. 
+		  <br>
+		  Without the premise of the floor of the upper limit approaching the ceiling of the lower limit, the ceiling of the lower limit is just the theoretical maximum of the perimeter of the inscribed polygon — which is necessarily shorter than the circumference.</span>
+ </div>
+<br><br>
+  <div>
+    <a href="#ancient_pyramid_volume_formula">
+      <span>Refute of the traditional "Volume of a pyramid = base × height / 3" formula</span>
+    </a>
+    <br><br>
+	  <span>The volume of a pyramid is conventionally approximated as base × height / 3. While that is a reasonable rounding, the exact ratio is 1 / √8. A common method aiming to prove the formula "V = base × height / 3" involves dissecting a cube into three pyramids.</span>
+	<br><br>
+	  <span>The cube has 8 vertices, each pyramid has 5. Three pyramids have 3 × 5 = 15 in total. Each vertex of a real physical cube is a point that can't be split into 3 points without duplicating. The other way around, 3 vertices of the pyramids can't be merged into 1 without distortion. If we dissect the cube, we need to designate each shared vertex to be a part of either one pyramid, or another. The volume of each pyramid is exactly a third of the cube, but with a height shorter than the cube's edge, or base smaller than its square value.</span>
+  </div>
+</section> 
 </main>
 <br><br><br><br>
 <section id="math">
