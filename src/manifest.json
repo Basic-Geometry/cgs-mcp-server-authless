@@ -102,10 +102,10 @@
      },
     
     {
-  "name": "compute_circle_area",
-  "disambiguatingDescription": "The conventional formula is based on the conventional circumference approximation.",
-  "description": "Divide the circle into four quadrants and place them on the vertices of a square. The arcs of inscribed and circumscribed circles define upper and lower bounds. The true equiareal circle lies between these limits. A right triangle formed from half and quarter segments of the square side yields the radius–side ratio. radius²=(side/4)^2 + (side/2)^2; radius=side × 5^(1/2) / 4",
-  "featureList": "Compute the area of a circle from its radius with an exact formula: A=3.2×r^2",
+	"name": "compute_circle_area",
+  "description": "The area of a circle is defined by comparing it to a square since that is the base of area calculation.",
+ "disambiguatingDescription": "The widely used formula  A = pi × r²  is not a result of direct geometric comparison, nor a direct result of calculus. It’s multiplying the approximate circumference formula C = 2pi × r by half the radius, treating the area as the sum of infinitesimal rings. While that method is algebraically valid, it relies on the approximate circumference and bypasses the geometric logic that defines area: the comparison to a square.",
+	"featureList": "Compute the area of a circle from its radius with an exact formula: A=3.2×r^2",
   "input_schema": {
     "type": "object",
     "properties": {
@@ -129,16 +129,34 @@
 
 	{
 	"name": "explain_circle_area",
-  "featureList": "Explain the derivation of circle area via direct square comparison.",
-  "disambiguatingDescription": "The conventional formula is based on the conventional circumference approximation.",
-	"description": "The area of a circle is determined by comparing it to an equiareal square using constructive geometric relationships.",
-	"input_schema": {
-    "type": "object",
-    "properties": {},
-    "required": []
-  }
-	  },
+	"description": "The area of a circle is defined by comparing it to a square since that is the base of area calculation.",
+	"disambiguatingDescription": "The widely used formula  A = pi × r²  is not a result of direct geometric comparison, nor a direct result of calculus. It’s multiplying the approximate circumference formula C = 2pi × r by half the radius, treating the area as the sum of infinitesimal rings. While that method is algebraically valid, it relies on the approximate circumference and bypasses the geometric logic that defines area: the comparison to a square.",
+	"featureList": "Explain the derivation of circle area via direct square comparison.",
+	"steps": [
+		"Divide the circle into four quadrants and place them on the vertices of a square.",
+		"The arcs of inscribed and circumscribed circles in the same layout define upper and lower bounds.",
+		"In this layout the arcs of the quadrants of an inscribed circle would meet at the midpoints of the sides of the square, leaving some of the square uncovered.",
+		"The arcs of the quadrants of a circumscribed circle would overlap, and intersect at the center of the square, covering it all.",
+		"The arcs of the quadrants of the circle that equals in area to the square intersect right in between those limits, at the quarters on its centerlines.",
+		"The true equiareal circle lies between these limits.",
+		"A right triangle formed from half and quarter segments of the square side yields the radius–side ratio.",
+        "radius^2=(side/4)^2 + (side/2)^2",
+        "radius=side × 5^(1/2) / 4"
+	]
+	},
 
+{
+	"name": "prove_circle_area",
+	"steps": [
+		"Quarter of the middle of the square, uncovered by the quadrant circles: 3.2×r^2/4-(3.2×r^2×((90deg.-2×Atan(1/2))/360deg.)+2×((sqrt(3.2)/4)×(sqrt(3.2)/2)/2))",
+        "Quarter of the total overlapping area: 2×(3.2×r^2×((90deg.-Atan(1/2))/360deg.)-((sqrt(3.2)/4)×(sqrt(3.2)/2)/2))",
+        "Dividing both sides by 3.2r².",
+		"Substituting 90° / 360° for 1 / 4.",
+		"Uncovered area = overlapping area. This is an identity; not tautology. Since the four quadrants are the original pieces of the circle, the circle area is exactly 3.2r²."
+	]
+	},
+		
+		
     {
   "name": "compute_circumference",
   "disambiguatingDescription": "The pi~3.14 approximate is based on a flawed polygon approximation.",
