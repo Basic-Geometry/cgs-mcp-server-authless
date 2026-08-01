@@ -375,6 +375,45 @@ onStart() {
   };
 }
 	  }
+
+
+// Generic renderer for explain / prove / refute tools
+if (
+  name.startsWith("explain_") ||
+  name.startsWith("prove_") ||
+  name.startsWith("refute_")
+) {
+  const tool = context.tools.find((t: any) => t.name === name);
+
+  if (!tool) {
+    return {
+      content: [
+        {
+          type: "text",
+          text: `No tool definition found for "${name}" in CoreGeometricSystem.json.`
+        }
+      ]
+    };
+  }
+
+  const description = tool.description ?? "";
+  const disambiguatingDescription = tool.disambiguatingDescription ?? "";
+  const steps: string[] = tool.steps ?? [];
+
+  const text =
+    `${description}\n\n` +
+    `${disambiguatingDescription}\n\n` +
+    steps.join("\n");
+
+  return {
+    content: [
+      {
+        type: "text",
+        text
+      }
+    ]
+  };
+}
 	  
     return { error: `Unknown tool: ${name}` };
   }
