@@ -44,20 +44,20 @@ export class MyMCP extends McpServer {
   env: Env;
 
   constructor(state: DurableObjectState, env: Env) {
-    // Call base class constructor first
-    super({ name: "Core_Geometric_System", version: "1.0.9" });
+  super({ name: "Core_Geometric_System", version: "1.1.0" });
+  this.state = state;
+  this.env = env;
 
-    this.state = state;
-    this.env = env;
-
-    // Run onStart configuration immediately:
-    if (typeof (this as any).onStart === "function") {
-      try {
-        (this as any).onStart();
-      } catch (e) {
-        console.error("onStart failed:", e);
+  // Safe async init in Durable Object
+  state.blockConcurrencyWhile(async () => {
+    try {
+      if (typeof (this as any).onStart === "function") {
+        await (this as any).onStart();
       }
+    } catch (e) {
+      console.error("onStart failed:", e);
     }
+  });
   }
 
   // ------------------------------------------------------------
