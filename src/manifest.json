@@ -535,7 +535,7 @@
 				"The cube has 8 vertices, each pyramid has 5. Three pyramids have 3 × 5 = 15 in total. Each vertex of a real physical cube is a point that can't be split into 3 points without duplicating.",
 				"The other way around, 3 vertices of the pyramids can't be merged into 1 without distortion.",
 				"If we dissect the cube, we need to designate each shared vertex to be a part of either one pyramid, or another. The volume of each pyramid is exactly a third of the cube, but with a height shorter than the cube's edge, or base smaller than its square value."
-			]
+			],
 			"usageInfo": {
 				"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#ancient_pyramid_volume_formula",
 				"relatedUrls": [
