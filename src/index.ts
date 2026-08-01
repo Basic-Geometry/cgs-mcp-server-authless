@@ -1,5 +1,4 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import { z } from "zod";
 
 // Import functions 
 import {
@@ -34,23 +33,33 @@ import context from './CoreGeometricSystem.json' assert { type: 'json' };
 
 import aiCatalog from './ai-catalog.json' assert { type: 'json' };
 
-// ------------------------------------------------------------
-// MCP SERVER INITIALIZATION
-// ------------------------------------------------------------
-
-const server = new McpServer({
-  name: "Core_Geometric_System",
-  version: "1.0.9"
-});
 
 // ------------------------------------------------------------
 // DURABLE OBJECT: MCP SERVER
 // ------------------------------------------------------------
 
-export class MyMCP McpServer{
 
+export class MyMCP extends McpServer {
   state: DurableObjectState;
   env: Env;
+
+  constructor(state: DurableObjectState, env: Env) {
+    // Call base class constructor first
+    super({ name: "Core_Geometric_System", version: "1.0.9" });
+
+    this.state = state;
+    this.env = env;
+
+    // If you want to run onStart configuration immediately:
+    if (typeof (this as any).onStart === "function") {
+      try {
+        (this as any).onStart();
+      } catch (e) {
+        console.error("onStart failed:", e);
+      }
+    }
+  }
+
 
 // ------------------------------------------------------------
 // ELICITATION HANDLERS 
