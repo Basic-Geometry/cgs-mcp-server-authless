@@ -47,7 +47,7 @@ const server = new McpServer({
 // DURABLE OBJECT: MCP SERVER
 // ------------------------------------------------------------
 
-export class MyMCP extends McpServer{
+export class MyMCP McpServer{
 
   state: DurableObjectState;
   env: Env;
@@ -263,7 +263,8 @@ onStart() {
           ]
         };
       } catch {
-        return { content: [{ type: "text", text: "Error" }] 
+        return { 
+			content: [{ type: "text", text: `Error: ${message}` }]
 		};
       }
 	  }
