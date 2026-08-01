@@ -50,7 +50,7 @@ export class MyMCP extends McpServer {
     this.state = state;
     this.env = env;
 
-    // If you want to run onStart configuration immediately:
+    // Run onStart configuration immediately:
     if (typeof (this as any).onStart === "function") {
       try {
         (this as any).onStart();
@@ -60,29 +60,21 @@ export class MyMCP extends McpServer {
     }
   }
 
-
-// ------------------------------------------------------------
-// ELICITATION HANDLERS 
-// ------------------------------------------------------------
-onStart() {
-	this.mcp.configureElicitationHandlers({
-  form: async (request, serverId) => {
-    return {
-      type: "forwardToUser",
-      request,
-      serverId
-    };
+  // ------------------------------------------------------------
+  // ELICITATION HANDLERS 
+  // ------------------------------------------------------------
+  onStart() {
+    this.mcp.configureElicitationHandlers({
+      form: async (request, serverId) => {
+        return {
+          type: "forwardToUser",
+          request,
+          serverId
+        };
+      }
+    });
   }
-});
-}
-	
 
-
-
-  constructor(state: DurableObjectState, env: Env) {
-    this.state = state;
-    this.env = env;
-  }
 
   // -----------------------------
   // TOOL EXECUTION
@@ -271,10 +263,11 @@ onStart() {
             }
           ]
         };
-      } catch {
-        return { 
-			content: [{ type: "text", text: `Error: ${message}` }]
-		};
+      } catch (err) {
+        const message = err instanceof Error ? err.message : "Error";
+        return {
+          content: [{ type: "text", text: `Error: ${message}` }]
+        };
       }
 	  }
 
