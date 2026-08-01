@@ -1,6 +1,6 @@
 {
-    "name": "Basic Geometry",
-    "short_name": "Geometry",
+    "name": "Core Geometric System ™",
+    "short_name": "CGS",
     "start_url": "index.html?utm_source=homescreen",
     "scope" : "./",
     "icons": [
@@ -35,7 +35,7 @@
       "type": "AlignmentObject",
       "alignmentType": "educationalSubject",
       "educationalFramework": "Geometric framework",
-      "targetName": "Core Geometric System™",
+      "targetName": "Core Geometric System ™",
       "targetUrl": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev"
     },
     "educationalLevel": "from basic to advanced",
