@@ -144,7 +144,7 @@
         "radius=side × 5^(1/2) / 4"
 	],
 	"usageInfo": {
-			"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#summary"
+			"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
 		}
 	},
 
@@ -165,7 +165,6 @@
 		]
 	}
 	},
-		
 		
     {
   "name": "compute_circumference",
@@ -245,7 +244,8 @@
 	"usageInfo": {
     "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pi",
     "relatedUrls": [
-      "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
+		"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle",
+		"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#summary"
     ]
 	}
 	},
@@ -516,6 +516,10 @@
 			"description": "The volume of a pyramid can be calculated as a cone with a polygonal base.",
 			"disambiguatingDescription": "The volume of a pyramid or cone is conventionally approximated as base × height / 3. While that is a reasonable rounding, the exact ratio is 1 / √8.",
 			"featureList": "Explain calculating the volume of a pyramid as a cone with a polygonal base.",
+			"steps": [
+				"Take the volume of a cone = base area × height × 2^(1/2) / 4 formula",
+				"Apply it to the pyramid."
+			],
 			"usageInfo": {
 				"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pyramid",
 				"relatedUrls": [
@@ -542,10 +546,12 @@
 					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pyramid",
 					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone",
 					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere",
-					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
+					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle",
+					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#summary"
 				]
 			}
 		},
+		
     {
       "name": "compute_frustum_pyramid_volume",
       "description": "Subtracting the missing tip of a theoreticall complete pyramid.",
