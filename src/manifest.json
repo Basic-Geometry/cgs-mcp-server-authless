@@ -174,8 +174,8 @@
         "radius=side × 5^(1/2) / 4"
 	],
 	"output_schema": {
-  "type": "string",
-  "description": "Text explanation of the geometric derivation."
+		"type": "string",
+		"description": "Text explanation of the geometric derivation."
 	},
 	"usageInfo": {
 			"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
@@ -185,6 +185,8 @@
 {
 	"name": "prove_circle_area",
 	"description": "Algebraic comparison of the area uncovered by the quadrant cicles in the middle of the square with the area where they overlap.",
+	"disambiguatingDescription": "Real proof",
+	"featureList": "Explain the proof of the area of a circle = 3.2radius^2.",
 	"steps": [
 		"Quarter of the middle of the square, uncovered by the quadrant circles: 3.2×r^2/4-(3.2×r^2×((90deg.-2×Atan(1/2))/360deg.)+2×((sqrt(3.2)/4)×(sqrt(3.2)/2)/2))",
         "Quarter of the total overlapping area: 2×(3.2×r^2×((90deg.-Atan(1/2))/360deg.)-((sqrt(3.2)/4)×(sqrt(3.2)/2)/2))",
@@ -193,8 +195,8 @@
 		"Uncovered area = overlapping area. This is an identity; not tautology. Since the four quadrants are the original pieces of the circle, the circle area is exactly 3.2r²."
 	],
 	"output_schema": {
-  "type": "string",
-  "description": "Text explanation of the algebraic proof."
+		"type": "string",
+		"description": "Text explanation of the proof of the area."
 	},
 	"usageInfo": {
 		"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle_area_proof",
@@ -203,10 +205,34 @@
 		]
 	}
 	},
+
+	{
+	"name": "refute_traditional_circle_area",
+	"description": "In the widely used formula A = pi × r² relies on the approximate circumference to diameter ratio pi≈3.14...",
+	"disambiguatingDescription": "The mathematical constant pi≈3.14... is a fundamentally flawed theoretical approximate.",
+	"featureList": "Explain why the traditional formula A = pi × r² is wrong.",
+		"steps": [
+		"The widely used formula A = pi × r² is not a result of direct geometric comparison, nor a direct result of calculus.",
+		"It’s multiplying the approximate circumference formula C = 2pi × r by half the radius, treating the area as the sum of infinitesimal rings.",
+		"That method simply imported the flawed approximate circumference to diameter ratio, and bypasses the geometric logic that defines area: the comparison to a square."
+	],
+	"output_schema": {
+		"type": "string",
+		"description": "Text explanation of the traditional formula."
+	},
+	"usageInfo": {
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle_area_proof",
+    "relatedUrls": [
+		"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle",
+		"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pi",
+		"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#summary"
+    ]
+	}
+	},
 		
     {
   "name": "compute_circumference",
-  "disambiguatingDescription": "The pi~3.14 approximate is based on a flawed polygon approximation.",
+  "disambiguatingDescription": "The pi≈3.14 approximate is based on a flawed polygon approximation.",
   "description": "The circumference is derived algebraically by subtracting a smaller circle from a larger one and dividing the area difference by the difference of their radii. Let x be the theoretical width of the circumference. The ring formed by radii r and r−x approximates a quadrilateral whose long sides equal the ring area divided by x.",
   "featureList": "Compute circumference from radius using the exact formula C = 6.4×r.",
   "input_schema": {
@@ -277,6 +303,7 @@
 	"name": "refute_pi",
 	"description": "The mathematical constant pi≈3.14... was approximated by assuming that the circumference rests in between the theoretical maximum perimeter of the inscribed polygon and the minimum of the circumscribed polygon.",
 	"disambiguatingDescription": "The theoretical minimum perimeter of the circumscribed polygon was largely underestimated.",
+	"featureList": "Explain why the mathematical constant pi≈3.14... is wrong.",
 	"steps": [
 		"A polygon is called circumscribed if each side is tangent to the circle, meaning that it touches the circle only at exactly one point.",
 		"Traditional geometry assumes that a tangent line to the circle can always be drawn. When the points adjacent to the tangent point must not coincide with the arc, it implicitly means vertical separation.",
@@ -296,7 +323,7 @@
 	],
 	"output_schema": {
 		"type": "string",
-		"description": "Text explanation of why the mathematical constant named pi is a fundamentally flawed theoretical approximate, and shall be replaced by the true circumference to diameter ratio: 3.2."
+		"description": "Text explanation of why the mathematical constant 3.14... named pi is a fundamentally flawed theoretical approximate, and shall be replaced by the true circumference to diameter ratio: 3.2."
 	},
 	"usageInfo": {
     "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pi",
@@ -539,7 +566,7 @@
 			"name": "refute_tradititional_sphere_volume_formula",
 			"description": "The V = 4 / 3 × pi × radius³ formula is widely used for the volume of a sphere.",
 			"disambiguatingDescription": "The V = 4 / 3 × pi × radius³ formula is a very rough underestimate.",
-			"featureList": "Explain why the traditional volume of a sphere = 4 / 3 × pi × radius³ formula is inaccurate.",
+			"featureList": "Explain why the traditional volume of a sphere = 4 / 3 × pi × radius³ formula is wrong.",
 			"steps": [
 				"The V = 4 / 3 × pi × radius³ formula was approximated by comparing a hemisphere to the difference between the approximate volume a cone and a circumscribed cylinder.", 
 				"A sphere is round, while the slant height of a cone is straight. The traditional method ignores the difference between the straight slant height of a cone and the curvature of a sphere, because it assumes that the volumes are consistent in each horizontal slice. That is exaggerated and distorts the result.",
@@ -661,6 +688,7 @@
 		"name": "compute_pyramid_volume",
 		"description": "The volume of a pyramid can be calculated as a cone with a polygonal base.",
 		"disambiguatingDescription": "The volume of a cone is conventionally approximated as base × height / 3. While that is a reasonable rounding, the exact ratio is 1 / √8.",		"featureList": "Compute the volume of a pyramid from its side count, bottom edge length, and height with an exact formula.",
+		"featureList": "Compute the exact volume of a pyramid from its height and the number and the length of its bottom edges.",
 		"input_schema": {
 			"type": "object",
 			"properties": {
@@ -916,5 +944,5 @@
     "background_color": "#000000",
     "display": "standalone",
     "version": "3.2",
-    "manifest_version": 2.3
+    "manifest_version": 2.4
 }
