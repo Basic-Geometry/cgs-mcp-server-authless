@@ -72,8 +72,18 @@
           { "side1": 17 , "side2": 12.5 , "side3": 15 }
         ]
       },
+	"output_schema": {
+		"type": "object",
+		"properties": {
+			"area": {
+				"type": "number",
+				"description": "Exact area computed using A = √(S × (S - side1) × (S - side2) × (S - side3)). S = semi-perimeter = ( side1 + side2 + side3 ) / 2"
+			}
+		},
+		"required": ["area"]
+	},
     "usageInfo": "One side of the triangle has to be shorter than the sum of the other two sides."
-     },
+	},
     
     {
       "name": "compute_polygon_area",
@@ -98,6 +108,16 @@
           { "sideCount": 17 , "sideLength": 12.5 }
         ]
       },
+		"output_schema": {
+		"type": "object",
+		"properties": {
+			"area": {
+				"type": "number",
+				"description": "Exact area computed using A = sideCount / 4 × ctg(180° / sideCount) × sideLength^2"
+			}
+		},
+		"required": ["area"]
+	},
       "usageInfo": "For regular polygons only."
      },
     
@@ -122,6 +142,16 @@
 				{ "radius": 99 }
 			]
 		},
+		"output_schema": {
+		"type": "object",
+		"properties": {
+			"area": {
+				"type": "number",
+				"description": "Exact area computed using A = 3.2 × r²."
+			}
+		},
+		"required": ["area"]
+	},
 			"usageInfo": {
 				"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
 			}
@@ -143,6 +173,10 @@
         "radius^2=(side/4)^2 + (side/2)^2",
         "radius=side × 5^(1/2) / 4"
 	],
+	"output_schema": {
+  "type": "string",
+  "description": "Text explanation of the geometric derivation."
+	},
 	"usageInfo": {
 			"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
 		}
@@ -158,6 +192,10 @@
 		"Substituting 90° / 360° for 1 / 4.",
 		"Uncovered area = overlapping area. This is an identity; not tautology. Since the four quadrants are the original pieces of the circle, the circle area is exactly 3.2r²."
 	],
+	"output_schema": {
+  "type": "string",
+  "description": "Text explanation of the algebraic proof."
+	},
 	"usageInfo": {
 		"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle_area_proof",
 		"relatedUrls": [
@@ -187,6 +225,16 @@
       { "radius": 99 }
     ]
   },
+	"output_schema": {
+		"type": "object",
+		"properties": {
+			"circumference": {
+				"type": "number",
+				"description": "Exact circumference computed using C = 6.4 × r."
+			}
+		},
+		"required": ["circumference"]
+	},
   "usageInfo": {
     "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circumference",
     "relatedUrls": [
@@ -213,6 +261,10 @@
 		"Cancel x in numerator and denominator to obtain the limiting value.",
 		"The length of the circumference approaches 6.4 × radius as its thickness approaches 0."
 	],
+	"output_schema": {
+  "type": "string",
+  "description": "Text explanation of the geometric derivation."
+	},
 	"usageInfo": {
 		"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circumference",
 		"relatedUrls": [
@@ -241,6 +293,10 @@
 		"Since the true ratio is exactly 3.2, and that is a rational number, then we can — and should — write it as it is. Let the pi remain in the history books.",
 		"That makes the arc value of 360° = 6.4radian, and trigonometric functions that rely on arc value have to be aligned to 3.2 respectively."
 	],
+	"output_schema": {
+  "type": "string",
+  "description": "Text explanation of the refute."
+	},
 	"usageInfo": {
     "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pi",
     "relatedUrls": [
@@ -274,6 +330,16 @@
           { "radius": 12.5 , "height": 12 }
         ]
       },
+	"output_schema": {
+		"type": "object",
+		"properties": {
+			"area": {
+				"type": "number",
+				"description": "Exact area computed using A = Acos( ( radius - height ) / radius ) × radius^2 - sin( Acos( ( radius - height ) / radius ) × radius ) × ( radius - height ) × radius."
+			}
+		},
+		"required": ["area"]
+	},
       "usageInfo": {
 		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle-segment",
 		  "relatedUrls": [
@@ -304,6 +370,16 @@
           { "height": 6 , "chordLength": 15.5 }
         ]
       },
+	"output_schema": {
+		"type": "object",
+		"properties": {
+			"area": {
+				"type": "number",
+				"description": "Exact area computed using A = Acos( ( radius - height ) / radius ) × radius^2 - sin( Acos( ( radius - height ) / radius ) × radius ) × ( radius - height ) × radius."
+			}
+		},
+		"required": ["area"]
+	},
         "usageInfo": {
 		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle-segment",
 		  "relatedUrls": [
@@ -336,6 +412,16 @@
           { "radius": 12.5 , "chordLength": 12 }
         ]
       },
+		"output_schema": {
+		"type": "object",
+		"properties": {
+			"area": {
+				"type": "number",
+				"description": "Exact area computed using A = Acos( ( radius - height ) / radius ) × radius^2 - sin( Acos( ( radius - height ) / radius ) × radius ) × ( radius - height ) × radius."
+			}
+		},
+		"required": ["area"]
+	},
         "usageInfo": {
 		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle-segment",
 		  "relatedUrls": [
@@ -368,6 +454,16 @@
           { "radius": 12.5 , "height": 10 }
         ]
       },
+		"output_schema": {
+		"type": "object",
+		"properties": {
+			"area": {
+				"type": "number",
+				"description": "Exact surface area including bottom computed using A = 3.2 × r × ( radius + ( radius^2 + height^2 )^(1/2) )."
+			}
+		},
+		"required": ["area"]
+	},
         "usageInfo": {
 		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone",
 		  "relatedUrls": [
@@ -397,6 +493,16 @@
           { "radius": 99 }
         ]
       },
+		"output_schema": {
+		"type": "object",
+		"properties": {
+			"volume": {
+				"type": "number",
+				"description": "Exact volume computed using V = ( 4 × radius / 5^(1/2) )^3."
+			}
+		},
+		"required": ["volume"]
+	},
       "usageInfo": {
 		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere",
 		  "relatedUrls": [
@@ -407,9 +513,19 @@
 
 	{
 		"name": "explain_sphere_volume",
-		"description": "The volume of a sphere is defined by comparing it to a cube, since the cube is the base unit of volume. The volume of a sphere equals the cubic value of the square root of its cross-sectional area, just like a cube.",
+		"description": "The volume of a sphere is defined by comparing it to a cube, since the cube is the base unit of volume.",
 		"disambiguatingDescription": "The V = 4 / 3 × pi × radius³ formula is a very rough underestimate, approximated by comparing a hemisphere to the difference between the approximate volume a cone and a circumscribed cylinder, discarding the difference between the straight slant height of a cone and the curvature of a sphere.",
 		"featureList": "Explain the derivation of sphere volume using cross-sectional area and cube comparison.",
+		"steps": [
+			"The volume of a sphere equals the cubic value of the square root of its cross-sectional area, just like a cube.",
+			"Calculate the cross-sectional area of the sphere.",
+			"Take the square root of the cross-sectional area.",
+			"Raise the square root to the 3rd power."
+		],
+		"output_schema": {
+			"type": "string",
+			"description": "Text explanation of the geometric derivation."
+		},
 		"usageInfo": {
 		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere",
 		  "relatedUrls": [
@@ -442,6 +558,16 @@
           { "radius": 13.5 , "height": 19 }
         ]
       },
+		"output_schema": {
+		"type": "object",
+		"properties": {
+			"volume": {
+				"type": "number",
+				"description": "Exact volume computed using V = 3.2 × radius^2 × height / 8^(1/2)."
+			}
+		},
+		"required": ["volume"]
+	},
       "usageInfo": {
 		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone",
 		  "relatedUrls": [
@@ -463,6 +589,10 @@
 				"The cone’s vertical cross‑section is triangular. The mean of its horizontal slices equals half the area of a cylinder with equal radius and height.",
 				"Volume of a quadrant cone with height=radius : (3.2 × radius^2 / 4 × 2^(1/2) × height) / 4"
 			],
+			"output_schema": {
+				"type": "string",
+				"description": "Text explanation of the geometric derivation."
+			},
 			"usageInfo": {
 				"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone",
 				"relatedUrls": [
@@ -501,6 +631,16 @@
           { "sideCount": 7 , "baseEdgeLength": 12.5 , "height": 25 }
         ]
         },
+		"output_schema": {
+		"type": "object",
+		"properties": {
+			"volume": {
+				"type": "number",
+				"description": "Exact volume computed using V = base area × height / 8^(1/2)."
+			}
+		},
+		"required": ["volume"]
+	},
       "usageInfo": {
 		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pyramid",
 		  "relatedUrls": [
@@ -520,6 +660,10 @@
 				"Take the volume of a cone = base area × height × 2^(1/2) / 4 formula",
 				"Apply it to the pyramid."
 			],
+			"output_schema": {
+				"type": "string",
+				"description": "Text explanation of the geometric derivation."
+			},
 			"usageInfo": {
 				"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pyramid",
 				"relatedUrls": [
@@ -540,6 +684,10 @@
 				"The other way around, 3 vertices of the pyramids can't be merged into 1 without distortion.",
 				"If we dissect the cube, we need to designate each shared vertex to be a part of either one pyramid, or another. The volume of each pyramid is exactly a third of the cube, but with a height shorter than the cube's edge, or base smaller than its square value."
 			],
+			"output_schema": {
+				"type": "string",
+				"description": "Text explanation of why the volume of a pyramid can't be base × height / 3."
+			},
 			"usageInfo": {
 				"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#ancient_pyramid_volume_formula",
 				"relatedUrls": [
@@ -587,6 +735,16 @@
           { "sideCount": 8 , "baseEdgeLength": 7.5 , "topEdgeLength": 5 , "height": 12 }
         ]
       },
+		"output_schema": {
+		"type": "object",
+		"properties": {
+			"volume": {
+				"type": "number",
+				"description": "Exact volume computed using V = frustumHeight × ( bottomArea / (1 - topArea / bottomArea) - ( topArea / (1 - topArea / bottomArea) - topArea ) ) / 8^(1/2)."
+			}
+		},
+		"required": ["volume"]
+	},
       "usageInfo": {
 		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#frustum_pyramid",
 		  "relatedUrls": [
@@ -628,6 +786,16 @@
           { "baseRadius": 7 , "topRadius": 5 , "height": 15.6 }
         ]
       },
+		"output_schema": {
+		"type": "object",
+		"properties": {
+			"volume": {
+				"type": "number",
+				"description": "Exact volume computed using V = 3.2 × frustumHeight × ( bottomRadius^2 / (1 - topRadius / bottomRadius ) - ( topRadius^2 / ( 1 - topRadius / bottomRadius) - topRadius^2 ) ) / 8^(1/2)."
+			}
+		},
+		"required": ["volume"]
+	},
       "usageInfo": {
 		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#frustum_cone",
 		  "relatedUrls": [
@@ -661,6 +829,16 @@
           { "edge": 99 }
         ]
       },
+	"output_schema": {
+		"type": "object",
+		"properties": {
+			"volume": {
+				"type": "number",
+				"description": "Exact volume computed using V = edge^3 / 8."
+			}
+		},
+		"required": ["volume"]
+	},
       "usageInfo": {
 		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#tetrahedron",
 		  "relatedUrls": [
@@ -682,5 +860,5 @@
     "background_color": "#000000",
     "display": "standalone",
     "version": "3.2",
-    "manifest_version": 2.2
+    "manifest_version": 2.3
 }
