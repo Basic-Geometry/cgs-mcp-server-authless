@@ -82,7 +82,10 @@
 		},
 		"required": ["area"]
 	},
-    "usageInfo": "One side of the triangle has to be shorter than the sum of the other two sides."
+    "usageInfo": {
+		"text": "One side of the triangle has to be shorter than the sum of the other two sides.",
+		"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#triangle"
+	}
 	},
     
     {
@@ -118,7 +121,10 @@
 		},
 		"required": ["area"]
 	},
-      "usageInfo": "For regular polygons only."
+      "usageInfo": {
+		  "text": "For regular polygons only.",
+		  "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#polygon"
+	  }
      },
     
 		{
