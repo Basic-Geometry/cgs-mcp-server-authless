@@ -116,7 +116,7 @@
 		"properties": {
 			"area": {
 				"type": "number",
-				"description": "Exact area computed using A = sideCount / 4 × ctg(180° / sideCount) × sideLength^2"
+				"description": "Area computed using the exact A = sideCount / 4 × ctg(180° / sideCount) × sideLength^2"
 			}
 		},
 		"required": ["area"]
