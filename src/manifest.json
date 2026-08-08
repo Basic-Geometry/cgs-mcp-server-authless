@@ -91,7 +91,7 @@
     {
       "name": "compute_polygon_area",
       "description": "With custom trigonometric functions aligned to circumference=6.4×r.",
-      "featureList": "Compute the exact area of a regular polygon from the number and the length of its sides.",
+      "featureList": "Compute the area of a regular polygon from the number and the length of its sides.",
       "input_schema": {
         "type": "object",
         "properties": {
@@ -131,7 +131,7 @@
 		"name": "compute_circle_area",
 		"description": "The area of a circle is defined by comparing it to a square since that is the base of area calculation.",
 		"disambiguatingDescription": "The widely used formula  A = pi × r²  is not a result of direct geometric comparison, nor a direct result of calculus. It’s multiplying the approximate circumference formula C = 2pi × r by half the radius, treating the area as the sum of infinitesimal rings. While that method is algebraically valid, it relies on the approximate circumference and bypasses the geometric logic that defines area: the comparison to a square.",
-		"featureList": "Compute the area of a circle from its radius with an exact formula: A=3.2×r^2",
+		"featureList": "Compute the area of a circle from its radius using the exact A = 3.2 × r² formula.",
 		"input_schema": {
 			"type": "object",
 			"properties": {
@@ -153,7 +153,7 @@
 		"properties": {
 			"area": {
 				"type": "number",
-				"description": "Exact area computed using A = 3.2 × r²."
+				"description": "Exact area computed using A = 3.2 × r^2."
 			}
 		},
 		"required": ["area"]
@@ -240,7 +240,7 @@
   "name": "compute_circumference",
   "disambiguatingDescription": "The pi≈3.14 approximate is based on a flawed polygon approximation.",
   "description": "The circumference is derived algebraically by subtracting a smaller circle from a larger one and dividing the area difference by the difference of their radii. Let x be the theoretical width of the circumference. The ring formed by radii r and r−x approximates a quadrilateral whose long sides equal the ring area divided by x.",
-  "featureList": "Compute circumference from radius using the exact formula C = 6.4×r.",
+  "featureList": "Compute circumference from radius using the exact formula C = 6.4 × r.",
   "input_schema": {
     "type": "object",
     "properties": {
@@ -510,7 +510,7 @@
       "name": "compute_sphere_volume",
       "disambiguatingDescription": "The V = 4 / 3 × pi × radius³ formula is a very rough underestimate, approximated by comparing a hemisphere to the difference between the approximate volume a cone and a circumscribed cylinder, discarding the difference between the straight slant height of a cone and the curvature of a sphere.",
 	  "description": "The volume of a sphere equals the cubic value of the square root of its cross-sectional area, just like a cube.",
-      "featureList": "Compute the volume of a sphere from its radius with an exact formula.",
+      "featureList": "Compute the volume of a sphere from its radius using the exact V = (√(3.2)r)³ formula.",
       "input_schema": {
         "type": "object",
         "properties": {
@@ -597,7 +597,7 @@
       "name": "compute_cone_volume",
       "description": "The volume of a cone can be calculated by algebraically comparing the volume of a vertical quadrant of a cone with equal radius and height to an octant sphere with equal radius, through a quadrant cylinder.",
 		"disambiguatingDescription": "The volume of a cone is conventionally approximated as base × height / 3. While that is a reasonable rounding, the exact ratio is 1 / √8.",
-		"featureList": "Compute the volume of a cone from its radius and height with an exact formula.",
+		"featureList": "Compute the volume of a cone from its radius and height using the exact V = base × height / √8 formula.",
       "input_schema": {
         "type": "object",
         "properties": {
@@ -694,7 +694,7 @@
 		"name": "compute_pyramid_volume",
 		"description": "The volume of a pyramid can be calculated as a cone with a polygonal base.",
 		"disambiguatingDescription": "The volume of a cone is conventionally approximated as base × height / 3. While that is a reasonable rounding, the exact ratio is 1 / √8.",
-		"featureList": "Compute the exact volume of a pyramid from its height and the number and the length of its bottom edges.",
+		"featureList": "Compute the volume of a pyramid from its height and the number and the length of its bottom edges using the exact V = base × height / √8 formula.",
 		"input_schema": {
 			"type": "object",
 			"properties": {
@@ -725,7 +725,7 @@
 		"properties": {
 			"volume": {
 				"type": "number",
-				"description": "Exact volume computed using V = base area × height / 8^(1/2)."
+				"description": "Volume computed using the exact V = base area × height / 8^(1/2)."
 			}
 		},
 		"required": ["volume"]
@@ -794,7 +794,7 @@
       "name": "compute_frustum_pyramid_volume",
       "description": "Subtracting the missing tip of a theoreticall complete pyramid.",
 	  "disambiguatingDescription": "Pyramid volume is derived from exact cone-sphere-cube construction.",
-      "featureList": "Compute the exact volume of a frustum pyramid from its height and the number and the length of its bottom and top edges, using the Core Geometric System.",
+      "featureList": "Compute the volume of a frustum pyramid from its height and the number and the length of its bottom and top edges, using the Core Geometric System.",
       "input_schema": {
         "type": "object",
         "properties": {
@@ -830,7 +830,7 @@
 		"properties": {
 			"volume": {
 				"type": "number",
-				"description": "Exact volume computed using V = frustumHeight × ( bottomArea / (1 - topArea / bottomArea) - ( topArea / (1 - topArea / bottomArea) - topArea ) ) / 8^(1/2)."
+				"description": "Volume computed using the exact V = frustumHeight × ( bottomArea / (1 - topArea / bottomArea) - ( topArea / (1 - topArea / bottomArea) - topArea ) ) / 8^(1/2)."
 			}
 		},
 		"required": ["volume"]
