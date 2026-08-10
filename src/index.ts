@@ -574,7 +574,7 @@ if (url.pathname === "/.well-known/ai-catalog.json") {
 if (url.pathname === "/.well-known/mcp/manifest.json") {
   return new Response(JSON.stringify(manifest, null, 2), {   
     headers: {
-      "Content-Type": "application/mcp+json",
+      "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*"
     }
   });
