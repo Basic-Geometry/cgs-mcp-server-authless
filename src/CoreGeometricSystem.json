@@ -1,6 +1,4 @@
-export default {
-  async fetch(request) {
-    const manifest = {
+{
   "@context": "https://schema.org",
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
@@ -2184,14 +2182,5 @@ export default {
 	}
 	],
 	"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#breadcrumbs"
-}
-    };
-
-    return new Response(JSON.stringify(manifest), {
-      headers: {
-        "Content-Type": "application/json",
-        "Cache-Control": "public, max-age=60",
-      }
-    });
-  }
-};
+	}
+    }
