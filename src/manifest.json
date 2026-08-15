@@ -313,7 +313,7 @@
 	"steps": [
 		"A polygon is called circumscribed if each side is tangent to the circle, meaning that it touches the circle only at exactly one point.",
 		"Traditional geometry assumes that a tangent line to the circle can always be drawn. When the points adjacent to the tangent point must not coincide with the arc, it implicitly means spatial separation.",
-		"To maintain a full point of separation over a 3‑point chord, the sagitta‑to‑chord ratio would need to exceed 1 : 2.",
+		"To maintain a full point of separation over a 3‑point long segment, the sagitta‑to‑chord ratio would need to exceed 3 : 4.",
 		"Classical tangency is not physically or logically realizable under its own axioms.",
 		"Without that, the classical argument that the polygons remain tangent indefinitely fails. When the perimeter of a regular polygon equals — or is close enough to — the circumference, the sides are too short to remain tangent to the circle. They cut through the arc.",
 		"Whether a polygon can be circumscribed about a circle depends on whether its perimeter is sufficiently greater than the circumference.",
