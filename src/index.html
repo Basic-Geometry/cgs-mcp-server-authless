@@ -3880,12 +3880,10 @@ To know if the polygons are still circumscribed at every finite step, you must a
 <br>
 Yet finding the circumference is the purpose of the method. The method therefore relies on the very assumption it seeks to prove. That is circular reasoning.
 <br><br>
-You cannot use the method to justify the assumption that makes the method valid.
-<br><br>
 The flaw in the classical method becomes even clearer when we try to implement it practically.
-<br><br>
-The breakdown is visible already at a small finite side count when attempting to draw a circumscribed 24-gon or 48-gon via exact angle bisection (central angle 15° → 7.5°).
 <br>
+The breakdown is visible already at a small finite side count when attempting to draw a circumscribed 24-gon or 48-gon via exact angle bisection (central angle 15° → 7.5°).
+<br><br>
 The figure collapses:</p>
 <br>
 <figure class="imgbox">
@@ -3905,40 +3903,60 @@ According to traditional geometry,
 <br>
 <p>Note that in these terms, even if the dimensions of the point are defined as 0, the thickness of the line is logically one point. 
 <br><br><br>
-The tangent point T and its two adjacent points T₋₁ and T₊₁ form a 3‑point long section on the tangent line. 
+The tangent point T and its two adjacent points T₋₁ and T₊₁ form a 3‑point long section on the tangent line.
 <br>
-Classical geometry insists that these adjacent points must not coincide with the arc, which implicitly requires a nonzero separation between the tangent line and the points adjacent to the tangent point on the circular arc.
+Classical geometry insists that these adjacent points must not coincide with the arc, which implicitly requires a non-zero separation between the tangent line and the points adjacent to the tangent point on the circular arc.
 <br>
-This separation is never quantified, because classical geometry assumes infinite resolution.  
+In other words, no matter how small the central angle becomes, the distance between the tangent line and the arc is strictly non-zero for any point other than T. 
+<br>
+This separation is never quantified, because classical geometry assumes infinite resolution. 
+The classical framework relies on an idealized continuum where space is infinitely divisible. 
+<br><br>
 But the geometry is forced to confront physical spatial reality once we assign even the smallest operational width to a point.
 <br><br>
-This is where the traditional concept of tangency becomes visibly distorted. </p>
+The height of a circular arc over a chord is the sagitta.
+<br><br>
+To maintain a full point of separation over a 3‑point long segment, the sagitta‑to‑chord ratio would need to exceed 3 : 4.</p> 
 <br>
 <figure class="imgbox">
     <img class="center-fit" src="traditionalTangency.png" alt="To maintain a full point of separation over a 3‑point chord, the sagitta‑to‑chord ratio would need to exceed 1 : 2.">
 </figure>
 <br>
-<p>The height of a circular arc over a chord is the sagitta.  
-<br><br>
-To maintain a full point of separation over a 3‑point chord, the sagitta‑to‑chord ratio would need to exceed 1 : 2.  
+<p>That is an unrealistically steep curve.
 <br>
-That is an unrealistically steep curve.
+This is where the traditional concept of tangency becomes visibly distorted.
 <br><br>
-In reality, for any large circle, the central angle subtended by three adjacent spatial points is an infinitesimal fraction of a degree.  
+In reality, as the side count increases in a regular polygon, the central angle subtended by a single side drops significantly — it approaches 0°. 
 <br>
-At angles near 0°, the sagitta collapses toward zero — billions of times smaller than the 1‑point threshold required to keep the arc and tangent line apart.</p>
+For any large circle, the central angle subtended by three adjacent spatial points is an infinitesimal fraction of a degree. 
+<br>
+At very small angles, the sagitta collapses toward zero — billions of times smaller than the 1‑point threshold required to keep the arc and the tangent line apart.</p> 
 <br>
 <figure class="imgbox">
     <img class="center-fit" src="arcAndLine.png" alt="Once the sagitta drops below the fundamental grid threshold required to separate the arc from the straight line, single-point tangency ceases to exist. The arc and the tangent line physically and logically coincide across that entire interval.">
 </figure>
 <br>
-<p><strong>
-Once the sagitta drops below the fundamental grid threshold required to separate the arc from the straight line, single-point tangency ceases to exist. The arc and the tangent line physically and logically coincide across that entire interval. 
+<p>If the separation distance between the arc and the line drops below the dimension of a single constituent point, the gap between the polygon's side and the circular arc ceases to exist. 
+<br>
+The points representing the arc and the points representing the line occupy the same spatial locations, meaning single‑point tangency dissolves into a shared, multi‑point tangent section. The arc and the line segment become indistinguishable across a finite interval — they physically and logically coincide. 
 <br><br>
-Classical tangency is not physically or logically realizable under its own axioms. 
+<b>Why that is pivotal:</b>
+<br>
+If the polygon's vertices protrude beyond r by a distance smaller than the length of this region of coincidence, the classical assumption that the polygon strictly "surrounds" or "circumscribes" the circle at discrete points breaks down. 
+<br>
+Classical limits assume infinite resolution to avoid this collapse.
+<br>
+If classical geometry insists on maintaining a physical gap by declaring the tiny separation distance to be the "new minimum unit," then the original tangent point itself morphs into a segment composed of several of these new minimum units. 
+<br>
+The boundary is no longer touching at an isolated 0‑dimensional point T; it shares an entire multi-point interval with the arc.
+<br>
+This is the logical loophole at the foundation of Archimedes' method.
 <br><br>
-Without that, the classical argument that the polygons remain tangent indefinitely fails. 
-It cannot be used to refute the circumference = 3.2diameter.
+Either path leads to the same inescapable conclusion: <strong>classical tangency is not physically or logically realizable under its own axioms.</strong> The polygon's side and the arc are forced into a multi‑point coincidence. 
+<br>
+Archimedean pi bounds rely on taking the side count to infinity — which explicitly forces the central angle of each section approaching 0°. 
+<br>
+As the side count approaches infinity and the central angles approach 0°, the lack of the idealized single‑point tangency invalidates the circumscribed boundary that classical pi derivations rely upon.
 <br><br>
 The area–square construction gives the true ratio. 
 <br>
@@ -4868,7 +4886,7 @@ This restores geometry to its constructive roots and eliminates the analytic ass
     <br><br>
 	  <span><strong>The mathematical constant pi≈3.14... was approximated by assuming that the circumference rests in between the theoretical maximum perimeter of the inscribed polygon and the minimum of the circumscribed polygon.</strong></span>
 	<br><br>
-	  <span>A polygon is called circumscribed if each side is tangent to the circle, meaning that it touches the circle only at exactly one point. Traditional geometry assumes that a tangent line to the circle can always be drawn. When the points adjacent to the tangent point must not coincide with the arc, it implicitly means spatial separation. To maintain a full point of separation over a 3‑point chord, the sagitta‑to‑chord ratio would need to exceed 1 : 2. Classical tangency is not physically or logically realizable under its own axioms. Without that, the classical argument that the polygons remain tangent indefinitely fails. 
+	  <span>A polygon is called circumscribed if each side is tangent to the circle, meaning that it touches the circle only at exactly one point. Traditional geometry assumes that a tangent line to the circle can always be drawn. When the points adjacent to the tangent point must not coincide with the arc, it implicitly means spatial separation. To maintain a full point of separation over a 3‑point long segment, the sagitta‑to‑chord ratio would need to exceed 3 : 4. Classical tangency is not physically or logically realizable under its own axioms. Without that, the classical argument that the polygons remain tangent indefinitely fails. 
 		  <br>
 		  <strong>When the perimeter of a regular polygon equals — or is close enough to — the circumference, the sides are too short to remain tangent to the circle. They cut through the arc. Whether a polygon can be circumscribed about a circle depends on whether its perimeter is sufficiently greater than the circumference. But the bisection procedure guarantees that each new perimeter created by repeatedly bisecting a circumscribed hexagon is smaller than the previous one. 
 		  <br>
