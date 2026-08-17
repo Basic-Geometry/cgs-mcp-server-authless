@@ -231,7 +231,7 @@
     "relatedUrls": [
 		"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle",
 		"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pi",
-		"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#summary"
+		"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#disclaimer"
     ]
 	}
 	},
@@ -334,7 +334,7 @@
     "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pi",
     "relatedUrls": [
 		"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle",
-		"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#summary"
+		"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#disclaimer"
     ]
 	}
 	},
@@ -587,7 +587,7 @@
 					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere",
 					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle",
 					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pi",
-					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#summary"
+					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#disclaimer"
 				]
 			}
 		},
@@ -684,7 +684,7 @@
 					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone",
 					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere",
 					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle",
-					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#summary"
+					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#disclaimer"
 				]
 			}
 		},
@@ -784,7 +784,7 @@
 					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone",
 					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere",
 					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle",
-					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#summary"
+					"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#disclaimer"
 				]
 			}
 		},
