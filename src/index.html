@@ -3551,18 +3551,16 @@ if ( topEdgeLength > baseEdgeLength) {
   const tangent = tan(ratio);
 	const baseArea = (sideCount / 4) * (baseEdgeLength ** 2) / tangent;
 	const topArea = (sideCount / 4) * (topEdgeLength ** 2) / tangent;
+	const root = Math.sqrt(baseArea * topArea);
+	const volume = frustumPyramidVolume(baseArea, topArea, root, height);
 	const solidVolume = baseArea * height;
-	const shape = topEdgeLength / baseEdgeLength;
-	const inverse = 1 - shape;
-	const reciprocal = 1 / inverse;
-	const volume = frustumPyramidVolume(baseArea, topArea, reciprocal, height);
-
+	
 
 if ( topEdgeLength === baseEdgeLength) {
     document.getElementById('frustum-pyramid-volume').innerText = 
 	`Volume of solid: ${solidVolume.toFixed(5)} cubic units`;
     return;
-	}
+}
 	
   document.getElementById('frustum-pyramid-volume').innerText =
     `Volume ≈ ${volume.toFixed(5)} cubic units`;
@@ -3583,7 +3581,90 @@ document.getElementById('frustum-pyramid-height').addEventListener('input', upda
     <img class="center-fit" src="frustumCone.jpeg" alt="Frustum cone">
     </figure>
 <br>
+<span>V </span>=
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mfrac>
+	<mrow>
+		<mn>3.2</mn>
+<mo>×</mo>
+      <mi>H</mi>
+	</mrow>
+	<msqrt>
+        <mn>8</mn>
+      </msqrt>
+</mfrac>
+	<mo>×</mo>
+      <mo>(</mo>
+      <mfrac>
+        <mrow>
+      <msup>
+			<msub>  
+        <mi>r</mi>
+			<mi>(bottom)</mi>
+			</msub>
+        <mn>2</mn>
+	  </msup>
+		</mrow>
+        <mrow>
+          <mn>1</mn>
+          <mo>-</mo>
+          <mfrac>
+            <msub>  
+        <mi>r</mi>
+			<mi>(top)</mi>
+			</msub>
+            <msub>  
+        <mi>r</mi>
+			<mi>(bottom)</mi>
+			</msub>
+          </mfrac>
+        </mrow>
+      </mfrac>
+      <mo>-</mo>
+      <mo>(</mo>
+      <mfrac>
+        <mrow>
+      <msup>
+			<msub>  
+        <mi>r</mi>
+			<mi>(top)</mi>
+			</msub>
+        <mn>2</mn>
+	  </msup>
+		</mrow>
+        <mrow>
+          <mn>1</mn>
+          <mo>-</mo>
+<mfrac>
+            <msub>  
+        <mi>r</mi>
+			<mi>(top)</mi>
+			</msub>
+            <msub>  
+        <mi>r</mi>
+			<mi>(bottom)</mi>
+			</msub>
+          </mfrac>
+        </mrow>
+      </mfrac>
+      <mo>-</mo>
+      <msup>
+			<msub>  
+        <mi>r</mi>
+			<mi>(top)</mi>
+			</msub>
+        <mn>2</mn>
+	  </msup>
+      <mo>)</mo>
+      <mo>)</mo>
+</mrow>
+  </math>
+</div>
+<br>
 <div style="margin:12px">
+<span>The volume of a frustum cone can also be calculated via a simplified formula.</span>
+<br><br><br>
 <span>V </span>=
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
@@ -3641,39 +3722,33 @@ document.getElementById('frustum-pyramid-height').addEventListener('input', upda
 <br><br>
 <p id="frustum-cone-volume"></p>
 <script type="module" async>
-  function frustumConeVolume(baseArea, topArea, reciprocal, height) {
-  return height * (baseArea * reciprocal - topArea * (reciprocal - 1)) / Math.sqrt(8);
+  function frustumConeVolume(baseRadius, topRadius, height) {
+  return 3.2 * height * (baseRadius ** 2 + topRadius ** 2 + baseRadius*topRadius) / Math.sqrt(8);
 }
 
 function updateFrustumConeVolume() {
 
-	const baseRadius = parseFloat(document.getElementById('frustum-cone-base-radius').value);
-	const topRadius = parseFloat(document.getElementById('frustum-cone-top-radius').value);
-	const height = parseFloat(document.getElementById('frustum-cone-height').value);
-
-  if (isNaN(baseRadius) || isNaN(topRadius) || isNaN(height) || baseRadius === 0 || topRadius === 0) {
+	if (isNaN(baseRadius) || isNaN(topRadius) || isNaN(height) || baseRadius === 0 || topRadius === 0) {
     document.getElementById('frustum-cone-volume').innerText = '';
     return;
   }
 
-if ( topRadius > baseRadius) {
+	if ( topRadius > baseRadius) {
     document.getElementById('frustum-cone-volume').innerText = 'Let the larger end be the base.';
     return;
-}
+	}
 	
-	const baseArea = 3.2 * (baseRadius ** 2);
-	const topArea = 3.2 * (topRadius ** 2);
-	const cylinderVolume = baseArea * height;
-	const shape = topRadius / baseRadius;
-	const inverse = 1 - shape;
-	const reciprocal = 1 / inverse;
-	const volume = frustumConeVolume(baseArea, topArea, reciprocal, height);
+	const baseRadius = parseFloat(document.getElementById('frustum-cone-base-radius').value);
+	const topRadius = parseFloat(document.getElementById('frustum-cone-top-radius').value);
+	const height = parseFloat(document.getElementById('frustum-cone-height').value);
+	const volume = frustumConeVolume(baseRadius, topRadius, height);
+	const cylinderVolume = 3.2 * baseRadius ** 2 * height;
 
-if ( topRadius === baseRadius) {
-    document.getElementById('frustum-cone-volume').innerText = 
-	`Volume of cylinder: ${cylinderVolume.toFixed(5)} cubic units`;
-    return;
-}
+	if ( topRadius === baseRadius) {
+		document.getElementById('frustum-cone-volume').innerText = 
+			`Volume of cylinder: ${cylinderVolume.toFixed(5)} cubic units`;
+		return;
+	}
 	
   document.getElementById('frustum-cone-volume').innerText =
     `Volume = ${volume.toFixed(5)} cubic units`;
