@@ -3,7 +3,7 @@
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
-	"dateModified": "2026-08-17T08:18:50+02:00",
+	"dateModified": "2026-08-19T03:05:50+02:00",
 	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -1439,7 +1439,7 @@
           "@type": "PropertyValue",
           "name": "H(pyramid)",
           "description": "Height of the theoretical full pyramid",
-          "value": "frustumHeight / (1 - topArea / bottomArea)"
+          "value": "frustumHeight / (1 - √topArea / √bottomArea)"
         }
       },
       {
@@ -1450,7 +1450,7 @@
           "@type": "PropertyValue",
           "name": "V(pyramid)",
           "description": "Volume of the theoretical full pyramid",
-          "value": "bottomArea × frustumHeight / 8^(1/2) × (1 / (1 - topArea / bottomArea))"
+          "value": "bottomArea × frustumHeight / 8^(1/2) × (1 / (1 - √topArea / √bottomArea))"
         }
       },
       {
@@ -1466,7 +1466,7 @@
           "@type": "PropertyValue",
           "name": "V(tip)",
           "description": "Volume of the missing tip",
-          "value": "topArea × frustumHeight / 8^(1/2) × (1 / (1 - topArea / bottomArea) - 1)"
+          "value": "topArea × frustumHeight / 8^(1/2) × (1 / (1 - √topArea / √bottomArea) - 1)"
         }
       }
     ]
@@ -1475,7 +1475,7 @@
     "@type": "PropertyValue",
     "name": "Volume of a frustum pyramid",
     "description": "Exact volume of a frustum pyramid",
-    "value": "frustumHeight × (bottomArea / (1 - topArea / bottomArea) - (topArea / (1 - topArea / bottomArea) - topArea)) / sqrt(8)"
+    "value": "frustumHeight × (bottomArea / (1 - √topArea / √bottomArea) - (topArea / (1 - √topArea / √bottomArea) - topArea)) / sqrt(8)"
   },
   "subjectOf": [
     {
