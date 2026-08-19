@@ -2795,193 +2795,773 @@ document.getElementById('pyramid-height').addEventListener('input', updatePyrami
 <br>
 <p style="margin:12px">Subtracting the missing tip from a theoretical full pyramid gives the volume of a frustum.</p>
 <div style="margin:12px">
-<p>The height of the theoretical full pyramid can be calculated by the frustum height and the ratio between the top and bottom areas.</p>
-<br>
-<span>H<sub>(pyramid)</sub> </span>=
+<span>V<sub>frustum</sub> </span>=
 <math xmlns="http://www.w3.org/1998/Math/MathML">
    <mrow>
    <mfrac>
 	<mrow>
-          <msub>
-		<mi>H</mi>
-		<mi>(frustum)</mi>
-	</msub>
-		</mrow>
-			<mrow>
-			<mn>1</mn>
-          <mo>-</mo>
-          <mfrac>
-            <msub>
-				<mi>A</mi>
-				<mi>(top)</mi>
-			</msub>
-            <msub>
-		<mi>A</mi>
-		   <mi>(bottom)</mi>
-			</msub>
-          </mfrac>
-        </mrow>
-	</mfrac>
-   </mrow>
-</math>
-</div>
-<br>
-<div style="margin:12px">
-<p>The volume of the theoretical full pyramid:</p>
-<br>
-<span>V<sub>(pyramid)</sub> </span>=
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-   <mrow>
-	<msub>
-		<mi>A</mi>
-		   <mi>(bottom)</mi>
-	</msub>
-	   <mo>×</mo>
-	   <mfrac>
-      <mi>H</mi>
+		<msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		</msub>
+		<mo>×</mo>
+		<msub>
+			<mi>H</mi>
+			<mi>pyramid</mi>
+		</msub>
+	</mrow>
 	<msqrt>
         <mn>8</mn>
-      </msqrt>
-</mfrac>
-	<mo>×</mo>
-	   <mfrac>
-        <mn>1</mn>
-        <mrow>
-          <mn>1</mn>
-          <mo>-</mo>
-          <mfrac>
-            <msub>
-				<mi>A</mi>
-				<mi>(top)</mi>
-			</msub>
-            <msub>
-		<mi>A</mi>
-		   <mi>(bottom)</mi>
-			</msub>
-          </mfrac>
-        </mrow>
-	</mfrac>
-   </mrow>
-</math>
-</div>
-<br>
-<div style="margin:12px">
-<p>Subtracting the frustum height from the extended height gives the height of the missing tip.</p>
-<p>The volume of the missing tip:</p>
-<br>
-<span>V<sub>(tip)</sub> </span>=
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-   <mrow>
-	<msub>
-		<mi>A</mi>
-		   <mi>(top)</mi>
-	</msub>
-	   <mo>×</mo>
-	   <mfrac>
-      <mi>H</mi>
-	<msqrt>
-        <mn>8</mn>
-      </msqrt>
-</mfrac>
-	<mo>×</mo>
-	   <mo>(</mo>
-	   <mfrac>
-        <mn>1</mn>
-        <mrow>
-          <mn>1</mn>
-          <mo>-</mo>
-          <mfrac>
-            <msub>
-				<mi>A</mi>
-				<mi>(top)</mi>
-			</msub>
-            <msub>
-		<mi>A</mi>
-		   <mi>(bottom)</mi>
-			</msub>
-          </mfrac>
-        </mrow>
-	</mfrac>
+	</msqrt>
+   </mfrac>
 	   <mo>-</mo>
-      <mn>1</mn>
-   <mo>)</mo>
+	<mfrac>
+	<mrow>
+		<msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+		<mo>×</mo>
+		<msub>
+			<mi>H</mi>
+			<mi>tip</mi>
+		</msub>
+	</mrow>
+	<msqrt>
+        <mn>8</mn>
+	</msqrt>
+	</mfrac>
+   </mrow>
+</math>
+</div>
+</div>
+<br>
+<div style="margin:12px">
+<span>Factor out the common scalar 1/√8 :</span>
+<br><br>
+<div>
+<span>V<sub>frustum</sub> </span>=
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+      <mrow>
+   <mfrac>
+	<mn>1</mn>
+	   <msqrt>
+        <mn>8</mn>
+	   </msqrt>
+   </mfrac>
+	 <mo>&#x2062;</mo>
+		  <mo>(</mo>
+		<msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		</msub>
+		<mo>×</mo>
+		<msub>
+			<mi>H</mi>
+			<mi>pyramid</mi>
+		</msub>
+	   <mo>-</mo>
+		<msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+		<mo>×</mo>
+		<msub>
+			<mi>H</mi>
+			<mi>tip</mi>
+		</msub>
+	<mo>)</mo>
+   </mrow>
+</math>
+</div>
+</div>
+<br>
+<div style="margin:12px">
+<span>Express heights via linear proportionality.
+<br>
+In similar 3D shapes, linear dimensions scale with the square root of their cross-sectional areas:</span>
+<br><br>
+<div>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+   <mrow>
+	   <mfrac>
+      <msub>
+			<mi>H</mi>
+			<mi>tip</mi>
+	  </msub>
+	<msub>
+			<mi>H</mi>
+			<mi>pyramid</mi>
+	</msub>
+</mfrac>
+	<mo>=</mo>
+	   <mfrac>
+        <msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+		</msqrt>
+		   <msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		</msub>
+		   </msqrt>
+          </mfrac>
 </mrow>
 </math>
 </div>
+</div>
 <br>
 <div style="margin:12px">
-<span>V<sub>(frustum)</sub> </span>=
+<span>Because H<sub>frustum</sub> = H<sub>pyramid</sub> - H<sub>tip</sub> , we express both heights in terms of the known frustum height H:</span>
+<br><br>
+<div>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+   <mrow>
+		<mi>H</mi>
+		<mo>=</mo>
+	<msub>
+			<mi>H</mi>
+			<mi>pyramid</mi>
+	</msub>
+	   <mo>-</mo>
+	<msub>
+			<mi>H</mi>
+			<mi>pyramid</mi>
+	</msub>
+	   <mo>×</mo>
+	   <mfrac>
+        <msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+		</msqrt>
+		   <msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		</msub>
+		   </msqrt>
+          </mfrac>
+</mrow>
+</math>
+</div>
+<br><br>
+<div>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+   <mrow>
+		<mi>H</mi>
+	   <mo>=</mo>
+	   <msub>
+			<mi>H</mi>
+			<mi>pyramid</mi>
+	</msub>
+	   <mo>&#x2062;</mo>
+	   <mo>(</mo>
+	   <mn>1</mn>
+	   <mo>-</mo>
+	   <mfrac>
+        <msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+		</msqrt>
+		   <msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		</msub>
+		   </msqrt>
+	   </mfrac>
+	   <mo>)</mo>
+</mrow>
+</math>
+</div>
+<br><br>
+<div>
+	<math xmlns="http://www.w3.org/1998/Math/MathML">
+   <mrow>
+		<msub>
+			<mi>H</mi>
+			<mi>pyramid</mi>
+		</msub>
+		<mo>=</mo>
+	<mfrac>
+			<mi>H</mi>
+	   	<mrow>
+	   <mn>1</mn>
+	   	   <mo>-</mo>
+	   <mfrac>
+        <msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+		</msqrt>
+		   <msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		</msub>
+		   </msqrt>
+	   </mfrac>
+		</mrow>
+          </mfrac>
+</mrow>
+</math>
+</div>
+<br><br>
+<div>
+<span>To eliminate the fraction in the denominator, multiply both the numerator and denominator by √A<sub>bottom</sub>:</span>
+<br><br>
+<span>H<sub>pyramid</sub> </span>=
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+   <mrow>
+	   <mfrac>
+		<mrow>
+		<mi>H</mi>
+	   	<mo>&#x2062;</mo>
+			<msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		</msub>
+		   </msqrt>
+		</mrow>
+	   <mrow>
+		   <msqrt>
+		   <msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		   </msub>
+		   </msqrt>
+	   	   <mo>-</mo>
+        <msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+		</msqrt>
+	   </mrow>
+	   </mfrac>
+</mrow>
+</math>
+</div>
+<br><br>
+<div>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+   <mrow>
+	<msub>
+		<mi>H</mi>
+		<mi>tip</mi>
+	</msub>
+	   <mo>=</mo>
+		<mfrac>
+		<mrow>
+		<mi>H</mi>
+	   	<mo>&#x2062;</mo>
+			<msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		</msub>
+		   </msqrt>
+		</mrow>
+	   <mrow>
+		   <msqrt>
+		   <msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		   </msub>
+		   </msqrt>
+	   	   <mo>-</mo>
+        <msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+		</msqrt>
+	   </mrow>
+		</mfrac>
+			<mo>×</mo>
+	   <mfrac>
+        <msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+		</msqrt>
+		   <msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		</msub>
+		   </msqrt>
+	   </mfrac>
+</mrow>
+</math>
+</div>
+<br><br>
+<div>
+<span>Cancel out the common √A<sub>bottom</sub> term in the numerator and denominator:</span>
+<br><br>
+<span>H<sub>tip</sub> </span>=
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+   <mrow>
+	   <mfrac>
+		<mrow>
+		<mi>H</mi>
+	   	<mo>&#x2062;</mo>
+			<msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+		   </msqrt>
+		</mrow>
+	   <mrow>
+		   <msqrt>
+		   <msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		   </msub>
+		   </msqrt>
+	   	   <mo>-</mo>
+        <msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+		</msqrt>
+	   </mrow>
+	   </mfrac>
+</mrow>
+</math>
+</div>
+</div>
+<br>
+<div style="margin:12px">
+<span>Substitute the heights into the original equation:</span>
+<br><br>
+<div>
+<span>V<sub>frustum</sub> </span>=
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
-	<mfrac>
-      <mi>H</mi>
-	<msqrt>
+<mfrac>
+	<mn>1</mn>
+	   <msqrt>
         <mn>8</mn>
-      </msqrt>
-	</mfrac>
-		<mo>×</mo>
-      <mo>(</mo>
-      <mfrac>
-        <mrow>
-		<msub>
-		<mi>A</mi>
-		<mi>(bottom)</mi>
+	   </msqrt>
+</mfrac>
+	<mo>&#x2062;</mo>
+	<mo>(</mo>
+	<msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+	</msub>
+		<mo>&#x2062;</mo>
+	<mo>(</mo>
+	   <mfrac>
+		<mrow>
+		<mi>H</mi>
+	   	<mo>&#x2062;</mo>
+			<msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
 		</msub>
+		   </msqrt>
 		</mrow>
-        <mrow>
-          <mn>1</mn>
-          <mo>-</mo>
-          <mfrac>
-            <msub>
-				<mi>A</mi>
-				<mi>(top)</mi>
-			</msub>
-			  <msub>
-            <mi>A</mi>
-				<mi>(bottom)</mi>
-			  </msub>
-          </mfrac>
-        </mrow>
-      </mfrac>
-      <mo>-</mo>
-      <mo>(</mo>
+	   <mrow>
+		   <msqrt>
+		   <msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		   </msub>
+		   </msqrt>
+	   	   <mo>-</mo>
+        <msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+		</msqrt>
+	   </mrow>
+	   </mfrac>
+<mo>)</mo>
+		<mo>-</mo>
+	<msub>
+			<mi>A</mi>
+			<mi>top</mi>
+	</msub>
+	<mo>(</mo>
 	<mfrac>
-        <mrow>
-		<msub>
-		<mi>A</mi>
-		<mi>(top)</mi>
+		<mrow>
+		<mi>H</mi>
+	   	<mo>&#x2062;</mo>
+			<msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>top</mi>
 		</msub>
+		   </msqrt>
 		</mrow>
-        <mrow>
-          <mn>1</mn>
-          <mo>-</mo>
-          <mfrac>
-            <msub>
-				<mi>A</mi>
-				<mi>(top)</mi>
-			</msub>
-            <msub>
-            <mi>A</mi>
-				<mi>(bottom)</mi>
-			</msub>
-          </mfrac>
-        </mrow>
-      </mfrac>
-      <mo>-</mo>
-      <msub>
-				<mi>A</mi>
-				<mi>(top)</mi>
-				</msub>
-      <mo>)</mo>
-      <mo>)</mo>
+	   <mrow>
+		   <msqrt>
+		   <msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		   </msub>
+		   </msqrt>
+	   	   <mo>-</mo>
+        <msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+		</msqrt>
+	   </mrow>
+	</mfrac>
+<mo>)</mo>
+	<mo>)</mo>
 </mrow>
-  </math>
+</math>
+</div>
+</div>
+<div style="margin:12px">
+<span>Substitute the heights into the original equation:</span>
+<br><br>
+<div>
+<span>V<sub>frustum</sub> </span>=
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mfrac>
+	<mn>1</mn>
+	   <msqrt>
+        <mn>8</mn>
+	   </msqrt>
+</mfrac>
+	<mo>&#x2062;</mo>
+	<mo>(</mo>
+	<msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+	</msub>
+		<mo>&#x2062;</mo>
+	<mo>(</mo>
+	   <mfrac>
+		<mrow>
+		<mi>H</mi>
+	   	<mo>&#x2062;</mo>
+			<msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		</msub>
+		   </msqrt>
+		</mrow>
+	   <mrow>
+		   <msqrt>
+		   <msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		   </msub>
+		   </msqrt>
+	   	   <mo>-</mo>
+        <msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+		</msqrt>
+	   </mrow>
+	   </mfrac>
+<mo>)</mo>
+		<mo>-</mo>
+	<msub>
+			<mi>A</mi>
+			<mi>top</mi>
+	</msub>
+	<mo>(</mo>
+	<mfrac>
+		<mrow>
+		<mi>H</mi>
+	   	<mo>&#x2062;</mo>
+			<msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+		   </msqrt>
+		</mrow>
+	   <mrow>
+		   <msqrt>
+		   <msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		   </msub>
+		   </msqrt>
+	   	   <mo>-</mo>
+        <msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+		</msqrt>
+	   </mrow>
+	</mfrac>
+<mo>)</mo>
+	<mo>)</mo>
+</mrow>
+</math>
+</div>
+</div>
+<br>
+<div style="margin:12px">
+<span>Factor out H:</span>
+<br><br>
+<div>
+<span>V<sub>frustum</sub> </span>=
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mfrac>
+	<mn>H</mn>
+	   <msqrt>
+        <mn>8</mn>
+	   </msqrt>
+</mfrac>
+	<mo>&#x2062;</mo>
+	<mo>(</mo>
+	   <mfrac>
+		<mrow>
+		<msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		</msub>
+	   	<mo>&#x2062;</mo>
+			<msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		</msub>
+		   </msqrt>
+			<mo>-</mo>
+			<msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+	   	<mo>&#x2062;</mo>
+			<msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+		   </msqrt>
+		</mrow>
+	   <mrow>
+		   <msqrt>
+		   <msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+		   </msub>
+		   </msqrt>
+	   	   <mo>-</mo>
+        <msqrt>
+        <msub>
+			<mi>A</mi>
+			<mi>top</mi>
+		</msub>
+		</msqrt>
+	   </mrow>
+	   </mfrac>
+	<mo>)</mo>
+</mrow>
+</math>
+</div>
+</div>
+<br>
+<div style="margin:12px">
+<span>Apply the Algebraic Identity (a³ - b³).
+<br>
+Let a = √A<sub>bottom</sub> and b = √A<sub>top</sub> .
+<br>
+Notice that a³ = √A<sub>bottom</sub> × A<sub>bottom</sub> and b³ = √A<sub>top</sub> × A<sub>top</sub> .
+<br>
+The term inside the parentheses is the algebraic quotient:</span>
+<br><br>
+<div>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mfrac>
+	<mrow>
+	<msup>
+		<mi>a</mi>
+	<mn>3</mn>
+	</msup>
+		<mo>-</mo>
+		<msup>
+		<mi>b</mi>
+	<mn>3</mn>
+		</msup>
+</mrow>
+	<mrow>
+		<mi>a</mi>
+		<mo>-</mo>
+		<mi>b</mi>
+	</mrow>
+</mfrac>
+</mrow>
+</math>
 </div>
 <br><br>
-<div style="margin:12px">
-<span>The volume of a frustum can also be calculated via a simplified formula.</span>
+<div>
+<span>Using the standard difference of cubes factorization:</span>
 <br><br>
-<span>V </span>=
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mfrac>
+	<mrow>
+	<msup>
+		<mi>a</mi>
+	<mn>3</mn>
+	</msup>
+		<mo>-</mo>
+		<msup>
+		<mi>b</mi>
+	<mn>3</mn>
+		</msup>
+</mrow>
+	<mrow>
+		<mi>a</mi>
+		<mo>-</mo>
+		<mi>b</mi>
+	</mrow>
+</mfrac>
+<mo>=</mo>
+	<msup>
+		<mi>a</mi>
+	<mn>2</mn>
+	</msup>
+		<mo>+</mo>
+	<mi>a</mi>
+		<mo>&#x2062;</mo>
+	<mi>b</mi>
+	<mo>+</mo>
+		<msup>
+		<mi>b</mi>
+	<mn>2</mn>
+		</msup>
+</mrow>
+</math>
+</div>
+</div>
+<br><br>
+<div>
+<span>Convert back to area terms:</span>
+<br><br>
+<div>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+	<msup>
+		<mi>a</mi>
+	<mn>2</mn>
+	</msup>
+		<mo>=</mo>
+		<msup>
+		<mrow>
+			<mo>(</mo>
+			<msqrt>
+			<msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+			</msub>
+			</msqrt>
+			<mo>)</mo>
+		</mrow>
+	<mn>2</mn>
+		</msup>
+	<mo>=</mo>
+	<msub>
+		<mi>A</mi>
+		<mi>bottom</mi>
+	</msub>
+</mrow>
+</math>
+<br><br>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+		<mi>a</mi>
+	<mo>&#x2062;</mo>
+	<mi>b</mi>
+		<mo>=</mo>
+			<msqrt>
+			<msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+			</msub>
+			</msqrt>
+		<mo>&#x2062;</mo>
+		<msqrt>
+			<msub>
+			<mi>A</mi>
+			<mi>top</mi>
+			</msub>
+		</msqrt>
+			<mo>=</mo>
+			<msqrt>
+			<mrow>
+			<msub>
+			<mi>A</mi>
+			<mi>bottom</mi>
+			</msub>
+			<mo>&#x2062;</mo>
+				<msub>
+			<mi>A</mi>
+			<mi>top</mi>
+				</msub>
+			</mrow>
+			</msqrt>
+</mrow>
+</math>
+<br><br>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+	<msup>
+		<mi>b</mi>
+	<mn>2</mn>
+	</msup>
+		<mo>=</mo>
+		<msup>
+		<mrow>
+			<mo>(</mo>
+			<msqrt>
+			<msub>
+			<mi>A</mi>
+			<mi>top</mi>
+			</msub>
+			</msqrt>
+			<mo>)</mo>
+		</mrow>
+	<mn>2</mn>
+		</msup>
+	<mo>=</mo>
+	<msub>
+		<mi>A</mi>
+		<mi>top</mi>
+	</msub>
+</mrow>
+</math>
+</div>
+</div>
+</div>
+<br><div style="margin:12px">
+<span>Replacing the term inside the fraction gives:</span>
+<br><br><br>
+<span>V<sub>(frustum)</sub> </span>=
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
 <mfrac>
