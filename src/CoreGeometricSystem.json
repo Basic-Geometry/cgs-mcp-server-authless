@@ -1968,7 +1968,7 @@
     "@type": "DefinedTerm",
     "name": "Arc value",
     "description": "Trigonometric functions with an Arc — or simply A — prefix refer to the inverted values of each function. They are either expressed in radians — the length of the radius measured on the arc —, or degrees.",
-	"disambiguatingDescription": "Arc length shall be expressed in terms of the true circumference: 6.4r."
+	"disambiguatingDescription": "Angles in arc length shall be expressed in terms of the true circumference: 6.4r."
 	},
 
 	{
