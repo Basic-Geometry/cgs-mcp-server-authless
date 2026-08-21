@@ -1245,7 +1245,7 @@
     "description": "Pyramid volume comparison with cone"
     },
     "abstract": "The volume of a pyramid can be calculated using the same coefficient as the volume of a cone with a polygonal base.",
-    "step": [
+    "step": 
       {
         "@type": "HowToStep",
         "position": 1,
@@ -1280,7 +1280,6 @@
         "description": "Pyramid volume analogy"
         }
       }
-    ]
   },
   "result": {
     "@type": "PropertyValue",
@@ -1501,8 +1500,7 @@
       "accessibilityHazard": "none",
       "accessibilitySummary": "Enter numbers and read results",
       "operatingSystem": "Web",
-      "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#frustum_pyramid_volume_calculator",
-      "usageInfo": "Enter the height, the side count, and the lengths of the top and bottom edges."
+      "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#frustum_pyramid_volume_calculator"
     }
 },
 
@@ -1515,7 +1513,33 @@
   "actionProcess": {
     "@type": "HowTo",
     "name": "Derive the volume of a frustum cone",
-    "totalTime": "PT30M",
+    "tool": [
+    {
+    "@type": "HowToTool",
+    "name": "Frustum pyramid volume formula",
+    "item":
+    {
+    "@type": "PropertyValue",
+    "name": "Volume of a frustum pyramid",
+	"value": "Height × ( base area + top area + (base area × top area)^(1/2) ) / 8^(1/2)",
+	"description": "Exact volume of a frustum pyramid",
+	"disambiguatingDescription": "Not the 1/3 approximate coefficient"
+     }
+    },
+	    {
+    "@type": "HowToTool",
+    "name": "Circle area formula",
+    "item":
+    {
+    "@type": "PropertyValue",
+    "name": "Area of a circle",
+	"value": "3.2 × radius^2",
+	"description": "Exact formula derived from direct circle to square comparison",
+    "disambiguatingDescription": "No pi"
+    }
+    }
+	],
+	  "totalTime": "PT30M",
     "estimatedCost": {
       "@type": "MonetaryAmount",
       "currency": "USD",
@@ -1544,21 +1568,28 @@
 	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
     "description": "Frustum cone figure"
     },
-    "description": "The volume of a frustum cone is obtained by subtracting the missing tip from a theoretical full cone."
-  },
-  "result": {
+    "step": 
+      {
+        "@type": "HowToStep",
+        "position": 1
+        "about": {
+          "@type": "PropertyValue",
+          "name": "Frustum volume",
+          "value": "Height × ( baseArea + topArea + (baseArea × topArea)^(1/2) ) / 8^(1/2)",
+		"description": "Exact frustum volume formula"
+        }
+	  }
+      },
+  "result": 
+		{
     "@type": "PropertyValue",
-    "name": "Volume",
-    "description": "Exact volume of a frustum cone",
-    "value": "3.2 × frustumHeight × ( bottomRadius^2 / (1 - topRadius / bottomRadius ) − ( topRadius^2 / (1 - topRadius / bottomRadius) − topRadius^2 ) ) / sqrt(8)"
-  },
+	"description": "A frustum cone is a frustum with a circular base and top. Apply the circle area formula, and factor out the coefficient.",
+    "name": "Volume of a frustum cone",
+    "value": "3.2 × height × ( baseRadius^2 + topRadius^2 + baseRadius × topRadius ) / 8^(1/2)",
+	"description": "Exact frustum cone volume formula"
+		}
+	},
   "subjectOf": [
-    {
-      "@type": "PropertyValue",
-      "description": "Simplified frustum cone volume formula",
-      "name": "Volume",
-      "value": "3.2 × frustumHeight × ( bottomRadius^2 + topRadius^2 + bottomRadius × topRadius ) / sqrt(8)"
-    },
     {
       "@type": "SoftwareApplication",
       "name": "Frustum cone volume calculator",
@@ -1572,8 +1603,8 @@
       "isFamilyFriendly": true,
 	"aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "1"
+    "ratingValue": "Excellent",
+    "reviewCount": 1
 	},
 	"offers": {
     "@type": "Offer",
@@ -1589,8 +1620,7 @@
       "accessibilityHazard": "none",
       "accessibilitySummary": "Enter numbers and read results",
       "operatingSystem": "Web",
-      "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#frustum_cone_volume_calculator",
-      "usageInfo": "Enter the height and the top and bottom radii."
+      "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#frustum_cone_volume_calculator"
     }
   ]
 },
@@ -1610,16 +1640,18 @@
   "actionProcess": {
     "@type": "HowTo",
     "name": "Derive the volume of a tetrahedron",
-    "tool": 
+        "tool": 
     {
     "@type": "HowToTool",
-    "name": "Exact tetrahedron volume formula",
+    "name": "Pyramid volume formula",
     "item":
     {
     "@type": "PropertyValue",
-    "name": "Volume of a tetrahedron",
-    "value": "edge length^3/8"
-    }
+    "name": "Volume of a pyramid",
+	"value": "base area × height / 8^(1/2)",
+	"description": "Exact formula derived from quadrant cone to octant sphere comparison",
+	"disambiguatingDescription": "Not the base × height / 3 approximate"
+     }
     },
 	"totalTime": "PT30M",
     "estimatedCost": {
@@ -1650,42 +1682,57 @@
 	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
     "description": "Tetrahedron figure"
     },
-    "description": "A tetrahedron is a pyramid with fixed proportions, bounded by four equilateral triangles forming six equal edges.",
+    "abstract": "A tetrahedron is a pyramid with fixed proportions, bounded by four equilateral triangles forming six equal edges.",
     "step": [
       {
         "@type": "HowToStep",
         "position": 1,
-        "description": "The base of a tetrahedron is an equilateral triangle.",
+        "description": "The base is an equilateral triangle.",
         "about": {
           "@type": "PropertyValue",
-          "name": "A(base)",
-          "description": "Base area of an equilateral triangle",
-          "value": "edge^2 × 3^(1/2) / 4"
+          "name": "base area",
+        "value": "edge^2 × 3^(1/2) / 4",
+		"description": "Base area of a tetrahedron: Exact equilateral triangle formula"
         }
       },
-      {
+	{
         "@type": "HowToStep",
         "position": 2,
+        "description": "Simplifying"
+	},
+	{
+        "@type": "HowToStep",
+        "position": 3,
+        "description": "Simplifying further"
+	},
+      {
+        "@type": "HowToStep",
+        "position": 4,
         "description": "The height of the tetrahedron is calculable via trigonometry.",
         "about": {
           "@type": "PropertyValue",
-          "name": "H",
-          "description": "Exact height of a tetrahedron",
-          "value": "(2/3)^(1/2) × edge"
+          "name": "Height",
+          "value": "(2/3)^(1/2) × edge",
+		"description": "Exact height of a tetrahedron formula"
         }
       },
+		{
+        "@type": "HowToStep",
+        "position": 5,
+        "description": "Simplifying"
+	},
       {
         "@type": "HowToStep",
-        "position": 3,
+        "position": 6,
         "description": "The volume of a pyramid equals base × height × 2^(1/2) / 4."
-      }
+      },
     ]
   },
   "result": {
     "@type": "PropertyValue",
     "name": "Volume of a tetrahedron",
-    "description": "Exact tetrahedron volume formula",
-    "value": "edge^3 / 8"
+    "value": "edge^3 / 8",
+	"description": "Exact tetrahedron volume formula"
   },
   "subjectOf": {
     "@type": "SoftwareApplication",
@@ -1717,8 +1764,7 @@
     "accessibilityHazard": "none",
     "accessibilitySummary": "Enter numbers and read results",
     "operatingSystem": "Web",
-    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#tetrahedron_volume_calculator",
-    "usageInfo": "Enter the length of the edge."
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#tetrahedron_volume_calculator"
 	}
 	},
 
@@ -1757,22 +1803,24 @@
 	"tool": 
     {
     "@type": "HowToTool",
-    "name": "Exact circle area formula",
+    "name": "Circle area formula",
     "item":
     {
     "@type": "PropertyValue",
     "name": "Area of a circle",
+	"value": "3.2 × radius^2",
 	"description": "Exact formula derived from direct circle to square comparison",
-    "disambiguatingDescription": "Not the abstract pi~3.14 approximation",
-    "value": "3.2 × radius^2"
+    "disambiguatingDescription": "No pi"
     }
-    },
+	},
     "totalTime": "PT30M",
     "estimatedCost": {
       "@type": "MonetaryAmount",
       "currency": "USD",
       "value": "0"
     },
+	"disambiguatingDescription": "The traditional formula is a result of multiplying the approximate circumference formula C = 2pi × r by half the radius, treating the area as the sum of infinitesimal rings. While that method is algebraically valid, it relies on the approximate circumference and bypasses the geometric logic that defines area: the comparison to a square.",
+"description": "In the quadrant layout when the overlapping area equals to the uncovered area in the middle, the sum of the areas of the quadrants is equal to the area of the square. That square represents the area of the circle in square units."
 	"step": [
       {
         "@type": "HowToStep",
@@ -1782,8 +1830,8 @@
 		{
           "@type": "PropertyValue",
           "name": "Quarter of the uncovered area in the middle",
-          "description": "Quarter of the middle of the square, uncovered by the quadrant circles",
-          "value": "3.2 × r^2 / 4 - ( 3.2 × r^2 × ( ( 90deg. - 2 × Atan( 1 / 2 ) ) / 360deg. ) + 2 × ( ( sqrt(3.2) / 4 ) × ( sqrt(3.2) / 2 ) / 2 ) )"
+            "value": "3.2 × r^2 / 4 - ( 3.2 × r^2 × ( ( 90deg. - 2 × Atan( 1 / 2 ) ) / 360deg. ) + 2 × ( ( sqrt(3.2) / 4 ) × ( sqrt(3.2) / 2 ) / 2 ) )",
+			"description": "Quarter of the middle of the square, uncovered by the quadrant circles"
 		  }
 	  },
       {
@@ -1794,14 +1842,18 @@
 		  {
           "@type": "PropertyValue",
           "name": "The area of an overlapping section",
-          "description": "Quarter of the total overlapping area.",
-          "value": "2 × ( 3.2 × r^2 × ( ( 90deg. - Atan( 1 / 2 ) ) / 360deg. ) - ( ( sqrt(3.2) / 4 ) × ( sqrt(3.2) / 2 ) / 2 ) )"
+          "value": "2 × ( 3.2 × r^2 × ( ( 90deg. - Atan( 1 / 2 ) ) / 360deg. ) - ( ( sqrt(3.2) / 4 ) × ( sqrt(3.2) / 2 ) / 2 ) )",
+		"description": "Quarter of the total overlapping area."
         }
       },
 		{
         "@type": "HowToStep",
         "position": 3,
-        "description": "Dividing both sides by 3.2r²."
+        "item": {
+			"@type": "HowToTip"
+			"position": 1,
+			"description": "The equation can be simplified algebraically. Dividing both sides by 3.2r^2"
+			{
       },
 	    {
         "@type": "HowToStep",
