@@ -27,7 +27,6 @@
 <meta name="twitter:image" content="android-chrome-256x256.png">
 <meta name="msapplication-TileColor" content="#000000">
 <meta name="theme-color" content="#000000">
-
 <style>
        
         * {
@@ -101,6 +100,14 @@
             font-family: 'OpenDyslexic', sans-serif;
         }
 </style>
+  <script>
+    fetch('/CoreGeometricSystem.json')
+      .then(response => response.json())
+      .then(data => {
+        console.log('JSON loaded:', data);
+        window.myData = data; // make it globally available
+      });
+  </script>
 </head>
 <body>
 <div id="cookie-notice">
