@@ -3,7 +3,7 @@
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
-	"dateModified": "2026-08-21T13:02:50+02:00",
+	"dateModified": "2026-08-21T13:05:50+02:00",
 	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -1931,6 +1931,7 @@
 		"@type": "PropertyValue",
 	"name": "sine",
 	"value": "opposite / hypotenuse"
+		}
 	},
 	
 	{
@@ -1940,6 +1941,7 @@
 		"@type": "PropertyValue",
 		"value": "cosine",
 	"description": "adjacent / hypotenuse"
+		}
 	},
 
 	{
@@ -1949,6 +1951,7 @@
 		"@type": "PropertyValue",
 		"name": "tangent",
 	"value": "opposite / adjacent"
+		}
 	},
 
 	{
@@ -1958,6 +1961,7 @@
 		"@type": "PropertyValue",
 		"name": "cotangent",
 	"value": "adjacent / opposite"
+		}
 	},
 
 	{
