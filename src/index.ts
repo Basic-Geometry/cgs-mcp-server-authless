@@ -29,8 +29,6 @@ import {
 
 import manifest from './manifest.json' assert { type: 'json' };
 
-import context from './CoreGeometricSystem.json' assert { type: 'json' };
-
 import aiCatalog from './ai-catalog.json' assert { type: 'json' };
 
 
@@ -548,16 +546,6 @@ if (url.pathname.startsWith("/tools")) {
         }
       });
     }
-
-	// Serve structured data 
-    if (url.pathname === "/CoreGeometricSystem.json") {
-      return new Response(JSON.stringify(context, null, 2), {
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*"
-        }
-      });
-	}
 
 
 // ARD Capability Catalog
