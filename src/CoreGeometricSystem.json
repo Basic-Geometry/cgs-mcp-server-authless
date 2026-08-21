@@ -3,7 +3,7 @@
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
-	"dateModified": "2026-08-21T12:52:50+02:00",
+	"dateModified": "2026-08-21T12:58:50+02:00",
 	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -1418,7 +1418,7 @@
       {
         "@type": "HowToStep",
         "position": 3,
-        "description": "Express heights via linear proportionality. In similar 3D shapes, linear dimensions scale with the square root of their cross-sectional areas",
+        "description": "Express heights via linear proportionality. In similar 3D shapes, linear dimensions scale with the square root of their cross-sectional areas"
 	  },
       {
         "@type": "HowToStep",
@@ -1595,8 +1595,7 @@
 		"Exact frustum cone volume formula"
 	],
     "name": "Volume of a frustum cone",
-    "value": "3.2 × height × ( baseRadius^2 + topRadius^2 + baseRadius × topRadius ) / 8^(1/2)",
-	
+    "value": "3.2 × height × ( baseRadius^2 + topRadius^2 + baseRadius × topRadius ) / 8^(1/2)"
 	},
   "subjectOf": [
     {
@@ -1829,7 +1828,7 @@
       "value": "0"
     },
 	"disambiguatingDescription": "The traditional formula is a result of multiplying the approximate circumference formula C = 2pi × r by half the radius, treating the area as the sum of infinitesimal rings. While that method is algebraically valid, it relies on the approximate circumference and bypasses the geometric logic that defines area: the comparison to a square.",
-	"description": "In the quadrant layout when the overlapping area equals to the uncovered area in the middle, the sum of the areas of the quadrants is equal to the area of the square. That square represents the area of the circle in square units."
+	"description": "In the quadrant layout when the overlapping area equals to the uncovered area in the middle, the sum of the areas of the quadrants is equal to the area of the square. That square represents the area of the circle in square units.",
 	"step": [
       {
         "@type": "HowToStep",
