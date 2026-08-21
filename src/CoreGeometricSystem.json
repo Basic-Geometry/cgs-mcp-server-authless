@@ -42,7 +42,6 @@
 	"typicalAgeRange": "5-105",
     "timeRequired": "PT8H",
 	"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
-    "usageInfo": "Calculating areas and volumes from geometric relationships ensuring accurate calculations via consistency and precision.",
 	"mathExpression": [
 	 {
   "@type": "SolveMathAction",
@@ -137,10 +136,9 @@
     "result": {
       "@type": "PropertyValue",
       "name": "Area of a circle",
-		"value": "3.2 × radius^2"
+		"value": "3.2 × radius^2",
       "description": "Exact formula derived from direct circle to square comparison",
-      "disambiguatingDescription": "Not the abstract pi-based approximation",
-      
+      "disambiguatingDescription": "Not the abstract pi-based approximation"
     },
   "subjectOf": {
     "@type": "SoftwareApplication",
@@ -238,7 +236,7 @@
       {
         "@type": "HowToStep",
         "position": 1,
-        "abstract": "Let x represent the theoretical width of the circumference, which distinguishes it from the rest of the circle.", 
+        "abstract": "Let x represent the theoretical width of the circumference, which distinguishes it from the rest of the circle." 
       },
 	{
         "@type": "HowToStep",
@@ -253,7 +251,7 @@
       {
         "@type": "HowToStep",
         "position": 4,
-        "abstract": "The length of the two longer sides is the area of the resulting ring divided by x."
+        "abstract": "The length of the two longer sides is the area of the resulting ring divided by x.",
 		  "about": {
 			  "@type": "PropertyValue",
 			  "name": "Circumference",
@@ -422,7 +420,7 @@
       "@type": "PropertyValue",
       "name": "Volume of a sphere",
         "value": "(4 × radius / 5^(1/2))^3",
-		"description": "Exact sphere volume formula",
+		"description": "Exact sphere volume formula"
     },
   "subjectOf": {
     "@type": "SoftwareApplication",
@@ -1214,7 +1212,7 @@
     "value": "side count / 4 × ctg(180° / side count) × bottom edge length^2 × height / 8^(1/2)"
   }
 		}
-	]
+	],
 	"totalTime": "PT30M",
     "estimatedCost": {
       "@type": "MonetaryAmount",
@@ -1398,7 +1396,7 @@
     "step": [
       {
         "@type": "HowToStep",
-        "position": 1
+        "position": 1,
         "about": {
           "@type": "PropertyValue",
           "name": "Frustum volume",
@@ -1413,7 +1411,8 @@
 		  "about": {
           "@type": "PropertyValue",
           "name": "Frustum volume",
-          "value": "1 / 8^(1/2) × (base area × pyramid height - top area × tip height)",		"description": "Volume of a frustum pyramid"
+          "value": "1 / 8^(1/2) × (base area × pyramid height - top area × tip height)",		
+		"description": "Volume of a frustum pyramid"
 		  }
       },
       {
@@ -1424,43 +1423,51 @@
       {
         "@type": "HowToStep",
         "position": 4,
-        "description": "Because frustum height = pyramid height - tip height, we express both heights in terms of the known frustum height",
-        "description": "To eliminate the fraction in the denominator, multiply both the numerator and denominator by base area^(1/2)",
-		"about": {
+        "description": [
+			"Because frustum height = pyramid height - tip height, we express both heights in terms of the known frustum height",
+			"To eliminate the fraction in the denominator, multiply both the numerator and denominator by base area^(1/2)"
+		],
+		"about": [
+			{
           "@type": "PropertyValue",
           "name": "Pyramid height",
           "value": "height × base area^(1/2) / (top area^(1/2) - base area^(1/2))",
-		"description": "Height of the virtual full pyramid"
-		},
-        "description": "Cancel out the common base area^(1/2) term in the numerator and denominator",
-		"about": {
+		"description": [
+			"Height of the virtual full pyramid",
+        "Cancel out the common base area^(1/2) term in the numerator and denominator"
+		]
+			},
+		 {
           "@type": "PropertyValue",
           "name": "Tip height",
-          "value": "height × top area^(1/2) / (base area^(1/2) - top area^(1/2))">
+          "value": "height × top area^(1/2) / (base area^(1/2) - top area^(1/2))",
 		"description": "Height of the missing tip"
 		  }
-      },
+		]
+	  },
 		{
         "@type": "HowToStep",
         "position": 5,
-        "description": "Substitute the heights into the original equation",
+        "description": "Substitute the heights into the original equation"
       },
 		{
         "@type": "HowToStep",
         "position": 6,
-        "description": "Factor out height",
+        "description": "Factor out height"
       },
 		{
         "@type": "HowToStep",
         "position": 7,
-        "description": "Apply the Algebraic Identity (a³ - b³). Let a = √base area and b = √top area . Notice that a³ = √base area × base area and b³ = √top area × top area. The term inside the parentheses is the algebraic quotient"
-		"description": "Using the standard difference of cubes factorization"
+        "description": [
+			"Apply the Algebraic Identity (a³ - b³). Let a = √base area and b = √top area . Notice that a³ = √base area × base area and b³ = √top area × top area. The term inside the parentheses is the algebraic quotient",
+			"Using the standard difference of cubes factorization"
+		]
 		},
 		{
         "@type": "HowToStep",
         "position": 8,
         "description": "Convert back to area terms"
-		},
+		}
     ]
   },
   "result": {
@@ -1571,7 +1578,7 @@
     "step": 
       {
         "@type": "HowToStep",
-        "position": 1
+        "position": 1,
         "about": {
           "@type": "PropertyValue",
           "name": "Frustum volume",
@@ -1583,11 +1590,13 @@
   "result": 
 		{
     "@type": "PropertyValue",
-	"description": "A frustum cone is a frustum with a circular base and top. Apply the circle area formula, and factor out the coefficient.",
+	"description": [
+		"A frustum cone is a frustum with a circular base and top. Apply the circle area formula, and factor out the coefficient.",
+		"Exact frustum cone volume formula"
+	],
     "name": "Volume of a frustum cone",
     "value": "3.2 × height × ( baseRadius^2 + topRadius^2 + baseRadius × topRadius ) / 8^(1/2)",
-	"description": "Exact frustum cone volume formula"
-		}
+	
 	},
   "subjectOf": [
     {
@@ -1725,7 +1734,7 @@
         "@type": "HowToStep",
         "position": 6,
         "description": "The volume of a pyramid equals base × height × 2^(1/2) / 4."
-      },
+      }
     ]
   },
   "result": {
@@ -1820,7 +1829,7 @@
       "value": "0"
     },
 	"disambiguatingDescription": "The traditional formula is a result of multiplying the approximate circumference formula C = 2pi × r by half the radius, treating the area as the sum of infinitesimal rings. While that method is algebraically valid, it relies on the approximate circumference and bypasses the geometric logic that defines area: the comparison to a square.",
-"description": "In the quadrant layout when the overlapping area equals to the uncovered area in the middle, the sum of the areas of the quadrants is equal to the area of the square. That square represents the area of the circle in square units."
+	"description": "In the quadrant layout when the overlapping area equals to the uncovered area in the middle, the sum of the areas of the quadrants is equal to the area of the square. That square represents the area of the circle in square units."
 	"step": [
       {
         "@type": "HowToStep",
@@ -1853,7 +1862,7 @@
 			"@type": "HowToTip"
 			"position": 1,
 			"description": "The equation can be simplified algebraically. Dividing both sides by 3.2r^2"
-			{
+		}
       },
 	    {
         "@type": "HowToStep",
@@ -1918,33 +1927,50 @@
     
 	{
 	"@type": "DefinedTerm",
+		{
+		"@type": "identifier",
 	"name": "sine",
-	"description": "opposite / hypotenuse"
+	"value": "opposite / hypotenuse"
 	},
 	
 	{
 	"@type": "DefinedTerm",
-	"name": "cosine",
+	{
+		"@type": "identifier",
+		"value": "cosine",
 	"description": "adjacent / hypotenuse"
 	},
 
 	{
 	"@type": "DefinedTerm",
-	"name": "tangent",
-	"description": "opposite / adjacent"
+	{
+		"@type": "identifier",
+		"name": "tangent",
+	"value": "opposite / adjacent"
 	},
 
 	{
 	"@type": "DefinedTerm",
-	"name": "cotangent",
-	"description": "adjacent / opposite"
+	{
+		"@type": "identifier",
+		"name": "cotangent",
+	"value": "adjacent / opposite"
 	},
 
 	{
     "@type": "DefinedTerm",
-    "name": "The True Universal Circle Constant",
-    "description": "Area/radius^2=circumference/diameter=3.2≈3.14≈pi",
-	"disambiguatingDescription": "The mathematical constant named pi is an artifact of a fundamentally flawed theoretical approximate."
+    "name": "Arc value",
+    "description": "Trigonometric functions with an Arc — or simply A — prefix refer to the inverted values of each function. They are either expressed in radians — the length of the radius measured on the arc —, or degrees.",
+	"disambiguatingDescription": "Arc length shall be expressed in terms of the true circumference: 6.4r."
+	},
+
+	{
+	"@type": "DefinedTerm",
+		"name": "The Right Triangle Hypotenuse Theorem",
+	{
+		"@type": "identifier",
+		"name": "hypotenuse^2",
+	"value": "(leg1)^2+(leg2)^2"
 	}
 	],
 	"assesses": [
