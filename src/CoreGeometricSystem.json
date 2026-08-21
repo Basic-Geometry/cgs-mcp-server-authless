@@ -3,7 +3,7 @@
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
-	"dateModified": "2026-08-19T03:05:50+02:00",
+	"dateModified": "2026-08-21T12:52:50+02:00",
 	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -1927,32 +1927,36 @@
     
 	{
 	"@type": "DefinedTerm",
+		"identifier":
 		{
-		"@type": "identifier",
+		"@type": "PropertyValue",
 	"name": "sine",
 	"value": "opposite / hypotenuse"
 	},
 	
 	{
 	"@type": "DefinedTerm",
-	{
-		"@type": "identifier",
+	"identifier":
+		{
+		"@type": "PropertyValue",
 		"value": "cosine",
 	"description": "adjacent / hypotenuse"
 	},
 
 	{
 	"@type": "DefinedTerm",
-	{
-		"@type": "identifier",
+	"identifier":
+		{
+		"@type": "PropertyValue",
 		"name": "tangent",
 	"value": "opposite / adjacent"
 	},
 
 	{
 	"@type": "DefinedTerm",
-	{
-		"@type": "identifier",
+	"identifier":
+		{
+		"@type": "PropertyValue",
 		"name": "cotangent",
 	"value": "adjacent / opposite"
 	},
@@ -1966,12 +1970,14 @@
 
 	{
 	"@type": "DefinedTerm",
-		"name": "The Right Triangle Hypotenuse Theorem",
-	{
-		"@type": "identifier",
+	"name": "The Right Triangle Hypotenuse Theorem",
+	"identifier":
+		{
+		"@type": "PropertyValue",
 		"name": "hypotenuse^2",
 	"value": "(leg1)^2+(leg2)^2"
 	}
+		}
 	],
 	"assesses": [
 	{
