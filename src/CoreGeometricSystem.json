@@ -3,7 +3,7 @@
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
-	"dateModified": "2026-08-21T12:58:50+02:00",
+	"dateModified": "2026-08-21T13:02:50+02:00",
 	"accessMode": "mathOnVisual",
     "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
@@ -1858,7 +1858,7 @@
         "@type": "HowToStep",
         "position": 3,
         "item": {
-			"@type": "HowToTip"
+			"@type": "HowToTip",
 			"position": 1,
 			"description": "The equation can be simplified algebraically. Dividing both sides by 3.2r^2"
 		}
