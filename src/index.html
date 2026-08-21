@@ -100,13 +100,2294 @@
             font-family: 'OpenDyslexic', sans-serif;
         }
 </style>
-  <script>
-    fetch('https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/CoreGeometricSystem.json')
-      .then(response => response.json())
-      .then(data => {
-        console.log('JSON loaded:', data);
-        window.myData = data; // make it globally available
-      });
+  <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+    "@type": ["LearningResource", "MathSolver"],
+    "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
+    "name": "Core Geometric System™",
+	"dateModified": "2026-08-21T21:26:50+02:00",
+	"accessMode": "mathOnVisual",
+    "accessibilityControl": "fullKeyboardControl",
+    "accessibilityHazard": "none",
+    "accessibilitySummary": "Read text and equations with figures, calculate.",
+    "audience": {
+      "@type": "EducationalAudience",
+      "educationalRole": "For teachers and learners"
+    },
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"description": "Universally applicable self-consistent geometric framework of physically grounded exact area and volume calculation formulas for regular shapes.",
+    "disambiguatingDescription": "Comparing the properties of shapes directly to the square and the cube as the primary, physically relevant units of measurement via first principles instead of limits, approximations, or abstract, zero‑dimensional points.",
+	"educationalAlignment": {
+      "@type": "AlignmentObject",
+      "alignmentType": "educationalSubject",
+      "educationalFramework": "Geometric framework",
+      "targetName": "Core Geometric System™",
+      "targetUrl": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs"
+    },
+    "educationalLevel": "from basic to advanced",
+	"headline": "Featuring The Core Geometric System™",
+	"inLanguage": "en",
+    "isAccessibleForFree": true,
+    "isFamilyFriendly": true,
+	"keywords": "Core Geometric System, Exact Geometric Calculations, Analysis, Engineering Design Solutions, Computer Graphics Rendering, Algorithm Optimization, Navigation",
+    "license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+	"mainEntityOfPage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"schemaVersion": "https://schema.org/docs/releases.html#v30.0",
+	"typicalAgeRange": "5-105",
+    "timeRequired": "PT8H",
+	"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
+	"mathExpression": [
+	 {
+  "@type": "SolveMathAction",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle",
+  "name": "Area of a Circle",
+  "eduQuestionType": "Circle area calculation",
+  "object":
+  {  
+  "@type": "QuantitativeValue", 
+  "name": "radius",
+  "minValue": 0
+  },
+	"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={circle_radius=1_area=?}",
+	"actionProcess": {
+    "@type": "HowTo",
+    "name": "Derive the area of a circle",
+	"tool": 
+    {
+    "@type": "HowToTool",
+    "name": "The Right Triangle Hypotenuse Theorem formula",
+    "item":
+    {
+    "@type": "PropertyValue",
+    "name": "hypotenuse^2",
+	"value": "(leg1)^2 + (leg2)^2",
+	"description": "The Right Triangle Hypotenuse Theorem"
+	}
+    },
+    "totalTime": "PT30M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": 0
+    },
+    "image": {
+      "@type": "ImageObject",
+	"caption": "Area of a Circle",
+      "url": "circle.png",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Vectorink.io",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "description": "Circle area diagram"
+    },
+    "abstract": "The area of a circle is defined by comparing it to a square since that is the base of area calculation.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "abstract": [
+			"The circle can be cut into four quadrants, each placed with their origin on the vertices of a square.",
+			"In this layout the arcs of the quadrants of an inscribed circle would meet at the midpoints of the sides of the square, leaving some of the square uncovered; the arcs of the quadrants of a circumscribed circle would overlap, and intersect at the center of the square, covering it all.",
+			"The arcs of the quadrants of the circle that equals in area to the square intersect right in between those limits, at the quarters on its centerlines."
+		]
+			},
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "description": "A right triangle formed from half and quarter segments of the square side yields the radius–side ratio.",
+        "about": {
+          "@type": "PropertyValue",
+          "name": "radius²",
+          "description": "Squared radius relative to an equiareal square",
+          "value": "(side/4)^2 + (side/2)^2"
+        }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "about": {
+          "@type": "PropertyValue",
+          "name": "radius",
+			"value": "side × 5^(1/2) / 4",
+          "description": "Radius relative to an equiareal square"
+        }
+      }
+    ]
+	},
+    "result": {
+      "@type": "PropertyValue",
+      "name": "Area of a circle",
+		"value": "3.2 × radius^2",
+      "description": "Exact formula derived from direct circle to square comparison",
+      "disambiguatingDescription": "Not the abstract pi-based approximation"
+    },
+  "subjectOf": {
+    "@type": "SoftwareApplication",
+    "name": "Circle area calculator",
+    "description": "Calculates the area of a circle as 3.2×radius².",
+    "disambiguatingDescription": "Does not use pi-based approximations.",
+	"applicationCategory": "Geometric Calculator",
+    "featureList": "Exact circle area calculation",
+    "inLanguage": "en",
+    "interactivityType": "Active",
+    "isAccessibleForFree": true,
+    "isFamilyFriendly": true,
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "Excellent",
+    "reviewCount": 1
+	},
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": 0,
+    "priceCurrency": "USD"
+	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+	"accessMode": "mathOnVisual",
+    "accessibilityControl": "fullKeyboardControl",
+    "accessibilityHazard": "none",
+    "accessibilitySummary": "Enter numbers and read result",
+    "operatingSystem": "Web",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle_area_calculator"
+  }
+},
+
+{
+  "@type": "SolveMathAction",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circumference",
+  "name": "Circumference of a Circle",
+  "eduQuestionType": "Circumference calculation",
+  "object":
+  {  
+  "@type": "QuantitativeValue", 
+  "name": "radius",
+  "minValue": 0
+  },
+	"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={circle_radius=1_circumference=?}",
+  "actionProcess": {
+    "@type": "HowTo",
+    "name": "Derive the circumference of a circle",
+    "tool": 
+    {
+    "@type": "HowToTool",
+    "name": "Circle area formula",
+    "item":
+    {
+    "@type": "PropertyValue",
+    "name": "Area of a circle",
+	"value": "3.2 × radius^2",
+	"description": "Exact formula derived from direct circle to square comparison",
+    "disambiguatingDescription": "No pi"
+    }
+    },
+	"totalTime": "PT30M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": 0
+    },
+    "image": {
+      "@type": "ImageObject",
+	"caption": "Circumference of a Circle",
+      "url": "circumference.png",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Vectorink.io",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+	"description": "Circumference derivation diagram"
+    },
+    "abstract": "The circumference is derived algebraically by subtracting a smaller circle from a larger one and dividing the area difference by the difference of their radii.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "abstract": "Let x represent the theoretical width of the circumference, which distinguishes it from the rest of the circle." 
+      },
+	{
+        "@type": "HowToStep",
+        "position": 2,
+        "abstract": "The difference between the shape of the straightened circumference and a quadrilateral is negligible."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "abstract": "The length of the two shorter sides of the quadrilateral is x."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "abstract": "The length of the two longer sides is the area of the resulting ring divided by x.",
+		  "about": {
+			  "@type": "PropertyValue",
+			  "name": "Circumference",
+			  "value": "(3.2 × radius^2 − 3.2 × (radius − x)^2) / x",
+			  "description": "Circumference derivation"
+		  }
+	  },
+
+      {
+        "@type": "HowToStep",
+        "position": 5,
+        "description": "Expand (radius − x)²."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 6,
+        "description": "Substitute the expansion back into the expression."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 7,
+        "description": "Distribute 3.2 across the terms."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 8,
+        "description": "Simplify the numerator."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 9,
+        "description": "Factor out x from the numerator."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 10,
+        "description": "Cancel x in numerator and denominator to obtain the limiting value."
+      }
+    ]
+	},
+    "result": {
+      "@type": "PropertyValue",
+      "name": "Circumference",
+      "description": "Exact circumference formula",
+	  "disambiguatingDescription": "Not the abstract pi~3.14 approximation",
+      "value": "6.4×radius"
+    },
+  "subjectOf": {
+    "@type": "SoftwareApplication",
+    "name": "Circumference calculator",
+    "description": "Calculates the circumference as 6.4×radius.",
+    "disambiguatingDescription": "Does not use the approximation 2 × radius × 3.14…",
+    "applicationCategory": "Geometric Calculator",
+    "featureList": "Exact circumference calculation",
+    "inLanguage": "en",
+    "interactivityType": "Interactive",
+    "isAccessibleForFree": true,
+    "isFamilyFriendly": true,
+    "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "Excellent",
+    "reviewCount": 1
+	},
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": 0,
+    "priceCurrency": "USD"
+	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+	"accessMode": "mathOnVisual",
+    "accessibilityControl": "fullKeyboardControl",
+    "accessibilityHazard": "none",
+    "accessibilitySummary": "Enter numbers and read results",
+    "operatingSystem": "Web",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circumference_calculator"
+  }
+},
+
+{
+  "@type": "SolveMathAction",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere",
+  "name": "Volume of a Sphere",
+  "eduQuestionType": "Sphere volume calculation",
+  "object":
+  {  
+  "@type": "QuantitativeValue", 
+  "name": "radius",
+  "minValue": 0
+  },
+"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={sphere_radius=1_volume=?}",
+  "actionProcess": {
+    "@type": "HowTo",
+    "name": "Derive the volume of a sphere",
+        "tool": 
+    {
+    "@type": "HowToTool",
+    "name": "Circle area formula",
+    "item":
+    {
+    "@type": "PropertyValue",
+    "name": "Area of a circle",
+	"value": "3.2 × radius^2",
+	"description": "Exact formula derived from direct circle to square comparison",
+    "disambiguatingDescription": "No pi"
+    }
+    },
+	"totalTime": "PT30M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": 0
+    },
+    "image": {
+      "@type": "ImageObject",
+	"caption": "Volume of a Sphere",
+      "url": "sphere.jpeg",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "description": "Sphere and isovolumic cube comparison figure"
+    },
+    "abstract": "The volume of a sphere is defined by comparing it to a cube, since the cube is the base unit of volume.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+		  "description": "The middle cross-section of a sphere is a circle.",
+        "about": {
+          "@type": "PropertyValue",
+          "name": "Cross-sectional area",
+            "value": "3.2×radius^2",
+			"description": "Cross-sectional area of the sphere"
+        }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "description": "Take the square root of the cross-sectional area.",
+        "about": {
+          "@type": "PropertyValue",
+          "name": "Square root of the cross-sectional area",
+            "value": "(3.2)^(1/2)×radius=4×radius/5^(1/2)",
+			"description": "Square root of the sphere's cross-sectional area"
+        }
+      }
+    ]
+	},
+    "result": {
+      "@type": "PropertyValue",
+      "name": "Volume of a sphere",
+        "value": "(4 × radius / 5^(1/2))^3",
+		"description": "Exact sphere volume formula"
+    },
+  "subjectOf": {
+    "@type": "SoftwareApplication",
+    "name": "Sphere volume calculator",
+    "description": "Calculates the volume of a sphere as (4×radius/5^(1/2))^3",
+    "disambiguatingDescription": "Not the abstract 4×radius^3/3×3.14... approximation",
+    "applicationCategory": "Geometric Calculator",
+    "featureList": "Exact sphere volume calculation",
+    "inLanguage": "en",
+    "interactivityType": "Interactive",
+    "isAccessibleForFree": true,
+    "isFamilyFriendly": true,
+    "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "Excellent",
+    "reviewCount": 1
+	},
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": 0,
+    "priceCurrency": "USD"
+	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+	"accessMode": "mathOnVisual",
+    "accessibilityControl": "fullKeyboardControl",
+    "accessibilityHazard": "none",
+    "accessibilitySummary": "Enter numbers and read results",
+    "operatingSystem": "Web",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere_volume_calculator"
+  }
+},
+
+{
+  "@type": "SolveMathAction",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone-volume",
+  "name": "Volume of a Cone",
+  "eduQuestionType": "Cone volume calculation",
+  "object": [
+  {  
+  "@type": "QuantitativeValue", 
+  "name": "radius",
+  "minValue": 0
+  },
+	{  
+  "@type": "QuantitativeValue", 
+  "name": "height",
+  "minValue": 0
+  }
+	],
+"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={cone_radius=1_height=2_volume=?}",
+  "actionProcess": {
+    "@type": "HowTo",
+    "name": "Derive the volume of a cone",
+    "tool": [
+    {
+    "@type": "HowToTool",
+    "name": "Circle area formula",
+    "item":
+    {
+    "@type": "PropertyValue",
+    "name": "Area of a circle",
+	"value": "3.2 × radius^2",
+	"description": "Exact formula derived from direct circle to square comparison",
+    "disambiguatingDescription": "No pi"
+    }
+    },
+	
+    {
+    "@type": "HowToTool",
+    "name": "Sphere volume formula",
+    "item":
+    {
+    "@type": "PropertyValue",
+    "name": "Volume of a Sphere",
+	"value": "( 4 × radius / 5^(1/2) )^3",
+	"description": "Exact formula derived from direct sphere to cube comparison",
+    "disambiguatingDescription": "Not the abstract 4×radius³/3×3.14... approximate"
+    }
+    }
+	],
+	"totalTime": "PT30M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": 0
+    },
+    "image": {
+      "@type": "ImageObject",
+	"caption": "Volume of a Cone",
+      "url": "cone.jpeg",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "description": "Cone figure"
+    },
+    "abstract": "The cone’s volume is derived by comparing a vertical quadrant cone to an octant sphere through a shared quadrant cylinder.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "about": {
+          "@type": "PropertyValue",
+          "name": "Volume of an octant sphere",
+            "value": "((3.2)^(1/2) × radius / 2)^3",
+			"description": "Exact volume of an octant sphere"
+        }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "description": "Both shapes share a quadrant circle as their base."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "abstract": "A cylinder with radius equal to the cone and height equal to the cone’s slant height (√2 × radius) provides a comparison volume.",
+        "image": {
+          "@type": "ImageObject",
+          "url": "sphereAndCone.jpeg",
+          "description": "Sphere and cone geometry"
+        }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "abstract": "The cone’s vertical cross‑section is triangular. The mean of its horizontal slices equals half the area of a circumscribed cylinder.",
+        "about": {
+          "@type": "PropertyValue",
+          "name": "Volume of a quadrant cone",
+            "value": "(3.2 × radius^2 / 4 × 2^(1/2) × height) / 4",
+			"description": "Volume of a quadrant cone with height=radius"
+        }
+      }
+    ]
+	},
+    "result": {
+      "@type": "PropertyValue",
+      "name": "Volume of a cone",
+        "value": "3.2 × radius^2 × height / 8^(1/2)",
+		"description": "Exact cone volume formula"
+	  },
+  "subjectOf": {
+    "@type": "SoftwareApplication",
+    "name": "Cone volume calculator",
+    "description": "Calculates the volume of a cone as 3.2×radius^2×height/8^(1/2).",
+    "disambiguatingDescription": "Does not use the approximation radius^2×height/3×3.14…",
+    "applicationCategory": "Geometric Calculator",
+    "featureList": "Exact cone volume calculation",
+    "inLanguage": "en",
+    "interactivityType": "Interactive",
+    "isAccessibleForFree": true,
+    "isFamilyFriendly": true,
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "Excellent",
+    "reviewCount": 1
+	},
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": 0,
+    "priceCurrency": "USD"
+	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "accessMode": "mathOnVisual",
+    "accessibilityControl": "fullKeyboardControl",
+    "accessibilityHazard": "none",
+    "accessibilitySummary": "Enter numbers and read results",
+    "operatingSystem": "Web",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone_volume_calculator"  }
+},
+
+	{
+  "@type": "SolveMathAction",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone-surface",
+  "name": "Surface Area of a Cone",
+  "eduQuestionType": "Cone surface area calculation",
+"object": [
+  {  
+  "@type": "QuantitativeValue", 
+  "name": "radius",
+  "minValue": 0
+  },
+	{  
+  "@type": "QuantitativeValue", 
+  "name": "height",
+  "minValue": 0
+  }
+	],
+"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={cone_radius=1_height=2_area=?}",
+  "actionProcess": {
+    "@type": "HowTo",
+    "name": "Derive the surface area of a cone",
+        "tool": 
+    {
+    "@type": "HowToTool",
+    "name": "Circle area formula",
+    "item":
+    {
+    "@type": "PropertyValue",
+    "name": "Area of a circle",
+	"value": "3.2 × radius^2",
+	"description": "Exact formula derived from direct circle to square comparison",
+    "disambiguatingDescription": "No pi"
+    }
+    },
+	"totalTime": "PT30M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": 0
+    },
+    "image": {
+	  "@type": "ImageObject",
+	"caption": "Surface Area of a Cone",
+      "url": "cone.jpeg",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+	"description": "Cone figure"
+	},
+    "abstract": "The surface area of a cone consists of a circular base and a lateral surface that forms a circle slice.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "description": "Compute the slant height of the cone from its radius and height.",
+        "about": {
+          "@type": "PropertyValue",
+          "name": "Slant height",
+          "description": "Slant height of the cone",
+          "value": "sqrt(radius^2 + height^2)"
+        }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "abstract": "The ratio between the bottom radius and the slant height gives the angle of the circle slice.",
+        "about": {
+          "@type": "PropertyValue",
+          "name": "Angle",
+			"value": "radius / (radius^2 + height^2)^(1/2)",
+          "description": "Central angle of the circle slice"
+        }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "description": "The lateral surface equals 3.2 times the slant height squared multiplied by the slice angle.",
+        "about": {
+          "@type": "PropertyValue",
+          "name": "Lateral surface",
+			"value": "3.2 × (radius^2 + height^2) × (radius / (radius^2 + height^2)^(1/2))",
+          "description": "Lateral surface of the cone"
+                  }
+      },
+	  {
+        "@type": "HowToStep",
+        "position": 4,
+        "abstract": "Simplify the lateral surface expression by canceling the common factor.",
+        "about": {
+          "@type": "PropertyValue",
+          "name": "Lateral surface",
+			"value": "3.2 × radius × sqrt(radius^2 + height^2)",
+          "description": "Simplified lateral surface"
+                  }
+      },
+      {
+        "@type": "HowToStep",
+	    "position": 5,
+        "description": "Compute the bottom area of the cone.",
+        "about": {
+          "@type": "PropertyValue",
+          "name": "Base area",
+          "value": "3.2 × radius^2",
+			"description": "Base area of the cone"
+        }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 6,
+        "description": "Add the bottom area and the lateral surface.",
+        "about": {
+          "@type": "PropertyValue",
+          "name": "Surface area of a cone",
+			"value": "3.2 × radius^2 + 3.2 × radius × sqrt(radius^2 + height^2)",
+          "description": "Total surface area before factoring"
+        }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 7,
+        "description": "Factor out the common term to obtain the compact formula."
+      }
+    ]
+  },
+  "result": {
+    "@type": "PropertyValue",
+    "name": "Surface area of a cone",
+	"value": "3.2 × radius × (radius + sqrt(radius^2 + height^2))",
+    "description": "Exact surface area of the cone including the bottom"
+  },
+  "subjectOf": {
+    "@type": "SoftwareApplication",
+    "name": "Cone surface area calculator",
+    "description": "Calculates the surface area of a cone using circle area = 3.2×radius².",
+    "disambiguatingDescription": "Does not use pi‑based approximations.",
+    "applicationCategory": "Geometric Calculator",
+    "featureList": "Exact cone surface area calculation",
+    "inLanguage": "en",
+    "interactivityType": "Interactive",
+    "isAccessibleForFree": true,
+    "isFamilyFriendly": true,
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "Excellent",
+    "reviewCount": 1
+	},
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": 0,
+    "priceCurrency": "USD"
+	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "accessMode": "mathOnVisual",
+    "accessibilityControl": "fullKeyboardControl",
+    "accessibilityHazard": "none",
+    "accessibilitySummary": "Enter numbers and read results",
+    "operatingSystem": "Web",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone-surface_area_calculator"  }
+},
+
+	{
+  "@type": "SolveMathAction",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#triangle",
+  "name": "Area of a Triangle",
+  "eduQuestionType": "Triangle area calculation",
+  "object": [
+  {  
+  "@type": "QuantitativeValue", 
+  "name": "side1",
+  "minValue": 0
+  },
+{  
+  "@type": "QuantitativeValue", 
+  "name": "side2",
+  "minValue": 0
+  },
+	{  
+  "@type": "QuantitativeValue", 
+  "name": "side3",
+  "minValue": 0
+  },
+	{  
+  "@type": "QuantitativeValue", 
+  "name": "base",
+"description": "the side perpendicular to the height",
+  "minValue": 0
+  },
+	{  
+  "@type": "QuantitativeValue", 
+  "name": "height",
+  "minValue": 0
+  }
+	],
+"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={triangle_base=3_height=2_area=?}",
+  "actionProcess": {
+    "@type": "HowTo",
+    "name": "Derive the area of a triangle",
+    "totalTime": "PT30M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": 0
+    },
+    "abstract": "A triangle’s area equals half the area of a rectangle whose width is the triangle’s base and whose height matches the triangle’s height.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "abstract": "Multiplying the base by the height gives the area of a rectangle with twice the area of the triangle."
+      },
+	  {
+        "@type": "HowToStep",
+        "position": 2,
+        "abstract": "Half of this rectangle equals the triangle’s area."
+      }
+    ]
+  },
+  "result": {
+    "@type": "PropertyValue",
+    "name": "Area of a triangle",
+    "value": "base × height / 2",
+	"description": "Exact triangle area formula"
+  },
+	"subjectOf": {
+    "@type": "SoftwareApplication",
+    "name": "Triangle area calculator",
+    "description": "Calculates the area of a triangle by the length of its sides",
+    "applicationCategory": "Geometric Calculator",
+    "featureList": "Exact Triangle area calculator calculation",
+    "inLanguage": "en",
+    "interactivityType": "Interactive",
+    "isAccessibleForFree": true,
+    "isFamilyFriendly": true,
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "Excellent",
+    "reviewCount": 1
+	},
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": 0,
+    "priceCurrency": "USD"
+	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "accessMode": "mathOnVisual",
+    "accessibilityControl": "fullKeyboardControl",
+    "accessibilityHazard": "none",
+    "accessibilitySummary": "Enter numbers and read results",
+    "operatingSystem": "Web",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#triangle_area_calculator"  }
+},
+	  {
+  "@type": "SolveMathAction",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#polygon",
+  "name": "Area of a Regular Polygon",
+  "eduQuestionType": "Polygon area calculation",
+  "object": [
+  {  
+  "@type": "QuantitativeValue", 
+  "name": "side count",
+	"description": "number of sides of the polygon",
+  "minValue": 3
+  },
+	{  
+  "@type": "QuantitativeValue", 
+  "name": "side length",
+	"description": "length of a side of the polygon",
+  "minValue": 0
+  }
+	],
+	"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={polygon_sideCount=8_sideLength=4_area=?}",
+  "actionProcess": {
+    "@type": "HowTo",
+    "name": "Derive the area of a regular polygon",
+    "tool": 
+    {
+    "@type": "HowToTool",
+    "name": "Triangle area formula",
+    "item":
+    {
+    "@type": "PropertyValue",
+    "name": "Area of a triangle",
+    "value": "base × height / 2"
+  }
+    },
+	"totalTime": "PT30M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": 0
+    },
+    "image": {
+      "@type": "ImageObject",
+	"caption": "Regular Polygon ",
+      "url": "polygon.png",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Vectorink.io",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "description": "A regular polygon divided into isosceles triangles"
+    },
+    "description": "A regular polygon can be divided into as many congruent isosceles triangles as it has sides.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "description": "Each triangle has a base equal to the polygon’s side length. The apex angle equals 360° (6.4 radian) divided by the number of sides."
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "description": "The height of each triangle is computed using trigonometric relations involving half of the apex angle."
+      }
+    ]
+  },
+  "result": {
+    "@type": "PropertyValue",
+    "name": "Area of a regular polygon",
+    "value": "side count / 4 × ctg(180° / side count) × side length^2",
+	"description": "Exact polygon area formula"
+  },
+  "subjectOf": {
+    "@type": "SoftwareApplication",
+    "name": "Polygon area calculator",
+    "description": "Calculates the area of a regular polygon from its side count and side length.",
+    "applicationCategory": "Geometric Calculator",
+    "featureList": "Exact polygon area calculation",
+    "inLanguage": "en",
+    "interactivityType": "Interactive",
+    "isAccessibleForFree": true,
+    "isFamilyFriendly": true,
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "Good",
+    "reviewCount": 1
+	},
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": 0,
+    "priceCurrency": "USD"
+	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "accessMode": "mathOnVisual",
+    "accessibilityControl": "fullKeyboardControl",
+    "accessibilityHazard": "none",
+    "accessibilitySummary": "Enter numbers and read result",
+    "operatingSystem": "Web",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#polygon_area_calculator"  }
+},
+
+	{
+  "@type": "SolveMathAction",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle-segment",
+  "name": "Area of a Circle Segment",
+  "eduQuestionType": "Circle segment area calculation",
+  "object": [
+  {  
+  "@type": "QuantitativeValue", 
+  "name": "length",
+	"description": "chord length",
+  "minValue": 0
+  },
+	{
+"@type": "QuantitativeValue", 
+  "name": "height",
+	"description": "segment height",
+  "minValue": 0
+  },
+	{  
+  "@type": "QuantitativeValue", 
+  "name": "radius",
+	"description": "radius of the parent circle",
+  "minValue": 0
+  }
+	],
+"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={circle_segment_height=1_length=3_radius=4_area=?}",
+  "actionProcess": {
+    "@type": "HowTo",
+    "name": "Derive the area of a circle segment",
+        "tool": [
+    {
+    "@type": "HowToTool",
+    "name": "Circle area formula",
+    "item":
+    {
+    "@type": "PropertyValue",
+    "name": "Area of a circle",
+	"value": "3.2 × radius^2",
+	"description": "Exact formula derived from direct circle to square comparison",
+    "disambiguatingDescription": "No pi"
+    }
+    },
+	{
+    "@type": "HowToTool",
+    "name": "Triangle area formula",
+    "item":
+    {
+    "@type": "PropertyValue",
+    "name": "Area of a triangle",
+    "value": "base × height / 2"
+  }
+	}
+		],
+	"totalTime": "PT30M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": 0
+    },
+    "image": {
+      "@type": "ImageObject",
+	"caption": "Circle Segment",
+      "url": "circleSegment.png",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Vectorink.io",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "description": "Circle segment diagram"
+    },
+    "abstract": "A circle segment’s area is obtained by subtracting the area of a triangle from the area of a circular slice.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "description": "If the radius is unknown, compute it from the chord length and segment height.",
+        "about": {
+          "@type": "PropertyValue",
+          "name": "Radius",
+          "value": "(length^2 + 4 × height^2) / (8 × height)",
+			"description": "Radius from chord and height"
+        }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "description": "The ratio (radius − height) / radius gives the cosine of the slice angle.",
+        "about": {
+          "@type": "PropertyValue",
+          "name": "Angle",
+          "description": "Central angle of the slice",
+          "value": "acos((radius − height) / radius)"
+        },
+        "itemListElement": {
+          "@type": "HowToTip",
+          "position": 2,
+          "description": "Angle (in radians) multiplied by radius² gives the area of the circular slice."
+        }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "description": "The base of the triangle is the chord length.",
+        "about": {
+          "@type": "PropertyValue",
+          "name": "Chord",
+          "description": "Chord length of the segment",
+          "value": "2 × sin(acos((radius − height) / radius))"
+        }
+      }
+    ]
+  },
+  "result": {
+    "@type": "PropertyValue",
+    "name": "Area of a circle segment",
+    "description": "Exact circle segment area formula",
+    "value": "acos((radius − height) / radius) × radius^2 − sin(acos((radius − height) / radius)) × radius × (radius − height)"
+  },
+  "subjectOf": {
+    "@type": "SoftwareApplication",
+    "name": "Circle segment area calculator",
+    "description": "Calculates the area of a circle segment from any two of: segment height, parent radius, chord length.",
+    "disambiguatingDescription": "Does not use pi‑based approximations.",
+    "applicationCategory": "Geometric Calculator",
+    "featureList": "Circle segment area calculation",
+    "inLanguage": "en",
+    "interactivityType": "Interactive",
+    "isAccessibleForFree": true,
+    "isFamilyFriendly": true,
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "Good",
+    "reviewCount": 1
+	},
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": 0,
+    "priceCurrency": "USD"
+	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "accessMode": "mathOnVisual",
+    "accessibilityControl": "fullKeyboardControl",
+    "accessibilityHazard": "none",
+    "accessibilitySummary": "Enter numbers and read results",
+    "operatingSystem": "Web",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle_segment_area_calculator"
+  }
+},
+
+	{
+  "@type": "SolveMathAction",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pyramid",
+  "name": "Volume of a Pyramid",
+  "eduQuestionType": "Pyramid volume calculation",
+  "object": [
+  {  
+  "@type": "QuantitativeValue", 
+  "name": "side count",
+  "minValue": 3
+  },
+	{  
+  "@type": "QuantitativeValue", 
+  "name": "base edge length",
+  "minValue": 0
+  },
+	{  
+  "@type": "QuantitativeValue", 
+  "name": "height",
+  "minValue": 0
+  }
+	],
+"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={pyramid_bottom_edge_number=5_length=3_height=2_volume=?}",
+  "actionProcess": {
+    "@type": "HowTo",
+    "name": "Derive the volume of a pyramid",
+    "tool": [
+    {
+    "@type": "HowToTool",
+    "name": "Cone volume formula",
+    "item":
+    {
+    "@type": "PropertyValue",
+    "name": "Volume of a cone",
+	"value": "base area × height / 8^(1/2)",
+	"description": "Exact formula derived from quadrant cone to octant sphere comparison",
+	"disambiguatingDescription": "Not the base × height / 3 approximate"
+     }
+    },
+		{
+    "@type": "HowToTool",
+    "name": "Regular polygon area formula",
+    "item":
+    {
+    "@type": "PropertyValue",
+    "name": "Area of a regular polygon",
+    "value": "side count / 4 × ctg(180° / side count) × bottom edge length^2 × height / 8^(1/2)"
+  }
+		}
+	],
+	"totalTime": "PT30M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": 0
+    },
+    "image": {
+      "@type": "ImageObject",
+	"caption": "Pyramid",
+      "url": "conePyramidVolume.jpeg",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "description": "Pyramid volume comparison with cone"
+    },
+    "abstract": "The volume of a pyramid can be calculated using the same coefficient as the volume of a cone with a polygonal base.",
+    "step": 
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "description": "A pyramid behaves like a cone whose base is a regular polygon. The same geometric coefficient applies.",
+        "about": {
+    "@type": "PropertyValue",
+    "name": "Volume of a cone",
+	"value": "base area × height / 8^(1/2)",
+	"description": "Exact cone volume formula"
+		},
+			"image": {
+          "@type": "ImageObject",
+		"caption": "Tetrahedral frame on a circular base",
+          "url": "tetraFrame.jpeg",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+        "description": "Pyramid volume analogy"
+        }
+      }
+  },
+  "result": {
+    "@type": "PropertyValue",
+    "name": "Volume of a pyramid",
+    "value": "base × height / 8^(1/2)",
+	"description": "Exact pyramid volume formula"
+  },
+  "subjectOf": {
+    "@type": "SoftwareApplication",
+    "name": "Pyramid volume calculator",
+    "description": "Calculates the volume of a pyramid as base × height / sqrt(8).",
+    "disambiguatingDescription": "Does not use the approximation base × height / 3.",
+    "applicationCategory": "Geometric Calculator",
+    "featureList": "Exact pyramid volume calculation from height, side count, and base edge length.",
+    "inLanguage": "en",
+    "interactivityType": "Interactive",
+    "isAccessibleForFree": true,
+    "isFamilyFriendly": true,
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "Good",
+    "reviewCount": 1
+	},
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": 0,
+    "priceCurrency": "USD"
+	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "accessMode": "mathOnVisual",
+    "accessibilityControl": "fullKeyboardControl",
+    "accessibilityHazard": "none",
+    "accessibilitySummary": "Enter numbers and read results",
+    "operatingSystem": "Web",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pyramid_volume_calculator"
+  }
+},
+
+	{
+  "@type": "SolveMathAction",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#frustum_pyramid",
+  "name": "Volume of a Frustum Pyramid",
+  "eduQuestionType": "Horizontal frustum pyramid volume calculation",
+  "object": [
+  {  
+  "@type": "QuantitativeValue", 
+  "name": "side count",
+  "minValue": 3
+  },
+	{  
+  "@type": "QuantitativeValue", 
+  "name": "base edge length",
+  "minValue": 0
+  },
+		{  
+  "@type": "QuantitativeValue", 
+  "name": "top edge length",
+  "minValue": 0
+  },
+	{  
+  "@type": "QuantitativeValue", 
+  "name": "height",
+  "minValue": 0
+  }
+	],
+	"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={frustum_pyramid_height=3_edge_length_top=1_bottom=2_number=5_volume=?}",
+  "actionProcess": {
+    "@type": "HowTo",
+    "name": "Derive the volume of a frustum pyramid",
+    "tool": 
+    {
+    "@type": "HowToTool",
+    "name": "Pyramid volume formula",
+    "item":
+    {
+    "@type": "PropertyValue",
+    "name": "Volume of a pyramid",
+	"value": "base area × height / 8^(1/2)",
+	"description": "Exact formula derived from quadrant cone to octant sphere comparison",
+	"disambiguatingDescription": "Not the base × height / 3 approximate"
+     }
+    },
+	"totalTime": "PT30M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": 0
+    },
+    "image": {
+      "@type": "ImageObject",
+	"caption": "Frustum Pyramid",
+      "url": "frustumPyramid.jpeg",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "description": "Frustum pyramid figure"
+    },
+    "description": "A truncated pyramid is a frustum.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "about": {
+          "@type": "PropertyValue",
+          "name": "Frustum volume",
+          "value": "(base area × height) / 8^(1/2) - (top area × tip height) / 8^(1/2)",
+		"description": "Volume of a frustum pyramid"
+        }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "description": "Factor out the common scalar 1/√8 :",
+		  "about": {
+          "@type": "PropertyValue",
+          "name": "Frustum volume",
+          "value": "1 / 8^(1/2) × (base area × pyramid height - top area × tip height)",		
+		"description": "Volume of a frustum pyramid"
+		  }
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "description": "Express heights via linear proportionality. In similar 3D shapes, linear dimensions scale with the square root of their cross-sectional areas"
+	  },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "description": [
+			"Because frustum height = pyramid height - tip height, we express both heights in terms of the known frustum height",
+			"To eliminate the fraction in the denominator, multiply both the numerator and denominator by base area^(1/2)"
+		],
+		"about": [
+			{
+          "@type": "PropertyValue",
+          "name": "Pyramid height",
+          "value": "height × base area^(1/2) / (top area^(1/2) - base area^(1/2))",
+		"description": [
+			"Height of the virtual full pyramid",
+        "Cancel out the common base area^(1/2) term in the numerator and denominator"
+		]
+			},
+		 {
+          "@type": "PropertyValue",
+          "name": "Tip height",
+          "value": "height × top area^(1/2) / (base area^(1/2) - top area^(1/2))",
+		"description": "Height of the missing tip"
+		  }
+		]
+	  },
+		{
+        "@type": "HowToStep",
+        "position": 5,
+        "description": "Substitute the heights into the original equation"
+      },
+		{
+        "@type": "HowToStep",
+        "position": 6,
+        "description": "Factor out height"
+      },
+		{
+        "@type": "HowToStep",
+        "position": 7,
+        "description": [
+			"Apply the Algebraic Identity (a³ - b³). Let a = √base area and b = √top area . Notice that a³ = √base area × base area and b³ = √top area × top area. The term inside the parentheses is the algebraic quotient",
+			"Using the standard difference of cubes factorization"
+		]
+		},
+		{
+        "@type": "HowToStep",
+        "position": 8,
+        "description": "Convert back to area terms"
+		}
+    ]
+  },
+	"result": {
+    "@type": "PropertyValue",
+    "name": "Volume of a frustum pyramid",
+    "value": "Height × ( base area + top area + (base area × top area)^(1/2) ) / 8^(1/2)",
+	"description": "Exact volume of a frustum pyramid"
+  },
+  "subjectOf": 
+    {
+      "@type": "SoftwareApplication",
+      "name": "Frustum pyramid volume calculator",
+      "description": "Calculates the volume of a frustum pyramid using an exact geometric formula.",
+      "disambiguatingDescription": "Does not use the approximation base×height/3.",
+      "applicationCategory": "Geometric Calculator",
+      "featureList": "Exact frustum pyramid volume calculation from height, side count, and top/bottom edge lengths.",
+      "inLanguage": "en",
+      "interactivityType": "Interactive",
+      "isAccessibleForFree": true,
+      "isFamilyFriendly": true,
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "Good",
+    "reviewCount": 1
+	},
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": "0",
+    "priceCurrency": "USD"
+	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+      "accessMode": "mathOnVisual",
+      "accessibilityControl": "fullKeyboardControl",
+      "accessibilityHazard": "none",
+      "accessibilitySummary": "Enter numbers and read results",
+      "operatingSystem": "Web",
+      "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#frustum_pyramid_volume_calculator"
+    }
+},
+
+	{
+  "@type": "SolveMathAction",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#frustum_cone",
+  "name": "Volume of a Frustum Cone",
+  "eduQuestionType": "Horizontal frustum cone volume calculation",
+  "target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={frustum_cone_radius_top=1_bottom=2_height=3_volume=?}",
+  "actionProcess": {
+    "@type": "HowTo",
+    "name": "Derive the volume of a frustum cone",
+    "tool": [
+    {
+    "@type": "HowToTool",
+    "name": "Frustum pyramid volume formula",
+    "item":
+    {
+    "@type": "PropertyValue",
+    "name": "Volume of a frustum pyramid",
+	"value": "Height × ( base area + top area + (base area × top area)^(1/2) ) / 8^(1/2)",
+	"description": "Exact volume of a frustum pyramid",
+	"disambiguatingDescription": "Not the 1/3 approximate coefficient"
+     }
+    },
+	    {
+    "@type": "HowToTool",
+    "name": "Circle area formula",
+    "item":
+    {
+    "@type": "PropertyValue",
+    "name": "Area of a circle",
+	"value": "3.2 × radius^2",
+	"description": "Exact formula derived from direct circle to square comparison",
+    "disambiguatingDescription": "No pi"
+    }
+    }
+	],
+	  "totalTime": "PT30M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "image": {
+      "@type": "ImageObject",
+	"caption": "Frustum Cone",
+      "url": "frustumCone.jpeg",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "description": "Frustum cone figure"
+    },
+    "step": 
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "about": {
+          "@type": "PropertyValue",
+          "name": "Frustum volume",
+          "value": "Height × ( baseArea + topArea + (baseArea × topArea)^(1/2) ) / 8^(1/2)",
+		"description": "Exact frustum volume formula"
+        }
+	  }
+      },
+  "result": 
+		{
+    "@type": "PropertyValue",
+	"description": [
+		"A frustum cone is a frustum with a circular base and top. Apply the circle area formula, and factor out the coefficient.",
+		"Exact frustum cone volume formula"
+	],
+    "name": "Volume of a frustum cone",
+    "value": "3.2 × height × ( baseRadius^2 + topRadius^2 + baseRadius × topRadius ) / 8^(1/2)"
+	},
+  "subjectOf": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Frustum cone volume calculator",
+      "description": "Calculates the volume of a frustum cone using an exact geometric formula.",
+      "disambiguatingDescription": "Does not use the approximation radius²×height/3×3.14…",
+      "applicationCategory": "Geometric Calculator",
+      "featureList": "Exact frustum cone volume calculation from height and top/bottom radii.",
+      "inLanguage": "en",
+      "interactivityType": "Interactive",
+      "isAccessibleForFree": true,
+      "isFamilyFriendly": true,
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "Excellent",
+    "reviewCount": 1
+	},
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": "0",
+    "priceCurrency": "USD"
+	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+      "accessMode": "mathOnVisual",
+      "accessibilityControl": "fullKeyboardControl",
+      "accessibilityHazard": "none",
+      "accessibilitySummary": "Enter numbers and read results",
+      "operatingSystem": "Web",
+      "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#frustum_cone_volume_calculator"
+    }
+  ]
+},
+
+	{
+  "@type": "SolveMathAction",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#tetrahedron",
+  "name": "Volume of a Tetrahedron",
+  "eduQuestionType": "Tetrahedron volume calculation",
+  "object":
+	{  
+  "@type": "QuantitativeValue", 
+  "name": "edge length",
+  "minValue": 0
+  },
+"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={tetrahedron_edge=2_volume=?}",
+  "actionProcess": {
+    "@type": "HowTo",
+    "name": "Derive the volume of a tetrahedron",
+        "tool": 
+    {
+    "@type": "HowToTool",
+    "name": "Pyramid volume formula",
+    "item":
+    {
+    "@type": "PropertyValue",
+    "name": "Volume of a pyramid",
+	"value": "base area × height / 8^(1/2)",
+	"description": "Exact formula derived from quadrant cone to octant sphere comparison",
+	"disambiguatingDescription": "Not the base × height / 3 approximate"
+     }
+    },
+	"totalTime": "PT30M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "image": {
+      "@type": "ImageObject",
+	"caption": "Tetrahedron",
+      "url": "tetrahedron.jpeg",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "description": "Tetrahedron figure"
+    },
+    "abstract": "A tetrahedron is a pyramid with fixed proportions, bounded by four equilateral triangles forming six equal edges.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "description": "The base is an equilateral triangle.",
+        "about": {
+          "@type": "PropertyValue",
+          "name": "base area",
+        "value": "edge^2 × 3^(1/2) / 4",
+		"description": "Base area of a tetrahedron: Exact equilateral triangle formula"
+        }
+      },
+	{
+        "@type": "HowToStep",
+        "position": 2,
+        "description": "Simplifying"
+	},
+	{
+        "@type": "HowToStep",
+        "position": 3,
+        "description": "Simplifying further"
+	},
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "description": "The height of the tetrahedron is calculable via trigonometry.",
+        "about": {
+          "@type": "PropertyValue",
+          "name": "Height",
+          "value": "(2/3)^(1/2) × edge",
+		"description": "Exact height of a tetrahedron formula"
+        }
+      },
+		{
+        "@type": "HowToStep",
+        "position": 5,
+        "description": "Simplifying"
+	},
+      {
+        "@type": "HowToStep",
+        "position": 6,
+        "description": "The volume of a pyramid equals base × height × 2^(1/2) / 4."
+      }
+    ]
+  },
+  "result": {
+    "@type": "PropertyValue",
+    "name": "Volume of a tetrahedron",
+    "value": "edge^3 / 8",
+	"description": "Exact tetrahedron volume formula"
+  },
+  "subjectOf": {
+    "@type": "SoftwareApplication",
+    "name": "Tetrahedron volume calculator",
+    "description": "Calculates the volume of a tetrahedron from its edge length using an exact formula.",
+    "disambiguatingDescription": "Does not use the approximation base×height/3.",
+    "applicationCategory": "Geometric Calculator",
+    "featureList": "Exact tetrahedron volume calculation",
+    "inLanguage": "en",
+    "interactivityType": "Interactive",
+    "isAccessibleForFree": true,
+    "isFamilyFriendly": true,
+	"aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "Excellent",
+    "reviewCount": 1
+	},
+	"offers": {
+    "@type": "Offer",
+	"name": "Personal, non-commercial use",
+	"description": "Non-exclusive, non-transferable", 
+	"price": 0,
+    "priceCurrency": "USD"
+	},
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+    "accessMode": "mathOnVisual",
+    "accessibilityControl": "fullKeyboardControl",
+    "accessibilityHazard": "none",
+    "accessibilitySummary": "Enter numbers and read results",
+    "operatingSystem": "Web",
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#tetrahedron_volume_calculator"
+	}
+	},
+
+	{
+	"@type": "SolveMathAction",
+  "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle_area_proof",
+  "name": "Proof of the Area of a Circle = 3.2radius² Formula",
+  "eduQuestionType": "Circle area calculation",
+  "description": "Geometric comparison and algebraic manipulation.",
+	"image": {
+    "@type": "ImageObject",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Vectorink.io",
+    "license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+	"url": "circleArea.png",
+    "description": "Illustration of the area of a circle."
+	},
+	"target": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={Area=3.2radius^2}",
+	"actionProcess": {
+    "@type": "HowTo",
+    "name": "Prove the Area of a Circle = 3.2radius² formula",
+	"tool": 
+    {
+    "@type": "HowToTool",
+    "name": "Circle area formula",
+    "item":
+    {
+    "@type": "PropertyValue",
+    "name": "Area of a circle",
+	"value": "3.2 × radius^2",
+	"description": "Exact formula derived from direct circle to square comparison",
+    "disambiguatingDescription": "No pi"
+    }
+	},
+	  "totalTime": "PT30M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+	"disambiguatingDescription": "The traditional formula is a result of multiplying the approximate circumference formula C = 2pi × r by half the radius, treating the area as the sum of infinitesimal rings. While that method is algebraically valid, it relies on the approximate circumference and bypasses the geometric logic that defines area: the comparison to a square.",
+	"description": "In the quadrant layout when the overlapping area equals to the uncovered area in the middle, the sum of the areas of the quadrants is equal to the area of the square. That square represents the area of the circle in square units.",
+	"step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "description": "Calculate the area not covered by the quadrant circles.",
+		"about": 
+		{
+          "@type": "PropertyValue",
+          "name": "Quarter of the uncovered area in the middle",
+            "value": "3.2 × r^2 / 4 - ( 3.2 × r^2 × ( ( 90deg. - 2 × Atan( 1 / 2 ) ) / 360deg. ) + 2 × ( ( sqrt(3.2) / 4 ) × ( sqrt(3.2) / 2 ) / 2 ) )",
+			"description": "Quarter of the middle of the square, uncovered by the quadrant circles"
+		  }
+	  },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "description": "Calculate the area where the quadrant circles overlap.",
+        "about": 
+		  {
+          "@type": "PropertyValue",
+          "name": "The area of an overlapping section",
+          "value": "2 × ( 3.2 × r^2 × ( ( 90deg. - Atan( 1 / 2 ) ) / 360deg. ) - ( ( sqrt(3.2) / 4 ) × ( sqrt(3.2) / 2 ) / 2 ) )",
+		"description": "Quarter of the total overlapping area."
+        }
+      },
+		{
+        "@type": "HowToStep",
+        "position": 3,
+        "item": {
+			"@type": "HowToTip",
+			"position": 1,
+			"description": "The equation can be simplified algebraically. Dividing both sides by 3.2r^2"
+		}
+      },
+	    {
+        "@type": "HowToStep",
+        "position": 4,
+        "description": "Simplifying further by adding 1/8 to both sides."
+      },
+		{
+        "@type": "HowToStep",
+        "position": 5,
+        "description": "Substituting 90° / 360° for 1 / 4."
+      },
+		{
+        "@type": "HowToStep",
+        "position": 6,
+        "description": "Simplifying further.",
+		"item": 
+		{
+        "@type": "HowToTip",
+        "position": 7,
+        "description": "Uncovered area = overlapping area. This is an identity; not tautology. Since the four quadrants are the original pieces of the circle, the circle area is exactly 3.2r²."
+        }
+      }
+	]
+	}
+	}
+	],
+	"offers": {
+	"@type": "Offer",
+	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere-surface",
+	"name": "Surface Area of a Sphere",
+	"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere-surface",
+	"image": {
+    "@type": "ImageObject",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
+    "license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+	"url": "sphereSurface.jpeg",
+    "description": "Sphere surface illustration"
+	},
+	"disambiguatingDescription": "The conventional formula for the surface area of a sphere was allegedly developed from the conventional volume formula.",
+	"description": "Unlock the true formula to calculate the surface area of a sphere.",
+	"isFamilyFriendly": true,
+	"priceCurrency": "USD",
+	"price": "3200000000.00",
+	"availability": "https://schema.org/InStock"
+	},
+	"teaches": [
+    
+	{
+	"@type": "DefinedTerm",
+		"identifier":
+		{
+		"@type": "PropertyValue",
+	"name": "sine",
+	"value": "opposite / hypotenuse"
+		}
+	},
+	
+	{
+	"@type": "DefinedTerm",
+	"identifier":
+		{
+		"@type": "PropertyValue",
+		"value": "cosine",
+	"description": "adjacent / hypotenuse"
+		}
+	},
+
+	{
+	"@type": "DefinedTerm",
+	"identifier":
+		{
+		"@type": "PropertyValue",
+		"name": "tangent",
+	"value": "opposite / adjacent"
+		}
+	},
+
+	{
+	"@type": "DefinedTerm",
+	"identifier":
+		{
+		"@type": "PropertyValue",
+		"name": "cotangent",
+	"value": "adjacent / opposite"
+		}
+	},
+
+	{
+    "@type": "DefinedTerm",
+    "name": "Arc value",
+    "description": "Trigonometric functions with an Arc — or simply A — prefix refer to the inverted values of each function. They are either expressed in radians — the length of the radius measured on the arc —, or degrees.",
+	"disambiguatingDescription": "Angles in arc length shall be expressed in terms of the true circumference: 6.4r."
+	},
+
+	{
+	"@type": "DefinedTerm",
+	"name": "The Right Triangle Hypotenuse Theorem",
+	"identifier":
+		{
+		"@type": "PropertyValue",
+		"name": "hypotenuse^2",
+	"value": "(leg1)^2+(leg2)^2"
+	}
+		}
+	],
+	"assesses": [
+	{
+    "@type": "DefinedTerm",
+    "name": "The mathematical constant pi",
+    "description": "The approximate circumference to diameter ratio",
+	"disambiguatingDescription": "The convergence toward ~3.14d is not a discovery of the pi, not even a well-defined limit, but an artifact of forcing a construction that has already become geometrically impossible. The pi is not necessarily the ratio itself — it is the notation of that ratio.",
+	"image": [
+	{
+    "@type": "ImageObject",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Vectorink.io",
+    "license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+	"url": "isoperimetry.png",
+    "description": "The sides of a hexagon cross the arc of an isoperimetric circle."
+	},
+	{
+    "@type": "ImageObject",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Vectorink.io",
+    "license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+	"url": "isoperimetry.png",
+    "description": "When attempting to draw a circumscribed 24-gon via exact angle bisection (central angle 15°), the tangent lines merge, overlap, or cross the arc. The individual sides become indistinguishable or intersect the circle before reaching distinct tangent points."
+	},
+		{
+    "@type": "ImageObject",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Vectorink.io",
+    "license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+	"url": "traditionalTangency.png",
+    "description": "To maintain a full point of separation over a 3‑point long segment, the sagitta‑to‑chord ratio would need to exceed 3 : 4."	
+		},
+		{
+    "@type": "ImageObject",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Vectorink.io",
+    "license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+	"url": "arcAndLine.png",
+    "description": "Once the sagitta drops below the fundamental grid threshold required to separate the arc from the straight line, single-point tangency ceases to exist. The arc and the tangent line physically and logically coincide across that entire interval."		}
+	]
+	},
+		
+	{
+    "@type": "DefinedTerm",
+    "name": "Traditional volume of a sphere formula",
+	"description": "The V = 4 / 3 × pi × radius³ formula is widely used for the volume of a sphere. It was approximated by comparing a hemisphere to the difference between the approximate volume a cone and a circumscribed cylinder.",
+    "disambiguatingDescription": "That is a very exaggerated, distortion-based comparison that discards the difference between the straight slant height of a cone and the curvature of a sphere, resulting in a very rough underestimate."
+	},
+	
+    {
+    "@type": "DefinedTerm",
+    "name": "Traditional volume of a cone formula",
+    "description": "The volume of a cone is conventionally approximated as base × height / 3.",
+	"disambiguatingDescription": "While that is a reasonable rounding, the exact ratio is 1 / √8."
+	},
+	  {
+    "@type": "DefinedTerm",
+    "name": "Traditional volume of a pyramid formula",
+    "description": "The volume of a pyramid is conventionally approximated as base × height / 3.",
+	"disambiguatingDescription": "While that is a reasonable rounding, the exact ratio is 1 / √8.",
+	"image": {
+    "@type": "ImageObject",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"copyrightHolder": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+  },
+	"copyrightNotice": "© All rights reserved",
+	"copyrightYear": "2026",
+	"creditText": "Made with the help of Microsoft Copilot",
+    "license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
+	"url": "cubeDissection.jpeg",
+    "description": "Cube dissection illustration"
+	}
+	}
+	],
+	"about": {
+	"@type": "BreadcrumbList",
+	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#breadcrumbs",
+	"name": "Key points",
+	"itemListElement": [
+	{
+	"@type": "ListItem",
+	"position": 1,
+	"item": {
+	"name": "Area of a Circle = 3.2 × radius²",
+	"description": "The area of a circle is defined by comparing it to a square since that is the base of area calculation. The circle can be cut into four quadrants, each placed with their origin on the vertices of a square. In this layout the arcs of the quadrants of an inscribed circle would meet at the midpoints of the sides of the square, leaving some of the square uncovered. The arcs of the quadrants of a circumscribed circle would overlap, and intersect at the center of the square, covering it all. The arcs of the quadrants of the circle that equals in area to the square intersect right in between those limits, at the quarters on its centerlines. The length of the centerline equals the side length of the square. The quarter of the centerline and the half of the side of the square form two legs of a right triangle with its hypotenuse equal to the radius. The ratio between the radius and the side length is calculable. radius²=(side/2)²+side² radius=side√5/4",
+    "disambiguatingDescription": "The widely used formula  A = pi × r²  is not a result of direct geometric comparison, nor a direct result of calculus. It’s multiplying the approximate circumference formula C = 2pi × r by half the radius, treating the area as the sum of infinitesimal rings. While that method is algebraically valid, it relies on the approximate circumference and bypasses the geometric logic that defines area: the comparison to a square.",
+	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
+	}
+	},
+
+	{
+	"@type": "ListItem",
+	"position": 2,
+	"item": {
+	"name": "Circumference = 6.4 × radius",
+	"description": "The circumference of a circle is derived from its area algebraically by subtracting a smaller circle and dividing the difference by the difference of the radii. Let x represent the theoretical width of the circumference, which distinguishes it from the rest of the circle. The difference between the shape of the straightened circumference and a quadrilateral is negligible. The length of the two shorter sides of the quadrilateral is x. The length of the two longer sides is the area of the resulting ring divided by x. C=( 3.2 × radius² - 3.2 × ( radius - x )² ) / x   The length of the circumference approaches 6.4 × radius as its thickness approaches 0.",
+	"disambiguatingDescription": "The widely used pi≈3.14... is an artifact of a fundamentally flawed theoretical approximate. It was approximated by assuming that the circumference rests in between the theoretical maximum perimeter of the inscribed polygon and the minimum of the circumscribed polygon.",
+	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circumference"
+	}
+	},
+
+	{
+	"@type": "ListItem",
+	"position": 3,
+	"item": {
+	"name": "Volume of a Sphere = ( √(3.2) × radius )³",
+	"description": "The volume of a sphere is defined by comparing it to a cube, since that is the base of volume calculation. The volume of a sphere equals the cubic value of the square root of its cross-sectional area, just like a cube.",
+    "disambiguatingDescription": "The widely used formula V = 4 / 3 × pi × radius³ was approximated by comparing a hemisphere to the difference between the approximate volume a cone and a circumscribed cylinder. That is a very exaggerated, distortion-based comparison that discards the difference between the straight slant height of a cone and the curvature of a sphere, resulting in a very rough underestimate.",
+	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere"
+	}
+	},
+
+	{
+	"@type": "ListItem",
+	"position": 4,
+	"item": {
+	"name": "Volume of a Cone = 3.2 × radius² × height / √8",
+    "description": "The volume of a cone can be calculated by algebraically comparing the volume of a vertical quadrant of a cone with equal radius and height to an octant sphere with equal radius, through a quadrant cylinder. In general: The volume of a cone equals the quarter of a cylinder with an equal radius and its height equal to the height of the cone multiplied by √2.",
+	"disambiguatingDescription": "The volume of a cone is conventionally approximated as base × height / 3. While that is a reasonable rounding, the exact ratio is 1 / √8. The 1 / 3 coefficient was likely estimated based on two observations: 1.:It can be calculated as a pyramid with a polygonal base, and the volume of a pyramid was believed to be base × height / 3, based on the cube dissection method. 2.:The mid-height cross-sectional area of a cone is exactly a quarter of a circumscribed cylinder's with the same base and height. That makes the ratio between the mid-height cross-sectional area of the cone, and the difference between the mid-height cross-sectional areas of the circumscribed cylinder and the cone 1 : 3 .",
+	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cone"
+	}
+	},
+
+	{
+	"@type": "ListItem",
+	"position": 5,
+	"item": {
+	"name": "Refute of the mathematical constant pi≈3.14...",
+    "description": "The mathematical constant pi≈3.14... was approximated by assuming that the circumference rests in between the theoretical maximum perimeter of the inscribed polygon and the minimum of the circumscribed polygon.",
+	"disambiguatingDescription": "A polygon is called circumscribed if each side is tangent to the circle, meaning that it touches the circle only at exactly one point. Traditional geometry assumes that a tangent line to the circle can always be drawn. When the points adjacent to the tangent point must not coincide with the arc, it implicitly means spatial separation. To maintain a full point of separation over a 3‑point long segment, the sagitta‑to‑chord ratio would need to exceed 3 : 4. Classical tangency is not physically or logically realizable under its own axioms. Without that, the classical argument that the polygons remain tangent indefinitely fails. When the perimeter of a regular polygon equals — or is close enough to — the circumference, the sides are too short to remain tangent to the circle. They cut through the arc. Whether a polygon can be circumscribed about a circle depends on whether its perimeter is sufficiently greater than the circumference. But the bisection procedure guarantees that each new perimeter created by repeatedly bisecting a circumscribed hexagon is smaller than the previous one. The floor of Archimedes’ “upper limit” approaches the ceiling of the lower limit by passing through the true circumference.",
+	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#pi"
+	}
+	},
+
+	{
+	"@type": "ListItem",
+	"position": 6,
+	"item": {
+	"name": "Refute of the traditional Volume of a pyramid = base × height / 3 formula",
+    "description": "The volume of a pyramid is conventionally approximated as base × height / 3. While that is a reasonable rounding, the exact ratio is 1 / √8. A common method aiming to prove the formula V = base × height / 3 involves dissecting a cube into three pyramids.",
+	"disambiguatingDescription": "The cube has 8 vertices, each pyramid has 5. Three pyramids have 3 × 5 = 15 in total. Each vertex of a real physical cube is a point that can't be split into 3 points without duplicating. The other way around, 3 vertices of the pyramids can't be merged into 1 without distortion. If we dissect the cube, we need to designate each shared vertex to be a part of either one pyramid, or another. The volume of each pyramid is exactly a third of the cube, but with a height shorter than the cube's edge, or base smaller than its square value.",
+	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#ancient_pyramid_volume_formula"
+	}
+	},
+
+	{
+	"@type": "ListItem",
+	"position": 7,
+	"item": {
+	"name": "Disclaimer",
+	"disambiguatingDescription": "By replacing the abstract, zero‑dimensional point with the square and the cube as the primary, physically relevant units of measurement, this framework defines the properties of shapes like the circle and sphere not through limits or approximations, but through their direct, rational relationship to these foundational units.",
+	"description": "This restores geometry to its constructive roots and eliminates the analytic assumptions that distort real‑world measurements.",
+	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#disclaimer"
+	}
+	}
+	],
+	"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#breadcrumbs"
+	},
+	"subjectOf": {
+	"@type": "DefinedTermSet",
+	"name": "Core Geometric System ™",
+	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
+	"description": "Universally applicable self-consistent geometric framework of physically grounded exact area and volume calculation formulas for regular shapes.",
+    "disambiguatingDescription": "Comparing the properties of shapes directly to the square and the cube as the primary, physically relevant units of measurement via first principles instead of limits, approximations, or abstract, zero‑dimensional points.",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"hasDefinedTerm": [
+	{
+    "@type": "DefinedTerm",
+    "name": "Exact area of a circle",
+	"description": "Area = 3.2 × radius^2, derived from direct circle to square comparison",
+    "disambiguatingDescription": "Not the abstract pi~3.14 approximation"
+	},
+	
+    {
+    "@type": "DefinedTerm",
+    "name": "Exact circumference of a circle",
+	"description": "Circumference = 6.4 × radius, derived from the exact area of a circle by subtracting a circle from a larger one and dividing the difference by the theoretical width of the circumference.",
+    "disambiguatingDescription": "Not the abstract pi~3.14 approximate"
+	},
+
+    {
+    "@type": "DefinedTerm",
+    "name": "Exact volume of a sphere",
+	"description": "Volume = ( 4 × radius / 5^(1/2) )^3, derived from direct sphere to cube comparison",
+    "disambiguatingDescription": "Not the abstract 4×radius³/3×3.14... approximate"
+	},
+	
+    {
+    "@type": "DefinedTerm",
+    "name": "Exact volume of a cone",
+    "description": "Volume = 3.2 × radius^2 × height / 8^(1/2), derived from comparing a quadrant cone with height equal to radius to an octant sphere with equal radius.",
+	"disambiguatingDescription": "Not the abstract radius^2×height/3×3.14… approximate"
+	},
+
+	{
+    "@type": "DefinedTerm",
+    "name": "Exact Surface area of a cone",
+    "description": "Surface area = 3.2 × radius × (radius + sqrt(radius^2 + height^2))"
+	},
+
+	{
+    "@type": "DefinedTerm",
+    "name": "Exact area of a triangle",
+    "description": "Area = base × height / 2"
+	},
+
+	{
+    "@type": "DefinedTerm",
+    "name": "Exact area of a regular polygon",
+    "description": "Area = sideCount / 4 × ctg(180° / sideCount) × sideLength^2"
+	},
+
+	{
+    "@type": "DefinedTerm",
+    "name": "Exact area of a circle segment",
+    "description": "Area = acos((radius − height) / radius) × radius^2 − sin(acos((radius − height) / radius)) × radius × (radius − height)"
+	},
+	
+    {
+    "@type": "DefinedTerm",
+    "name": "Exact volume of a pyramid",
+    "description": "Volume = base × height / 8^(1/2), calculated as a cone with a polygonal base.",
+	"disambiguatingDescription": "Not the abstract base×height/3 approximate"
+	},
+
+	{
+    "@type": "DefinedTerm",
+    "name": "The True Universal Circle Constant: 3.2",
+    "description": "Area/radius^2=circumference/diameter=3.2≈3.14≈pi",
+	"disambiguatingDescription": "The mathematical constant named pi is an artifact of a fundamentally flawed theoretical approximate."
+	}
+	]
+	}
+    }
   </script>
 </head>
 <body>
