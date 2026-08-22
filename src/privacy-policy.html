@@ -36,8 +36,17 @@
             height: 100%;
         }
        
+		.rounded-button {
+  display: inline-block;
+  padding: 7px 9px;
+  text-decoration: none;
+  border-radius: 9px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+		}
+	
 body {
-        font-family: 'OpenDyslexic', sans-serif;
+            font-family: 'OpenDyslexic', sans-serif;
 }
 </style>
 
@@ -45,9 +54,8 @@ body {
 {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy#policy",
    "name": "Do Not Sell My Personal Information",
-	"dateModified": "2026-08-22T17:16:50+02:00",
+	"dateModified": "2026-08-22T20:56:39+02:00",
 	"accessMode": "textual",
     "accessibilityControl": "fullMouseControl",
     "accessibilityHazard": "none",
@@ -98,7 +106,8 @@ body {
 </script>
 </head>
 <body>
-<section id="policy">
+<main style="margin:12px">
+<section id="cookies">
 <h1 style="font-size:130%">This site uses IT cookies to enure you get the best experience on it.</h1>
 <br>
 <p>It also includes embedded content, which behave the same way as if you visited their location.
@@ -111,7 +120,7 @@ If you're not happy with that, please close the page.</p>
 <section id="contact">
 <h2>Your contact info:</h2>
 <br>
-<div itemprop="image" class="imgbox">
+<div class="imgbox">
     <img class="center-fit" width="257" height="273" src="Gmac4247.jpg" alt="Gaál Sándor">
     </div>
 <br>
@@ -126,15 +135,15 @@ If you're not happy with that, please close the page.</p>
 <span>+36305075125</span>
 <br><br>
 <p>(International rates apply.)</p>
-<br><br> 
 </section>
-<p>® All rights reserved</p>
-<p>2026</p>
+</main>
 <br><br><br><br>
 <footer>
-<a style="margin:9px;" href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev"> Home </a>
-<br>
-<br>
+<div style="margin:9px">
+<a class="rounded-button" href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">Home</a>
+<br><br>
+<p style="text-align:center">® 2026 Gaál Sándor</p>
+</div>
 </footer>
 </body>
 </html>
