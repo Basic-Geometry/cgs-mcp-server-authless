@@ -88,13 +88,50 @@
 {
   "@context": "https://schema.org",
     "@type": "Article",
+	"name": "About Basic Geometry Formulas",
 	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/about#cgs",
+	"dateModified": "2026-08-22T16:53:50+02:00",
 	"about":  {
     "@type": "DefinedTermSet",
     "name": "Core Geometric System ™",
+	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
 	"description": "Universally applicable self-consistent geometric framework of physically grounded exact area and volume calculation formulas for regular shapes.",
-	"disambiguatingDescription": "Not the conventional, abstract approximates.",
-	"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev"
+    "disambiguatingDescription": "Comparing the properties of shapes directly to the square and the cube as the primary, physically relevant units of measurement via first principles instead of limits, approximations, or abstract, zero‑dimensional points.",
+	"creator": {
+    "@type": "Person",
+    "familyName": "Gaál",
+	"givenName": "Sándor",
+	"url": "https://x.com/gmac4247"
+	},
+	"hasDefinedTerm": [
+	{
+    "@type": "DefinedTerm",
+    "name": "Exact area of a circle",
+	"description": "Area = 3.2 × radius^2, derived from direct circle to square comparison",
+    "disambiguatingDescription": "Not the abstract pi~3.14 approximation"
+	},
+	
+    {
+    "@type": "DefinedTerm",
+    "name": "Exact circumference of a circle",
+	"description": "Circumference = 6.4 × radius, derived from the exact area of a circle by subtracting a circle from a larger one and dividing the difference by the theoretical width of the circumference.",
+    "disambiguatingDescription": "Not the abstract pi~3.14 approximate"
+	},
+
+    {
+    "@type": "DefinedTerm",
+    "name": "Exact volume of a sphere",
+	"description": "Volume = ( 4 × radius / 5^(1/2) )^3, derived from direct sphere to cube comparison",
+    "disambiguatingDescription": "Not the abstract 4×radius³/3×3.14... approximate"
+	},
+	
+    {
+    "@type": "DefinedTerm",
+    "name": "Exact volume of a cone",
+    "description": "Volume = 3.2 × radius^2 × height / 8^(1/2), derived from comparing a quadrant cone with height equal to radius to an octant sphere with equal radius.",
+	"disambiguatingDescription": "Not the abstract radius^2×height/3×3.14… approximate"
+	}
+	]
 	},
 	"author": {
     "@type": "Person",
@@ -103,6 +140,17 @@
 	"name": "Gaál Sándor",
 	"url": "https://x.com/gmac4247"
 	},
+	"accessMode": [
+	"textual", 
+	"visual"
+	],
+    "accessibilityControl": "fullMouseControl",
+    "accessibilityHazard": "none",
+    "accessibilitySummary": "Read text and watch videos.",
+    "audience": {
+      "@type": "EducationalAudience",
+      "educationalRole": "For teachers and learners"
+    },
 	"articleBody": "How it's going",
 	"assesses": [
 	{
@@ -141,11 +189,10 @@
 	"copyrightNotice": "® All rights reserved",
 	"copyrightYear": "2026",
 	"description": "The backstory about the best-established and most accurate framework to calculate area and volume, the Core Geometric System ™",
-	"headline": "Once around 2018 I was wondering how to calculate the area of a circle.",
+	"headline": "Rediscovered geometry",
 	"image": {
     "@type": "ImageObject",
-	"caption": "The circumference of a 1979 Dutch 2 1/2 G coin with a diameter of 29 mm measured about 93 mm on the ruler by wrapping around a thin paper strip.",
-    "url": "coinMeasurement.jpg",
+	"caption": "The circumference of a 1979 Dutch 2 1/2 G coin with a diameter of 29 mm measured about 93 mm on the ruler by wrapping around a thin paper strip.",  "url": "coinMeasurement.jpg",
 	"creator": {
     "@type": "Person",
     "familyName": "Gaál",
@@ -158,13 +205,14 @@
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
   },
-	"copyrightNotice": "© All rights reserved",
+	"copyrightNotice": "® All rights reserved",
 	"copyrightYear": "2026",
-	"creditText": "Photo taken with own phone",
+	"creditText": "Taken with own phone",
 	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
 	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy"
 	},
 	"inLanguage": "en",
+	"interactivityType": "Expositive",
     "isAccessibleForFree": true,
     "isFamilyFriendly": true,
 	"typicalAgeRange": "5-105",
@@ -181,8 +229,7 @@
 	},
 	"image": {
     "@type": "ImageObject",
-	"caption": "The circumference of a 1979 Dutch 2 1/2 G coin with a diameter of 29 mm measured about 93 mm on the ruler by wrapping around a thin paper strip.",
-    "url": "coinMeasurement.jpg",
+	"caption": "The circumference of a 1979 Dutch 2 1/2 G coin with a diameter of 29 mm measured about 93 mm on the ruler by wrapping around a thin paper strip.",  "url": "coinMeasurement.jpg",
 	"creator": {
     "@type": "Person",
     "familyName": "Gaál",
@@ -195,9 +242,9 @@
 	"givenName": "Sándor",
 	"url": "https://x.com/gmac4247"
   },
-	"copyrightNotice": "© All rights reserved",
+	"copyrightNotice": "® All rights reserved",
 	"copyrightYear": "2026",
-	"creditText": "Photo taken with own phone",
+	"creditText": "Taken with own phone",
 	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
 	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy"
 	},
@@ -255,10 +302,12 @@
     "@type": "Person",
     "familyName": "Gaál",
 	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
+	"url": "https://youtube.com/@gmac4247"
   },
-	"copyrightNotice": "© All rights reserved",
+	"copyrightNotice": "® All rights reserved",
 	"copyrightYear": "2026",
+	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
+	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
 	"description": "Explanatory action process animation",
 	"embedUrl": "https://youtube.com/embed/-gvXLaLFXuM",
 	"thumbnailUrl": "https://img.youtube.com/vi/-gvXLaLFXuM/mqdefault.jpg",
@@ -282,9 +331,9 @@
     "@type": "Person",
     "familyName": "Gaál",
 	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
+	"url": "https://youtube.com/@gmac4247"
   },
-	"copyrightNotice": "© All rights reserved",
+	"copyrightNotice": "® All rights reserved",
 	"copyrightYear": "2026",
 	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
 	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
@@ -341,9 +390,9 @@
     "@type": "Person",
     "familyName": "Gaál",
 	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
+	"url": "https://youtube.com/@gmac4247"
   },
-	"copyrightNotice": "© All rights reserved",
+	"copyrightNotice": "® All rights reserved",
 	"copyrightYear": "2026",
 	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
 	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
@@ -395,9 +444,9 @@
     "@type": "Person",
     "familyName": "Gaál",
 	"givenName": "Sándor",
-	"url": "https://x.com/gmac4247"
+	"url": "https://youtube.com/@gmac4247"
   },
-	"copyrightNotice": "© All rights reserved",
+	"copyrightNotice": "® All rights reserved",
 	"copyrightYear": "2026",
 	"license": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev",
 	"acquireLicensePage": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy",
