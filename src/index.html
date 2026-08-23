@@ -174,8 +174,7 @@ body {
     {
     "@type": "PropertyValue",
     "name": "hypotenuse^2",
-	"value": "(leg1)^2 + (leg2)^2",
-	"description": "The Right Triangle Hypotenuse Theorem"
+	"value": "(leg1)^2 + (leg2)^2"
 	}
     },
     "totalTime": "PT30M",
@@ -241,13 +240,26 @@ body {
       }
     ]
 	},
-    "result": {
-      "@type": "PropertyValue",
-      "name": "Area of a circle",
-		"value": "3.2 × radius^2",
-      "description": "Exact formula derived from direct circle to square comparison",
-      "disambiguatingDescription": "Not the abstract pi-based approximation"
-    },
+    "result": 
+	  {
+    "@type": "DefinedTerm",
+    "name": "Area of a circle",
+	"description": [
+	  "Exact, physical area of a circle.",
+	  "Direct circle-to-square comparison."
+	  ],
+	"disambiguatingDescription": "Not the traditional, abstract pi≈3.14... approximate.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Area of a circle", 
+    "value": "3.2 × radius^2",
+	"description": [
+	  "Universally applicable formula to calculate the exact physical area of a circle in terms of its radius.",
+	  "Derived via cutting the circle into four quadrants, placing them with their origin on the vertices of a square with side = 4radius / 5^(1/2).",
+	  ]
+  }
+},
   "subjectOf": {
     "@type": "SoftwareApplication",
     "name": "Circle area calculator",
@@ -261,9 +273,9 @@ body {
     "isFamilyFriendly": true,
 	"aggregateRating": {
     "@type": "AggregateRating",
-	"bestRating": "9",
-	"worstRating": "0",
-    "ratingValue": "9",
+	"bestRating": 9,
+	"worstRating": 0,
+    "ratingValue": 9,
     "reviewCount": 1
 	},
 	"offers": {
@@ -303,13 +315,16 @@ body {
     {
     "@type": "HowToTool",
     "name": "Circle area formula",
+	"description": [
+	  "Universally applicable formula to calculate the exact physical area of a circle in terms of its radius.",
+	  "Derived via cutting the circle into four quadrants, placing them with their origin on the vertices of a square with side = 4radius / 5^(1/2)."
+	  ],
+	"disambiguatingDescription": "Not the traditional, abstract pi≈3.14... approximate.",
     "item":
     {
     "@type": "PropertyValue",
     "name": "Area of a circle",
-	"value": "3.2 × radius^2",
-	"description": "Exact formula derived from direct circle to square comparison",
-    "disambiguatingDescription": "No pi"
+	"value": "3.2 × radius^2"
     }
     },
 	"totalTime": "PT30M",
@@ -402,13 +417,23 @@ body {
       }
     ]
 	},
-    "result": {
-      "@type": "PropertyValue",
-      "name": "Circumference",
-      "description": "Exact circumference formula",
-	  "disambiguatingDescription": "Not the abstract pi~3.14 approximation",
-      "value": "6.4×radius"
-    },
+    "result": 
+	  {
+    "@type": "DefinedTerm",
+    "name": "Circumference of a circle",
+	"description": "Exact, physical circumference of a circle.",
+	"disambiguatingDescription": "Not the traditional, abstract pi≈3.14... approximate.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Circumference of a circle", 
+    "value": "6.4 × radius",
+	"description": [
+	  "Universally applicable formula to calculate the exact physical circumference of a circle in terms of its radius.",
+	  "Derived via subtracting a circle with a radius smaller than the original one by the virtual thickness of the circumference, and dividing the difference by that virtual thickness.",
+	  ]
+  }
+},
   "subjectOf": {
     "@type": "SoftwareApplication",
     "name": "Circumference calculator",
@@ -422,9 +447,9 @@ body {
     "isFamilyFriendly": true,
     "aggregateRating": {
     "@type": "AggregateRating",
-"bestRating": "9",
-	"worstRating": "0",
-	  "ratingValue": "9",
+"bestRating": 9,
+	"worstRating": 0,
+	  "ratingValue": 9,
     "reviewCount": 1
 	},
 	"offers": {
@@ -706,9 +731,9 @@ body {
     "isFamilyFriendly": true,
 	"aggregateRating": {
     "@type": "AggregateRating",
-"bestRating": "9",
-	"worstRating": "0",    
-	  "ratingValue": "Excellent",
+"bestRating": 9,
+	"worstRating": 0,    
+	  "ratingValue": 9,
     "reviewCount": 1
 	},
 	"offers": {
