@@ -2403,16 +2403,45 @@ body {
 
 	{
     "@type": "DefinedTerm",
-    "name": "Exact area of a circle segment",
-    "description": "Area = acos((radius − height) / radius) × radius^2 − sin(acos((radius − height) / radius)) × radius × (radius − height)"
-	},
-	
+    "name": "Area of a circle segment",
+	"description": "Exact, physical area of a circle segment.",
+	"disambiguatingDescription": "Based on the true area of a circle — 3.2radius² —, not the traditional, abstract pi≈3.14... approximate.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Area of a circle segment", 
+    "value": "acos((radius − height) / radius) × radius^2 − sin(acos((radius − height) / radius)) × radius × (radius − height)",
+	"description": "Universally applicable formula to calculate the exact physical area of a circle segment in terms of its height, and the radius of its parent circle."
+  }
+},
+	  
     {
     "@type": "DefinedTerm",
-    "name": "Exact volume of a pyramid",
-    "description": "Volume = base × height / 8^(1/2), calculated as a cone with a polygonal base.",
-	"disambiguatingDescription": "Not the abstract base×height/3 approximate"
-	},
+    "name": "Volume of a pyramid",
+	"description": "Exact, physical volume of a pyramid.",
+	"disambiguatingDescription": "Not the traditional, abstract base × height / 3 approximate.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Volume of a pyramid", 
+    "value": "base area × height / 8^(1/2)",
+	"description": "Universally applicable formula to calculate the exact physical volume of a pyramid in terms of its base area, and height."
+  }
+},
+
+	   {
+	"@type": "DefinedTerm",
+	"name": "Volume of a tetrahedron",
+	"description": "Exact, physical volume of a tetrahedron.",
+	"disambiguatingDescription": "Not the traditional, abstract base × height / 3 approximate.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Volume of a tetrahedron", 
+    "value": "edge^3 / 8",
+	"description": "Universally applicable formula to calculate the exact physical volume of a tetrahedron  in terms of its edge length."
+  }
+},
 
 	{
     "@type": "DefinedTerm",
