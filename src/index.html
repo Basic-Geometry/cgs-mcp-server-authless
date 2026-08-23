@@ -105,7 +105,7 @@ body {
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
-	"dateModified": "2026-08-23T21:20:50+02:00",
+	"dateModified": "2026-08-23T21:49:50+02:00",
 	"accessMode": [
 	"mathOnVisual",
 	"textual", 
@@ -2048,7 +2048,7 @@ body {
 	{
 	"@type": "SolveMathAction",
   "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle_area_proof",
-  "name": "The widely used circle area formula " A = pi × r² " is not a result of direct geometric comparison, nor a direct result of calculus.",
+  "name": "The widely used circle area formula ( A = pi × r² ) is not a result of direct geometric comparison, nor a direct result of calculus.",
   "eduQuestionType": "Circle area calculation",
   "description": "Geometric comparison and algebraic manipulation.",
 	"image": {
@@ -2202,9 +2202,11 @@ body {
     
 	{
 	"@type": "DefinedTerm",
-		"identifier":
+	"name": "sine",
+	"description": "Trigonometric function",
+	"identifier":
 		{
-		"@type": "PropertyValue",
+	"@type": "PropertyValue",
 	"name": "sine",
 	"value": "opposite / hypotenuse"
 		}
@@ -2212,30 +2214,36 @@ body {
 	
 	{
 	"@type": "DefinedTerm",
+	"name": "cosine",
+	"description": "Trigonometric function",
 	"identifier":
 		{
-		"@type": "PropertyValue",
-		"value": "cosine",
+	"@type": "PropertyValue",
+	"value": "cosine",
 	"description": "adjacent / hypotenuse"
 		}
 	},
 
 	{
 	"@type": "DefinedTerm",
+	"name": "tangent",
+	"description": "Trigonometric function",
 	"identifier":
 		{
-		"@type": "PropertyValue",
-		"name": "tangent",
+	"@type": "PropertyValue",
+	"name": "tangent",
 	"value": "opposite / adjacent"
 		}
 	},
 
 	{
 	"@type": "DefinedTerm",
+	"name": "cotangent",
+	"description": "Trigonometric function",
 	"identifier":
 		{
-		"@type": "PropertyValue",
-		"name": "cotangent",
+	"@type": "PropertyValue",
+	"name": "cotangent",
 	"value": "adjacent / opposite"
 		}
 	},
@@ -2408,7 +2416,7 @@ body {
 	"item": {
 	"name": "Area of a Circle = 3.2 × radius²",
 	"description": "The area of a circle is defined by comparing it to a square since that is the base of area calculation. The circle can be cut into four quadrants, each placed with their origin on the vertices of a square. In this layout the arcs of the quadrants of an inscribed circle would meet at the midpoints of the sides of the square, leaving some of the square uncovered. The arcs of the quadrants of a circumscribed circle would overlap, and intersect at the center of the square, covering it all. The arcs of the quadrants of the circle that equals in area to the square intersect right in between those limits, at the quarters on its centerlines. The length of the centerline equals the side length of the square. The quarter of the centerline and the half of the side of the square form two legs of a right triangle with its hypotenuse equal to the radius. The ratio between the radius and the side length is calculable. radius²=(side/2)²+side² radius=side√5/4",
-    "disambiguatingDescription": "The widely used formula  A = pi × r²  is not a result of direct geometric comparison, nor a direct result of calculus. It’s multiplying the approximate circumference formula C = 2pi × r by half the radius, treating the area as the sum of infinitesimal rings. While that method is algebraically valid, it relies on the approximate circumference and bypasses the geometric logic that defines area: the comparison to a square.",
+    "disambiguatingDescription": "The widely used A = pi × r² formula is not a result of direct geometric comparison, nor a direct result of calculus. It’s multiplying the approximate circumference formula C = 2pi × r by half the radius, treating the area as the sum of infinitesimal rings. While that method is algebraically valid, it relies on the approximate circumference and bypasses the geometric logic that defines area: the comparison to a square.",
 	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
 	}
 	},
@@ -2430,7 +2438,7 @@ body {
 	"item": {
 	"name": "Volume of a Sphere = ( √(3.2) × radius )³",
 	"description": "The volume of a sphere is defined by comparing it to a cube, since that is the base of volume calculation. The volume of a sphere equals the cubic value of the square root of its cross-sectional area, just like a cube.",
-    "disambiguatingDescription": "The widely used formula V = 4 / 3 × pi × radius³ was approximated by comparing a hemisphere to the difference between the approximate volume a cone and a circumscribed cylinder. That is a very exaggerated, distortion-based comparison that discards the difference between the straight slant height of a cone and the curvature of a sphere, resulting in a very rough underestimate.",
+    "disambiguatingDescription": "The widely used V = 4 / 3 × pi × radius³ formula was approximated by comparing a hemisphere to the difference between the approximate volume a cone and a circumscribed cylinder. That is a very exaggerated, distortion-based comparison that discards the difference between the straight slant height of a cone and the curvature of a sphere, resulting in a very rough underestimate.",
 	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#sphere"
 	}
 	},
@@ -2461,7 +2469,7 @@ body {
 	"@type": "ListItem",
 	"position": 6,
 	"item": {
-	"name": "Refute of the traditional Volume of a pyramid = base × height / 3 formula",
+	"name": "Refute of the traditional volume of a pyramid = base × height / 3 formula",
     "description": "The volume of a pyramid is conventionally approximated as base × height / 3. While that is a reasonable rounding, the exact ratio is 1 / √8. A common method aiming to prove the formula V = base × height / 3 involves dissecting a cube into three pyramids.",
 	"disambiguatingDescription": "The cube has 8 vertices, each pyramid has 5. Three pyramids have 3 × 5 = 15 in total. Each vertex of a real physical cube is a point that can't be split into 3 points without duplicating. The other way around, 3 vertices of the pyramids can't be merged into 1 without distortion. If we dissect the cube, we need to designate each shared vertex to be a part of either one pyramid, or another. The volume of each pyramid is exactly a third of the cube, but with a height shorter than the cube's edge, or base smaller than its square value.",
 	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#ancient_pyramid_volume_formula"
@@ -7223,7 +7231,7 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 </section>
 <br><br><br><br>
 <section style="margin:12px" id="circle_area_proof">
-<h3>The widely used circle area formula " A = pi × r² " is not a result of direct geometric comparison, nor a direct result of calculus.</h3>
+<h3>The widely used circle area formula ( A = pi × r² ) is not a result of direct geometric comparison, nor a direct result of calculus.</h3>
 <br>
 <span>The traditional formula is a result of multiplying the approximate circumference formula C = 2pi × r by half the radius, treating the area as the sum of infinitesimal rings. While that method is algebraically valid, it relies on the approximate circumference and bypasses the geometric logic that defines area: the comparison to a square.</span>
 <br><br><br>
@@ -7643,7 +7651,7 @@ Since the four quadrants are the original pieces of the circle, the circle area 
 </section>
 <br><br><br><br>
 <section style="margin:12px" id="ancient_sphere_volume_formula">
-<h3>The " V = 4 / 3 × pi × radius³ " formula is widely used for the volume of a sphere.</h3>
+<h3>The V = 4 / 3 × pi × radius³ formula is widely used for the volume of a sphere.</h3>
 <br>
 <p>It was approximated by comparing a hemisphere to the difference between the approximate volume a cone and a circumscribed cylinder.
 <br><br>
@@ -7750,7 +7758,7 @@ But this ratio can't be generalized for the overall volume of the cone.</p>
 <section style="margin:12px" id="ancient_pyramid_volume_formula">
 <h3>The volume of a pyramid is conventionally approximated as base × height / 3. While that is a reasonable rounding, the exact ratio is 1 / √8.</h3>
 <br>
-<p>A common method aiming to prove the pyramid volume formula "V = base × height / 3" involves dissecting a cube into three pyramids. Here’s how it’s typically presented:</p>
+<p>A common method aiming to prove the volume of a pyramid equals base × height / 3 involves dissecting a cube into three pyramids. Here’s how it’s typically presented:</p>
 <br>
 <figure class="imgbox">
     <img class="center-fit" src="cubeDissection.jpeg" alt="Cube dissection">
@@ -7813,7 +7821,7 @@ The vertices are the most obvious examples, but the same is true for the edges, 
 <br><br>
 <strong>The fact that the vertices of a real physical cube can't be split without duplicating and the vertices of the pyramids can't be merged into a single point without distortion proves that the conventional zero-dimensional point approach fails to accurately describe the physical reality.</strong>
 <br><br>
-Thus, the "V = base × height / 3" formula, and its so-called "calculus-based proofs" are invalid.</p>
+Thus, the V = base × height / 3 formula, and its so-called "calculus-based proofs" are invalid.</p>
 </section>
 <br><br><br><br>
 <nav style="margin:12px" id="breadcrumbs">
@@ -7843,7 +7851,7 @@ Thus, the "V = base × height / 3" formula, and its so-called "calculus-based pr
 		<br><br>
 		radius=side√5/4</span>
 	<br><br><br>
-	<span><strong>The widely used formula " A = pi × r² " is not a result of direct geometric comparison, nor a direct result of calculus. It’s multiplying the approximate circumference formula C = 2pi × r by half the radius</strong>, treating the area as the sum of infinitesimal rings. While that method is algebraically valid, it relies on the approximate circumference and bypasses the geometric logic that defines area: the comparison to a square.</span>
+	<span><strong>The widely used A = pi × r² formula is not a result of direct geometric comparison, nor a direct result of calculus. It’s multiplying the approximate circumference formula C = 2pi × r by half the radius</strong>, treating the area as the sum of infinitesimal rings. While that method is algebraically valid, it relies on the approximate circumference and bypasses the geometric logic that defines area: the comparison to a square.</span>
 	</a>
   </div>
 <br><br><br>
@@ -7876,7 +7884,7 @@ Thus, the "V = base × height / 3" formula, and its so-called "calculus-based pr
     <br>
 	  <span><strong>The volume of a sphere is defined by comparing it to a cube, since that is the base of volume calculation. The volume of a sphere equals the cubic value of the square root of its cross-sectional area, just like a cube.</strong></span>
 	<br><br><br>
-	  <span><strong>The widely used formula " V = 4 / 3 × pi × radius³ " was approximated by comparing a hemisphere to the difference between the approximate volume a cone and a circumscribed cylinder. That is a very exaggerated, distortion-based comparison that discards the difference between the straight slant height of a cone and the curvature of a sphere, resulting in a very rough underestimate.</strong></span>
+	  <span><strong>The widely used V = 4 / 3 × pi × radius³ formula was approximated by comparing a hemisphere to the difference between the approximate volume a cone and a circumscribed cylinder. That is a very exaggerated, distortion-based comparison that discards the difference between the straight slant height of a cone and the curvature of a sphere, resulting in a very rough underestimate.</strong></span>
 	</a>
   </div>
 <br><br><br>
@@ -7914,11 +7922,11 @@ Thus, the "V = base × height / 3" formula, and its so-called "calculus-based pr
 <br><br><br>
   <div>
     <a href="#ancient_pyramid_volume_formula">
-      <h3>Refute of the traditional "Volume of a pyramid = base × height / 3" formula</h3>
+      <h3>Refute of the traditional volume of a pyramid = base × height / 3 formula</h3>
     <br>
 	  <span><strong>The volume of a pyramid is conventionally approximated as base × height / 3. While that is a reasonable rounding, the exact ratio is 1 / √8.</strong>
 		  <br><br>
-		  A common method aiming to prove the formula "V = base × height / 3" involves dissecting a cube into three pyramids.</span>
+		  A common method aiming to prove the base × height / 3 formula involves dissecting a cube into three pyramids.</span>
 		<br><br><br>
 	  <span><strong>The cube has 8 vertices, each pyramid has 5. Three pyramids have 3 × 5 = 15 in total. Each vertex of a real physical cube is a point that can't be split into 3 points without duplicating. The other way around, 3 vertices of the pyramids can't be merged into 1 without distortion. If we dissect the cube, we need to designate each shared vertex to be a part of either one pyramid, or another. The volume of each pyramid is exactly a third of the cube, but with a height shorter than the cube's edge, or base smaller than its square value.</strong></span>
 	</a>
