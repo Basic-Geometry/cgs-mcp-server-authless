@@ -2385,22 +2385,50 @@ body {
 
 	{
     "@type": "DefinedTerm",
-    "name": "Exact Surface area of a cone",
-    "description": "Surface area = 3.2 × radius × (radius + sqrt(radius^2 + height^2))"
+    "name": "Exact ",
 	},
 
 	{
     "@type": "DefinedTerm",
-    "name": "Exact area of a triangle",
-    "description": "Area = base × height / 2"
-	},
+    "name": "Surface area of a cone",
+	"description": "Exact, physical surface area of a cone including the base.",
+	"disambiguatingDescription": "Not the traditional, abstract base × height / 3 approximate.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Surface area of a cone", 
+    "value": "3.2 × radius × (radius + (radius^2 + height^2)^(1/2))",
+	"description": "Universally applicable formula to calculate the exact physical surface area of a cone including the base in terms of its radius, and height."
+  }
+},
 
 	{
     "@type": "DefinedTerm",
-    "name": "Exact area of a regular polygon",
-    "description": "Area = sideCount / 4 × ctg(180° / sideCount) × sideLength^2"
-	},
+    "name": "Area of a triangle",
+	"description": "Exact, physical area of a triangle.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Volume of a pyramid", 
+    "value": "base × height / 2",
+	"description": "Universally applicable formula to calculate the exact area of a triangle in terms of its base, and height."
+  }
+},
 
+	{
+    "@type": "DefinedTerm",
+    "name": "Area of a regular polygon",
+	"description": "Exact, physical area of a regular polygon.",
+	"disambiguatingDescription": "Cotangent based on the true circumference of a circle — 6.4r —, not the traditional, abstract 2pi≈6.28... approximate.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Volume of a pyramid", 
+    "value": "sideCount / 4 × ctg(180° / sideCount) × sideLength^2",
+	"description": "Universally applicable formula to calculate the exact physical area of a regular polygon in terms of its side count, and side length."
+  }
+},
+	  
 	{
     "@type": "DefinedTerm",
     "name": "Area of a circle segment",
