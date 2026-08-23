@@ -2355,44 +2355,89 @@ body {
 	"url": "https://x.com/gmac4247"
 	},
 	"hasDefinedTerm": [
+
+	  {
+    "@type": "DefinedTerm",
+    "name": "Area of a circle",
+	"description": [
+	  "Exact, physical area of a circle.",
+	  "Direct circle-to-square comparison."
+	  ],
+	"disambiguatingDescription": "Not the traditional, abstract pi≈3.14... approximate.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Area of a circle", 
+    "value": "3.2 × radius^2",
+	"description": [
+	  "Universally applicable formula to calculate the exact physical area of a circle in terms of its radius.",
+	  "Derived via cutting the circle into four quadrants, placing them with their origin on the vertices of a square with side = 4radius / 5^(1/2).",
+	  ]
+  }
+},
+	  
 	{
     "@type": "DefinedTerm",
-    "name": "Exact area of a circle",
-	"description": "Area = 3.2 × radius^2, derived from direct circle to square comparison",
-    "disambiguatingDescription": "Not the abstract pi~3.14 approximation"
-	},
+    "name": "Circumference of a circle",
+	"description": "Exact, physical circumference of a circle.",
+	"disambiguatingDescription": "Not the traditional, abstract pi≈3.14... approximate.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Circumference of a circle", 
+    "value": "6.4 × radius",
+	"description": [
+	  "Universally applicable formula to calculate the exact physical circumference of a circle in terms of its radius.",
+	  "Derived via subtracting a circle with a radius smaller than the original one by the virtual thickness of the circumference, and dividing the difference by that virtual thickness.",
+	  ]
+  }
+},
 	
     {
     "@type": "DefinedTerm",
-    "name": "Exact circumference of a circle",
-	"description": "Circumference = 6.4 × radius, derived from the exact area of a circle by subtracting a circle from a larger one and dividing the difference by the theoretical width of the circumference.",
-    "disambiguatingDescription": "Not the abstract pi~3.14 approximate"
-	},
-
-    {
-    "@type": "DefinedTerm",
-    "name": "Exact volume of a sphere",
-	"description": "Volume = ( 4 × radius / 5^(1/2) )^3, derived from direct sphere to cube comparison",
-    "disambiguatingDescription": "Not the abstract 4×radius³/3×3.14... approximate"
-	},
-	
-    {
-    "@type": "DefinedTerm",
-    "name": "Exact volume of a cone",
-    "description": "Volume = 3.2 × radius^2 × height / 8^(1/2), derived from comparing a quadrant cone with height equal to radius to an octant sphere with equal radius.",
-	"disambiguatingDescription": "Not the abstract radius^2×height/3×3.14… approximate"
-	},
+    "name": "Volume of a sphere",
+	"description": [
+	  "Exact, physical volume of a sphere.",
+	  "Direct sphere-to-cube comparison."
+	  ],
+	"disambiguatingDescription": "Not the traditional, abstract pi4radius^3 / 3 approximate.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Volume of a sphere", 
+	"value": "( 4 × radius / 5^(1/2) )^3",
+	"description": [
+	  "Universally applicable formula to calculate the exact physical volume of a sphere in terms of its radius.",
+	  "Derived via raising the square root of the middle cross-sectional area — 3.2 × radius^2 — to the 3rd power."
+	  ]
+  }
+},
 
 	{
     "@type": "DefinedTerm",
-    "name": "Exact ",
-	},
+    "name": "Volume of a cone",
+	"description": "Exact, physical volume of a cone.",
+	"disambiguatingDescription": "Not the traditional, abstract base × height / 3 approximate.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Volume of a cone", 
+    "value": "3.2 × radius^2 × height / 8^(1/2)",
+	"description": [
+	  "Universally applicable formula to calculate the exact physical volume of a cone in terms of its base radius, and height.",
+	  "Derived via comparing a quadrant cone with an equal height and radius to an octant sphere with an equal radius."
+	  ]
+	}
+},
 
 	{
     "@type": "DefinedTerm",
     "name": "Surface area of a cone",
 	"description": "Exact, physical surface area of a cone including the base.",
-	"disambiguatingDescription": "Not the traditional, abstract base × height / 3 approximate.",
+	"disambiguatingDescription": [
+	  "Not the traditional, abstract base × height / 3 approximate.",
+	  "Base area based on the true area of a circle — 3.2radius^2 —, not the traditional, abstract pi≈3.14... approximate."
+	  ],
 	"identifier":
 		{
     "@type": "PropertyValue",
@@ -2409,7 +2454,7 @@ body {
 	"identifier":
 		{
     "@type": "PropertyValue",
-    "name": "Volume of a pyramid", 
+    "name": "Area of a triangle", 
     "value": "base × height / 2",
 	"description": "Universally applicable formula to calculate the exact area of a triangle in terms of its base, and height."
   }
@@ -2433,7 +2478,7 @@ body {
     "@type": "DefinedTerm",
     "name": "Area of a circle segment",
 	"description": "Exact, physical area of a circle segment.",
-	"disambiguatingDescription": "Based on the true area of a circle — 3.2radius² —, not the traditional, abstract pi≈3.14... approximate.",
+	"disambiguatingDescription": "Based on the true area of a circle — 3.2radius^2 —, not the traditional, abstract pi≈3.14... approximate.",
 	"identifier":
 		{
     "@type": "PropertyValue",
@@ -2473,10 +2518,21 @@ body {
 
 	{
     "@type": "DefinedTerm",
-    "name": "The True Universal Circle Constant: 3.2",
-    "description": "Area/radius^2=circumference/diameter=3.2≈3.14≈pi",
-	"disambiguatingDescription": "The mathematical constant named pi is an artifact of a fundamentally flawed theoretical approximate."
-	}
+    "name": "The True Universal Circle Constant",
+	"description": "The exact circumference to diameter ratio.",
+	"disambiguatingDescription": "Not the traditional, abstract pi≈3.14... approximate.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "circumference / diameter = area / radius^2", 
+    "value": "3.2",
+	"description": [
+	  "Universally applicable.",
+	  "Derived via cutting the circle into four quadrants, placing them with their origin on the vertices of a square with side = 4radius / 5^(1/2).",
+	  ]
+  }
+}
+
 	]
 	}
     }
