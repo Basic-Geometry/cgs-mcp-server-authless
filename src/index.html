@@ -105,7 +105,7 @@ body {
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
-	"dateModified": "2026-08-23T20:00:50+02:00",
+	"dateModified": "2026-08-23T20:37:50+02:00",
 	"accessMode": [
 	"mathOnVisual",
 	"textual", 
@@ -597,9 +597,9 @@ body {
     "isFamilyFriendly": true,
     "aggregateRating": {
     "@type": "AggregateRating",
-	  "bestRating": 9,
+	"bestRating": 9,
 	"worstRating": 0,    
-	  "ratingValue": 9,
+	"ratingValue": 9,
     "reviewCount": 1
 	},
 	"offers": {
@@ -760,9 +760,9 @@ body {
     "isFamilyFriendly": true,
 	"aggregateRating": {
     "@type": "AggregateRating",
-"bestRating": 9,
+	"bestRating": 9,
 	"worstRating": 0,    
-	  "ratingValue": 9,
+	"ratingValue": 9,
     "reviewCount": 1
 	},
 	"offers": {
@@ -957,9 +957,9 @@ body {
     "isFamilyFriendly": true,
 	"aggregateRating": {
     "@type": "AggregateRating",
-	  "bestRating": 9,
+	"bestRating": 9,
 	"worstRating": 0,    
-	  "ratingValue": 9,
+	"ratingValue": 9,
     "reviewCount": 1
 	},
 	"offers": {
@@ -1061,9 +1061,9 @@ body {
     "isFamilyFriendly": true,
 	"aggregateRating": {
     "@type": "AggregateRating",
-"bestRating": "9",
-	"worstRating": "0",   
-	  "ratingValue": "9",
+	"bestRating": 9,
+	"worstRating": 0,   
+	"ratingValue": 9,
     "reviewCount": 1
 	},
 	"offers": {
@@ -1109,13 +1109,15 @@ body {
     {
     "@type": "HowToTool",
     "name": "Triangle area formula",
-    "item":
-    {
+    "description": "Exact, physical area of a triangle.",
+	"item":
+		{
     "@type": "PropertyValue",
-    "name": "Area of a triangle",
-    "value": "base × height / 2"
+    "name": "Area of a triangle", 
+    "value": "base × height / 2",
+	"description": "Universally applicable formula to calculate the exact area of a triangle in terms of its base, and height."
   }
-    },
+},
 	"totalTime": "PT30M",
     "estimatedCost": {
       "@type": "MonetaryAmount",
@@ -1159,12 +1161,20 @@ body {
       }
     ]
   },
-  "result": {
-    "@type": "PropertyValue",
+  "result": 
+	  {
+    "@type": "DefinedTerm",
     "name": "Area of a regular polygon",
-    "value": "side count / 4 × ctg(180° / side count) × side length^2",
-	"description": "Exact polygon area formula"
-  },
+	"description": "Exact, physical area of a regular polygon.",
+	"disambiguatingDescription": "Cotangent based on the true circumference of a circle — 6.4r —, not the traditional, abstract 2pi≈6.28... approximate.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Area of a regular polygon", 
+    "value": "sideCount / 4 × ctg(180° / sideCount) × sideLength^2",
+	"description": "Universally applicable formula to calculate the exact physical area of a regular polygon in terms of its side count, and side length."
+  }
+},
   "subjectOf": {
     "@type": "SoftwareApplication",
     "name": "Polygon area calculator",
@@ -1177,9 +1187,9 @@ body {
     "isFamilyFriendly": true,
 	"aggregateRating": {
     "@type": "AggregateRating",
-"bestRating": "9",
-	"worstRating": "0",    
-	  "ratingValue": "8",
+	"bestRating": 9,
+	"worstRating": 0,    
+	"ratingValue": 8,
     "reviewCount": 1
 	},
 	"offers": {
@@ -1236,21 +1246,34 @@ body {
     {
     "@type": "PropertyValue",
     "name": "Area of a circle",
-	"value": "3.2 × radius^2",
-	"description": "Exact formula derived from direct circle to square comparison",
-    "disambiguatingDescription": "No pi"
-    }
-    },
+	"description": [
+	  "Exact, physical area of a circle.",
+	  "Direct circle-to-square comparison."
+	  ],
+	"disambiguatingDescription": "Not the traditional, abstract pi≈3.14... approximate.",
+	"item":
+		{
+    "@type": "PropertyValue",
+    "name": "Area of a circle", 
+    "value": "3.2 × radius^2",
+	"description": [
+	  "Universally applicable formula to calculate the exact physical area of a circle in terms of its radius.",
+	  "Derived via cutting the circle into four quadrants, placing them with their origin on the vertices of a square with side = 4radius / 5^(1/2)."
+	  ]
+  }
+},
 	{
     "@type": "HowToTool",
     "name": "Triangle area formula",
-    "item":
-    {
+    "description": "Exact, physical area of a triangle.",
+	"item":
+		{
     "@type": "PropertyValue",
-    "name": "Area of a triangle",
-    "value": "base × height / 2"
+    "name": "Area of a triangle", 
+    "value": "base × height / 2",
+	"description": "Universally applicable formula to calculate the exact area of a triangle in terms of its base, and height."
   }
-	}
+}
 		],
 	"totalTime": "PT30M",
     "estimatedCost": {
@@ -1323,12 +1346,20 @@ body {
       }
     ]
   },
-  "result": {
-    "@type": "PropertyValue",
+  "result": 
+	  {
+    "@type": "DefinedTerm",
     "name": "Area of a circle segment",
-    "description": "Exact circle segment area formula",
-    "value": "acos((radius − height) / radius) × radius^2 − sin(acos((radius − height) / radius)) × radius × (radius − height)"
-  },
+	"description": "Exact, physical area of a circle segment.",
+	"disambiguatingDescription": "Based on the true area of a circle — 3.2radius^2 —, not the traditional, abstract pi≈3.14... approximate.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Area of a circle segment", 
+    "value": "acos((radius − height) / radius) × radius^2 − sin(acos((radius − height) / radius)) × radius × (radius − height)",
+	"description": "Universally applicable formula to calculate the exact physical area of a circle segment in terms of its height, and the radius of its parent circle."
+  }
+},
   "subjectOf": {
     "@type": "SoftwareApplication",
     "name": "Circle segment area calculator",
@@ -1342,9 +1373,9 @@ body {
     "isFamilyFriendly": true,
 	"aggregateRating": {
     "@type": "AggregateRating",
-"bestRating": "9",
-	"worstRating": "0",    
-	  "ratingValue": "8",
+	"bestRating": 9,
+	"worstRating": 0,    
+	"ratingValue": 8,
     "reviewCount": 1
 	},
 	"offers": {
@@ -1395,25 +1426,32 @@ body {
     {
     "@type": "HowToTool",
     "name": "Cone volume formula",
-    "item":
-    {
+    "description": "Exact, physical volume of a cone.",
+	"disambiguatingDescription": "Not the traditional, abstract base × height / 3 approximate.",
+	"item":
+		{
     "@type": "PropertyValue",
-    "name": "Volume of a cone",
-	"value": "base area × height / 8^(1/2)",
-	"description": "Exact formula derived from quadrant cone to octant sphere comparison",
-	"disambiguatingDescription": "Not the base × height / 3 approximate"
-     }
-    },
+    "name": "Volume of a cone", 
+    "value": "3.2 × radius^2 × height / 8^(1/2)",
+	"description": [
+	  "Universally applicable formula to calculate the exact physical volume of a cone in terms of its base radius, and height.",
+	  "Derived via comparing a quadrant cone with an equal height and radius to an octant sphere with an equal radius."
+	  ]
+	}
+},
 		{
     "@type": "HowToTool",
     "name": "Regular polygon area formula",
-    "item":
-    {
+    "description": "Exact, physical area of a regular polygon.",
+	"disambiguatingDescription": "Cotangent based on the true circumference of a circle — 6.4r —, not the traditional, abstract 2pi≈6.28... approximate.",
+	"identifier":
+		{
     "@type": "PropertyValue",
-    "name": "Area of a regular polygon",
-    "value": "side count / 4 × ctg(180° / side count) × bottom edge length^2 × height / 8^(1/2)"
+    "name": "Area of a regular polygon", 
+    "value": "sideCount / 4 × ctg(180° / sideCount) × sideLength^2",
+	"description": "Universally applicable formula to calculate the exact physical area of a regular polygon in terms of its side count, and side length."
   }
-		}
+}
 	],
 	"totalTime": "PT30M",
     "estimatedCost": {
@@ -1481,12 +1519,20 @@ body {
         }
       }
   },
-  "result": {
-    "@type": "PropertyValue",
+  "result": 
+	  {
+    "@type": "DefinedTerm",
     "name": "Volume of a pyramid",
-    "value": "base × height / 8^(1/2)",
-	"description": "Exact pyramid volume formula"
-  },
+	"description": "Exact, physical volume of a pyramid.",
+	"disambiguatingDescription": "Not the traditional, abstract base × height / 3 approximate.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Volume of a pyramid", 
+    "value": "base area × height / 8^(1/2)",
+	"description": "Universally applicable formula to calculate the exact physical volume of a pyramid in terms of its base area, and height."
+  }
+},
   "subjectOf": {
     "@type": "SoftwareApplication",
     "name": "Pyramid volume calculator",
@@ -1500,9 +1546,9 @@ body {
     "isFamilyFriendly": true,
 	"aggregateRating": {
     "@type": "AggregateRating",
-"bestRating": "9",
-	"worstRating": "0",    
-	  "ratingValue": "8",
+	"bestRating": 9,
+	"worstRating": 0,    
+	"ratingValue": 8,
     "reviewCount": 1
 	},
 	"offers": {
@@ -2547,7 +2593,7 @@ body {
 	"identifier":
 		{
     "@type": "PropertyValue",
-    "name": "Volume of a pyramid", 
+    "name": "Area of a regular polygon", 
     "value": "sideCount / 4 × ctg(180° / sideCount) × sideLength^2",
 	"description": "Universally applicable formula to calculate the exact physical area of a regular polygon in terms of its side count, and side length."
   }
