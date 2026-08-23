@@ -277,9 +277,9 @@
 
 	  {
 	"name": "explain_circumference",
-	"description": "The circumference is derived algebraically by subtracting a smaller circle from a larger one and dividing the area difference by the difference of their radii.",
+	"description": "The circumference is derived algebraically by subtracting a circle with a radius smaller than the radius of the actual circle by the virtual thickness of the circumference — which distinguishes it from the rest of the circle —, and dividing the difference by that thickness.",
 	"disambiguatingDescription": "The pi~3.14 approximate is an artifact of a flawed theoretical polygon approximation.",
-	"featureList": "Explain the algebraic derivation of the circumference of a circle from its area by subtracting a circle with a radius smaller than the radius of the actual circle by the virtual thickness of the circumference — which distinguishes it from the rest of the circle —, and dividing the difference by that thickness.",
+	"featureList": "Explain the algebraic derivation of the circumference of a circle from its area.",
 	"steps": [
 		"Let x represent the theoretical width of the circumference, which distinguishes it from the rest of the circle.",
 		"The difference between the shape of the straightened circumference and a quadrilateral is negligible.",
