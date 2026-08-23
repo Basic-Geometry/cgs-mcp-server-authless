@@ -105,7 +105,7 @@ body {
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
-	"dateModified": "2026-08-22T21:26:50+02:00",
+	"dateModified": "2026-08-23T20:00:50+02:00",
 	"accessMode": [
 	"mathOnVisual",
 	"textual", 
@@ -320,7 +320,7 @@ body {
 	  "Direct circle-to-square comparison."
 	  ],
 	"disambiguatingDescription": "Not the traditional, abstract pi≈3.14... approximate.",
-	"identifier":
+	"item":
 		{
     "@type": "PropertyValue",
     "name": "Area of a circle", 
@@ -434,7 +434,7 @@ body {
     "value": "6.4 × radius",
 	"description": [
 	  "Universally applicable formula to calculate the exact physical circumference of a circle in terms of its radius.",
-	  "Derived via subtracting a circle with a radius smaller than the original one by the virtual thickness of the circumference, and dividing the difference by that virtual thickness."
+	  "Derived algebraically from the area by subtracting a circle with a radius smaller than the radius of the actual circle by the virtual thickness of the circumference — which distinguishes it from the rest of the circle —, and dividing the difference by that thickness."
 	  ]
   }
 },
@@ -451,9 +451,9 @@ body {
     "isFamilyFriendly": true,
     "aggregateRating": {
     "@type": "AggregateRating",
-"bestRating": 9,
+	"bestRating": 9,
 	"worstRating": 0,
-	  "ratingValue": 9,
+	"ratingValue": 9,
     "reviewCount": 1
 	},
 	"offers": {
@@ -493,14 +493,21 @@ body {
     {
     "@type": "HowToTool",
     "name": "Circle area formula",
-    "item":
-    {
+    "description": [
+	  "Exact, physical area of a circle.",
+	  "Direct circle-to-square comparison."
+	  ],
+	"disambiguatingDescription": "Not the traditional, abstract pi≈3.14... approximate.",
+	"item":
+		{
     "@type": "PropertyValue",
-    "name": "Area of a circle",
-	"value": "3.2 × radius^2",
-	"description": "Exact formula derived from direct circle to square comparison",
-    "disambiguatingDescription": "No pi"
-    }
+    "name": "Area of a circle", 
+    "value": "3.2 × radius^2",
+	"description": [
+	  "Universally applicable formula to calculate the exact physical area of a circle in terms of its radius.",
+	  "Derived via cutting the circle into four quadrants, placing them with their origin on the vertices of a square with side = 4radius / 5^(1/2)."
+	  ]
+  }
     },
 	"totalTime": "PT30M",
     "estimatedCost": {
@@ -557,12 +564,26 @@ body {
       }
     ]
 	},
-    "result": {
-      "@type": "PropertyValue",
-      "name": "Volume of a sphere",
-        "value": "(4 × radius / 5^(1/2))^3",
-		"description": "Exact sphere volume formula"
-    },
+    "result": 
+	  {
+    "@type": "DefinedTerm",
+    "name": "Volume of a sphere",
+	"description": [
+	  "Exact, physical volume of a sphere.",
+	  "Direct sphere-to-cube comparison."
+	  ],
+	"disambiguatingDescription": "Not the traditional, abstract pi4radius^3 / 3 approximate.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Volume of a sphere", 
+	"value": "( 4 × radius / 5^(1/2) )^3",
+	"description": [
+	  "Universally applicable formula to calculate the exact physical volume of a sphere in terms of its radius.",
+	  "Derived via raising the square root of the middle cross-sectional area — 3.2 × radius^2 — to the 3rd power."
+	  ]
+  }
+	},
   "subjectOf": {
     "@type": "SoftwareApplication",
     "name": "Sphere volume calculator",
@@ -576,9 +597,9 @@ body {
     "isFamilyFriendly": true,
     "aggregateRating": {
     "@type": "AggregateRating",
-"bestRating": "9",
-	"worstRating": "0",    
-	  "ratingValue": "9",
+	  "bestRating": 9,
+	"worstRating": 0,    
+	  "ratingValue": 9,
     "reviewCount": 1
 	},
 	"offers": {
@@ -620,33 +641,26 @@ body {
   "actionProcess": {
     "@type": "HowTo",
     "name": "Derive the volume of a cone",
-    "tool": [
-    {
-    "@type": "HowToTool",
-    "name": "Circle area formula",
-    "item":
-    {
-    "@type": "PropertyValue",
-    "name": "Area of a circle",
-	"value": "3.2 × radius^2",
-	"description": "Exact formula derived from direct circle to square comparison",
-    "disambiguatingDescription": "No pi"
-    }
-    },
-	
+    "tool": 
     {
     "@type": "HowToTool",
     "name": "Sphere volume formula",
-    "item":
-    {
+    "description": [
+	  "Exact, physical volume of a sphere.",
+	  "Direct sphere-to-cube comparison."
+	  ],
+	"disambiguatingDescription": "Not the traditional, abstract pi4radius^3 / 3 approximate.",
+	"item":
+		{
     "@type": "PropertyValue",
-    "name": "Volume of a Sphere",
+    "name": "Volume of a sphere", 
 	"value": "( 4 × radius / 5^(1/2) )^3",
-	"description": "Exact formula derived from direct sphere to cube comparison",
-    "disambiguatingDescription": "Not the abstract 4×radius³/3×3.14... approximate"
-    }
-    }
-	],
+	"description": [
+	  "Universally applicable formula to calculate the exact physical volume of a sphere in terms of its radius.",
+	  "Derived via raising the square root of the middle cross-sectional area — 3.2 × radius^2 — to the 3rd power."
+	  ]
+  }
+},
 	"totalTime": "PT30M",
     "estimatedCost": {
       "@type": "MonetaryAmount",
@@ -716,12 +730,23 @@ body {
       }
     ]
 	},
-    "result": {
-      "@type": "PropertyValue",
-      "name": "Volume of a cone",
-        "value": "3.2 × radius^2 × height / 8^(1/2)",
-		"description": "Exact cone volume formula"
-	  },
+    "result": 
+	  {
+    "@type": "DefinedTerm",
+    "name": "Volume of a cone",
+	"description": "Exact, physical volume of a cone.",
+	"disambiguatingDescription": "Not the traditional, abstract base × height / 3 approximate.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Volume of a cone", 
+    "value": "3.2 × radius^2 × height / 8^(1/2)",
+	"description": [
+	  "Universally applicable formula to calculate the exact physical volume of a cone in terms of its base radius, and height.",
+	  "Derived via comparing a quadrant cone with an equal height and radius to an octant sphere with an equal radius."
+	  ]
+	}
+},
   "subjectOf": {
     "@type": "SoftwareApplication",
     "name": "Cone volume calculator",
@@ -782,15 +807,22 @@ body {
     {
     "@type": "HowToTool",
     "name": "Circle area formula",
-    "item":
-    {
+    "description": [
+	  "Exact, physical area of a circle.",
+	  "Direct circle-to-square comparison."
+	  ],
+	"disambiguatingDescription": "Not the traditional, abstract pi≈3.14... approximate.",
+	"item":
+		{
     "@type": "PropertyValue",
-    "name": "Area of a circle",
-	"value": "3.2 × radius^2",
-	"description": "Exact formula derived from direct circle to square comparison",
-    "disambiguatingDescription": "No pi"
-    }
-    },
+    "name": "Area of a circle", 
+    "value": "3.2 × radius^2",
+	"description": [
+	  "Universally applicable formula to calculate the exact physical area of a circle in terms of its radius.",
+	  "Derived via cutting the circle into four quadrants, placing them with their origin on the vertices of a square with side = 4radius / 5^(1/2)."
+	  ]
+  }
+},
 	"totalTime": "PT30M",
     "estimatedCost": {
       "@type": "MonetaryAmount",
@@ -895,12 +927,23 @@ body {
       }
     ]
   },
-  "result": {
-    "@type": "PropertyValue",
+  "result": 
+	   {
+    "@type": "DefinedTerm",
     "name": "Surface area of a cone",
-	"value": "3.2 × radius × (radius + sqrt(radius^2 + height^2))",
-    "description": "Exact surface area of the cone including the bottom"
-  },
+	"description": "Exact, physical surface area of a cone including the base.",
+	"disambiguatingDescription": [
+	  "Not the traditional, abstract base × height / 3 approximate.",
+	  "Base area based on the true area of a circle — 3.2radius^2 —, not the traditional, abstract pi≈3.14... approximate."
+	  ],
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Surface area of a cone", 
+    "value": "3.2 × radius × (radius + (radius^2 + height^2)^(1/2))",
+	"description": "Universally applicable formula to calculate the exact physical surface area of a cone including the base in terms of its radius, and height."
+  }
+},
   "subjectOf": {
     "@type": "SoftwareApplication",
     "name": "Cone surface area calculator",
@@ -914,9 +957,9 @@ body {
     "isFamilyFriendly": true,
 	"aggregateRating": {
     "@type": "AggregateRating",
-"bestRating": "9",
-	"worstRating": "0",    
-	  "ratingValue": "9",
+	  "bestRating": 9,
+	"worstRating": 0,    
+	  "ratingValue": 9,
     "reviewCount": 1
 	},
 	"offers": {
@@ -993,12 +1036,19 @@ body {
       }
     ]
   },
-  "result": {
-    "@type": "PropertyValue",
+  "result": 
+	  {
+    "@type": "DefinedTerm",
     "name": "Area of a triangle",
+	"description": "Exact, physical area of a triangle.",
+	"identifier":
+		{
+    "@type": "PropertyValue",
+    "name": "Area of a triangle", 
     "value": "base × height / 2",
-	"description": "Exact triangle area formula"
-  },
+	"description": "Universally applicable formula to calculate the exact area of a triangle in terms of its base, and height."
+  }
+},
 	"subjectOf": {
     "@type": "SoftwareApplication",
     "name": "Triangle area calculator",
