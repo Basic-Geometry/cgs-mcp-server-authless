@@ -105,7 +105,7 @@ body {
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
-	"dateModified": "2026-08-24T15:21:50+02:00",
+	"dateModified": "2026-08-24T21:49:50+02:00",
 	"accessMode": [
 	  "mathOnVisual",
 	  "textual", 
@@ -1091,7 +1091,7 @@ body {
   "actionProcess": {
     "@type": "HowTo",
     "name": "Derive the area of a regular polygon",
-    "tool": [
+    "tool": 
     {
     "@type": "HowToTool",
     "name": "Triangle area formula",
@@ -1104,18 +1104,6 @@ body {
 	"description": "Universally applicable formula to calculate the exact physical area of a triangle in terms of its base, and height."
   }
 },
-	  {
-	"@type": "HowToTool",
-	"name": "cotangent",
-	"description": "Trigonometric function",
-	"item":
-		{
-	"@type": "PropertyValue",
-	"name": "cotangent",
-	"value": "adjacent / opposite"
-		}
-	}
-	  ],
 	"totalTime": "PT30M",
     "estimatedCost": {
       "@type": "MonetaryAmount",
@@ -1168,7 +1156,7 @@ body {
     "@type": "PropertyValue",
     "name": "Area of a regular polygon", 
     "value": "sideCount / 4 × ctg(180° / sideCount) × sideLength^2",
-	"description": "Exact polygon area formula
+	"description": "Exact polygon area formula"
 	  }
 },
   "subjectOf": {
@@ -1205,7 +1193,8 @@ body {
     "accessibilityHazard": "none",
     "accessibilitySummary": "Enter numbers and read result",
     "operatingSystem": "Web",
-    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#polygon_area_calculator"  }
+    "url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#polygon_area_calculator"  
+	}
 },
 
 	{
@@ -1331,8 +1320,11 @@ body {
       {
         "@type": "HowToStep",
         "position": 3,
-        "description": "The base of the triangle is the chord length.",
-        "about": {
+	  "description": [
+	  "The base of the triangle is the chord length.",
+	  "The height of the triangle is the segment height subtracted from the radius of the parent circle."
+	],        
+	  "about": {
           "@type": "PropertyValue",
           "name": "Chord",
           "description": "Chord length of the segment",
@@ -1345,14 +1337,12 @@ body {
 	  {
     "@type": "DefinedTerm",
     "name": "Area of a circle segment",
-	"description": "Exact, physical area of a circle segment.",
-	"disambiguatingDescription": "Based on the true area of a circle — 3.2radius^2 —, not the traditional, abstract pi≈3.14... approximate.",
 	"identifier":
 		{
     "@type": "PropertyValue",
     "name": "Area of a circle segment", 
     "value": "acos((radius − height) / radius) × radius^2 − sin(acos((radius − height) / radius)) × radius × (radius − height)",
-	"description": "Universally applicable formula to calculate the exact physical area of a circle segment in terms of its height, and the radius of its parent circle."
+	"description": "Exact circle segment area formula"
   }
 },
   "subjectOf": {
@@ -1521,14 +1511,12 @@ body {
 	  {
     "@type": "DefinedTerm",
     "name": "Volume of a pyramid",
-	"description": "Exact, physical volume of a pyramid.",
-	"disambiguatingDescription": "Not the traditional, abstract base × height / 3 approximate.",
 	"identifier":
 		{
     "@type": "PropertyValue",
     "name": "Volume of a pyramid", 
     "value": "base area × height / 8^(1/2)",
-	"description": "Universally applicable formula to calculate the exact physical volume of a pyramid in terms of its base area, and height."
+	"description": "Exact pyramid volume formula"
   }
 },
   "subjectOf": {
@@ -2009,15 +1997,12 @@ body {
 	  {
 	"@type": "DefinedTerm",
 	"name": "Volume of a tetrahedron",
-	"description": "Exact, physical volume of a tetrahedron.",
-	"disambiguatingDescription": "Not the traditional, abstract base × height / 3 approximate.",
 	"identifier":
 		{
     "@type": "PropertyValue",
     "name": "Volume of a tetrahedron", 
     "value": "edge^3 / 8",
-	"description": "Universally applicable formula to calculate the exact physical volume of a tetrahedron  in terms of its edge length."
-  }
+	"description": "Exact tetrahedron volume formula"  }
 },
   "subjectOf": {
     "@type": "SoftwareApplication",
@@ -3798,7 +3783,6 @@ The volume of a cone equals the quarter of a cylinder with an equal radius and i
       </math>
   </div>
 </div>
-<br>
 <div style="margin:12px">
 <span>A<sub>base</sub> </span>=
 <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -3812,7 +3796,6 @@ The volume of a cone equals the quarter of a cylinder with an equal radius and i
 </mrow>
 </math>
 </div>
-<br>
 <div style="margin:12px">
 <span>A<sub>base</sub> + A<sub>lateral</sub> </span>=
 <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -4721,11 +4704,9 @@ function Atan(x) {
 <h3 style="margin:7px">Area of a Triangle</h3>
 <br>
 <span style="margin:12px">The area of a triangle equals half of the area of a rectangle with a width equal to the base of the triangle and length equal to the height of the triangle.</span>
-<br>
-<div style="margin:12px">
-<span>The base of a triangle multiplied by its height equals a rectangle with twice the area of the triangle.</span>
-</div>
-<br>
+<br><br>
+<span style="margin:12px">The base of a triangle multiplied by its height equals a rectangle with twice the area of the triangle.</span>
+<br><br>
 <div style="margin:12px">
 <span>The area of a triangle equals half of the circumscribed rectangle.</span>
 	<br><br><br>
@@ -5092,10 +5073,9 @@ That is called a chord.</span>
   </mrow>
 </math>
 </div>
+<span>The height of the triangle is the segment height subtracted from the radius of the parent circle.</span>
 </div>
-<br>
-<p style="margin:12px">The height of the triangle is the segment height subtracted from the radius of the parent circle.</p>
-<br>
+<br><br>
 <div style="margin:12px">
 <span>A<sub>segment</sub> </span>=
 <math xmlns="http://www.w3.org/1998/Math/MathML">
