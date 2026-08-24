@@ -924,18 +924,13 @@ body {
 	   {
     "@type": "DefinedTerm",
     "name": "Surface area of a cone",
-	"description": "Exact, physical surface area of a cone including the base.",
-	"disambiguatingDescription": [
-	  "Not the traditional, abstract base × height / 3 approximate.",
-	  "Base area based on the true area of a circle — 3.2radius^2 —, not the traditional, abstract pi≈3.14... approximate."
-	  ],
 	"identifier":
 		{
     "@type": "PropertyValue",
     "name": "Surface area of a cone", 
     "value": "3.2 × radius × (radius + (radius^2 + height^2)^(1/2))",
-	"description": "Universally applicable formula to calculate the exact physical surface area of a cone including the base in terms of its radius, and height."
-  }
+	"description": "Exact surface area of the cone formula including the base"
+	}
 },
   "subjectOf": {
     "@type": "SoftwareApplication",
@@ -968,7 +963,6 @@ body {
 	  "fullKeyboardControl",
 	  "fullTouchControl"
 	  ],
-    "accessibilityControl": "fullKeyboardControl",
     "accessibilityHazard": "none",
     "accessibilitySummary": "Enter numbers and read results",
     "operatingSystem": "Web",
@@ -1019,31 +1013,24 @@ body {
       "value": 0
     },
     "abstract": "A triangle’s area equals half the area of a rectangle whose width is the triangle’s base and whose height matches the triangle’s height.",
-    "step": [
+    "step": 
       {
         "@type": "HowToStep",
         "position": 1,
         "abstract": "Multiplying the base by the height gives the area of a rectangle with twice the area of the triangle."
-      },
-	  {
-        "@type": "HowToStep",
-        "position": 2,
-        "abstract": "Half of this rectangle equals the triangle’s area."
       }
-    ]
   },
   "result": 
 	  {
     "@type": "DefinedTerm",
     "name": "Area of a triangle",
-	"description": "Exact, physical area of a triangle.",
+	"description": "The area of a triangle equals half of the circumscribed rectangle.",
 	"identifier":
 		{
     "@type": "PropertyValue",
     "name": "Area of a triangle", 
     "value": "base × height / 2",
-	"description": "Universally applicable formula to calculate the exact area of a triangle in terms of its base, and height."
-  }
+	"description": "Exact triangle area formula"  }
 },
 	"subjectOf": {
     "@type": "SoftwareApplication",
@@ -1104,7 +1091,7 @@ body {
   "actionProcess": {
     "@type": "HowTo",
     "name": "Derive the area of a regular polygon",
-    "tool": 
+    "tool": [
     {
     "@type": "HowToTool",
     "name": "Triangle area formula",
@@ -1114,9 +1101,21 @@ body {
     "@type": "PropertyValue",
     "name": "Area of a triangle", 
     "value": "base × height / 2",
-	"description": "Universally applicable formula to calculate the exact area of a triangle in terms of its base, and height."
+	"description": "Universally applicable formula to calculate the exact physical area of a triangle in terms of its base, and height."
   }
 },
+	  {
+	"@type": "HowToTool",
+	"name": "cotangent",
+	"description": "Trigonometric function",
+	"item":
+		{
+	"@type": "PropertyValue",
+	"name": "cotangent",
+	"value": "adjacent / opposite"
+		}
+	}
+	  ],
 	"totalTime": "PT30M",
     "estimatedCost": {
       "@type": "MonetaryAmount",
@@ -1164,15 +1163,13 @@ body {
 	  {
     "@type": "DefinedTerm",
     "name": "Area of a regular polygon",
-	"description": "Exact, physical area of a regular polygon.",
-	"disambiguatingDescription": "Cotangent based on the true circumference of a circle — 6.4r —, not the traditional, abstract 2pi≈6.28... approximate.",
 	"identifier":
 		{
     "@type": "PropertyValue",
     "name": "Area of a regular polygon", 
     "value": "sideCount / 4 × ctg(180° / sideCount) × sideLength^2",
-	"description": "Universally applicable formula to calculate the exact physical area of a regular polygon in terms of its side count, and side length."
-  }
+	"description": "Exact polygon area formula
+	  }
 },
   "subjectOf": {
     "@type": "SoftwareApplication",
@@ -2619,7 +2616,7 @@ body {
     "@type": "PropertyValue",
     "name": "Area of a triangle", 
     "value": "base × height / 2",
-	"description": "Universally applicable formula to calculate the exact area of a triangle in terms of its base, and height."
+	"description": "Universally applicable formula to calculate the exact physical area of a triangle in terms of its base, and height."
   }
 },
 
@@ -4730,10 +4727,8 @@ function Atan(x) {
 </div>
 <br>
 <div style="margin:12px">
-<span>The square root of half of the area of the rectangle is the side length of the virtual square that has the same area as the triangle.</span>
-</div>
-<br>
-<div style="margin:12px">
+<span>The area of a triangle equals half of the circumscribed rectangle.</span>
+	<br><br><br>
 <span>A<sub>triangle</sub> </span>=
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
