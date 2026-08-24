@@ -4900,7 +4900,7 @@ The area of each triangle equals:</span>
         <mn>180</mn>
         <mo>&#xB0;</mo>
       </mrow>
-      <mi>sides</mi>
+      <mi>side count</mi>
     </mfrac>
     <mo>)</mo>
 	</mrow>
@@ -4914,7 +4914,7 @@ The area of each triangle equals:</span>
 <math xmlns="http://www.w3.org/1998/Math/MathML">
   <mrow>
 <mfrac>
-<mi>sides</mi>
+<mi>side count</mi>
 <mn>4</mn>
 </mfrac>
 <mo>&#x2062;</mo>
@@ -4926,7 +4926,7 @@ The area of each triangle equals:</span>
         <mn>180</mn>
         <mo>&#xB0;</mo>
       </mrow>
-      <mi>sides</mi>
+      <mi>side count</mi>
     </mfrac>
     <mo>)</mo>
 <mo>&#x2062;</mo>
@@ -5290,8 +5290,8 @@ document.getElementById('parent-radius').addEventListener('input', segmentArea);
 <label for="pyramid-side-count">Side count:</label>
 <input id="pyramid-side-count" type="number" value="4" step="1">
 <br>
-<label for="pyramid-base-edge-length">Base edge length:</label>
-<input id="pyramid-base-edge-length" type="number" value="1" step="any">
+<label for="pyramid-base-edge">Base edge:</label>
+<input id="pyramid-base-edge" type="number" value="1" step="any">
 <br>
 <label for="pyramid-height">Height:</label>
 <input id="pyramid-height" type="number" value="1" step="any">
@@ -5304,17 +5304,17 @@ document.getElementById('parent-radius').addEventListener('input', segmentArea);
 
 function updatePyramidVolume() {
   const sideCount = parseFloat(document.getElementById('pyramid-side-count').value);
-  const baseEdgeLength = parseFloat(document.getElementById('pyramid-base-edge-length').value);
+  const baseEdge = parseFloat(document.getElementById('pyramid-base-edge').value);
   const height = parseFloat(document.getElementById('pyramid-height').value);
 
-  if (isNaN(sideCount) || isNaN(baseEdgeLength) || isNaN(height)) {
+  if (isNaN(sideCount) || isNaN(baseEdge) || isNaN(height)) {
     document.getElementById('pyramid-volume').innerText = '';
     return;
   }
 
   const ratio = 3.2 / sideCount;
   const tangent = tan(ratio);
-  const baseArea = (sideCount / 4) * (baseEdgeLength ** 2) / tangent;
+  const baseArea = (sideCount / 4) * (baseEdge ** 2) / tangent;
   const volume = pyramidVolume(baseArea, height);
 
   document.getElementById('pyramid-volume').innerText =
@@ -5322,7 +5322,7 @@ function updatePyramidVolume() {
 	  }
 
 document.getElementById('pyramid-side-count').addEventListener('input', updatePyramidVolume);
-document.getElementById('pyramid-base-edge-length').addEventListener('input', updatePyramidVolume);
+document.getElementById('pyramid-base-edge').addEventListener('input', updatePyramidVolume);
 document.getElementById('pyramid-height').addEventListener('input', updatePyramidVolume);
 </script>
 </div>
