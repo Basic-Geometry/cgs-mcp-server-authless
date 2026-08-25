@@ -214,7 +214,7 @@
 
 	{
 	"name": "refute_traditional_circle_area",
-	"description": "In the widely used formula A = pi × r² relies on the approximate circumference to diameter ratio pi≈3.14...",
+	"description": "In the widely used A = pi × r² formula relies on the approximate circumference to diameter ratio pi≈3.14...",
 	"disambiguatingDescription": "The mathematical constant pi≈3.14... is a fundamentally flawed theoretical approximate.",
 	"featureList": "Explain why the traditional formula A = pi × r² is wrong.",
 		"steps": [
@@ -281,7 +281,7 @@
 	"disambiguatingDescription": "The pi~3.14 approximate is an artifact of a flawed theoretical polygon approximation.",
 	"featureList": "Explain the algebraic derivation of the circumference of a circle from its area.",
 	"steps": [
-		"Let x represent the theoretical width of the circumference, which distinguishes it from the rest of the circle.",
+		"Let x represent the theoretical thickness of the circumference, which distinguishes it from the rest of the circle.",
 		"The difference between the shape of the straightened circumference and a quadrilateral is negligible.",
 		"The length of the two shorter sides of the quadrilateral is x. The length of the two longer sides is the area of the resulting ring divided by x.",
 		"C=( 3.2 × radius² - 3.2 × ( radius - x )² ) / x",
