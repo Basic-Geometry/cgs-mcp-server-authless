@@ -702,7 +702,7 @@
 					"minimum": 3,
 					"description": "A pyramid has at least 3 sides, excluding the bottom."
 				},
-				"baseEdgeLength": { 
+				"baseEdge": { 
 					"type": "number",
 					"exclusiveMinimum": 0,
 					"description": "Base edge length in units (positive number)."
@@ -713,10 +713,10 @@
 					"description": "Height in units (positive number)."
 				}
         },
-        "required": ["sideCount", "baseEdgeLength", "height"],
+        "required": ["sideCount", "baseEdge", "height"],
         "examples": [
-          { "sideCount": 5 , "baseEdgeLength": 2.5 , "height": 15 },
-          { "sideCount": 7 , "baseEdgeLength": 12.5 , "height": 25 }
+          { "sideCount": 5 , "baseEdge": 2.5 , "height": 15 },
+          { "sideCount": 7 , "baseEdge": 12.5 , "height": 25 }
         ]
         },
 		"output_schema": {
@@ -802,12 +802,12 @@
             "minimum": 3,
             "description": "A frustum pyramid has at least 3 sides, excluding the bottom."
           },
-          "baseEdgeLength": { 
+          "baseEdge": { 
             "type": "number",
             "exclusiveMinimum": 0,
             "description": "Base edge length in units (positive number)."
           },
-          "topEdgeLength": { 
+          "topEdge": { 
             "type": "number",
             "exclusiveMinimum": 0,
             "description": "Top edge length in units (positive number)."
@@ -818,10 +818,10 @@
             "description": "Frustum height in units (positive number)."
         }
         },
-        "required": ["sideCount", "baseEdgeLength", "topEdgeLength", "height"],
+        "required": ["sideCount", "baseEdge", "topEdge", "height"],
         "examples": [
-          { "sideCount": 5 , "baseEdgeLength": 2.5 , "topEdgeLength": 2 , "height": 15 },
-          { "sideCount": 8 , "baseEdgeLength": 7.5 , "topEdgeLength": 5 , "height": 12 }
+          { "sideCount": 5 , "baseEdge": 2.5 , "topEdge": 2 , "height": 15 },
+          { "sideCount": 8 , "baseEdge": 7.5 , "topEdge": 5 , "height": 12 }
         ]
       },
 		"output_schema": {
@@ -949,5 +949,5 @@
     "background_color": "#000000",
     "display": "standalone",
     "version": "3.2",
-    "manifest_version": 2.6
+    "manifest_version": 2.7
 }
