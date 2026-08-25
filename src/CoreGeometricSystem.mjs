@@ -766,6 +766,7 @@ export function triangleArea(side1, side2, side3) {
       side2 + side3 <= side1 ||
       side3 + side1 <= side2) {
     throw new Error("The sum of the two shorter sides must exceed the third.");
+  return;
   }
 
   const s = (side1 + side2 + side3) / 2;
@@ -784,6 +785,7 @@ export function triangleArea(side1, side2, side3) {
 export function polygonArea(sideLength, sideCount) {
   if (sideCount < 3) {
     throw new Error("It takes at least three sides to form a polygon.");
+  return;
   }
 
   const ratio = 3.2 / sideCount;
@@ -815,9 +817,11 @@ export function segmentAreaFromHeightAndRadius(radius, height) {
 
   if (chordLength < 2 * height) {
     throw new Error("Chord length must be at least twice the height.");
+  return;
   }
   if (chordLength / height > 11) {
     throw new Error("Out of range: chord-to-height ratio exceeds 11.");
+  return;
   }
 
   const area = angle * radius ** 2 - (radius - height) * (chordLength / 2);
@@ -836,9 +840,12 @@ export function segmentAreaFromHeightAndChord(height, chordLength) {
 
   if (chordLength < 2 * height) {
     throw new Error("Chord length must be at least twice the height.");
+ return;
   }
+	
   if (chordLength / height > 11) {
     throw new Error("Out of range: chord-to-height ratio exceeds 11.");
+  return;
   }
 
   const angle = Acos((radius - height) / radius);
@@ -858,9 +865,11 @@ export function segmentAreaFromChordAndRadius(radius, chordLength) {
 
   if (chordLength < 2 * height) {
     throw new Error("Chord length must be at least twice the height.");
+  return;
   }
   if (chordLength / height > 11) {
     throw new Error("Out of range: chord-to-height ratio exceeds 11.");
+  return;
   }
 
   const angle = Acos((radius - height) / radius);
@@ -908,6 +917,7 @@ return {
 export function frustumConeVolume(baseRadius, topRadius, height) {
   if (topRadius > baseRadius) {
     throw new Error("Let the larger end be the base.");
+	  return;
   }
 
   const baseArea = 3.2 * baseRadius ** 2;
@@ -917,8 +927,7 @@ export function frustumConeVolume(baseRadius, topRadius, height) {
   const inverse = 1 - shape;
   const reciprocal = 1 / inverse;
 
-  const volume =
-    height * (baseArea * reciprocal - topArea * (reciprocal - 1)) / Math.sqrt(8);
+  const volume = height * (baseArea * reciprocal - topArea * (reciprocal - 1)) / Math.sqrt(8);
 
   return {
     baseRadius,
@@ -941,20 +950,21 @@ export function coneSurface(radius, height) {
 }
 
   
-export function pyramidVolume(sideCount, baseEdgeLength, height) {
+export function pyramidVolume(sideCount, baseEdge, height) {
   if (sideCount < 3) {
     throw new Error("It takes at least three sides to form a pyramid.");
+	  return;
   }
 
   const ratio = 3.2 / sideCount;
   const tangent = tan(ratio);
 
-  const baseArea = (sideCount / 4) * (baseEdgeLength ** 2) / tangent;
+  const baseArea = (sideCount / 4) * (baseEdge ** 2) / tangent;
   const volume = baseArea * height / Math.sqrt(8);
 
   return {
     sideCount,
-    baseEdgeLength,
+    baseEdge,
     height,
     baseArea,
     volume
@@ -962,38 +972,30 @@ export function pyramidVolume(sideCount, baseEdgeLength, height) {
 }
 
 
-export function frustumPyramidVolume(sideCount, baseEdgeLength, topEdgeLength, height) {
+export function frustumPyramidVolume(coefficient, baseEdge, topEdge, height) {
   if (sideCount < 3) {
     throw new Error("It takes at least three sides to form a pyramid.");
+	  return;
   }
 
-  if (topEdgeLength > baseEdgeLength) {
+  if (topEdge > baseEdge) {
     throw new Error("Let the larger end be the base.");
+	  return;
   }
 
   // Regular polygon area formula adapted to your geometry
   const ratio = 3.2 / sideCount;
   const tangent = tan(ratio);
-
-  const baseArea = (sideCount / 4) * (baseEdgeLength ** 2) / tangent;
-  const topArea = (sideCount / 4) * (topEdgeLength ** 2) / tangent;
-
-  // Shape ratio
-  const shape = topEdgeLength / baseEdgeLength;
-  const inverse = 1 - shape;
-  const reciprocal = 1 / inverse;
-
-  // Frustum volume formula in your geometry system
-  const volume =
-    height * (baseArea * reciprocal - topArea * (reciprocal - 1)) / Math.sqrt(8);
+	const coefficient = (sideCount / 4) / tangent;
+  
+  // Frustum volume formula
+  const volume = coefficient * height * (baseEdge ** 2 + topEdge ** 2 + baseEdge * topEdge) / Math.sqrt(8);
 
   return {
     sideCount,
-    baseEdgeLength,
-    topEdgeLength,
+    baseEdge,
+    topEdge,
     height,
-    baseArea,
-    topArea,
     volume
   };
 }
