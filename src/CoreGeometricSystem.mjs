@@ -972,7 +972,7 @@ export function pyramidVolume(sideCount, baseEdge, height) {
 }
 
 
-export function frustumPyramidVolume(coefficient, baseEdge, topEdge, height) {
+export function frustumPyramidVolume(baseEdge, topEdge, height) {
   if (sideCount < 3) {
     throw new Error("It takes at least three sides to form a pyramid.");
 	  return;
