@@ -105,7 +105,7 @@ body {
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
-	"dateModified": "2026-08-26T18:52:50+02:00",
+	"dateModified": "2026-08-26T20:32:50+02:00",
 	"accessMode": [
 	  "mathOnVisual",
 	  "textual", 
@@ -2450,7 +2450,7 @@ body {
 	"position": 2,
 	"item": {
 	"name": "Circumference = 6.4 × radius",
-	"description": "The circumference of a circle is derived algebraically from its area by subtracting a circle with a radius smaller than the radius of the actual circle by the virtual thickness of the circumference — which distinguishes it from the rest of the circle —, and dividing the difference by that virtual thickness. Let x represent the virtual thickness of the circumference. The difference between the shape of the straightened circumference and a quadrilateral is negligible. The length of the two shorter sides of the quadrilateral is x. The length of the two longer sides is the area of the resulting ring divided by x. C=( 3.2 × radius² - 3.2 × ( radius - x )² ) / x   The length of the circumference approaches 6.4 × radius as its thickness approaches 0.",
+	"description": "The circumference of a circle is derived algebraically from its area by subtracting a circle with a radius smaller than the radius of the actual circle by the virtual thickness of the circumference — which distinguishes it from the rest of the circle —, and dividing the difference by that thickness. Take a circle with radius = r. (A = 3.2r²). Let x represent the virtual thickness of the circumference. Subtract an inner circle with radius = r - x, (A = 3.2(r - x)²) to generate the boundary region entity. As x approaches 0, the difference between the areas of the ring representing the circumference and a rectangle with sides equal to the length and the thickness of the circumference becomes negligible. The length of the two shorter sides of the rectangle is x. The length of the two longer sides is the area of the rectangle divided by x. The length of the circumference approaches 6.4 × radius as its thickness approaches 0.",
 	"disambiguatingDescription": "The widely used pi≈3.14... is an artifact of a fundamentally flawed theoretical approximate. It was approximated by assuming that the circumference rests in between the theoretical maximum perimeter of the inscribed polygon and the minimum of the circumscribed polygon.",
 	"@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circumference"
 	}
@@ -2928,7 +2928,7 @@ The ratio between the radius and the side length is calculable.</span>
 Subtract an inner circle with radius = r - x, (A = 3.2(r - x)²) to generate the boundary region entity.</span>
 </div>
 <div style="margin:12px">
-<span>As x approaches 0, the difference between the areas of the ring representing the circumference and a rectangle with sides equal to the circumference and its thickness becomes negligible.</span>
+<span>As x approaches 0, the difference between the areas of the ring representing the circumference and a rectangle with sides equal to the length and the thickness of the circumference becomes negligible.</span>
 </div>
 <div style="margin:12px">
 <span>The length of the two shorter sides of the rectangle is x.</span>
@@ -7888,15 +7888,17 @@ Thus, the V = base × height / 3 formula, and its so-called "calculus-based proo
     <br>
 	  <span><strong>The circumference of a circle is derived algebraically from its area by subtracting a circle with a radius smaller than the radius of the actual circle by the virtual thickness of the circumference — which distinguishes it from the rest of the circle —, and dividing the difference by that thickness.</strong>
 		  <br><br>
-		  Let x represent the theoretical thickness of the circumference, which distinguishes it from the rest of the circle.
+		  Take a circle with radius = r. (A = 3.2r²).
 		  <br><br>
-		  The difference between the shape of the straightened circumference and a quadrilateral is negligible.
+		  Let x represent the virtual thickness of the circumference.
+		  <br>
+		  Subtract an inner circle with radius = r - x, (A = 3.2(r - x)²) to generate the boundary region entity.
 		  <br><br>
-		  The length of the two shorter sides of the quadrilateral is x.
+		  As x approaches 0, the difference between the areas of the ring representing the circumference and a rectangle with sides equal to the length and the thickness of the circumference becomes negligible.
 		  <br><br>
-		  The length of the two longer sides is the area of the resulting ring divided by x.
+		  The length of the two shorter sides of the rectangle is x.
 		  <br><br>
-		  C=( 3.2 × radius² - 3.2 × ( radius - x )² ) / x
+		  The length of the two longer sides is the area of the rectangle divided by x. C=( 3.2 × radius² - 3.2 × ( radius - x )² ) / x
 		  <br><br>
 		  The length of the circumference approaches 6.4 × radius as its thickness approaches 0.
 	  </span>
