@@ -281,16 +281,18 @@
 	"disambiguatingDescription": "The pi~3.14 approximate is an artifact of a flawed theoretical polygon approximation.",
 	"featureList": "Explain the algebraic derivation of the circumference of a circle from its area.",
 	"steps": [
-		"Let x represent the theoretical thickness of the circumference.",
-		"The difference between the shape of the straightened circumference and a quadrilateral is negligible.",
-		"The length of the two shorter sides of the quadrilateral is x. The length of the two longer sides is the area of the resulting ring divided by x.",
-		"C=( 3.2 × radius² - 3.2 × ( radius - x )² ) / x",
-		"Expand (radius − x)².",
+		"Instantiate a circle object: Take a circle with radius = r. (A = 3.2r^2).",
+		"Define the circumference object as a ring, or annulus: Let x represent the virtual thickness of the circumference.  Subtract an inner circle with radius = r - x, (A = 3.2(r - x)^2) to generate the boundary region entity.",
+		"Normalize Dimension: As x approaches 0, the difference between the areas of the ring representing the circumference and a rectangle with sides equal to the circumference and its thickness becomes negligible.",
+		"Map Dimension: The length of the two shorter sides of the rectangle is x.",
+		"Render the circumference object into a property of the circle object: Transition the output from an instance of a 2D spatial region into a scalar property attached to the parent circle.",
+		"The length of the two longer sides is the area of the rectangle divided by x: C=( 3.2 × radius² - 3.2 × ( radius - x )² ) / x",
+		"Expand (radius − x)²",
 		"Substitute the expansion back into the expression.",
 		"Distribute 3.2 across the terms.",
 		"Simplify the numerator.",
 		"Factor out x from the numerator.",
-		"Cancel x in numerator and denominator to obtain the limiting value.",
+		"Cancel x in numerator and denominator to obtain the limiting value: C = 6.4r - 3.2x.",
 		"The length of the circumference approaches 6.4 × radius as its thickness approaches 0."
 	],
 	"output_schema": {
@@ -949,5 +951,5 @@
     "background_color": "#000000",
     "display": "standalone",
     "version": "3.2",
-    "manifest_version": 2.7
+    "manifest_version": 2.8
 }
