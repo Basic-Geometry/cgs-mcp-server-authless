@@ -3,7 +3,7 @@
 	"name": "cgs-mcp-server-authless",
 	"manifestType": "tool-manifest",
 	"main": "src/index.ts",
-	"compatibility_date": "2026-08-01",
+	"compatibility_date": "2026-08-26",
 	"workers_dev": true,
 	"private": false,
 	"scripts": {
