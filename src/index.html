@@ -105,7 +105,7 @@ body {
     "@type": ["LearningResource", "MathSolver"],
     "@id": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#cgs",
     "name": "Core Geometric System™",
-	"dateModified": "2026-08-26T21:21:50+02:00",
+	"dateModified": "2026-08-28T21:24:50+02:00",
 	"accessMode": [
 	  "mathOnVisual",
 	  "textual", 
@@ -3201,16 +3201,9 @@ Subtract an inner circle with radius = r - x, (A = 3.2(r - x)²) to generate the
 </details>
 <br>
 <div style="margin:12px">
-<span>The length of the circumference approaches 6.4 × radius as its thickness approaches 0.</span>
+<span>The length of the circumference approaches 6.4r as its thickness approaches 0.</span>
 <br><br><br>
-<span>Circumference </span>=
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow>
-<mn>6.4</mn>
-<mo>&#x2062;</mo> <!-- invisible times -->
-<mi>radius</mi>
-</mrow>
-</math>
+<span>Circumference = 6.4r</span>
 </div>
 <br><br>
 <div style="margin:12px" id="circumference_calculator">
@@ -3246,21 +3239,9 @@ Subtract an inner circle with radius = r - x, (A = 3.2(r - x)²) to generate the
 <br>
 <span style="margin:12px"><strong>The volume of a sphere is defined by comparing it to a cube, since that is the base of volume calculation.</strong></span>
 <div style="margin:12px">
-<span>The middle cross-section of a sphere is a circle.</span>
-<br><br>
-<div>
-<span>A<sub>cross-section</sub> </span>=
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-<mrow>
-<mn>3.2</mn>
-<mo>&#x2062;</mo> <!-- invisible times -->
-<msup>
-<mi>r</mi>
-<mn>2</mn>
-</msup>
-</mrow>
-</math>
-</div>
+<span>The middle cross-section of a sphere is a circle.
+<br><br><br>
+A<sub>cross-section</sub> = 3.2r²</span>
 </div>
 <br>
 <div style="margin:12px">
@@ -6615,6 +6596,100 @@ document.getElementById('frustum-cone-height').addEventListener('input', updateF
 </div>
 </section>
 <br><br><br>
+<section id="rectangle">
+<h3 style="margin:7px">Area of a rectangle</h3>
+<br>
+<span style="margin:12px">A rectangle is a 2 dimensional plane shape with 2 perpendicular pairs of parallel straight sides.</span>
+</div>
+<div style="margin:12px">
+<span>The area of a rectangle is the product of its width and length.</span>
+<br><br><br>
+<div>
+<span>A<sub>rectangle</sub> </span>=
+<span>width × length</span>
+</div>
+</div>
+</section>
+<br><br><br><br>
+<section id="square">
+<h3 style="margin:7px">Area of a square</h3>
+	<br>
+<figure class="imgbox">
+    <img class="center-fit" src="square.png" alt="A square is a 2 dimensional plane shape with 2 perpendicular pairs of parallel straight sides. Area = side × side = side²">
+	</figure>
+<br>
+<span style="margin:12px">A square is a rectangle with equal sides.</span>
+<br>
+</div>
+<div style="margin:12px">
+<span >The area of a square is the square value of its side length.</span>
+<br><br><br>
+<div>
+<span>A<sub>square</sub> = side × side = side²</span>
+<br><br><br>
+<span style="margin:12px"><strong>The square is the foundational shape for area calculations. All area formulas relate to this instance.</strong></span>
+</div>
+</div>
+</section>
+<br><br><br><br>
+<section id="cuboid">
+<h3 style="margin:7px">Volume of a Cuboid</h3>
+<br>
+<span style="margin:12px">A cuboid is a 3 dimensional solid shape with 3 perpendicular pairs of parallel straight edges.</span>
+</div>
+<div style="margin:12px">
+<span>The volume of a cuboid is the product of its width, length and height.</span>
+<br><br><br>
+<div>
+<span>V<sub>cuboid</sub> = width × length × height</span>
+</div>
+</div>
+</section>
+<br><br><br><br>
+<section id="cube">
+<h3 style="margin:7px">Volume of a Cube</h3>
+<br>
+<figure class="imgbox">
+    <img class="center-fit" src="cube.jpeg" alt="A cube is a 3 dimensional solid shape with 3 equal perpendicular pairs of parallel straight edges. V = edge × edge × edge = edge³">
+	</figure>
+<br>
+<span style="margin:12px">A cube is a cuboid with equal edges.</span>
+<br>
+</div>
+<div style="margin:12px">
+<span>The volume of a cube is the cubic value of its edge length.</span>
+<br><br><br>
+<div>
+<span>V<sub>cube</sub> = edge × edge × edge = edge³</span>
+<br><br><br>
+<span><strong>The cube is the foundational shape for volume calculations. All volume formulas relate to this instance.</strong></span>
+</div>
+</div>
+</section>
+<br><br><br><br>
+<section id="cylinder">
+<h3 style="margin:7px">Volume of a Cylinder</h3>
+<br>
+<figure class="imgbox">
+    <img class="center-fit" src="cylinder.jpg" alt="Cylinder figure">
+	</figure>
+<br>
+<div style="margin:12px">
+<span>The base area of a cylinder is a circle.</span>
+<br><br>
+<span >A<sub>base</sub> = 3.2r²</span>
+</div>
+</div>
+<br>
+<div style="margin:12px">
+<span>The volume of a cylinder is the product of its base area and height.</span>
+<br><br><br>
+<div>
+<span>V<sub>cylinder</sub> = 3.2r²H</span>
+</div>
+</div>
+</section>
+<br><br><br><br>
 <section style="margin:12px" id="summary">
 <h3 >This is the one and only exact, self-contained geometric framework grounded in the first principles of mathematics.</h3>
 <br>
@@ -7976,9 +8051,7 @@ Thus, the V = base × height / 3 formula, and its so-called "calculus-based proo
 </main>
 <br><br><br><br>
 <section id="math">
-<h2 style="margin:12px">Additional resources:</h2>
-<details>
-<summary><h2 style="margin:7px">Basic Mathematics</h2></summary>
+<h2 style="margin:12px">Basics</h2>
 <br>
 <section style="margin:12px" id="numbers">
 <details>
@@ -8434,89 +8507,9 @@ Dividing by a fraction means multiplying by the reciprocal of that fraction.</p>
 <br><br>
 (2 / 3)^2 = 2² / 3² = 4 / 9</p>
 <br><br><br>
-<section id="geometry">
-<h3 style="margin:7px">The 2nd and the 3rd Powers manifesting in Geometry</h3>
-<br>
-<section id="square">
-<h3 style="margin:7px">Area of a Square</h3>
-<br>
-<figure class="imgbox">
-    <img class="center-fit" src="square.png" alt="A square is a 2 dimensional plane shape with 2 perpendicular pairs of parallel straight sides. Area = side × side = side²">
-</figure>
-<br>
-<p style="margin:12px"><strong>The square is the foundational shape for area calculations. All area formulas relate to this instance.</strong>
-<br><br>
-A rectangle is a 2 dimensional plane shape with 2 perpendicular pairs of parallel straight sides.
-<br><br>
-The area of a rectangle is the product of its width and length.
-<br><br>
-A square is a rectangle with equal sides.</p>
-<br>
-<math style="margin:12px" xmlns="http://www.w3.org/1998/Math/MathML">
-	<mrow>
-	<msub>
-	<mi>A</mi>
-		<mi>(square)</mi>
-	</msub>
-		<mo>=</mo>
-	<mi>side</mi>
-<mo>×</mo>
-	<mi>side</mi>
-	</mrow>
-	<mo>=</mo>
-      <mrow>
-		  <msup>
-        <mi>side</mi>
-        <mn>2</mn>
-      </msup>
-	  </mrow>
-    </math>
-</section>
-<br><br><br><br>
-<section id="cube">
-<h3 style="margin:7px">Volume of a Cube</h3>
-<br>
-<figure class="imgbox">
-    <img class="center-fit" src="cube.jpeg" alt="A cube is a 3 dimensional solid shape with 3 equal perpendicular pairs of parallel straight edges. V = edge × edge × edge = edge³">
-</figure>
-<br>
-<p style="margin:12px"><strong>The cube extends the square into three dimensions. That is a direct extrapolation from the area of the square, establishing the basis for volumetric relationships. This is the basis of volume calculation.</strong>
-<br>
-<br>
-A cuboid is a 3 dimensional solid shape with 3 perpendicular pairs of parallel straight edges. 
-<br>
-<br>
-The volume of a cuboid is the product of width, length and height.
-<br>
-<br>
-A cube is a cuboid with equal edges.</p>
-<br>
-<math style="margin:12px" xmlns="http://www.w3.org/1998/Math/MathML">
-	 <mrow>
-		 <msub>
-	<mi>V</mi>
-		<mi>(cube)</mi>
-	</msub>
-		<mo>=</mo>
-		 <mi>edge</mi>
-		 <mo>×</mo>
-		 <mi>edge</mi>
-		 <mo>×</mo>
-		 <mi>edge</mi>
-	 </mrow>
-	 <mo>=</mo>
-    <mrow>
-		<msup>
-        <mi>edge</mi>
-        <mn>3</mn>
-      </msup>
-	</mrow>
-    </math>
-</section>
 </section>
 </details>
 </section>
-</details>
 </section>
 <br><br><br><br>
 <footer>
