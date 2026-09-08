@@ -112,7 +112,7 @@
 </div>
 <main itemscope itemtype="https://schema.org/LearningResource https://schema.org/MathSolver" id="cgs">
 <meta itemprop="name" content="Core Geometric System ™">
-<meta itemprop="dateModified" content="2026-09-03T20:17:29+02:00">
+<meta itemprop="dateModified" content="2026-09-08T21:05:29+02:00">
 <meta itemprop="accessMode" content="mathOnVisual">
 <meta itemprop="accessMode" content="textual">
 <meta itemprop="accessMode" content="visual">
@@ -5725,7 +5725,7 @@ He approximated the circumference of a circle using inscribed and circumscribed 
 His argument rests on three ideas:</p>
 <br>
 <ul style="margin:6px" itemprop="backstory">
-    <li>1. Upper bound: A circumscribed regular polygon has a perimeter greater than the circle’s circumference.</li>
+	<li>1. Upper bound: A circumscribed regular polygon is an upper limit, because a shape that strictly encloses another shape must have a larger area and outer perimeter.</li>
     <li>2. Lower bound: An inscribed regular polygon has a perimeter smaller than the circle’s circumference.</li>
 	<li>3. Convergence: As the number of sides increases, the perimeters of the inscribed and circumscribed polygons both approach the true circumference from below and above. As the number of sides reaches infinity, the polygons collapse into a circle.</li>
 </ul>  
@@ -5845,11 +5845,9 @@ Angles like 15°, 7.5°, and 3.75° can be derived from these using the classica
 </div>
 <br><br><br>
 <div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue" id="pi-approximation">
-<span itemprop="description">Both approach 3.14...d as n approaches infinity.</span>
-<br><br>
 <span itemprop="name">The approximate circumference to diameter ratio, based on the polygonal limits</span>:
 <br><br>
-<meta itemprop="value" content="sin(180°/n)n<pi<sin(180°/n)n/cos(180°/n)">
+<meta itemprop="value" content="sin(180°/n)n<3.14...<sin(180°/n)n/cos(180°/n)">
 <br>
 <math>
   <mrow>
@@ -5864,7 +5862,7 @@ Angles like 15°, 7.5°, and 3.75° can be derived from these using the classica
       <mo>&#x00B0;</mo>
     <mo>)</mo>
     <mo>&lt;</mo>
-    <mi>pi</mi>
+    <mn>3.14...</mn>
     <mo>&lt;</mo>
     <mi>n</mi>
     <mo>&#x00D7;</mo>
@@ -5902,82 +5900,13 @@ And those assumptions are false once the polygon has too many sides.</p>
 <div id="Archimedes-method-refute">
 <h5>Where the Assumptions Fail</h5>
 <br>
-<p itemprop="articleBody">The math world loves the idea that a regular polygon with a side count approaching infinity “collapses into a circle.” It’s a charming picture — but it is highly theoretical and ultimately unrealistic for two main reasons:</p>
-<br>
-<ul style="margin:6px" itemprop="articleBody">
-    <li>A polygon with an infinite side count is still oblong; not round. That distinguishes the polygon from the circle. Treating the two as interchangeable is a category error disguised as an approximate.</li>
-    <li>When the perimeter of a regular polygon equals — or is close enough to — the circumference, 
-	<ul style="margin:12px">
-		<li>the sides are too short to remain tangent to the circle. They cut through the arc.</li>
-		<li>The vertices can't coincide with the arc. They fall outside the circle.</li>
-	</ul>
-	</li>
-</ul>
-<p itemprop="articleBody">This behavior is easy to see in polygons with a low side count.</p>
-<br>
-<figure itemprop="image" class="imgbox" itemscope itemtype="https://schema.org/ImageObject">
-    <img class="center-fit" src="isoperimetry.png" alt="The sides of a hexagon cross the arc of an isoperimetric circle">
-<div itemprop="creator" itemscope itemtype="https://schema.org/Person">
-<meta itemprop="familyName" content="Gaál">
-<meta itemprop="givenName" content="Sándor">
-</div>
-<div itemprop="copyrightHolder" itemscope itemtype="https://schema.org/Person">
-<meta itemprop="familyName" content="Gaál">
-<meta itemprop="givenName" content="Sándor">
-</div>
-<meta itemprop="copyrightNotice" content="® All rights reserved">
-<meta itemprop="copyrightYear" content="2026">
-<meta itemprop="creditText" content="Made with the help of Vectorink.io">
-<link itemprop="license" href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">
-<meta itemprop="acquireLicensePage" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy">
-<meta itemprop="contentUrl" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/isoperimetry.png">
-<link itemprop="url" href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">
-</figure>
-<br>
-<p itemprop="articleBody">In traditional geometry, a polygon is called circumscribed if each side is tangent to the circle, meaning that it touches the circle only at exactly one point.
+<p itemprop="backstory">Traditional geometry defines "circumscribed" by specifying that every polygon side lies on a line tangent to the circle — where a tangent is defined as touching at exactly one single point.
 <br><br>
-Traditional geometry assumes that a tangent line to the circle can always be drawn. 
+Traditional geometry assumes that a tangent line to the circle can always be drawn.
 <br>
-That is another unproven assumption.
+That is an unproven assumption.
 <br>
 While a line can always be drawn, nothing guarantees single-point contact.
-<br><br>
-Whether a polygon can be circumscribed about a circle depends on whether its perimeter is sufficiently greater than the circumference. 
-<br><br>
-But the bisection procedure guarantees that each new perimeter created by repeatedly bisecting a circumscribed hexagon is smaller than the previous one. 
-<br><br>
-To know if the polygons are still circumscribed at every finite step, you must already know if the perimeter is large enough that no crossing occurs.
-<br>
-Yet finding the circumference is the purpose of the method. The method therefore relies on the very assumption it seeks to prove. That is circular reasoning.
-<br><br>
-The flaw in the classical method becomes even clearer when we try to implement it practically.
-<br>
-The breakdown is visible already at a small finite side count when attempting to draw a circumscribed 24-gon or 48-gon via exact angle bisection (central angle 15° → 7.5°).
-<br><br>
-The figure collapses:</p>
-<br>
-<figure itemprop="image" class="imgbox" itemscope itemtype="https://schema.org/ImageObject">
-    <img class="center-fit" src="polygonApproximation.png" alt="When attempting to draw a circumscribed 24-gon via exact angle bisection (central angle 15°), the tangent lines merge, overlap, or cross the arc. The individual sides become indistinguishable or intersect the circle before reaching distinct tangent points.">
-<div itemprop="creator" itemscope itemtype="https://schema.org/Person">
-<meta itemprop="familyName" content="Gaál">
-<meta itemprop="givenName" content="Sándor">
-</div>
-<div itemprop="copyrightHolder" itemscope itemtype="https://schema.org/Person">
-<meta itemprop="familyName" content="Gaál">
-<meta itemprop="givenName" content="Sándor">
-</div>
-<meta itemprop="copyrightNotice" content="® All rights reserved">
-<meta itemprop="copyrightYear" content="2026">
-<meta itemprop="creditText" content="Made with the help of Vectorink.io">
-<link itemprop="license" href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">
-<meta itemprop="acquireLicensePage" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy">
-<meta itemprop="contentUrl" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/polygonApproximation.png">
-<link itemprop="url" href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">
-</figure>
-<br>
-<p itemprop="articleBody">The supposed tangent lines merge, overlap, or cross the arc, behaving like an isoperimetric polygon rather than a circumscribed one. 
-<br>
-This is not a precision error, nor only a rendering limitation. It is the geometry refusing to produce a valid set of external tangents.
 <br><br>
 According to traditional geometry, 
 <br>
@@ -5986,7 +5915,7 @@ According to traditional geometry,
 	<li>"a line is a set of points, therefore, it has no thickness"</li>
 </ul>
 <br>
-<p itemprop="articleBody">Note that in these terms, even if the dimensions of the point are defined as 0, the thickness of the line is logically one point. 
+<p itemprop="articleBody">Note that under these premises, even if an abstract point is assigned a dimension of zero, any realized or constructed line must possess an operational width of at least one constituent spatial unit.
 <br><br>
 The tangent point T and its two adjacent points T₋₁ and T₊₁ form a 3‑point long section on the tangent line.
 <br>
@@ -5994,8 +5923,7 @@ Classical geometry insists that these adjacent points must not coincide with the
 <br>
 In other words, no matter how small the central angle becomes, the distance between the tangent line and the arc is strictly non-zero for any point other than T. 
 <br>
-This separation is never quantified, because classical geometry assumes infinite resolution. 
-The classical framework relies on an idealized continuum where space is infinitely divisible. 
+This separation is never quantified, because classical geometry assumes infinite resolution. The classical framework relies on an idealized continuum where space is arbitrarily divisible. 
 <br><br>
 But the geometry is forced to confront physical spatial reality once we assign even the smallest operational width to a point.
 <br><br>
@@ -6028,9 +5956,7 @@ This is where the traditional concept of tangency becomes visibly distorted.
 <br><br>
 In reality, as the side count increases in a regular polygon, the central angle subtended by a single side drops significantly — it approaches 0°. 
 <br>
-For any large circle, the central angle subtended by three adjacent spatial points is an infinitesimal fraction of a degree. 
-<br>
-At very small angles, the sagitta collapses toward zero — billions of times smaller than the 1‑point threshold required to keep the arc and the tangent line apart.</p> 
+For any macro-scale circle, the central angle subtended by three contiguous spatial units is an infinitesimal fraction of a degree. At these microscopic angles, the sagitta collapses quadratically toward zero — falling orders of magnitude below the single-unit threshold required to maintain physical separation between the arc and the tangent line.</p> 
 <br>
 <figure itemprop="image" class="imgbox" itemscope itemtype="https://schema.org/ImageObject">
     <img class="center-fit" src="arcAndLine.png" alt="Once the sagitta drops below the fundamental grid threshold required to separate the arc from the straight line, single-point tangency ceases to exist. The arc and the tangent line physically and logically coincide across that entire interval.">
@@ -6057,21 +5983,83 @@ The points representing the arc and the points representing the line occupy the 
 <br><br>
 Why that is pivotal:
 <br><br>
-If the polygon's vertices protrude beyond r by a distance smaller than the length of this region of coincidence, the classical assumption that the polygon strictly "surrounds" or "circumscribes" the circle at discrete points breaks down. 
-<br>
-Classical limits assume infinite resolution to avoid this collapse.
-<br>
-If classical geometry insists on maintaining a physical gap by declaring the tiny separation distance to be the "new minimum unit," then the original tangent point itself morphs into a segment composed of several of these new minimum units. 
-<br>
-The boundary is no longer touching at an isolated 0‑dimensional point T; it shares an entire multi-point interval with the arc.
-<br>
-This is the logical loophole at the foundation of Archimedes' method.
+Whether a polygon can be circumscribed about a circle depends on whether its perimeter is sufficiently greater than the circumference. 
 <br><br>
-Either path leads to the same inescapable conclusion: <strong>classical tangency is not physically or logically realizable under its own axioms.</strong> The polygon's side and the arc are forced into a multi‑point coincidence. 
+When the perimeter of a regular polygon equals — or is close enough to — the circumference, the sides are too short to remain tangent to the circle; they cut through the arc.
+<br><br>
+This behavior is easy to see in polygons with a low side count.</p>
 <br>
+<figure itemprop="image" class="imgbox" itemscope itemtype="https://schema.org/ImageObject">
+    <img class="center-fit" src="isoperimetry.png" alt="The sides of a hexagon cross the arc of an isoperimetric circle">
+<div itemprop="creator" itemscope itemtype="https://schema.org/Person">
+<meta itemprop="familyName" content="Gaál">
+<meta itemprop="givenName" content="Sándor">
+</div>
+<div itemprop="copyrightHolder" itemscope itemtype="https://schema.org/Person">
+<meta itemprop="familyName" content="Gaál">
+<meta itemprop="givenName" content="Sándor">
+</div>
+<meta itemprop="copyrightNotice" content="® All rights reserved">
+<meta itemprop="copyrightYear" content="2026">
+<meta itemprop="creditText" content="Made with the help of Vectorink.io">
+<link itemprop="license" href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">
+<meta itemprop="acquireLicensePage" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy">
+<meta itemprop="contentUrl" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/isoperimetry.png">
+<link itemprop="url" href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">
+</figure>
+<br>
+<p itemprop="articleBody">To know if the polygons are still circumscribed at every finite step, you must already know if the perimeter is large enough that no crossing occurs.
+<br>
+Yet finding the circumference is the purpose of the method. 
+<br><br>
+The bisection procedure guarantees that each new perimeter created by repeatedly bisecting a circumscribed hexagon is smaller than the previous one. 
+<br>
+Archimedes' method rests solely on the false assumption that each side touches at only one point, hence the triangle formed by the tangent point, vertex, and midpoint must structurally contain the entire circle slice, forcing the straight side to be strictly longer than the arc.
+<br>
+This is the critical flaw at the very foundation of the method. 
+<br><br>
+It's easy to overlook the lack of single-point tangency in the case of a circumscribed hexagon, because it doesn't matter at all.
+<br>
+But it becomes critical at higher side counts and smaller angles. When the protruding area shrinks below the area where the side and the arc overlap, the triangle stops fully "containing" the slice, and the comparison becomes invalid.
+<br><br>
+This breakdown becomes structurally evident at surprisingly modest side counts. When attempting to construct or model a circumscribed 24-gon with central angles of 15°, the required vertex clearance approaches spatial insignificance.
+<br><br>
+The figure collapses:</p>
+<br>
+<figure itemprop="image" class="imgbox" itemscope itemtype="https://schema.org/ImageObject">
+    <img class="center-fit" src="polygonApproximation.png" alt="When attempting to draw a circumscribed 24-gon via exact angle bisection (central angle 15°), the tangent lines merge, overlap, or cross the arc. The individual sides become indistinguishable or intersect the circle before reaching distinct tangent points.">
+<div itemprop="creator" itemscope itemtype="https://schema.org/Person">
+<meta itemprop="familyName" content="Gaál">
+<meta itemprop="givenName" content="Sándor">
+</div>
+<div itemprop="copyrightHolder" itemscope itemtype="https://schema.org/Person">
+<meta itemprop="familyName" content="Gaál">
+<meta itemprop="givenName" content="Sándor">
+</div>
+<meta itemprop="copyrightNotice" content="® All rights reserved">
+<meta itemprop="copyrightYear" content="2026">
+<meta itemprop="creditText" content="Made with the help of Vectorink.io">
+<link itemprop="license" href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">
+<meta itemprop="acquireLicensePage" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy">
+<meta itemprop="contentUrl" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/polygonApproximation.png">
+<link itemprop="url" href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">
+</figure>
+<br>
+<p itemprop="articleBody">The supposed tangent lines merge, overlap, or cross the arc.
+<br>
+This is not a precision error, nor only a rendering limitation; it is the geometry refusing to produce a valid set of external tangents.
+<br><br>
+Classical limits assume infinite resolution to avoid this collapse. Classical geometry insists on maintaining a physical gap by declaring the tiny separation distance to be the "new minimum unit," but that comes with an inevitable consequence: the original tangent point itself morphs into a segment composed of several of these new minimum units. 
+<br>
+Either path leads to the same inescapable conclusion: <strong>Classical tangency is not physically or logically realizable under its own axioms.</strong> 
+<br>
+Single-point contact is a mathematical abstraction. In reality, as the angle shrinks, the curve flattens relative to the line, creating a multi-point span of coincidence/overlap.
+<br>
+The boundary is not touching at an isolated 0‑dimensional point; the polygon's side and the arc are forced into a multi‑point coincidence.
+<br><br>
 Archimedean pi bounds rely on taking the side count to infinity — which explicitly forces the central angle of each section approaching 0°. 
 <br>
-As the side count approaches infinity and the central angles approach 0°, the lack of the idealized single‑point tangency invalidates the circumscribed boundary that classical pi derivations rely upon.
+As the side count approaches infinity and the central angles approach 0°, the lack of the idealized single‑point tangency invalidates the comparison that classical pi derivations rely upon.
 <br><br>
 The classical argument that the polygons remain tangent indefinitely fails. 
 <br>
@@ -6101,8 +6089,8 @@ P(n) = n × tan(180° / n) × d</p>
 <ul style="margin:6px" itemprop="articleBody">
     <li>A hexagon can be circumscribed about a circle.</li>
 	<li>An octagon can still be circumscribed.</li>
-	<li>But as the number of sides increases, each side becomes shorter and shorter, and eventually the straight sides can no longer maintain true tangency. They begin to cut through the circle instead of just touching it.</li>
-	<li>The 12‑gon is a borderline case. Its perimeter is still slightly greater than 3.2d, so it may or may not maintain true tangency.</li>
+	<li>But as the number of sides increases, each side becomes shorter and shorter, and eventually they begin to cut through the circle instead of just touching it.</li>
+	<li>The 12‑gon is a borderline case. Its perimeter is still slightly greater than 3.2d, so it may or may not be circumscribed.</li>
     <li>But the 24‑gon — and any polygon with more sides — cannot be circumscribed at all, because a circumscribed polygon must always satisfy P(n) > C. Once P(n) drops below 3.2d, the sides become too short to touch the circle at a single point. They inevitably cut through the arc instead of remaining outside it.</li>
 </ul>
 <br>
@@ -6150,7 +6138,7 @@ So the theoretical “infinite‑sided circumscribed polygon” does not collaps
 <br>
 It is simply a polygon whose sides have become so short that they no longer maintain tangency. It behaves more like a polygon pushed inward by isoperimetry than like a circle approached by limits.
 <br><br>
-<strong>The floor of Archimedes’ “upper limit” approaches the ceiling of the lower limit by passing through the true circumference.
+<strong>The floor of Archimedes’ “upper limit” approaches the ceiling of the lower limit by passing through the true circumference unknowingly.
 <br><br>
 Hence, the convergence toward ~3.14d is  not a discovery of the pi, not even a well-defined limit, but an artifact of forcing a construction that has already become geometrically impossible.</strong>
 <br><br>
