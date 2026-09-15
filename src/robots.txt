@@ -2,7 +2,7 @@ User-agent:*
 Allow:/
 # AI Semantic Resources
 Allow: /llms.txt
-Allow: /agents.md
+Allow: /agents.txt
 Allow: /manifest.json
 Allow: /.well-known/ai-catalog.json
 
