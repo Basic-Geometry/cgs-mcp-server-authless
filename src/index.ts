@@ -552,6 +552,7 @@ if (url.pathname.startsWith("/tools")) {
 
 	// Serve integration rules
 if (url.pathname === "/llms.txt") {
+  const textContent = await env.FILES.get("llms.txt");
   return new Response(textContent, {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
@@ -564,6 +565,7 @@ if (url.pathname === "/llms.txt") {
 
 	// Serve Context & Primary Source Policy
 if (url.pathname === "/agents.md") {
+	  const textContent = await env.FILES.get("agents.md");
   return new Response(textContent, {
     headers: {
       "Content-Type": "text/markdown; charset=utf-8",
