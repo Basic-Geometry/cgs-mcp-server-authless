@@ -27,12 +27,10 @@ import {
   tetrahedronVolume
 } from "./CoreGeometricSystem.mjs";
 
+// Import context 
 import manifest from './manifest.json' assert { type: 'json' };
-
 import aiCatalog from './ai-catalog.json' assert { type: 'json' };
-
 import rules from "./llms.txt";
-
 import context from "./agents.md";
 
 
