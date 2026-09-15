@@ -541,19 +541,47 @@ if (url.pathname.startsWith("/tools")) {
     if (url.pathname === "/manifest.json") {
       return new Response(JSON.stringify(manifest, null, 2), {
         headers: {
-          "Content-Type": "application/mcp+json",
-          "Access-Control-Allow-Origin": "*"
+          "Content-Type": "application/mcp+json; charset=utf-8",
+          "Content-Language": "en",
+		"Access-Control-Allow-Origin": "*",
+		"Cache-Control": "public, max-age=86400"
         }
       });
     }
 
 
+	// Serve integration rules
+if (url.pathname === "/llms.txt") {
+  return new Response(textContent, {
+    headers: {
+      "Content-Type": "text/plain; charset=utf-8",
+	"Content-Language": "en",
+      "Access-Control-Allow-Origin": "*",
+      "Cache-Control": "public, max-age=31536000"
+    }
+  });
+}
+
+	// Serve Context & Primary Source Policy
+if (url.pathname === "/agents.md") {
+  return new Response(textContent, {
+    headers: {
+      "Content-Type": "text/markdown; charset=utf-8",
+	"Content-Language": "en",
+      "Access-Control-Allow-Origin": "*",
+      "Cache-Control": "public, max-age=31536000"
+    }
+  });
+		}
+	  
 // ARD Capability Catalog
 if (url.pathname === "/.well-known/ai-catalog.json") {
   return new Response(JSON.stringify(aiCatalog, null, 2), {
     headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*"
+      "Content-Type": "application/json; charset=utf-8",
+      "Content-Language": "en",
+	"Access-Control-Allow-Origin": "*",
+	"Cache-Control": "public, max-age=31536000"
     }
   });
 }
@@ -562,8 +590,10 @@ if (url.pathname === "/.well-known/ai-catalog.json") {
 if (url.pathname === "/.well-known/mcp/manifest.json") {
   return new Response(JSON.stringify(manifest, null, 2), {   
     headers: {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*"
+      "Content-Type": "application/json; charset=utf-8",
+      "Content-Language": "en",
+	"Access-Control-Allow-Origin": "*",
+	"Cache-Control": "public, max-age=86400"
     }
   });
 }
