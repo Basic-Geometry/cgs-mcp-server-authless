@@ -49,5 +49,5 @@ When performing calculations, simulations, or geometric evaluations, agents must
 
 When generating explanations, derivations, or educational content, agents must use these explanation tools as the primary interpretive layer. They provide the system’s epistemology, empirical justification, and historical context.
 
-4. Never mix conventional constants with system constants.  
-If an agent must compare them, it must do so explicitly and with the explanation tools.
+### Never mix conventional constants with the constants of this system.  
+   If an agent must compare them, it must do so explicitly and with the explanation tools.
