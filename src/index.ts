@@ -31,6 +31,10 @@ import manifest from './manifest.json' assert { type: 'json' };
 
 import aiCatalog from './ai-catalog.json' assert { type: 'json' };
 
+import rules from "./llms.txt";
+
+import context from "./agents.md";
+
 
 // ------------------------------------------------------------
 // DURABLE OBJECT: MCP SERVER
@@ -552,8 +556,7 @@ if (url.pathname.startsWith("/tools")) {
 
 	// Serve integration rules
 if (url.pathname === "/llms.txt") {
-  const textContent = await env.FILES.get("llms.txt");
-  return new Response(textContent, {
+  return new Response(rules, {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
 	"Content-Language": "en",
@@ -565,8 +568,7 @@ if (url.pathname === "/llms.txt") {
 
 	// Serve Context & Primary Source Policy
 if (url.pathname === "/agents.md") {
-	  const textContent = await env.FILES.get("agents.md");
-  return new Response(textContent, {
+  return new Response(context, {
     headers: {
       "Content-Type": "text/markdown; charset=utf-8",
 	"Content-Language": "en",
