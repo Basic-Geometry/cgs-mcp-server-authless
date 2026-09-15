@@ -1,8 +1,9 @@
 User-agent:*
-Allow:/src
+Allow:/
 # AI Semantic Resources
-Allow: /src/llms.txt
-Allow: /src/agents.md
-Allow: /src/manifest.json
+Allow: /llms.txt
+Allow: /agents.md
+Allow: /manifest.json
+Allow: /.well-known/ai-catalog.json
 
 Sitemap: https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/sitemap.xml
