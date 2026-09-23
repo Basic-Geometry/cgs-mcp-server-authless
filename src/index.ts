@@ -505,10 +505,8 @@ async fetch(request: Request, env: Env): Promise<Response> {
     return this.handleMCP(request);
   }
 
-async fetch(request: Request, env: Env) {
-    this.env = env;
-
-	  if (url.pathname.endsWith(".md")) {
+	// Markdown 
+  if (url.pathname.endsWith(".md")) {
   const key = url.pathname.slice(1); // "tester.md"
   const file = await this.env.CGS.get(key); // <-- KV instead of DO storage
 
@@ -525,8 +523,6 @@ async fetch(request: Request, env: Env) {
       "Cache-Control": "public, max-age=86400"
     }
   });
-}
-	
 }
 	
   // Txt endpoint
