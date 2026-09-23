@@ -51,18 +51,43 @@ export class MyMCP extends McpServer {
     super();
     this.state = state;
     this.env = env;
+
+    // Safe async init in Durable Object
+    this.state.blockConcurrencyWhile(async () => {
+      try {
+        if (typeof (this as any).onStart === "function") {
+          await (this as any).onStart();
+        }
+      } catch (e) {
+        console.error("onStart failed:", e);
+      }
+    });
   }
 
-  state.blockConcurrencyWhile(async () => {
-    try {
-      if (typeof (this as any).onStart === "function") {
-        await (this as any).onStart();
-      }
-    } catch (e) {
-      console.error("onStart failed:", e);
+  async fetch(request: Request, env: Env) {
+    this.env = env;
+
+	  if (url.pathname.endsWith(".md")) {
+  const key = url.pathname.slice(1); // "tester.md"
+  const file = await this.env.CGS.get(key); // <-- KV instead of DO storage
+
+  if (!file) {
+    return new Response("Not found", { status: 404 });
+  }
+
+  return new Response(file, {
+    headers: {
+      "Content-Type": "text/markdown; charset=utf-8",
+      "Content-Language": "en",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "nosniff",
+      "Cache-Control": "public, max-age=86400"
     }
   });
-	}
+}
+	
+  }
+}
 
 // ------------------------------------------------------------
   // ELICITATION HANDLERS 
@@ -506,32 +531,13 @@ if (
 async fetch(request: Request, env: Env): Promise<Response> {
   this.env = env;  // <-- ensure env is available even if constructor didn't get it  const url = new URL(request.url);
 
-  // 1. MCP endpoint
+  // MCP endpoint
   if (url.pathname === "/mcp") {
     return this.handleMCP(request);
   }
 
-  // 2. Markdown endpoint (KV-backed)
-if (url.pathname.endsWith(".md")) {
-  const key = url.pathname.slice(1); // "tester.md"
-  const file = await this.env.CGS.get(key); // <-- KV instead of DO storage
 
-  if (!file) {
-    return new Response("Not found", { status: 404 });
-  }
-
-  return new Response(file, {
-    headers: {
-      "Content-Type": "text/markdown; charset=utf-8",
-      "Content-Language": "en",
-      "Access-Control-Allow-Origin": "*",
-      "X-Content-Type-Options": "nosniff",
-      "Cache-Control": "public, max-age=86400"
-    }
-  });
-}
-	
-  // 3. Txt endpoint
+  // Txt endpoint
   if (url.pathname.endsWith(".txt")) {
     const key = url.pathname.slice(1);
     const file = await this.state.storage.get(key);
@@ -551,7 +557,7 @@ if (url.pathname.endsWith(".md")) {
     });
 }
 	  
-  // 4. Default response
+  // Default response
   return new Response("CGS MCP Durable Object Ready", {
     headers: { "Content-Type": "text/plain" }
   });
