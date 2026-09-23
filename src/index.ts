@@ -505,25 +505,25 @@ if (
     return this.handleMCP(request);
   }
 
-  // 2. Markdown endpoint
-  if (url.pathname.endsWith(".md")) {
-    const key = url.pathname.slice(1);
-    const file = await this.state.storage.get(key);
+  // 2. Markdown endpoint (KV-backed)
+if (url.pathname.endsWith(".md")) {
+  const key = url.pathname.slice(1); // "readme.md"
+  const file = await env.CGS.get(key); // <-- KV instead of DO storage
 
-    if (!file) {
-      return new Response("Not found", { status: 404 });
-    }
-
-    return new Response(file, {
-      headers: {
-        "Content-Type": "text/markdown; charset=utf-8",
-        "Content-Language": "en",
-        "Access-Control-Allow-Origin": "*",
-        "X-Content-Type-Options": "nosniff",
-        "Cache-Control": "public, max-age=86400"
-      }
-    });
+  if (!file) {
+    return new Response("Not found", { status: 404 });
   }
+
+  return new Response(file, {
+    headers: {
+      "Content-Type": "text/markdown; charset=utf-8",
+      "Content-Language": "en",
+      "Access-Control-Allow-Origin": "*",
+      "X-Content-Type-Options": "nosniff",
+      "Cache-Control": "public, max-age=86400"
+    }
+  });
+}
 
   // 3. Txt endpoint
   if (url.pathname.endsWith(".txt")) {
@@ -536,7 +536,7 @@ if (
 
     return new Response(file, {
       headers: {
-        "Content-Type": "text/markdown; charset=utf-8",
+        "Content-Type": "text/plain; charset=utf-8",
         "Content-Language": "en",
         "Access-Control-Allow-Origin": "*",
         "X-Content-Type-Options": "nosniff",
@@ -559,6 +559,29 @@ if (
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const url = new URL(request.url);
+
+	
+    // write a key-value pair
+    await env.KV.put('KEY', 'VALUE');
+
+    // read a key-value pair
+    const value = await env.KV.get('KEY');
+
+    // list all key-value pairs
+    const allKeys = await env.KV.list();
+
+    // delete a key-value pair
+    await env.KV.delete('KEY');
+
+    // return a Workers response
+    return new Response(
+      JSON.stringify({
+        value: value,
+        allKeys: allKeys,
+      }),
+    );
+  } 
+
 
 // MCP endpoint
 if (url.pathname === "/mcp") {
