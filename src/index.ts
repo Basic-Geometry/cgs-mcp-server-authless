@@ -572,53 +572,84 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const url = new URL(request.url);
 
-	
-    // write a key-value pair
-    await env.KV.put('KEY', 'VALUE');
+    // ------------------------------------------------------------
+    // MCP endpoint
+    // ------------------------------------------------------------
+    if (url.pathname === "/mcp") {
+      const id = env.MCP_OBJECT.idFromName("singleton");
+      const stub = env.MCP_OBJECT.get(id);
+      return stub.fetch(request);
+    }
 
-    // read a key-value pair
-    const value = await env.KV.get('KEY');
+    // ------------------------------------------------------------
+    // Tools endpoint (redirect to MCP)
+    // ------------------------------------------------------------
+    if (url.pathname.startsWith("/tools")) {
+      const id = env.MCP_OBJECT.idFromName("singleton");
+      const stub = env.MCP_OBJECT.get(id);
 
-    // list all key-value pairs
-    const allKeys = await env.KV.list();
+      const mcpUrl = new URL("/mcp", request.url);
+      const mcpRequest = new Request(mcpUrl.toString(), request);
 
-    // delete a key-value pair
-    await env.KV.delete('KEY');
+      return stub.fetch(mcpRequest);
+    }
 
-    // return a Workers response
-    return new Response(
-      JSON.stringify({
-        value: value,
-        allKeys: allKeys,
-      }),
-    );
-  } 
-}
-
-// MCP endpoint
-if (url.pathname === "/mcp") {
-  const id = env.MCP_OBJECT.idFromName("singleton");
-  const stub = env.MCP_OBJECT.get(id);
-  return stub.fetch(request);
-}
-
-// Tools endpoint (redirect to MCP)
-if (url.pathname.startsWith("/tools")) {
-  const id = env.MCP_OBJECT.idFromName("singleton");
-  const stub = env.MCP_OBJECT.get(id);
-
-  const mcpUrl = new URL("/mcp", request.url);
-  const mcpRequest = new Request(mcpUrl.toString(), request);
-
-  return stub.fetch(mcpRequest);
-}
-
-							 
-	  
-    // Serve manifest
+    // ------------------------------------------------------------
+    // Manifest
+    // ------------------------------------------------------------
     if (url.pathname === "/manifest.json") {
       return new Response(JSON.stringify(manifest, null, 2), {
         headers: {
+          "Content-Type": "application/mcp+json; charset=utf-8",
+          "Content-Language": "en",
+          "Access-Control-Allow-Origin": "*",
+          "Cache-Control": "public, max-age=86400"
+        }
+      });
+    }
+
+    // ------------------------------------------------------------
+    // ARD Capability Catalog
+    // ------------------------------------------------------------
+    if (url.pathname === "/.well-known/catalog.json") {
+      return new Response(JSON.stringify(catalog, null, 2), {
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Language": "en",
+          "Access-Control-Allow-Origin": "*",
+          "Cache-Control": "public, max-age=31536000"
+        }
+      });
+    }
+
+    // ------------------------------------------------------------
+    // MCP Standard Location
+    // ------------------------------------------------------------
+    if (url.pathname === "/.well-known/mcp/manifest.json") {
+      return new Response(JSON.stringify(manifest, null, 2), {
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "Content-Language": "en",
+          "Access-Control-Allow-Origin": "*",
+          "Cache-Control": "public, max-age=86400"
+        }
+      });
+    }
+
+    // ------------------------------------------------------------
+    // Static assets (KV or ASSETS)
+    // ------------------------------------------------------------
+    if (env.ASSETS) {
+      return env.ASSETS.fetch(request);
+    }
+
+    return new Response("Not found", { status: 404 });
+  },
+
+  durableObjects: {
+    MCP_OBJECT: MyMCP
+  }
+};
           "Content-Type": "application/mcp+json; charset=utf-8",
           "Content-Language": "en",
 		"Access-Control-Allow-Origin": "*",
