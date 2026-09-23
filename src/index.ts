@@ -593,7 +593,7 @@ export default {
       }),
     );
   } 
-
+}
 
 // MCP endpoint
 if (url.pathname === "/mcp") {
