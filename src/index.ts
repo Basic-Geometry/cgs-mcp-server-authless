@@ -539,6 +539,21 @@ if (url.pathname.startsWith("/tools")) {
 }
 
 
+	      // Serve markdown 
+	  if (url.pathname.endsWith(".md")) {
+  const file = await env.DOCS.get(url.pathname.slice(1)); // e.g. "readme.md"
+  if (!file) return new Response("Not found", { status: 404 });
+
+  return new Response(file, {
+headers: {
+      "Content-Type": "text/markdown; charset=utf-8",
+	"Content-Language": "en",
+      "Access-Control-Allow-Origin": "*",
+      "Cache-Control": "public, max-age=31536000"
+}
+  });
+													 }
+	  
     // Serve manifest
     if (url.pathname === "/manifest.json") {
       return new Response(JSON.stringify(manifest, null, 2), {
