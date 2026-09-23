@@ -32,6 +32,12 @@ import manifest from './manifest.json' assert { type: 'json' };
 import catalog from './catalog.json' assert { type: 'json' };
 
 
+export default {
+  async fetch(request: Request, env: Env) {
+    return env.MY_MCP.fetch(request, env);  // <-- pass env into DO
+  }
+};
+
 // ------------------------------------------------------------
 // DURABLE OBJECT: MCP SERVER
 // ------------------------------------------------------------
@@ -42,9 +48,10 @@ export class MyMCP extends McpServer {
   env: Env;
 
   constructor(state: DurableObjectState, env: Env) {
-  super({ name: "Core_Geometric_System", version: "1.1.0" });
-  this.state = state;
-  this.env = env;
+    super();
+    this.state = state;
+    this.env = env;   // <-- store env so KV is available
+  }
 
   // Safe async init in Durable Object
   state.blockConcurrencyWhile(async () => {
@@ -497,8 +504,8 @@ if (
   // -----------------------------
   // FETCH ROUTER (inside DO)
   // -----------------------------
-  async fetch(request: Request): Promise<Response> {
-  const url = new URL(request.url);
+async fetch(request: Request, env: Env): Promise<Response> {
+  this.env = env;  // <-- ensure env is available even if constructor didn't get it  const url = new URL(request.url);
 
   // 1. MCP endpoint
   if (url.pathname === "/mcp") {
@@ -507,8 +514,8 @@ if (
 
   // 2. Markdown endpoint (KV-backed)
 if (url.pathname.endsWith(".md")) {
-  const key = url.pathname.slice(1); // "readme.md"
-  const file = await env.CGS.get(key); // <-- KV instead of DO storage
+  const key = url.pathname.slice(1); // "tester.md"
+  const file = await this.env.CGS.get(key); // <-- KV instead of DO storage
 
   if (!file) {
     return new Response("Not found", { status: 404 });
@@ -524,7 +531,7 @@ if (url.pathname.endsWith(".md")) {
     }
   });
 }
-
+	
   // 3. Txt endpoint
   if (url.pathname.endsWith(".txt")) {
     const key = url.pathname.slice(1);
