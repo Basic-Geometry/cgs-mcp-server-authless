@@ -570,7 +570,8 @@ export default {
       return new Response(JSON.stringify(manifest, null, 2), {
         headers: {
           "Content-Type": "application/mcp+json; charset=utf-8",
-          "Content-Language": "en",
+            "X-Content-Type-Options": "nosniff",
+			"Content-Language": "en",
           "Access-Control-Allow-Origin": "*",
           "Cache-Control": "public, max-age=86400"
         }
@@ -584,7 +585,8 @@ export default {
       return new Response(JSON.stringify(catalog, null, 2), {
         headers: {
           "Content-Type": "application/json; charset=utf-8",
-          "Content-Language": "en",
+			"X-Content-Type-Options": "nosniff",
+			"Content-Language": "en",
           "Access-Control-Allow-Origin": "*",
           "Cache-Control": "public, max-age=31536000"
         }
@@ -597,8 +599,9 @@ export default {
     if (url.pathname === "/.well-known/mcp/manifest.json") {
       return new Response(JSON.stringify(manifest, null, 2), {
         headers: {
-          "Content-Type": "application/json; charset=utf-8",
-          "Content-Language": "en",
+          "Content-Type": "application/mcp+json; charset=utf-8",
+            "X-Content-Type-Options": "nosniff",
+			"Content-Language": "en",
           "Access-Control-Allow-Origin": "*",
           "Cache-Control": "public, max-age=86400"
         }
