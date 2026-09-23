@@ -32,12 +32,6 @@ import manifest from './manifest.json' assert { type: 'json' };
 import catalog from './catalog.json' assert { type: 'json' };
 
 
-export default {
-  async fetch(request: Request, env: Env) {
-    return env.MY_MCP.fetch(request, env);  // <-- pass env into DO
-  }
-};
-
 // ------------------------------------------------------------
 // DURABLE OBJECT: MCP SERVER
 // ------------------------------------------------------------
@@ -572,6 +566,7 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext) {
     const url = new URL(request.url);
 
+	  
     // ------------------------------------------------------------
     // MCP endpoint
     // ------------------------------------------------------------
