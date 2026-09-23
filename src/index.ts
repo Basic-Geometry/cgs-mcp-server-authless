@@ -580,7 +580,7 @@ export default {
     // ------------------------------------------------------------
     // ARD Capability Catalog
     // ------------------------------------------------------------
-    if (url.pathname === "/.well-known/catalog.json") {
+    if (url.pathname === "/.well-known/mcp/catalog.json") {
       return new Response(JSON.stringify(catalog, null, 2), {
         headers: {
           "Content-Type": "application/json; charset=utf-8",
