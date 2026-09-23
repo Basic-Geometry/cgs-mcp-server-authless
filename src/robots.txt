@@ -4,6 +4,6 @@ Allow:/
 Allow: /llms.txt
 Allow: /agents.txt
 Allow: /manifest.json
-Allow: /.well-known/ai-catalog.json
+Allow: /.well-known/catalog.json
 
 Sitemap: https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/sitemap.xml
