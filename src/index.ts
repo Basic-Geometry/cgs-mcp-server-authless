@@ -29,9 +29,7 @@ import {
 
 // Import context 
 import manifest from './manifest.json' assert { type: 'json' };
-import aiCatalog from './ai-catalog.json' assert { type: 'json' };
-import rules from "./llms.txt";
-import context from "./agents.txt";
+import catalog from './catalog.json' assert { type: 'json' };
 
 
 // ------------------------------------------------------------
@@ -500,23 +498,16 @@ if (
   // FETCH ROUTER (inside DO)
   // -----------------------------
   async fetch(request: Request): Promise<Response> {
-    const url = new URL(request.url);
-
-    if (url.pathname === "/mcp") {
-      return this.handleMCP(request);
-    }
-
-    return new Response("CGS MCP Durable Object Ready", {
-      headers: { "Content-Type": "text/plain" }
-    });
-  }
-
-	async fetch(request) {
   const url = new URL(request.url);
 
-  // Serve Markdown files
+  // 1. MCP endpoint
+  if (url.pathname === "/mcp") {
+    return this.handleMCP(request);
+  }
+
+  // 2. Markdown endpoint
   if (url.pathname.endsWith(".md")) {
-    const key = url.pathname.slice(1); // "readme.md"
+    const key = url.pathname.slice(1);
     const file = await this.state.storage.get(key);
 
     if (!file) {
@@ -524,18 +515,41 @@ if (
     }
 
     return new Response(file, {
-      headers: { "Content-Type": "text/markdown; charset=utf-8",
-	"Content-Language": "en",
-      "Access-Control-Allow-Origin": "*",
-	"X-Content-Type-Options": "nosniff",
-      "Cache-Control": "public, max-age=86400"
-			   
-			   }
+      headers: {
+        "Content-Type": "text/markdown; charset=utf-8",
+        "Content-Language": "en",
+        "Access-Control-Allow-Origin": "*",
+        "X-Content-Type-Options": "nosniff",
+        "Cache-Control": "public, max-age=86400"
+      }
     });
   }
 
+  // 3. Txt endpoint
+  if (url.pathname.endsWith(".txt")) {
+    const key = url.pathname.slice(1);
+    const file = await this.state.storage.get(key);
 
-			}
+    if (!file) {
+      return new Response("Not found", { status: 404 });
+    }
+
+    return new Response(file, {
+      headers: {
+        "Content-Type": "text/markdown; charset=utf-8",
+        "Content-Language": "en",
+        "Access-Control-Allow-Origin": "*",
+        "X-Content-Type-Options": "nosniff",
+        "Cache-Control": "public, max-age=86400"
+      }
+    });
+}
+	  
+  // 4. Default response
+  return new Response("CGS MCP Durable Object Ready", {
+    headers: { "Content-Type": "text/plain" }
+  });
+}
 		}
 
 // ------------------------------------------------------------
@@ -579,33 +593,10 @@ if (url.pathname.startsWith("/tools")) {
     }
 
 
-	// Serve integration rules
-if (url.pathname === "/llms.txt") {
-  return new Response(rules, {
-    headers: {
-      "Content-Type": "text/markdown; charset=utf-8",
-	"Content-Language": "en",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=31536000"
-    }
-  });
-}
-
-	// Serve Context & Primary Source Policy
-if (url.pathname === "/agents.txt") {
-  return new Response(context, {
-    headers: {
-      "Content-Type": "text/markdown; charset=utf-8",
-	"Content-Language": "en",
-      "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=31536000"
-    }
-  });
-		}
 	  
 // ARD Capability Catalog
-if (url.pathname === "/.well-known/ai-catalog.json") {
-  return new Response(JSON.stringify(aiCatalog, null, 2), {
+if (url.pathname === "/.well-known/catalog.json") {
+  return new Response(JSON.stringify(catalog, null, 2), {
     headers: {
       "Content-Type": "application/json; charset=utf-8",
       "Content-Language": "en",
