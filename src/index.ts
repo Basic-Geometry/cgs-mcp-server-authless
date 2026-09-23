@@ -510,7 +510,33 @@ if (
       headers: { "Content-Type": "text/plain" }
     });
   }
-				}
+
+	async fetch(request) {
+  const url = new URL(request.url);
+
+  // Serve Markdown files
+  if (url.pathname.endsWith(".md")) {
+    const key = url.pathname.slice(1); // "readme.md"
+    const file = await this.state.storage.get(key);
+
+    if (!file) {
+      return new Response("Not found", { status: 404 });
+    }
+
+    return new Response(file, {
+      headers: { "Content-Type": "text/markdown; charset=utf-8",
+	"Content-Language": "en",
+      "Access-Control-Allow-Origin": "*",
+	"X-Content-Type-Options": "nosniff",
+      "Cache-Control": "public, max-age=86400"
+			   
+			   }
+    });
+  }
+
+
+			}
+		}
 
 // ------------------------------------------------------------
 // CLOUDFLARE WORKER ROUTER
@@ -538,23 +564,7 @@ if (url.pathname.startsWith("/tools")) {
   return stub.fetch(mcpRequest);
 }
 
-
-	      // Serve markdown 
-	  if (url.pathname.endsWith(".md")) {
-  const key = url.pathname.slice(1); // "readme.md"
-  const file = await env.CGS.get(key);
-  if (!file) return new Response("Not found", { status: 404 });
-
-  return new Response(file, {
-    headers: {
-      "Content-Type": "text/markdown; charset=utf-8",
-	"Content-Language": "en",
-      "Access-Control-Allow-Origin": "*",
-	"X-Content-Type-Options": "nosniff",
-      "Cache-Control": "public, max-age=86400"
-}
-  });
-													 }
+							 
 	  
     // Serve manifest
     if (url.pathname === "/manifest.json") {
