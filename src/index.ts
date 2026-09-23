@@ -87,7 +87,7 @@ export class MyMCP extends McpServer {
 }
 	
   }
-}
+
 
 // ------------------------------------------------------------
   // ELICITATION HANDLERS 
