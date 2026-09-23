@@ -8,8 +8,8 @@
 	"main": "src/index.ts",
 "kv_namespaces": [
   { 
-"binding" = "CGS", 
-"id" = "c1704de1ade847769b0fb88c1f2c2546" 
+"binding": "CGS", 
+"id": "c1704de1ade847769b0fb88c1f2c2546" 
 }
 ],
     "assets": {
