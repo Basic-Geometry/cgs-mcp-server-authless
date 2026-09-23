@@ -576,6 +576,15 @@ export default {
       return stub.fetch(request);
     }
 
+	  // ------------------------------------------------------------
+// Markdown files served from KV via Durable Object
+// ------------------------------------------------------------
+if (url.pathname.endsWith(".md")) {
+  const id = env.MCP_OBJECT.idFromName("singleton");
+  const stub = env.MCP_OBJECT.get(id);
+  return stub.fetch(request);
+}
+	  
     // ------------------------------------------------------------
     // Tools endpoint (redirect to MCP)
     // ------------------------------------------------------------
