@@ -541,15 +541,17 @@ if (url.pathname.startsWith("/tools")) {
 
 	      // Serve markdown 
 	  if (url.pathname.endsWith(".md")) {
-  const file = await env.DOCS.get(url.pathname.slice(1)); // e.g. "readme.md"
+  const key = url.pathname.slice(1); // "readme.md"
+  const file = await env.CGS.get(key);
   if (!file) return new Response("Not found", { status: 404 });
 
   return new Response(file, {
-headers: {
+    headers: {
       "Content-Type": "text/markdown; charset=utf-8",
 	"Content-Language": "en",
       "Access-Control-Allow-Origin": "*",
-      "Cache-Control": "public, max-age=31536000"
+	"X-Content-Type-Options": "nosniff",
+      "Cache-Control": "public, max-age=86400"
 }
   });
 													 }
