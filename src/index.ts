@@ -50,10 +50,9 @@ export class MyMCP extends McpServer {
   constructor(state: DurableObjectState, env: Env) {
     super();
     this.state = state;
-    this.env = env;   // <-- store env so KV is available
+    this.env = env;
   }
 
-  // Safe async init in Durable Object
   state.blockConcurrencyWhile(async () => {
     try {
       if (typeof (this as any).onStart === "function") {
@@ -63,8 +62,7 @@ export class MyMCP extends McpServer {
       console.error("onStart failed:", e);
     }
   });
-  }
-
+}
   // ------------------------------------------------------------
   // ELICITATION HANDLERS 
   // ------------------------------------------------------------
