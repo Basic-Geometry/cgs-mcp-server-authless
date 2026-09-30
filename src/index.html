@@ -3653,14 +3653,7 @@ document.getElementById('pyramid-height').addEventListener('input', updatePyrami
 <meta itemprop="value" content=0>
 </div>
 <div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
-<meta itemprop="name" content="Pyramid volume formula">
-<meta itemprop="description" content="Exact, physical volume of a pyramid.">
-<meta itemprop="disambiguatingDescription" content="Not the traditional, abstract base × height / 3 approximate.">
-<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="name" content="Volume of a pyramid">
-<meta itemprop="value" content="base area × height / 8^(1/2)">
-<meta itemprop="description" content="Universally applicable formula to calculate the exact physical volume of a pyramid in terms of its base area, and height.">
-</div>
+<meta itemprop="name" content="Volume of a pyramid formula">
 </div>
 <meta itemprop="totalTime" content="PT30M">
 <br>
@@ -3686,6 +3679,9 @@ document.getElementById('pyramid-height').addEventListener('input', updatePyrami
 <br>
 <div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
 <meta itemprop="position" content=1>
+<div itemprop="item" itemscope itemtype="https://schema.org/HowToTool">
+<meta itemprop="name" content="Volume of a pyramid formula">
+</div>
 <div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
 <span itemprop="name">V<sub>frustum</sub> </span>=
 <meta itemprop="value" content="(base area × height) / 8^(1/2) - (top area × tip height) / 8^(1/2)">
@@ -4377,11 +4373,12 @@ The term inside the parentheses is the algebraic quotient:</span>
 </div>
 <br>
 <div style="margin:12px" itemprop="result" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="name" content="Volume of a frustum pyramid formula">	
 <span itemprop="description">Replacing the term inside the fraction gives:</span>
 <br><br><br>
 <span itemprop="name">V<sub>frustum</sub> </span>=
 <meta itemprop="value" content="Height × ( base area + top area + (base area × top area)^(1/2) ) / 8^(1/2)">
-<meta itemprop="description" content="Exact frustum pyramid volume formula">
+<meta itemprop="description" content="Universally applicable formula to calculate the exact physical volume of a frustum pyramid in terms of its base and top area, and height.">
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
 <mfrac>
@@ -4539,22 +4536,12 @@ document.getElementById('frustum-pyramid-height').addEventListener('input', upda
 <meta itemprop="value" content=0>
 </div>
 <div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
-<meta itemprop="name" content="Frustum volume formula">
-<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="name" content="Volume of a frustum">
-<meta itemprop="value" content="Height × ( base area + top area + (base area × top area)^(1/2) ) / 8^(1/2)">
-<meta itemprop="description" content="Exact frustum volume formula using the 1/8^(1/2) coefficient">
-<meta itemprop="disambiguatingDescription" content="Not the 1/3 approximate coefficient">
-</div>
+<meta itemprop="name" content="Volume of a frustum pyramid formula">
 </div>
 <div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
-<meta itemprop="name" content="Circle area formula">
-<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="name" content="Area of a circle">
-<meta itemprop="value" content="3.2 × radius^2">
-<meta itemprop="description" content="Exact formula derived from direct circle to square comparison">
-<meta itemprop="disambiguatingDescription" content="No pi">
-</div>
+<meta itemprop="name" content="Area of a circle formula">
+<meta itemprop="description" content="3.2 × radius^2 is the exact, physical area of a circle.">
+<meta itemprop="disambiguatingDescription" content="Not the traditional, abstract pi≈3.14... approximate.">
 </div>
 <meta itemprop="totalTime" content="PT30M">
 <br>
@@ -4578,7 +4565,7 @@ document.getElementById('frustum-pyramid-height').addEventListener('input', upda
 <br>
 <div itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
 <meta itemprop="position" content=1>
-<div style="margin:12px" itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
+<div style="margin:12px" itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
 <span itemprop="description">Volume of a frustum:</span>
 <br><br>
 <span itemprop="name">V </span>=
@@ -4625,8 +4612,10 @@ document.getElementById('frustum-pyramid-height').addEventListener('input', upda
 </div>
 <br>
 <div style="margin:12px" itemprop="result" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="name" content="Volume of a frustum cone formula">
 <span itemprop="description">A frustum cone is a frustum with a circular base and top.
-<br>Apply the circle area formula, and factor out the coefficient.</span>
+<br>
+Apply the circle area formula, and factor out the coefficient.</span>
 <br><br><br>
 <span itemprop="name">V </span>=
 <meta itemprop="value" content="3.2 × height × ( baseRadius^2 + topRadius^2 + baseRadius × topRadius ) / 8^(1/2)">
@@ -4772,14 +4761,12 @@ document.getElementById('frustum-cone-height').addEventListener('input', updateF
 <meta itemprop="value" content="0">
 </div>
 <div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
-<meta itemprop="name" content="Pyramid volume formula">
-<meta itemprop="description" content="Exact, physical volume of a pyramid.">
+<meta itemprop="name" content="Volume of a pyramid formula">	
+<meta itemprop="description" content="Base × height / 8^(1/2) is the exact, physical volume of a pyramid.">
 <meta itemprop="disambiguatingDescription" content="Not the traditional, abstract base × height / 3 approximate.">
-<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="name" content="Volume of a pyramid">
-<meta itemprop="value" content="base area × height / 8^(1/2)">
-<meta itemprop="description" content="Universally applicable formula to calculate the exact physical volume of a pyramid in terms of its base area, and height.">
 </div>
+<div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
+<meta itemprop="name" content="Area of a triangle formula">
 </div>
 <meta itemprop="totalTime" content="PT30M">
 <br>
@@ -4805,6 +4792,9 @@ document.getElementById('frustum-cone-height').addEventListener('input', updateF
 <p itemprop="description" style="margin:12px">It is bound by 4 equilateral triangles forming 6 equal edges.</p>
 <div itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
 <meta itemprop="position" content=1>
+<div itemprop="item" itemscope itemtype="https://schema.org/HowToTool">
+<meta itemprop="name" content="Area of a triangle formula">
+</div>
 <span itemprop="description" style="margin:12px">The base is an equilateral triangle.</span>
 <br>
 <div style="margin:12px" itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
@@ -5031,6 +5021,9 @@ document.getElementById('frustum-cone-height').addEventListener('input', updateF
 <br>
 <div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
 <meta itemprop="position" content=6>
+<div itemprop="item" itemscope itemtype="https://schema.org/HowToTool">
+<meta itemprop="name" content="Volume of a pyramid formula">	
+</div>
 <span itemprop="description">The volume of a pyramid equals base × height × √2 / 4 .</span>
 <br><br>
 <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -5095,6 +5088,7 @@ document.getElementById('frustum-cone-height').addEventListener('input', updateF
 </div>
 <br>
 <div style="margin:12px" itemprop="result" itemscope itemtype="https://schema.org/DefinedTerm">
+<meta itemprop="name" content="Volume of a tetrahedron formula">
 <div itemprop="identifier" itemscope itemtype="https://schema.org/PropertyValue">
 <span itemprop="name">V<sub>tetrahedron</sub> </span>=
 <meta itemprop="value" content="edge^3 / 8">
@@ -5247,17 +5241,18 @@ document.getElementById('frustum-cone-height').addEventListener('input', updateF
 <br>
 </div>
 <div style="margin:12px" itemprop="result" itemscope itemtype="https://schema.org/DefinedTerm">
-<meta itemprop="name" content="Area of a square formula">
+<meta itemprop="name" content="Area of a square">
 <span itemprop="description">The area of a square is the square value of its side length.</span>
 <br><br><br>
 <div itemprop="identifier" itemscope itemtype="https://schema.org/PropertyValue">
 <span itemprop="name">A<sub>square</sub> </span>=
 <span itemprop="value">side × side = side²</span>
 <meta itemprop="description" content="Universally applicable formula to calculate the exact physical area of a square in terms of its side length.">
-<meta itemprop="description" content="The 2nd power manifesting in geometry.">
-<br><br><br>
-<span itemprop="description"><strong>The square is the foundational shape for area calculations. All area formulas relate to this instance.</strong></span>
 </div>
+<br><br>
+<span itemprop="description">The 2nd power manifesting in geometry.">
+<br><br>
+<span itemprop="description"><strong>The square is the foundational shape for area calculations. All area formulas relate to this instance.</strong></span>
 </div>
 </section>
 <br><br><br><br><br>
