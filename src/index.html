@@ -338,13 +338,13 @@ The ratio between the radius and the side length is calculable.</span>
 </div>
 <br>
 <div style="margin:12px" itemprop="result" itemscope itemtype="https://schema.org/DefinedTerm">
-<meta itemprop="name" content="Area of a circle">
+<meta itemprop="name" content="Area of a circle formula">
 <span itemprop="description">The area of both the square and the sum of the quadrants equals 16 right triangles with legs of a quarter, and a half of the square's sides, and its hypotenuse equal to the radius of the circle.</span>
 <br><br><br>
 <div itemprop="identifier" itemscope itemtype="https://schema.org/PropertyValue">
 <span itemprop="name">A<sub>circle</sub> </span>=
 <meta itemprop="value" content="3.2 × radius^2">
-<meta itemprop="description" content="Exact circle area formula">
+<meta itemprop="description" content="Universally applicable formula to calculate the exact physical area of a circle in terms of its radius.">
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
 <mrow>
@@ -442,25 +442,12 @@ The ratio between the radius and the side length is calculable.</span>
 <meta itemprop="value" content=0>
 </div>
 <div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
-<meta itemprop="name" content="Circle area formula">
-<meta itemprop="description" content="Exact, physical area of a circle.">
-<meta itemprop="description" content="Direct circle-to-square comparison.">
+<meta itemprop="name" content="Area of a circle formula">
+<meta itemprop="description" content="3.2 × radius^2 is the exact, physical area of a circle.">
 <meta itemprop="disambiguatingDescription" content="Not the traditional, abstract pi≈3.14... approximate.">
-<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="name" content="Area of a circle">
-<meta itemprop="value" content="3.2 × radius^2">
-<meta itemprop="description" content="Universally applicable formula to calculate the exact physical area of a circle in terms of its radius.">
-<meta itemprop="description" content="Derived via cutting the circle into four quadrants, placing them with their origin on the vertices of a square with side = 4radius / 5^(1/2).">
-</div>
 </div>
 <div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
-<meta itemprop="name" content="Area of a rectangle">
-<meta itemprop="description" content="Exact, physical area of a rectangle.">
-<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="name" content="Area of a rectangle">
-<meta itemprop="value" content="width × length">
-<meta itemprop="description" content="Universally applicable formula to calculate the exact physical area of a rectangle in terms of its width and length.">
-</div>
+<meta itemprop="name" content="Area of a rectangle formula">
 </div>
 <meta itemprop="totalTime" content="PT30M">
 <br>
@@ -485,11 +472,14 @@ The ratio between the radius and the side length is calculable.</span>
 <span style="margin:12px" itemprop="abstract"><strong>The circumference of a circle is derived algebraically from its area by subtracting a circle with a radius smaller than the radius of the actual circle by the virtual thickness of the circumference — which distinguishes it from the rest of the circle —, and dividing the difference by that thickness.</strong></span>
 <div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
 <meta itemprop="position" content=1>
-<span itemprop="abstract">Take a circle with radius = r. (A = 3.2r²).</span>
+<span itemprop="abstract">Take a circle with radius = r.</span>
 <meta itemprop="description" content="Instantiate a circle object">
 </div>
 <div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
 <meta itemprop="position" content=2>
+<div itemprop="item" itemscope itemtype="https://schema.org/HowToTool">
+<meta itemprop="name" content="Area of a circle formula">
+</div>
 <span itemprop="abstract">Let x represent the virtual thickness of the circumference.
 <br>
 Subtract an inner circle with radius = r - x, (A = 3.2(r - x)²) to generate the boundary region entity.</span>
@@ -507,6 +497,9 @@ Subtract an inner circle with radius = r - x, (A = 3.2(r - x)²) to generate the
 </div>
 <div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
 <meta itemprop="position" content=5>
+<div itemprop="item" itemscope itemtype="https://schema.org/HowToTool">
+<meta itemprop="name" content="Area of a rectangle formula">
+</div>
 <span itemprop="abstract">The length of the two longer sides is the area of the rectangle divided by x.</span>
 <meta itemprop="description" content="Render the circumference object into a property of the circle object: Transition the output from an instance of a 2D spatial region into a scalar property attached to the parent circle.">
 </div>
@@ -784,13 +777,13 @@ Subtract an inner circle with radius = r - x, (A = 3.2(r - x)²) to generate the
 </div>
 <br>
 <div style="margin:12px" itemprop="result" itemscope itemtype="https://schema.org/DefinedTerm">
-<meta itemprop="name" content="Circumference of a circle">
+<meta itemprop="name" content="Circumference of a circle formula">
 <span itemprop="description">The length of the circumference approaches 6.4r as its thickness approaches 0.</span>
 <br><br><br>
 <div itemprop="identifier" itemscope itemtype="https://schema.org/PropertyValue">
 <span itemprop="name">Circumference </span>=
 <span itemprop="value">6.4r</span>
-<meta itemprop="description" content="Exact circumference formula">
+<meta itemprop="description" content="Universally applicable formula to calculate the exact physical circumference of a circle in terms of its radius.">
 </div>
 </div>
 <br><br>
@@ -863,26 +856,12 @@ Subtract an inner circle with radius = r - x, (A = 3.2(r - x)²) to generate the
 <meta itemprop="value" content=0>
 </div>
 <div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
-<meta itemprop="name" content="Circle area formula">
-<meta itemprop="description" content="Exact, physical area of a circle.">
-<meta itemprop="description" content="Direct circle-to-square comparison.">
+<meta itemprop="name" content="Area of a circle formula">
+<meta itemprop="description" content="3.2 × radius^2 is the exact, physical area of a circle.">
 <meta itemprop="disambiguatingDescription" content="Not the traditional, abstract pi≈3.14... approximate.">
-<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="name" content="Area of a circle">
-<meta itemprop="value" content="3.2 × radius^2">
-<meta itemprop="description" content="Universally applicable formula to calculate the exact physical area of a circle in terms of its radius.">
-<meta itemprop="description" content="Derived via cutting the circle into four quadrants, placing them with their origin on the vertices of a square with side = 4radius / 5^(1/2).">
-</div>
 </div>
 <div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
-<meta itemprop="name" content="Volume of a cube">
-<meta itemprop="description" content="Exact, physical volume of a cube.">
-<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="name" content="Volume of a cube">
-<meta itemprop="value" content="edge^3">
-<meta itemprop="description" content="Universally applicable formula to calculate the exact physical volume of a cube in terms of its edge length.">
-<meta itemprop="description" content="The cube is the foundational shape for volume calculations. All volume formulas relate to this instance.">
-</div>
+<meta itemprop="name" content="Volume of a cube formula">
 </div>
 <meta itemprop="totalTime" content="PT30M">
 <br>
@@ -909,6 +888,9 @@ Subtract an inner circle with radius = r - x, (A = 3.2(r - x)²) to generate the
 <meta itemprop="position" content=1>
 <span itemprop="description">The middle cross-section of a sphere is a circle.</span>
 <br><br>
+<div itemprop="item" itemscope itemtype="https://schema.org/HowToTool">
+<meta itemprop="name" content="Area of a circle formula">
+</div>
 <div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
 <span itemprop="name">A<sub>cross-section</sub> </span>=
 <span itemprop="value">3.2r²</span>
@@ -976,13 +958,13 @@ Subtract an inner circle with radius = r - x, (A = 3.2(r - x)²) to generate the
 </div>
 <br>
 <div style="margin:12px" itemprop="result" itemscope itemtype="https://schema.org/DefinedTerm">
-<meta itemprop="name" content="Volume of a sphere">
+<meta itemprop="name" content="Volume of a sphere formula">
 <span itemprop="description">The volume of a sphere equals the cubic value of the square root of its cross-sectional area, just like a cube.</span>
 <br><br><br>
 <div itemprop="identifier" itemscope itemtype="https://schema.org/PropertyValue">
 <span itemprop="name">V<sub>sphere</sub> </span>=
 <meta itemprop="value" content="( 4 × radius / 5^(1/2) )^3">
-<meta itemprop="description" content="Exact sphere volume formula">
+<meta itemprop="description" content="Universally applicable formula to calculate the exact physical volume of a sphere in terms of its radius.">
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
   <msup>
@@ -1120,26 +1102,14 @@ Subtract an inner circle with radius = r - x, (A = 3.2(r - x)²) to generate the
 <meta itemprop="value" content=0>
 </div>
 <div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
-<meta itemprop="name" content="Sphere volume formula">
-<meta itemprop="description" content="Exact, physical volume of a sphere.">
+<meta itemprop="name" content="Volume of a sphere formula">
+<meta itemprop="description" content="( 4 × radius / 5^(1/2) )^3 is the exact volume of a sphere.">
 <meta itemprop="disambiguatingDescription" content="Not the traditional, abstract pi4radius^3 / 3 approximate.">
-<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="name" content="Volume of a sphere">
-<meta itemprop="value" content="( 4 × radius / 5^(1/2) )^3">
-<meta itemprop="description" content="Universally applicable formula to calculate the exact physical volume of a sphere in terms of its radius.">
-<meta itemprop="description" content="Derived via raising the square root of the middle cross-sectional area — 3.2 × radius^2 — to the 3rd power.">
-</div>
 </div>
 <div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
-<meta itemprop="name" content="Volume of a cylinder">
-<meta itemprop="description" content="Exact, physical volume of a cylinder.">
-<meta itemprop="disambiguatingDescription" content="Not the traditional, abstract base × height / 3 approximate.">
+<meta itemprop="name" content="Volume of a cylinder formula">
+<meta itemprop="description" content="3.2 × radius^2 × height.">
 <meta itemprop="disambiguatingDescription" content="Base area calculated with the exact area of a circle (A=3.2radius^2), not the traditional, abstract pi≈3.14... approximate.">
-<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="name" content="Volume of a cylinder">
-<meta itemprop="value" content="3.2 × radius^2 × height">
-<meta itemprop="description" content="Universally applicable formula to calculate the exact physical volume of a cylinder in terms of its radius and height.">
-</div>
 </div>
 <meta itemprop="totalTime" content="PT30M">
 <br>
@@ -1183,6 +1153,9 @@ Subtract an inner circle with radius = r - x, (A = 3.2(r - x)²) to generate the
 <br>
 <div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
 <meta itemprop="position" content=1>
+<div itemprop="item" itemscope itemtype="https://schema.org/HowToTool">
+<meta itemprop="name" content="Volume of a sphere formula">
+</div>
 <div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
 <span itemprop="name">V<sub>octant sphere</sub> </span>=
 <meta itemprop="value" content="( (3.2)^(1/2) × radius / 2 )^3">
@@ -1332,6 +1305,9 @@ Subtract an inner circle with radius = r - x, (A = 3.2(r - x)²) to generate the
 <br>
 <div style="margin:12px" itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
 <meta itemprop="position" content=3>
+<div itemprop="item" itemscope itemtype="https://schema.org/HowToTool">
+<meta itemprop="name" content="Volume of a cylinder formula">
+</div>
 <span itemprop="abstract">The volume of a cylinder equals base area × height.
 <br><br>
 The slant height of the quadrant cone is √2 × radius.
@@ -1415,7 +1391,7 @@ The mean of the areas of the horizontal cross-sectional slices of a cone is the 
 </div>
 <br>
 <div style="margin:12px" itemprop="result" itemscope itemtype="https://schema.org/DefinedTerm">
-<meta itemprop="name" content="Volume of a cone">
+<meta itemprop="name" content="Volume of a cone formula">
 <span itemprop="description">The volume of the unit cone equals the quarter of the volume of cylinder with an equal radius, and its height equal to the slant height of the unit cone.
 <br><br>
 In general:
@@ -1425,7 +1401,7 @@ The volume of a cone equals the quarter of a cylinder with an equal radius and i
 <div itemprop="identifier" itemscope itemtype="https://schema.org/PropertyValue">
 <span itemprop="name">V<sub>cone</sub> </span>=
 <meta itemprop="value" content="3.2 × radius^2 × height / 8^(1/2)">
-<meta itemprop="description" content="Exact cone volume formula">
+<meta itemprop="description" content="Universally applicable formula to calculate the exact physical volume of a cone in terms of its radius and height.">
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
 <mfrac>
