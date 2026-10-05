@@ -115,7 +115,7 @@
 </div>
 <main itemscope itemtype="https://schema.org/LearningResource https://schema.org/MathSolver" id="cgs">
 <meta itemprop="name" content="Core Geometric System ™">
-<meta itemprop="dateModified" content="2026-10-01T01:42:29+02:00">
+<meta itemprop="dateModified" content="2026-10-05T23:58:29+02:00">
 <meta itemprop="accessMode" content="mathOnVisual">
 <meta itemprop="accessMode" content="textual">
 <meta itemprop="accessMode" content="visual">
@@ -6202,26 +6202,27 @@ These values are exact, rational, and logically derived. They can be verified nu
 Since the true ratio is exactly 3.2, and that is a rational number, then we can — and should — write it as it is. Let the pi remain in the history books. Geometry deserves better.</strong></p>
 <br><br>
 <div id="correction">
+<meta itemprop="description" content="pi≠Circumference/diameter=Area/radius^2=3.2≈3.14≈pi">
 <math xmlns="http://www.w3.org/1998/Math/MathML">
     <mrow>
       <mtext>pi</mtext>
 	<mo>≠</mo>
+		<mfrac>
+        <mrow><mtext>Circumference</mtext></mrow>
+        <mrow><mtext>diameter</mtext></mrow>
+		</mfrac>
+		<mo>=</mo>
       <mfrac>
         <mrow><mtext>Area</mtext></mrow>
         <mrow><msup><mtext>radius</mtext><mn>2</mn></msup></mrow>
       </mfrac>
 	<mo>=</mo>
-      <mn>3.2</mn>
-      <mo>=</mo>
-      <mfrac>
-        <mrow><mtext>Circumference</mtext></mrow>
-        <mrow><mtext>diameter</mtext></mrow>
-      </mfrac>
+      <mn>3.2</mn>      
       <mo>&#x2248;</mo>
       <mn>3.14</mn>
       <mo>&#x2248;</mo>
       <mtext>pi</mtext>
-    </mrow>
+	</mrow>
   </math>
 </div>
 <br><br>
@@ -6229,11 +6230,10 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 </section>
 </section>
 <br><br><br><br>
-<section style="margin:12px" itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="circle_area_proof">
-<h3 itemprop="name">The widely used circle area formula ( A = pi × r² ) is not a result of direct geometric comparison, nor a direct result of calculus.</h3>
-<meta itemprop="eduQuestionType" content="Circle area calculation">
+<section style="margin:12px" itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="basic_circle_area_proof">
+<meta itemprop="name" content="Basic proof of 3.2radius^2 is the exact area of a circle">
+<meta itemprop="eduQuestionType" content="Circle area proof">
 <div itemprop="actionProcess" itemscope itemtype="https://schema.org/HowTo">
-<meta itemprop="name" content="Prove that the area of a circle equals exactly 3.2radius^2">
 <div itemprop="estimatedCost" itemscope itemtype="https://schema.org/MonetaryAmount">
 <meta itemprop="currency" content="USD">
 <meta itemprop="value" content="0">
@@ -6244,14 +6244,16 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 <meta itemprop="name" content="Area of a circle">
 <meta itemprop="value" content="3.2 × radius^2">
 <meta itemprop="description" content="Exact formula derived from direct circle to square comparison">
-<meta itemprop="disambiguatingDescription" content="No pi">
 </div>
 </div>
 <meta itemprop="totalTime" content="PT30M">
+<h3 itemprop="disambiguatingDescription">The widely used circle area formula ( A = pi × r² ) is not a result of direct geometric comparison, nor a direct result of calculus.</h3>
 <br>
 <span itemprop="disambiguatingDescription">The traditional formula is a result of multiplying the approximate circumference formula C = 2pi × r by half the radius, treating the area as the sum of infinitesimal rings. While that method is algebraically valid, it relies on the approximate circumference and bypasses the geometric logic that defines area: the comparison to a square.</span>
-<br><br><br>
-<span itemprop="description">In the quadrant layout when the overlapping area equals to the uncovered area in the middle, the sum of the areas of the quadrants is equal to the area of the square. That square represents the area of the circle in square units.</span>
+<br><br>
+<span itemprop="description">Instead of relying on that circumference‑based amendment, this proof follows the direct circle–square comparison described earlier. We compare a square and a circle in a quadrant layout, where the arc‑intersection condition fixes the side to radius ratio as 4/√5. With that ratio established, the area balance is determined entirely through the areas that arise in this configuration: the curvilinear quarter of the uncovered region and the two overlapping segment halves along each side.</span>
+<br><br>
+<span itemprop="abstract">In the quadrant layout when the overlapping area equals to the uncovered area in the middle, the sum of the areas of the quadrants is equal to the area of the square. That square represents the area of the circle in square units.</span>
 <br><br>
 <figure itemprop="image" class="imgbox" itemscope itemtype="http://schema.org/ImageObject">
     <img class="center-fit" src="equityFigure.png" alt="Circle area">
@@ -6274,7 +6276,11 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 <div itemprop="step" itemscope itemtype="https://schema.org/HowToStep" id="uncovered">
 <meta itemprop="position" content="1">
 <div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
-<span itemprop="name">Quarter of the uncovered area in the middle </span>=
+<span itemprop="name">Quarter of the uncovered curvilinear area in the middle</span>:
+<br>
+<span itemprop="description">(Defined by points with reference to the origin (0, 0): 
+<br>
+(0, 0), (1/√5, 0), (0, 1/√5))</span>
 <meta itemprop="value" content="3.2 × r^2 / 4 - ( 3.2 × r^2 × ( ( 90deg. - 2 × Atan( 1 / 2 ) ) / 360deg. ) + 2 × ( ( sqrt(3.2) / 4 ) × ( sqrt(3.2) / 2 ) / 2 ) )"> 
 <meta itemprop="description" content="Quarter of the area in the middle of the square, uncovered by the quadrant circles.">
 <br><br>
@@ -6363,14 +6369,20 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 <div itemprop="step" itemscope itemtype="https://schema.org/HowToStep" id="overlap">
 <meta itemprop="position" content="2">
 <div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
-<span itemprop="name">The area of an overlapping section </span>=
+<span itemprop="name">The area of 2 overlapping segment halves</span>:
+<br>
+<span itemprop="description">(Defined by points with reference to the origin (0, 0): 
+<br>
+(1/√5, 0), (2/√5, 0), (2/√5, 1-2/√5); 
+<br>
+(0, 1/√5), (0, 2/√5), (1-2/√5, 2/√5))</span>
 <meta itemprop="value" content="2 × ( 3.2 × r^2 × ( ( 90deg. - Atan( 1 / 2 ) ) / 360deg. ) - ( ( sqrt(3.2) / 4 ) × ( sqrt(3.2) / 2 ) / 2 ) )"> 
 <meta itemprop="description" content="Quarter of the total overlapping area.">
 <br><br>
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
 <mn>2</mn>
-<mo>×</mo>
+<mo>&#x2062;</mo> <!-- invisible times -->
 <mrow>
 <mo>(</mo>
 <mn>3.2</mn>
@@ -6436,7 +6448,7 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 <meta itemprop="position" content="3">
 <div itemprop="item" itemscope itemtype="https://schema.org/HowToTip">
 <meta itemprop="position" content="1">
-<p itemprop="description">The equation can be simplified algebraically.</p>
+<span itemprop="description">The equation can be simplified algebraically.</span>
 </div>
 <br><br>
 <div>
@@ -6456,7 +6468,7 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 <mo>&#xB0;</mo>
 <mo>-</mo>
 <mn>2</mn>
-<mo>×</mo>
+<mo>&#x2062;</mo> <!-- invisible times -->
 <mo>arctan</mo>
 <mo>&#x2061;</mo>
 <mrow>
@@ -6483,7 +6495,7 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 <mo>=</mo>
 <mrow>
 <mn>2</mn>
-<mo>×</mo>
+<mo>&#x2062;</mo> <!-- invisible times -->
 <mo>(</mo>
 <mfrac>
 <mrow>
@@ -6524,7 +6536,7 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 <div itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
 <meta itemprop="position" content="4">
 <div>
-<p itemprop="description">Simplifying further by adding 1/8 :</p>
+<span itemprop="description">Simplifying further by adding 1/8 :</span>
 <br>
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
@@ -6540,7 +6552,7 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 <mo>&#xB0;</mo>
 <mo>-</mo>
 <mn>2</mn>
-<mo>×</mo>
+<mo>&#x2062;</mo> <!-- invisible times -->
 <mo>arctan</mo>
 <mo>&#x2061;</mo>
 <mrow>
@@ -6560,7 +6572,7 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 <mo>)</mo>
 <mo>=</mo>
 <mn>2</mn>
-<mo>×</mo>
+<mo>&#x2062;</mo> <!-- invisible times -->
 <mfrac>
 <mrow>
 <mo>arctan</mo>
@@ -6587,7 +6599,7 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 <div itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
 <meta itemprop="position" content="5">
 <div>
-<p itemprop="description">Substituting 90° / 360° for 1 / 4 :</p>
+<span itemprop="description">Substituting 90° / 360° for 1 / 4 :</span>
 <br>
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
@@ -6609,7 +6621,7 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 <mo>&#xB0;</mo>
 <mo>-</mo>
 <mn>2</mn>
-<mo>×</mo>
+<mo>&#x2062;</mo> <!-- invisible times -->
 <mo>arctan</mo>
 <mo>&#x2061;</mo>
 <mrow>
@@ -6629,7 +6641,7 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 <mo>)</mo>
 <mo>=</mo>
 <mn>2</mn>
-<mo>×</mo>
+<mo>&#x2062;</mo> <!-- invisible times -->
 <mfrac>
 <mrow>
 <mo>arctan</mo>
@@ -6656,7 +6668,7 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 <div itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
 <meta itemprop="position" content="6">
 <div>
-<p itemprop="description">Simplifying further:</p>
+<span itemprop="description">Simplifying further:</span>
 <br>
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
@@ -6718,6 +6730,375 @@ Since the four quadrants are the original pieces of the circle, the circle area 
 <meta itemprop="contentUrl" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/circleArea.png">
 </figure>
 </section>
+<br><br><br>
+<section style="margin:12px" itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="complex_circle_area_proof">
+<meta itemprop="name" content="Complex proof of 3.2radius^2 is the exact area of a circle">
+<meta itemprop="eduQuestionType" content="Circle area proof">
+<div itemprop="actionProcess" itemscope itemtype="https://schema.org/HowTo">
+<div itemprop="estimatedCost" itemscope itemtype="https://schema.org/MonetaryAmount">
+<meta itemprop="currency" content="USD">
+<meta itemprop="value" content="0">
+</div>
+<div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
+<meta itemprop="name" content="Circle area formula">
+<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="name" content="Area of a circle">
+<meta itemprop="value" content="3.2 × radius^2">
+<meta itemprop="description" content="Exact formula derived from direct circle to square comparison">
+</div>
+</div>
+<meta itemprop="totalTime" content="PT30M">
+<h3 itemprop="disambiguatingDescription">This second, more comprehensive proof illustrates the same 4/√5 side‑to‑radius ratio, but in a different constructive layout.</h3>
+<br>
+<div itemprop="abstract">
+<span>Here, four smaller squares are used, each having exactly one quarter of the area of the equiareal square. Each smaller square spans between the origin and the points where the circle’s arc intersects the sides of the equiareal square. Because of this placement, the overlapping regions of the smaller squares add up to precisely one quarter of the equiareal square.
+<br><br>
+This configuration proves the circle’s exact area in two independent ways. The areas are perfectly balanced if</span>
+<ul style="margin:6px">
+    <li>1. the parts of the circle uncovered by the smaller squares (the four curvilinear regions at the vertices and the four circular segments lying outside the equiareal square) equal the area where the smaller squares overlap, and</li>
+	<li>2. the circular segments lying outside the equiareal square equal the straight‑edged vertex regions lying outside the circle.</li>
+</ul>
+</div>
+<br>
+<figure itemprop="image" class="imgbox" itemscope itemtype="http://schema.org/ImageObject">
+    <img class="center-fit" src="equityFigure2.png" alt="Circle area">
+<div itemprop="creator" itemscope itemtype="https://schema.org/Person">
+<meta itemprop="familyName" content="Gaál">
+<meta itemprop="givenName" content="Sándor">
+</div>
+<div itemprop="copyrightHolder" itemscope itemtype="https://schema.org/Person">
+<meta itemprop="familyName" content="Gaál">
+<meta itemprop="givenName" content="Sándor">
+</div>
+<meta itemprop="copyrightNotice" content="® All rights reserved">
+<meta itemprop="copyrightYear" content="2026">
+<meta itemprop="creditText" content="Made with the help of Vectorink.io">
+<link itemprop="license" href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">
+<meta itemprop="acquireLicensePage" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy">
+<meta itemprop="contentUrl" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/equityFigure2.png">
+</figure>
+<br>
+<div itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+<meta itemprop="position" content="1">
+<div itemprop="description">
+<span>Defining structural points for objects with reference to the origin (0, 0):</span>
+<br><br>
+<span>A: (2/√5, 1/√5) An intersection point of the arc and a side of the equiareal square.</span>
+<br><br>
+<span>B: (√2/2, √2/2) An intersection point of the arc and the diagonal of the equiareal square.</span>
+<br><br>
+<span>C: (1/√5, 1/√5) An intersection point of two smaller squares, and the diagonal of the equiareal square.</span>
+<br><br>
+<span>D: (0, 1) An intersection point of the arc and the centerline.</span>
+<br><br>
+<span>E: (-1/√5, 2/√5) An intersection point of the arc and a side of the equiareal square.</span>
+<br><br>
+<span>F: (0, 2/√5) An intersection point of the centerline and a side of the equiareal square.</span>
+</div>
+</div>
+<br><br>
+<div itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+<meta itemprop="position" content="2">
+<div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="name" content="half area of an outlying segment">
+<meta itemprop="value" content="3.2×atan(1/2)/360deg.-1/5">
+<span itemprop="description">Calculate the half area of an outlying segment by subtracting triangle OEF from circle slice ODE.</span>
+<br><br>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mn>3.2</mn>
+<mo>&#x2062;</mo> <!-- invisible times -->
+<mfrac>
+<mrow>
+<mo>arctan</mo>
+<mo>&#x2061;</mo>
+<mo>(</mo>
+<mfrac>
+<mn>1</mn>
+<mn>2</mn>
+</mfrac>
+<mo>)</mo>
+</mrow>
+<mrow>
+<mn>360</mn>
+<mo>&#xB0;</mo>
+</mrow>
+</mfrac>
+<mo>-</mo>
+<mfrac>
+<mrow>
+<mfrac>
+<mn>1</mn>
+<msqrt>
+<mn>5</mn>
+</msqrt>
+</mfrac>
+<mo>×</mo>
+<mfrac>
+<mn>2</mn>
+<msqrt>
+<mn>5</mn>
+</msqrt>
+</mfrac>
+</mrow>
+<mn>2</mn>
+</mfrac>
+</mrow>
+</math>
+</div>
+</div>
+<br><br>
+<div itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+<meta itemprop="position" content="3">
+<div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
+<meta itemprop="name" content="half of an uncovered curvilinear area">
+<meta itemprop="value" content="3.2×(45deg.-atan(1/2))/360deg.-1/10">
+<span itemprop="description">Calculate the half of an uncovered curvilinear area by subtracting triangle ACO from circle slice ABO.</span>
+<br><br>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mn>3.2</mn>
+<mo>&#x2062;</mo> <!-- invisible times -->
+<mfrac>
+<mrow>
+<mn>45</mn>
+<mo>&#xB0;</mo>
+<mo>-</mo>
+<mo>arctan</mo>
+<mo>&#x2061;</mo>
+<mo>(</mo>
+<mfrac>
+<mn>1</mn>
+<mn>2</mn>
+</mfrac>
+<mo>)</mo>
+</mrow>
+<mrow>
+<mn>360</mn>
+<mo>&#xB0;</mo>
+</mrow>
+</mfrac>
+<mo>-</mo>
+<mfrac>
+<mrow>
+<mfrac>
+<mn>1</mn>
+<msqrt>
+<mn>5</mn>
+</msqrt>
+</mfrac>
+<mo>×</mo>
+<mfrac>
+<mn>1</mn>
+<msqrt>
+<mn>5</mn>
+</msqrt>
+</mfrac>
+</mrow>
+<mn>2</mn>
+</mfrac>
+</mrow>
+</math>
+</div>
+</div>
+<br><br>
+<div itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+<meta itemprop="position" content="4">
+<span itemprop="description">Add an outlying segment and an uncovered curvilinear area:</span>
+<br><br>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mn>2</mn>
+<mo>&#x2062;</mo> <!-- invisible times -->
+<mo>(</mo>
+<mn>3.2</mn>
+<mo>&#x2062;</mo> <!-- invisible times -->
+<mfrac>
+<mrow>
+<mo>arctan</mo>
+<mo>&#x2061;</mo>
+<mo>(</mo>
+<mfrac>
+<mn>1</mn>
+<mn>2</mn>
+</mfrac>
+<mo>)</mo>
+</mrow>
+<mrow>
+<mn>360</mn>
+<mo>&#xB0;</mo>
+</mrow>
+</mfrac>
+<mo>-</mo>
+<mfrac>
+<mrow>
+<mfrac>
+<mn>1</mn>
+<msqrt>
+<mn>5</mn>
+</msqrt>
+</mfrac>
+<mo>×</mo>
+<mfrac>
+<mn>2</mn>
+<msqrt>
+<mn>5</mn>
+</msqrt>
+</mfrac>
+</mrow>
+<mn>2</mn>
+</mfrac>
+<mo>+</mo>
+<mn>3.2</mn>
+<mo>&#x2062;</mo> <!-- invisible times -->
+<mfrac>
+<mrow>
+<mn>45</mn>
+<mo>&#xB0;</mo>
+<mo>-</mo>
+<mo>arctan</mo>
+<mo>&#x2061;</mo>
+<mo>(</mo>
+<mfrac>
+<mn>1</mn>
+<mn>2</mn>
+</mfrac>
+<mo>)</mo>
+</mrow>
+<mrow>
+<mn>360</mn>
+<mo>&#xB0;</mo>
+</mrow>
+</mfrac>
+<mo>-</mo>
+<mfrac>
+<mrow>
+<mfrac>
+<mn>1</mn>
+<msqrt>
+<mn>5</mn>
+</msqrt>
+</mfrac>
+<mo>×</mo>
+<mfrac>
+<mn>1</mn>
+<msqrt>
+<mn>5</mn>
+</msqrt>
+</mfrac>
+</mrow>
+<mn>2</mn>
+</mfrac>
+<mo>)</mo>
+</mrow>
+</math>
+</div>
+<br><br>
+<div itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+<meta itemprop="position" content="5">
+<span itemprop="description">Simplify:</span>
+<br><br>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mn>2</mn>
+<mo>&#x2062;</mo> <!-- invisible times -->
+<mo>(</mo>
+<mn>3.2</mn>
+<mo>&#x2062;</mo> <!-- invisible times -->
+<mfrac>
+<mrow>
+<mo>arctan</mo>
+<mo>&#x2061;</mo>
+<mo>(</mo>
+<mfrac>
+<mn>1</mn>
+<mn>2</mn>
+</mfrac>
+<mo>)</mo>
+</mrow>
+<mrow>
+<mn>360</mn>
+<mo>&#xB0;</mo>
+</mrow>
+</mfrac>
+<mo>-</mo>
+<mfrac>
+<mn>1</mn>
+<mn>5</mn>
+</mfrac>
+<mo>+</mo>
+<mn>3.2</mn>
+<mo>&#x2062;</mo> <!-- invisible times -->
+<mfrac>
+<mrow>
+<mn>45</mn>
+<mo>&#xB0;</mo>
+<mo>-</mo>
+<mo>arctan</mo>
+<mo>&#x2061;</mo>
+<mo>(</mo>
+<mfrac>
+<mn>1</mn>
+<mn>2</mn>
+</mfrac>
+<mo>)</mo>
+</mrow>
+<mrow>
+<mn>360</mn>
+<mo>&#xB0;</mo>
+</mrow>
+</mfrac>
+<mo>-</mo>
+<mfrac>
+<mn>1</mn>
+<mn>10</mn>
+</mfrac>
+<mo>)</mo>
+</mrow>
+</math>
+</div>
+<br><br>
+<div itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
+<meta itemprop="position" content="6">
+<span itemprop="description">Simplify further:</span>
+<br><br>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow>
+<mn>2</mn>
+<mo>&#x2062;</mo> <!-- invisible times -->
+<mo>(</mo>
+<mfrac>
+<mn>4</mn>
+<mn>10</mn>
+</mfrac>
+<mo>-</mo>
+<mfrac>
+<mn>3</mn>
+<mn>10</mn>
+</mfrac>
+<mo>)</mo>
+<mo>=</mo>
+<mfrac>
+<mn>1</mn>
+<mn>5</mn>
+</mfrac>
+</mrow>
+</math>
+<br><br><br>
+<div itemprop="item" itemscope itemtype="https://schema.org/HowToTip">
+<meta itemprop="position" content="7">
+<span itemprop="description">The sum of the outlying segments and the uncovered curvilinear areas equals exactly the overlapping areas of the small squares.</span>
+</div>
+<br>
+<div itemprop="item" itemscope itemtype="https://schema.org/HowToTip">
+<meta itemprop="position" content="8">
+<span itemprop="description">Since the sum of an outlying segment and an uncovered curvilinear area is exactly 1/5, subtracting an uncovered curvilinear area from a square with an area of 1/5 shows that the area of a straight‑edged vertex region lying outside the circle equals exactly the area of an outlying segment.</span>
+</div>
+</div>
+</div>
+<br>
+<span itemprop="description">The arc intersects the sides of a concentric square at its quarters only if side/radius=4/√5, hence this is the only true area balance ratio.</span>
+	</section>	
 <br><br><br><br>
 <section style="margin:12px" id="ancient_sphere_volume_formula" itemprop="assesses" itemscope itemtype="https://schema.org/DefinedTerm">
 <meta itemprop="name" content="Traditional volume of a sphere formula">
