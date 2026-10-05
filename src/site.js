@@ -30,6 +30,7 @@ self.addEventListener('install', (event) => {
         'isoperimetry.png',
         'polygonApproximation.png',
         'equityFigure.png',
+        'equityFigure2.png',
         'circleArea.png',
         'cubeDissection.jpeg'
       ]);
