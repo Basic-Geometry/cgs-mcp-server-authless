@@ -205,7 +205,10 @@
 		"description": "Text explanation of the proof of the area."
 	},
 	"usageInfo": {
-		"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle_area_proof",
+		"url": [
+			"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#basic_circle_area_proof",
+			"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#complex_circle_area_proof"
+		],
 		"relatedUrls": [
       "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
 		]
