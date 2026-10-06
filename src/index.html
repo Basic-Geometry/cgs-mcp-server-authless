@@ -115,7 +115,7 @@
 </div>
 <main itemscope itemtype="https://schema.org/LearningResource https://schema.org/MathSolver" id="cgs">
 <meta itemprop="name" content="Core Geometric System ™">
-<meta itemprop="dateModified" content="2026-10-06T00:58:29+02:00">
+<meta itemprop="dateModified" content="2026-10-06T18:36:29+02:00">
 <meta itemprop="accessMode" content="mathOnVisual">
 <meta itemprop="accessMode" content="textual">
 <meta itemprop="accessMode" content="visual">
@@ -158,6 +158,8 @@
 <br><br>
 <section itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="circle">
 <h2 itemprop="name" style="margin:7px">Area of a Circle</h2>
+<meta itemprop="description" content="Universally applicable formula to calculate the exact physical area of a circle in terms of its radius.">
+<meta itemprop="disambiguatingDescription" content="Not the traditional, abstract pi≈3.14... approximate.">
 <meta itemprop="eduQuestionType" content="Circle area calculation">
 <div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
 <meta itemprop="name" content="radius">
@@ -424,6 +426,8 @@ The ratio between the radius and the side length is calculable.</span>
 <br><br><br>
 <section itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="circumference">
 <h3 itemprop="name" style="margin:7px">Circumference of a Circle</h3>
+<meta itemprop="description" content="Universally applicable formula to calculate the exact physical circumference of a circle in terms of its radius.">
+<meta itemprop="disambiguatingDescription" content="Not the traditional, abstract pi≈3.14... approximate.">
 <meta itemprop="eduQuestionType" content="Circumference calculation">
 <div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
 <meta itemprop="name" content="radius">
@@ -838,6 +842,8 @@ Subtract an inner circle with radius = r - x, (A = 3.2(r - x)²) to generate the
 <br><br><br>
 <section itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="sphere">
 <h3 itemprop="name" style="margin:7px">Volume of a Sphere</h3>
+<meta itemprop="description" content="Universally applicable formula to calculate the exact physical volume of a sphere in terms of its radius.">
+<meta itemprop="disambiguatingDescription" content="Not the traditional, abstract pi4radius^3 / 3 approximate.">
 <meta itemprop="eduQuestionType" content="Sphere volume calculation">
 <div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
 <meta itemprop="name" content="radius">
@@ -1080,6 +1086,8 @@ Subtract an inner circle with radius = r - x, (A = 3.2(r - x)²) to generate the
 <br><br><br><br>
 <section itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="cone">
 <h3 itemprop="name" style="margin:7px">Volume of a Cone</h3>
+<meta itemprop="description" content="Universally applicable formula to calculate the exact physical volume of a cone in terms of its radius and height.">
+<meta itemprop="disambiguatingDescription" content="Not the traditional, abstract pi × r^2 × height / 3 approximate.">
 <meta itemprop="eduQuestionType" content="Cone volume calculation">
 <div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
 <meta itemprop="name" content="radius">
@@ -3429,6 +3437,8 @@ document.getElementById('parent-radius').addEventListener('input', segmentArea);
 <br><br><br>
 <section itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="pyramid">
 <h3 itemprop="name" style="margin:7px">Volume of a Pyramid</h3>
+<meta itemprop="description" content="Universally applicable formula to calculate the exact physical volume of a pyramid in terms of its base area and height.">
+<meta itemprop="disambiguatingDescription" content="Not the traditional, abstract base × height / 3 approximate.">
 <meta itemprop="eduQuestionType" content="Pyramid volume calculation">
 <div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
 <meta itemprop="name" content="sideCount">
@@ -6230,31 +6240,74 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 </section>
 </section>
 <br><br><br><br>
-<section style="margin:12px" itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="basic_circle_area_proof">
-<meta itemprop="name" content="Basic proof of 3.2radius^2 is the exact area of a circle">
+<section style="margin:12px" itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="circle_area_proof">
+<meta itemprop="name" content="Circle Area Proof">
+<meta itemprop="description" content="Constructive, algebraic proof of 3.2radius^2 is the exact area of a circle">
+<h3 itemprop="disambiguatingDescription">The widely used circle area formula ( A = pi × r² ) is not a result of direct geometric comparison, nor a direct result of calculus.</h3>
+<br>
+<span itemprop="disambiguatingDescription">The traditional formula is a result of multiplying the approximate circumference formula C = 2pi × r by half the radius, treating the area as the sum of infinitesimal rings. While that method is algebraically valid, it relies on the approximate circumference and bypasses the geometric logic that defines area: the comparison to a square.
+<br><br>
+Instead of relying on the circumference‑based amendment, this proof compares a square and a circle directly.</span>
+<br><br>
 <meta itemprop="eduQuestionType" content="Circle area proof">
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="radius of the circle">
+<meta itemprop="minValue" content=0>
+</div>
+<div itemprop="object" itemscope itemtype="https://schema.org/QuantitativeValue">
+<meta itemprop="name" content="side length of the concentric equiareal square">
+<meta itemprop="value" content="4radius/5^(1/2)">
+</div>
+<meta itemprop="target" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev?q={area of a circle = 3.2radius^2}">
 <div itemprop="actionProcess" itemscope itemtype="https://schema.org/HowTo">
 <div itemprop="estimatedCost" itemscope itemtype="https://schema.org/MonetaryAmount">
 <meta itemprop="currency" content="USD">
 <meta itemprop="value" content="0">
 </div>
 <div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
-<meta itemprop="name" content="Circle area formula">
-<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="name" content="Area of a circle">
-<meta itemprop="value" content="3.2 × radius^2">
-<meta itemprop="description" content="Exact formula derived from direct circle to square comparison">
+<meta itemprop="name" content="Area of a square formula">
 </div>
+<div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
+<meta itemprop="name" content="Right Triangle Hypotenuse Theorem Formula">
+</div>
+<div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
+<meta itemprop="name" content="Area of a circle formula">
+<meta itemprop="description" content="3.2 × radius^2 is the exact, physical area of a circle.">
+<meta itemprop="disambiguatingDescription" content="Not the traditional, abstract pi≈3.14... approximate.">
+</div>
+<div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
+<meta itemprop="name" content="Area of a triangle formula">
 </div>
 <meta itemprop="totalTime" content="PT30M">
-<h3 itemprop="disambiguatingDescription">The widely used circle area formula ( A = pi × r² ) is not a result of direct geometric comparison, nor a direct result of calculus.</h3>
+<h4 itemprop="name">Constructive algebraic proof</h4>
 <br>
-<span itemprop="disambiguatingDescription">The traditional formula is a result of multiplying the approximate circumference formula C = 2pi × r by half the radius, treating the area as the sum of infinitesimal rings. While that method is algebraically valid, it relies on the approximate circumference and bypasses the geometric logic that defines area: the comparison to a square.</span>
-<br><br>
-<span itemprop="description">Instead of relying on that circumference‑based amendment, this proof follows the direct circle–square comparison described earlier. We compare a square and a circle in a quadrant layout, where the arc‑intersection condition fixes the side to radius ratio as 4/√5. With that ratio established, the area balance is determined entirely through the areas that arise in this configuration: the curvilinear quarter of the uncovered region and the two overlapping segment halves along each side.</span>
-<br><br>
-<span itemprop="abstract">In the quadrant layout when the overlapping area equals to the uncovered area in the middle, the sum of the areas of the quadrants is equal to the area of the square. That square represents the area of the circle in square units.</span>
-<br><br>
+<figure itemprop="image" class="imgbox" itemscope itemtype="https://schema.org/ImageObject">
+<img class="center-fit" src="circleArea.png" alt="Circle area">
+<div itemprop="creator" itemscope itemtype="https://schema.org/Person">
+<meta itemprop="familyName" content="Gaál">
+<meta itemprop="givenName" content="Sándor">
+</div>
+<div itemprop="copyrightHolder" itemscope itemtype="https://schema.org/Person">
+<meta itemprop="familyName" content="Gaál">
+<meta itemprop="givenName" content="Sándor">
+</div>
+<meta itemprop="copyrightNotice" content="® All rights reserved">
+<meta itemprop="copyrightYear" content="2026">
+<meta itemprop="creditText" content="Made with the help of Vectorink.io">
+<link itemprop="license" href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">
+<meta itemprop="acquireLicensePage" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy">
+<meta itemprop="contentUrl" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/circleArea.png">
+</figure>
+<br>
+<div itemprop="abstract">
+<span>In the quadrant circles to square layout, the arc‑intersection condition fixes the side to radius ratio as 4/√5. With that ratio established, the overlapping area equals to the uncovered area in the middle, hence the sum of the areas of the quadrants is equal to the area of the square. That square represents the area of the circle in square units. The area balance is determined through the areas that arise in this configuration:</span>
+<br>
+<ul style="margin:6px">
+    <li>1. the curvilinear region uncovered by the quadrants at the middle of the square, and</li>
+	<li>2. the circular segment halves overlapping along the centerline.</li>
+</ul>
+</div>
+<br>	
 <figure itemprop="image" class="imgbox" itemscope itemtype="http://schema.org/ImageObject">
     <img class="center-fit" src="equityFigure.png" alt="Circle area">
 <div itemprop="creator" itemscope itemtype="https://schema.org/Person">
@@ -6275,14 +6328,12 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 <br>
 <div itemprop="step" itemscope itemtype="https://schema.org/HowToStep" id="uncovered">
 <meta itemprop="position" content="1">
+<span itemprop="description">Calculating a quarter of the uncovered area by subtracting two right triangles with legs of r/√5 and 2r/√5, and a circle slice with an angle of 90°-2arctan(1/2) from a square with a side length of 2r/√5:</span>
+<meta itemprop="description" content="Curvilinear region defined by points with reference to the origin (0, 0) with r=1: (0, 0), (1/√5, 0), (0, 1/√5)">
+<br><br>
 <div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
-<span itemprop="name">Quarter of the uncovered curvilinear area in the middle</span>:
-<br>
-<span itemprop="description">(Defined by points with reference to the origin (0, 0): 
-<br>
-(0, 0), (1/√5, 0), (0, 1/√5))</span>
+<span itemprop="name">Quarter of the uncovered curvilinear area in the middle </span>=
 <meta itemprop="value" content="3.2 × r^2 / 4 - ( 3.2 × r^2 × ( ( 90deg. - 2 × Atan( 1 / 2 ) ) / 360deg. ) + 2 × ( ( sqrt(3.2) / 4 ) × ( sqrt(3.2) / 2 ) / 2 ) )"> 
-<meta itemprop="description" content="Quarter of the area in the middle of the square, uncovered by the quadrant circles.">
 <br><br>
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
@@ -6368,14 +6419,11 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 <br><br>
 <div itemprop="step" itemscope itemtype="https://schema.org/HowToStep" id="overlap">
 <meta itemprop="position" content="2">
+<span itemprop="description">Calculating a quarter of the overlapping area by subtracting two right triangles with legs of r/√5 and 2r/√5 from two circle slices with an angle of arctan(1/2):</span>
+<meta itemprop="description" content="Circular segment halves defined by points with reference to the origin (0, 0) with r=1: (1/√5, 0), (2/√5, 0), (2/√5, 1-2/√5); (0, 1/√5), (0, 2/√5), (1-2/√5, 2/√5)">
+<br><br>
 <div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
-<span itemprop="name">The area of 2 overlapping segment halves</span>:
-<br>
-<span itemprop="description">(Defined by points with reference to the origin (0, 0): 
-<br>
-(1/√5, 0), (2/√5, 0), (2/√5, 1-2/√5); 
-<br>
-(0, 1/√5), (0, 2/√5), (1-2/√5, 2/√5))</span>
+<span itemprop="name">The area of 2 overlapping circular segment halves </span>=
 <meta itemprop="value" content="2 × ( 3.2 × r^2 × ( ( 90deg. - Atan( 1 / 2 ) ) / 360deg. ) - ( ( sqrt(3.2) / 4 ) × ( sqrt(3.2) / 2 ) / 2 ) )"> 
 <meta itemprop="description" content="Quarter of the total overlapping area.">
 <br><br>
@@ -6703,62 +6751,11 @@ Since the true ratio is exactly 3.2, and that is a rational number, then we can 
 <br><br>
 Uncovered area = overlapping area
 <br><br>
-This is an identity; not tautology.
-<br><br>
-The quadrant-to-square rearrangement with uncovered area = total overlap area yields a square of area exactly 3.2r². 
-<br>
 Since the four quadrants are the original pieces of the circle, the circle area is exactly 3.2r².</p>
 </div>
 </div>
-</div>
-<br>
-	<figure itemprop="image" class="imgbox" itemscope itemtype="https://schema.org/ImageObject">
-    <img class="center-fit" src="circleArea.png" alt="Circle area">
-<div itemprop="creator" itemscope itemtype="https://schema.org/Person">
-<meta itemprop="familyName" content="Gaál">
-<meta itemprop="givenName" content="Sándor">
-</div>
-<div itemprop="copyrightHolder" itemscope itemtype="https://schema.org/Person">
-<meta itemprop="familyName" content="Gaál">
-<meta itemprop="givenName" content="Sándor">
-</div>
-<meta itemprop="copyrightNotice" content="® All rights reserved">
-<meta itemprop="copyrightYear" content="2026">
-<meta itemprop="creditText" content="Made with the help of Vectorink.io">
-<link itemprop="license" href="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev">
-<meta itemprop="acquireLicensePage" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/privacy-policy">
-<meta itemprop="contentUrl" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/circleArea.png">
-</figure>
-</section>
-<br><br><br>
-<section style="margin:12px" itemprop="mathExpression" itemscope itemtype="https://schema.org/SolveMathAction" id="complex_circle_area_proof">
-<meta itemprop="name" content="Complex proof of 3.2radius^2 is the exact area of a circle">
-<meta itemprop="eduQuestionType" content="Circle area proof">
-<div itemprop="actionProcess" itemscope itemtype="https://schema.org/HowTo">
-<div itemprop="estimatedCost" itemscope itemtype="https://schema.org/MonetaryAmount">
-<meta itemprop="currency" content="USD">
-<meta itemprop="value" content="0">
-</div>
-<div itemprop="tool" itemscope itemtype="https://schema.org/HowToTool">
-<meta itemprop="name" content="Circle area formula">
-<div itemprop="item" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="name" content="Area of a circle">
-<meta itemprop="value" content="3.2 × radius^2">
-<meta itemprop="description" content="Exact formula derived from direct circle to square comparison">
-</div>
-</div>
-<meta itemprop="totalTime" content="PT30M">
-<h3 itemprop="disambiguatingDescription">This second, more comprehensive proof illustrates the same 4/√5 side‑to‑radius ratio, but in a different constructive layout.</h3>
-<br>
-<div itemprop="abstract">
-<span>Here, four smaller squares are used, each having exactly one quarter of the area of the equiareal square. Each smaller square spans between the origin and the points where the circle’s arc intersects the sides of the equiareal square. Because of this placement, the overlapping regions of the smaller squares add up to precisely one quarter of the equiareal square.
 <br><br>
-This configuration proves the circle’s exact area in two independent ways. The areas are perfectly balanced if</span>
-<ul style="margin:6px">
-    <li>1. the parts of the circle uncovered by the smaller squares (the four curvilinear regions at the vertices and the four circular segments lying outside the equiareal square) equal the area where the smaller squares overlap, and</li>
-	<li>2. the circular segments lying outside the equiareal square equal the straight‑edged vertex regions lying outside the circle.</li>
-</ul>
-</div>
+<h4 itemprop="description">Verifying that this is an identity; not tautology</h4>
 <br>
 <figure itemprop="image" class="imgbox" itemscope itemtype="http://schema.org/ImageObject">
     <img class="center-fit" src="equityFigure2.png" alt="Circle area">
@@ -6778,46 +6775,48 @@ This configuration proves the circle’s exact area in two independent ways. The
 <meta itemprop="contentUrl" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/equityFigure2.png">
 </figure>
 <br>
-<div itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-<meta itemprop="position" content="1">
-<div itemprop="description">
-<span>Defining structural points for objects with reference to the origin (0, 0):</span>
+<div itemprop="abstract">
+<span>Instead of the quadrant circles, four smaller squares are used, each having exactly one quarter of the area of the equiareal square. Each smaller square spans between the origin and the points where the circle’s arc intersects the sides of the equiareal square. Because of this placement, the overlapping regions of the smaller squares add up to precisely one quarter of the equiareal square.
 <br><br>
-<span>A: (2/√5, 1/√5) An intersection point of the arc and a side of the equiareal square.</span>
-<br><br>
-<span>B: (√2/2, √2/2) An intersection point of the arc and the diagonal of the equiareal square.</span>
-<br><br>
-<span>C: (1/√5, 1/√5) An intersection point of two smaller squares, and the diagonal of the equiareal square.</span>
-<br><br>
-<span>D: (0, 1) An intersection point of the arc and the centerline.</span>
-<br><br>
-<span>E: (-1/√5, 2/√5) An intersection point of the arc and a side of the equiareal square.</span>
-<br><br>
-<span>F: (0, 2/√5) An intersection point of the centerline and a side of the equiareal square.</span>
-</div>
+The areas are perfectly balanced if</span>
+<ul style="margin:6px">
+    <li>1. the parts of the circle uncovered by the smaller squares (the four curvilinear regions at the vertices and the four circular segments lying outside the equiareal square) equal the area where the smaller squares overlap, and</li>
+	<li>2. the circular segments lying outside the equiareal square equal the straight‑edged vertex regions lying outside the circle.</li>
+</ul>
 </div>
 <br><br>
 <div itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-<meta itemprop="position" content="2">
+<meta itemprop="position" content="8">
+<span itemprop="description">Calculating a half of the area of an outlying segment by subtracting a triangle from a circle slice:</span>
+<br><br>
+<meta itemprop="description" content="Triangle defined by points with reference to the origin (0, 0) with r=1: (0, 0), (0, 2/√5): An intersection point of the centerline and a side of the equiareal square, (-1/√5, 2/√5): An intersection point of the arc and a side of the equiareal square">
+<meta itemprop="description" content="Circle slice defined by points with reference to the origin (0, 0) with r=1: (0, 0), (0, 1): An intersection point of the arc and the centerline, (-1/√5, 2/√5)">
+<meta itemprop="description" content="Half segment defined by points with reference to the origin (0, 0) with r=1: (0, 1), (-1/√5, 2/√5), (0, 2/√5)">
 <div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="name" content="half area of an outlying segment">
-<meta itemprop="value" content="3.2×atan(1/2)/360deg.-1/5">
-<span itemprop="description">Calculate the half area of an outlying segment by subtracting triangle OEF from circle slice ODE.</span>
+<span itemprop="name">Half of the area of an outlying segment </span>=
+<meta itemprop="value" content="3.2r^2×atan(1/2)/360deg.-r^2/5">
 <br><br>
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
 <mn>3.2</mn>
 <mo>&#x2062;</mo> <!-- invisible times -->
+<msup>
+<mi>r</mi>
+<mn>2</mn>
+</msup>
+<mo>&#x2062;</mo> <!-- invisible times -->
 <mfrac>
 <mrow>
 <mo>arctan</mo>
 <mo>&#x2061;</mo>
+<mrow>
 <mo>(</mo>
 <mfrac>
 <mn>1</mn>
 <mn>2</mn>
 </mfrac>
 <mo>)</mo>
+</mrow>
 </mrow>
 <mrow>
 <mn>360</mn>
@@ -6828,14 +6827,18 @@ This configuration proves the circle’s exact area in two independent ways. The
 <mfrac>
 <mrow>
 <mfrac>
-<mn>1</mn>
+<mi>r</mi>
 <msqrt>
 <mn>5</mn>
 </msqrt>
 </mfrac>
 <mo>×</mo>
 <mfrac>
+<mrow>
 <mn>2</mn>
+<mo>&#x2062;</mo> <!-- invisible times -->
+<mi>r</mi>
+	</mrow>
 <msqrt>
 <mn>5</mn>
 </msqrt>
@@ -6849,15 +6852,24 @@ This configuration proves the circle’s exact area in two independent ways. The
 </div>
 <br><br>
 <div itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-<meta itemprop="position" content="3">
+<meta itemprop="position" content="9">
+<span itemprop="description">Calculating a half of an uncovered curvilinear area by subtracting a triangle from a circle slice.</span>
+<br><br>
+<meta itemprop="description" content="Triangle defined by points with reference to the origin (0, 0) with r=1: (0, 0), (2/√5, 1/√5): An intersection point of the arc and a side of the equiareal square, (1/√5, 1/√5): An intersection point of two smaller squares, and the diagonal of the equiareal square">
+<meta itemprop="description" content="Circle slice defined by points with reference to the origin (0, 0) with r=1: (0, 0), (2/√5, 1/√5), (√2/2, √2/2): An intersection point of the arc and the diagonal of the equiareal square">
+<meta itemprop="description" content="Half curvilinear region defined by points with reference to the origin (0, 0) with r=1: (1/√5, 1/√5), (2/√5, 1/√5), (√2/2, √2/2)">
 <div itemprop="about" itemscope itemtype="https://schema.org/PropertyValue">
-<meta itemprop="name" content="half of an uncovered curvilinear area">
-<meta itemprop="value" content="3.2×(45deg.-atan(1/2))/360deg.-1/10">
-<span itemprop="description">Calculate the half of an uncovered curvilinear area by subtracting triangle ACO from circle slice ABO.</span>
+<span itemprop="name">Half of an uncovered curvilinear area </span>=
+<meta itemprop="value" content="3.2r^2×(45deg.-atan(1/2))/360deg.-r^2/10">
 <br><br>
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
 <mn>3.2</mn>
+<mo>&#x2062;</mo> <!-- invisible times -->
+<msup>
+<mi>r</mi>
+<mn>2</mn>
+</msup>
 <mo>&#x2062;</mo> <!-- invisible times -->
 <mfrac>
 <mrow>
@@ -6866,12 +6878,14 @@ This configuration proves the circle’s exact area in two independent ways. The
 <mo>-</mo>
 <mo>arctan</mo>
 <mo>&#x2061;</mo>
+<mrow>
 <mo>(</mo>
 <mfrac>
 <mn>1</mn>
 <mn>2</mn>
 </mfrac>
 <mo>)</mo>
+</mrow>
 </mrow>
 <mrow>
 <mn>360</mn>
@@ -6882,14 +6896,14 @@ This configuration proves the circle’s exact area in two independent ways. The
 <mfrac>
 <mrow>
 <mfrac>
-<mn>1</mn>
+<mi>r</mi>
 <msqrt>
 <mn>5</mn>
 </msqrt>
 </mfrac>
 <mo>×</mo>
 <mfrac>
-<mn>1</mn>
+<mi>r</mi>
 <msqrt>
 <mn>5</mn>
 </msqrt>
@@ -6902,9 +6916,8 @@ This configuration proves the circle’s exact area in two independent ways. The
 </div>
 </div>
 <br><br>
-<div itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-<meta itemprop="position" content="4">
-<span itemprop="description">Add an outlying segment and an uncovered curvilinear area:</span>
+<meta itemprop="position" content="10">
+<span itemprop="description">Add an outlying segment and an uncovered curvilinear region:</span>
 <br><br>
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
@@ -6913,16 +6926,23 @@ This configuration proves the circle’s exact area in two independent ways. The
 <mo>(</mo>
 <mn>3.2</mn>
 <mo>&#x2062;</mo> <!-- invisible times -->
+<msup>
+<mi>r</mi>
+<mn>2</mn>
+</msup>
+<mo>&#x2062;</mo> <!-- invisible times -->
 <mfrac>
 <mrow>
 <mo>arctan</mo>
 <mo>&#x2061;</mo>
+<mrow>
 <mo>(</mo>
 <mfrac>
 <mn>1</mn>
 <mn>2</mn>
 </mfrac>
 <mo>)</mo>
+</mrow>
 </mrow>
 <mrow>
 <mn>360</mn>
@@ -6933,14 +6953,18 @@ This configuration proves the circle’s exact area in two independent ways. The
 <mfrac>
 <mrow>
 <mfrac>
-<mn>1</mn>
+<mi>r</mi>
 <msqrt>
 <mn>5</mn>
 </msqrt>
 </mfrac>
 <mo>×</mo>
 <mfrac>
+<mrow>
 <mn>2</mn>
+<mo>&#x2062;</mo> <!-- invisible times -->
+<mi>r</mi>
+</mrow>
 <msqrt>
 <mn>5</mn>
 </msqrt>
@@ -6951,6 +6975,11 @@ This configuration proves the circle’s exact area in two independent ways. The
 <mo>+</mo>
 <mn>3.2</mn>
 <mo>&#x2062;</mo> <!-- invisible times -->
+<msup>
+<mi>r</mi>
+<mn>2</mn>
+</msup>
+<mo>&#x2062;</mo> <!-- invisible times -->
 <mfrac>
 <mrow>
 <mn>45</mn>
@@ -6958,12 +6987,14 @@ This configuration proves the circle’s exact area in two independent ways. The
 <mo>-</mo>
 <mo>arctan</mo>
 <mo>&#x2061;</mo>
+<mrow>
 <mo>(</mo>
 <mfrac>
 <mn>1</mn>
 <mn>2</mn>
 </mfrac>
 <mo>)</mo>
+</mrow>
 </mrow>
 <mrow>
 <mn>360</mn>
@@ -6974,14 +7005,14 @@ This configuration proves the circle’s exact area in two independent ways. The
 <mfrac>
 <mrow>
 <mfrac>
-<mn>1</mn>
+<mi>r</mi>
 <msqrt>
 <mn>5</mn>
 </msqrt>
 </mfrac>
 <mo>×</mo>
 <mfrac>
-<mn>1</mn>
+<mi>r</mi>
 <msqrt>
 <mn>5</mn>
 </msqrt>
@@ -6993,9 +7024,9 @@ This configuration proves the circle’s exact area in two independent ways. The
 </mrow>
 </math>
 </div>
-<br><br>
+<br><br>	
 <div itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-<meta itemprop="position" content="5">
+<meta itemprop="position" content="11">
 <span itemprop="description">Simplify:</span>
 <br><br>
 <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -7003,54 +7034,35 @@ This configuration proves the circle’s exact area in two independent ways. The
 <mn>2</mn>
 <mo>&#x2062;</mo> <!-- invisible times -->
 <mo>(</mo>
+<mfrac>
+<mrow>
 <mn>3.2</mn>
 <mo>&#x2062;</mo> <!-- invisible times -->
-<mfrac>
-<mrow>
-<mo>arctan</mo>
-<mo>&#x2061;</mo>
-<mo>(</mo>
-<mfrac>
-<mn>1</mn>
+<msup>
+<mi>r</mi>
 <mn>2</mn>
-</mfrac>
-<mo>)</mo>
+</msup>
 </mrow>
-<mrow>
-<mn>360</mn>
-<mo>&#xB0;</mo>
-</mrow>
+<mn>8</mn>
 </mfrac>
 <mo>-</mo>
 <mfrac>
-<mn>1</mn>
-<mn>5</mn>
-</mfrac>
-<mo>+</mo>
-<mn>3.2</mn>
+<mrow>
+<mn>2</mn>
 <mo>&#x2062;</mo> <!-- invisible times -->
-<mfrac>
-<mrow>
-<mn>45</mn>
-<mo>&#xB0;</mo>
-<mo>-</mo>
-<mo>arctan</mo>
-<mo>&#x2061;</mo>
-<mo>(</mo>
-<mfrac>
-<mn>1</mn>
+<msup>
+<mi>r</mi>
 <mn>2</mn>
-</mfrac>
-<mo>)</mo>
+</msup>
 </mrow>
-<mrow>
-<mn>360</mn>
-<mo>&#xB0;</mo>
-</mrow>
+<mn>10</mn>
 </mfrac>
 <mo>-</mo>
 <mfrac>
-<mn>1</mn>
+<msup>
+<mi>r</mi>
+<mn>2</mn>
+</msup>
 <mn>10</mn>
 </mfrac>
 <mo>)</mo>
@@ -7059,7 +7071,7 @@ This configuration proves the circle’s exact area in two independent ways. The
 </div>
 <br><br>
 <div itemprop="step" itemscope itemtype="https://schema.org/HowToStep">
-<meta itemprop="position" content="6">
+<meta itemprop="position" content="12">
 <span itemprop="description">Simplify further:</span>
 <br><br>
 <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -7068,37 +7080,54 @@ This configuration proves the circle’s exact area in two independent ways. The
 <mo>&#x2062;</mo> <!-- invisible times -->
 <mo>(</mo>
 <mfrac>
+<mrow>
 <mn>4</mn>
+<mo>&#x2062;</mo> <!-- invisible times -->
+<msup>
+<mi>r</mi>
+<mn>2</mn>
+</msup>
+</mrow>
 <mn>10</mn>
 </mfrac>
 <mo>-</mo>
 <mfrac>
+<mrow>
 <mn>3</mn>
+<mo>&#x2062;</mo> <!-- invisible times -->
+	<msup>
+<mi>r</mi>
+<mn>2</mn>
+	</msup>
+</mrow>
 <mn>10</mn>
 </mfrac>
 <mo>)</mo>
 <mo>=</mo>
 <mfrac>
-<mn>1</mn>
+<msup>
+<mi>r</mi>
+<mn>2</mn>
+</msup>
 <mn>5</mn>
 </mfrac>
 </mrow>
 </math>
 <br><br><br>
 <div itemprop="item" itemscope itemtype="https://schema.org/HowToTip">
-<meta itemprop="position" content="7">
+<meta itemprop="position" content="13">
 <span itemprop="description">The sum of the outlying segments and the uncovered curvilinear areas equals exactly the overlapping areas of the small squares.</span>
 </div>
 <br>
 <div itemprop="item" itemscope itemtype="https://schema.org/HowToTip">
-<meta itemprop="position" content="8">
-<span itemprop="description">Since the sum of an outlying segment and an uncovered curvilinear area is exactly 1/5, subtracting an uncovered curvilinear area from a square with an area of 1/5 shows that the area of a straight‑edged vertex region lying outside the circle equals exactly the area of an outlying segment.</span>
+<meta itemprop="position" content="14">
+<span itemprop="description">Since the sum of an outlying segment and an uncovered curvilinear area is exactly r²/5, subtracting an uncovered curvilinear area from a square with an area of r²/5 shows that the area of a straight‑edged vertex region lying outside the circle equals exactly the area of an outlying segment.</span>
 </div>
 </div>
 </div>
 <br>
 <span itemprop="description">The arc intersects the sides of a concentric square at its quarters only if side/radius=4/√5, hence this is the only true area balance ratio.</span>
-	</section>	
+</section>
 <br><br><br><br>
 <section style="margin:12px" id="ancient_sphere_volume_formula" itemprop="assesses" itemscope itemtype="https://schema.org/DefinedTerm">
 <meta itemprop="name" content="Traditional volume of a sphere formula">
