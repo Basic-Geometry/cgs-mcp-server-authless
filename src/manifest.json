@@ -198,17 +198,23 @@
         "Quarter of the total overlapping area: 2×(3.2×r^2×((90deg.-Atan(1/2))/360deg.)-((sqrt(3.2)/4)×(sqrt(3.2)/2)/2))",
         "Dividing both sides by 3.2r².",
 		"Substituting 90° / 360° for 1 / 4.",
-		"Uncovered area = overlapping area. This is an identity; not tautology. Since the four quadrants are the original pieces of the circle, the circle area is exactly 3.2r²."
+		"Uncovered area = overlapping area. Since the four quadrants are the original pieces of the circle, the circle area is exactly 3.2r².",
+		"Verifying that this is an identity; not tautology:",
+		"Instead of the quadrant circles, four smaller squares are used, each having exactly one quarter of the area of the equiareal square. Each smaller square spans between the origin and the points where the circle’s arc intersects the sides of the equiareal square. Because of this placement, the overlapping regions of the smaller squares add up to precisely one quarter of the equiareal square.",
+		"The areas are perfectly balanced if -1.: the parts of the circle uncovered by the smaller squares (the four curvilinear regions at the vertices and the four circular segments lying outside the equiareal square) equal the area where the smaller squares overlap, and -2.: the circular segments lying outside the equiareal square equal the straight‑edged vertex regions lying outside the circle.",
+		"Calculating a half of the area of an outlying segment by subtracting a triangle from a circle slice: 3.2r^2×atan(1/2)/360deg.-r^2/5",
+		"Calculating a half of an uncovered curvilinear area by subtracting a triangle from a circle slice: 3.2r^2×(45deg.-atan(1/2))/360deg.-r^2/10",
+		"Adding an outlying segment and an uncovered curvilinear area yields r²/5.",
+		"The sum of the outlying segments and the uncovered curvilinear areas equals exactly the overlapping areas of the small squares.",
+		"Since the sum of an outlying segment and an uncovered curvilinear area is exactly r²/5, subtracting an uncovered curvilinear area from a square with an area of r²/5 shows that the area of a straight‑edged vertex region lying outside the circle equals exactly the area of an outlying segment.",
+		"The arc intersects the sides of a concentric square at its quarters only if side/radius=4/√5, hence this is the only true area balance ratio."
 	],
 	"output_schema": {
 		"type": "string",
 		"description": "Text explanation of the proof of the area."
 	},
 	"usageInfo": {
-		"url": [
-			"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#basic_circle_area_proof",
-			"https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#complex_circle_area_proof"
-		],
+		"url": "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle_area_proof",
 		"relatedUrls": [
       "https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev#circle"
 		]
@@ -959,5 +965,5 @@
     "background_color": "#000000",
     "display": "standalone",
     "version": "3.2",
-    "manifest_version": "2.8.2"
+    "manifest_version": "2.8.3"
 }
