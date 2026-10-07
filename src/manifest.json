@@ -171,13 +171,11 @@
 	"steps": [
 		"Divide the circle into four quadrants and place them on the vertices of a square.",
 		"The arcs of inscribed and circumscribed circles in the same layout define upper and lower bounds.",
-		"In this layout the arcs of the quadrants of an inscribed circle would meet at the midpoints of the sides of the square, leaving some of the square uncovered.",
-		"The arcs of the quadrants of a circumscribed circle would overlap, and intersect at the center of the square, covering it all.",
-		"The arcs of the quadrants of the circle that equals in area to the square intersect right in between those limits, at the quarters on its centerlines.",
-		"The true equiareal circle lies between these limits.",
-		"A right triangle formed from half and quarter segments of the square side yields the radius–side ratio.",
+		"In this layout: -The arcs of the quadrants of an inscribed circle meet at the midpoints of the square’s sides, leaving the central region of the square uncovered. - The arcs of the quadrants of a circumscribed circle overlap and intersect at the center of the square, covering the entire square. - The arcs of the quadrants of the circle whose area equals that of the square intersect exactly between those two extremes, at the quarter‑points of the square’s centerlines.",
+		"The hypotenuse of a right triangle formed from half and quarter segments of the square side equals the radius.",
         "radius^2=(side/4)^2 + (side/2)^2",
-        "radius=side × 5^(1/2) / 4"
+        "radius=side × 5^(1/2) / 4",
+		"The area of both the square and the sum of the quadrants equals 16 right triangles with legs of a quarter, and a half of the square's sides, and its hypotenuse equal to the radius of the circle." 
 	],
 	"output_schema": {
 		"type": "string",
@@ -965,5 +963,5 @@
     "background_color": "#000000",
     "display": "standalone",
     "version": "3.2",
-    "manifest_version": "2.8.3"
+    "manifest_version": "2.8.5"
 }
