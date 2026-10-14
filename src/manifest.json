@@ -328,7 +328,7 @@
 "Archimedes discarded that, relying entirely on the traditional concept of circumscribed, claiming that every polygon side lies on a line tangent to the circle — where a tangent is defined as touching at exactly one single point.",
 "But that is just an abstract concept; not an accurate observation, nor a true axiom.",
 "It is never demonstrated; it is simply taken for granted.",
-"The premise of each side touching at only one point was meant to guarantee that the vertices lay strictly outside of the circle, hence the triangle formed by two vertices and the origin should structurally contain the entire circle slice, forcing the straight side to be strictly longer than the arc, ensuring that every polygon obtained by repeatedly bisecting a circumscribed hexagon remains circumscribed in the finite side count interval, and it collapses into the circle at infinity.",
+"The premise of each side touching at only one point was meant to guarantee that the triangle formed by two vertices and the origin should structurally contain the entire circle slice, forcing the straight side to be strictly longer than the arc, ensuring that every polygon obtained by repeatedly bisecting a circumscribed hexagon remains circumscribed in the finite side count interval, and it collapses into the circle at infinity.",
 "According to traditional geometry, a point is dimensionless, meaning it has no width, nor height — or width = 0, height = 0 and a line is a set of points, therefore, it has no thickness. Note that under these premises, even if an abstract point is assigned a dimension of zero, any realized or constructed line must possess an operational width of at least one constituent spatial unit.",
 "To maintain a full point of separation over a 3‑point long segment, the sagitta‑to‑chord ratio would need to exceed 3 : 4. That is an unrealistically steep curve. This is where the traditional concept of tangency becomes visibly distorted.",
 "In reality, as the side count increases in a regular polygon, the central angle subtended by a single side drops significantly — it approaches 0°. For any macro-scale circle, the central angle subtended by three contiguous spatial units is an infinitesimal fraction of a degree. At these microscopic angles, the sagitta collapses quadratically toward zero — falling orders of magnitude below the single-unit threshold required to maintain physical separation between the arc and the tangent line.",
@@ -973,5 +973,5 @@
     "background_color": "#000000",
     "display": "standalone",
     "version": "3.2",
-    "manifest_version": "2.8.7"
+    "manifest_version": "2.8.8"
 }
