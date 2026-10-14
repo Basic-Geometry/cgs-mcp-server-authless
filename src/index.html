@@ -115,7 +115,7 @@
 </div>
 <main itemscope itemtype="https://schema.org/LearningResource https://schema.org/MathSolver" id="cgs">
 <meta itemprop="name" content="Core Geometric System ™">
-<meta itemprop="dateModified" content="2026-10-14T15:01:29+02:00">
+<meta itemprop="dateModified" content="2026-10-14T18:02:29+02:00">
 <meta itemprop="accessMode" content="mathOnVisual">
 <meta itemprop="accessMode" content="textual">
 <meta itemprop="accessMode" content="visual">
@@ -207,7 +207,7 @@
 <br>
 In this layout:</span>
 <br><br>
-<ul>
+<ul style="margin:6px">
 	<li>The arcs of the quadrants of an inscribed circle meet at the midpoints of the square’s sides, leaving the central region of the square uncovered.</li>
 	<li>The arcs of the quadrants of a circumscribed circle overlap and intersect at the center of the square, covering the entire square.</li>
 	<li><strong>The arcs of the quadrants of the circle whose area equals that of the square intersect exactly between those two extremes, at the quarter‑points of the square’s centerlines.</strong></li>
@@ -5967,6 +5967,7 @@ It is never demonstrated; it is simply taken for granted.</strong></p>
 <br>
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
+<mi>" </mi>
 <mfrac>
 <mrow>
 <mn>2</mn>
@@ -5995,14 +5996,15 @@ It is never demonstrated; it is simply taken for granted.</strong></p>
 </mrow>
 <mo>&#x2062;</mo> <!-- Invisible times -->
 <mi>r</mi>
+<mi> "</mi>
 </mrow>
 </math>
 </div>
 <br><br>
 <p itemprop="articleBody">According to traditional geometry,</p>
 <ul style="margin:6px" itemprop="articleBody">
-    <li>"a point is dimensionless, meaning it has no width, nor height — or width = 0, height = 0"</li> 
-	<li>"a line is a set of points, therefore, it has no thickness"</li>
+    <li>"a point is dimensionless, meaning it has no width, nor height — or width = 0, height = 0",</li> 
+	<li>"a line is a set of points, therefore, it has no thickness".</li>
 </ul>
 <br>
 <p itemprop="articleBody"><strong>Note that under these premises, even if an abstract point is assigned a dimension of zero, any realized or constructed line must possess an operational width of at least one constituent spatial unit.</strong>
@@ -7438,18 +7440,17 @@ But this ratio can't be generalized for the overall volume of the cone.</p>
 <meta itemprop="contentUrl" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/cubeDissection.jpeg">
 </figure>
 <br>
-<p itemprop="disambiguatingDescription">
-Take a cube with an edge length of ( e ).
+<p itemprop="description">Take a cube with an edge length of ( e ).
 <br><br>
 Volume of the cube: V = the cubic value of e.
 <br><br>
-Imagine dividing the cube into three square pyramids, each with:
-<br><br>
-- Base: One face of the cube, so the base area is the square value of e .
-<br><br>
-- Height: The edge of the cube, ( e ), since the apex of each pyramid is the cube’s vertex opposite the base, depending on the dissection. 
-<br><br>
-A common dissection:
+Imagine dividing the cube into three square pyramids, each with:</p>
+<ul style="margin:6px" itemprop="description">
+	<li>base: one face of the cube, so the base area is the square value of e,</li>
+	<li>height: the edge of the cube, ( e ), since the apex of each pyramid is the cube’s vertex opposite the base, depending on the dissection.</li>
+</ul>
+<br>
+<p itemprop="description">A common dissection:
 <br><br>
 Choose one vertex of the cube as the apex.
 <br><br>
@@ -7457,21 +7458,21 @@ Form three pyramids, each with this apex and a base on one of the three faces ad
 <br><br>
 Each pyramid has a base area of the square value of e, and height ( e ) (the distance from the apex to the base plane). 
 <br><br>
-Volume of each pyramid: V(pyramid) = ( square value of e ) × e, divided by 3 = the cubic value of e divided by 3.
+Volume of each pyramid: V(pyramid) = e² × e / 3 = e³ / 3 
 <br><br>
-Since there are three pyramids, their total volume is: 3 × ( ( cubic value of e ) divided by 3 ) = the cubic value of e.
+Since there are three pyramids, their total volume is e³. 
 <br><br>
-This equals the cube’s volume, suggesting the one third factor is correct.
+This equals the cube’s volume, suggesting the one third factor is correct.</p>
 <br><br>
-The Vertex Problem is a critical flaw in this dissection when applied to a real, physical cube:
-<br><br>
-Vertex Assignment: 
+<h4 itemprop="disambiguatingDescription">The Vertex Problem is a critical flaw in this dissection when applied to a real, physical cube.</h4>
+<br>
+<p itemprop="disambiguatingDescription">Vertex Assignment: 
 <br><br>
 When we cut the cube into three pyramids sharing a common vertex as the apex, the geometry seems clean in theory. But if you physically slice the cube, you have to decide where that vertex belongs:
 <br><br>
-The cube has 8 vertices, each pyramid has 5. Three pyramids have 3 × 5 = 15 in total.
+<strong>The cube has 8 vertices, each pyramid has 5. Three pyramids have 3 × 5 = 15 in total.
 <br><br>
-<strong>Each vertex of a real physical cube is a point that can't be split into 3 points without duplicating. The other way around, 3 vertices of the pyramids can't be merged into 1 without distortion.</strong>
+Each vertex of a real physical cube is a point that can't be split into 3 points without duplicating. The other way around, 3 vertices of the pyramids can't be merged into 1 without distortion.</strong>
 <br>
 If we dissect the cube, we need to designate each shared vertex to be a part of either one pyramid, or another. 
 <br><br>
@@ -7481,15 +7482,12 @@ The volume of each pyramid is exactly a third of the cube, but with a height sho
 <br><br>
 Their bases and heights are slightly adjusted due to the vertex assignment, undermining the proof’s simplicity.
 <br><br><br>
-If the solid pyramids'
-<br><br>
-- base is the square value of e,
-<br><br>
-and their 
-<br><br>
-- height is e,
-<br><br>
-then the volume of each pyramid has to be larger than 1 / 3 × base × height, because 3 such pyramids can't form a cube with the same edge length, because their vertices and faces can't occupy the same space simultaneously.
+If the solid pyramids'</p>
+<ul style="margin:6px" itemprop="disambiguatingDescription">
+	<li>base is e²,</li>
+	<li>height is e,</li>
+</ul>
+<p itemprop="disambiguatingDescription">then the volume of each pyramid has to be larger than 1 / 3 × base × height, because 3 such pyramids can't form a cube with the same edge length, because their vertices and faces can't occupy the same space simultaneously.
 <br><br>
 The vertices are the most obvious examples, but the same is true for the edges, the diagonals and the inner faces. 
 <br><br>
