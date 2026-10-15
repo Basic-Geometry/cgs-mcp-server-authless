@@ -25,6 +25,7 @@ self.addEventListener('install', (event) => {
         'shapes.jpeg',
         'sphereConeComparison.jpeg',
         'crystal.jpeg',
+        'piApproximation.jpg',
         'traditionalTangency.png',
         'arcAndLine.png',
         'arcAndOverlappingLine.png',
