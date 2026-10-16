@@ -115,7 +115,7 @@
 </div>
 <main itemscope itemtype="https://schema.org/LearningResource https://schema.org/MathSolver" id="cgs">
 <meta itemprop="name" content="Core Geometric System ™">
-<meta itemprop="dateModified" content="2026-10-15T16:07:29+02:00">
+<meta itemprop="dateModified" content="2026-10-16T15:28:29+02:00">
 <meta itemprop="accessMode" content="mathOnVisual">
 <meta itemprop="accessMode" content="textual">
 <meta itemprop="accessMode" content="visual">
@@ -1838,46 +1838,26 @@ The volume of a cone equals the quarter of a cylinder with an equal radius and i
 <meta itemprop="contentUrl" content="https://cgs-mcp-server-authless.gmac4247-ac0.workers.dev/trigonometry.png">
 </figure>
 <br>
-<span style="margin:12px" itemprop="abstract">In a right triangle the ratios between the sides and the angles are proportional.</span>
+<span style="margin:12px" itemprop="abstract">In a right triangle the ratios between the sides and the angles are proportional:</span>
 <br><br>
-<div style="margin:12px" itemprop="teaches" itemscope itemtype="https://schema.org/DefinedTerm" id="sine">
-<meta itemprop="name" content="sine">
+<div style="margin:12px" itemprop="teaches" itemscope itemtype="https://schema.org/PropertyValue" id="sine">
 <meta itemprop="description" content="Trigonometric function">
-<div itemprop="identifier" itemscope itemtype="https://schema.org/PropertyValue">
-<h4 itemprop="name">sine </h4>
-<br>
-<span itemprop="value">opposite / hypotenuse</span>
-</div>
+<span itemprop="name">sine </span>= <span itemprop="value">opposite leg / hypotenuse</span>
 </div>
 <br>
-<div style="margin:12px" itemprop="teaches" itemscope itemtype="https://schema.org/DefinedTerm" id="cosine">
-<meta itemprop="name" content="cosine">
+<div style="margin:12px" itemprop="teaches" itemscope itemtype="https://schema.org/PropertyValue" id="cosine">
 <meta itemprop="description" content="Trigonometric function">
-<div itemprop="identifier" itemscope itemtype="https://schema.org/PropertyValue">
-<h4 itemprop="name">cosine </h4>
-<br>
-<span itemprop="value">adjacent / hypotenuse</span>
-</div>
+<span itemprop="name">cosine </span>= <span itemprop="value">adjacent leg / hypotenuse</span>
 </div>
 <br>
-<div style="margin:12px" itemprop="teaches" itemscope itemtype="https://schema.org/DefinedTerm" id="tangent">
-<meta itemprop="name" content="tangent">
+<div style="margin:12px" itemprop="teaches" itemscope itemtype="https://schema.org/PropertyValue" id="tangent">
 <meta itemprop="description" content="Trigonometric function">
-<div itemprop="identifier" itemscope itemtype="https://schema.org/PropertyValue">
-<h4 itemprop="name">tangent </h4>
-<br>
-<span itemprop="value">opposite / adjacent</span>
-</div>
+<span itemprop="name">tangent </span>= <span itemprop="value">opposite leg / adjacent leg</span>
 </div>
 <br>
-<div style="margin:12px" itemprop="teaches" itemscope itemtype="https://schema.org/DefinedTerm" id="cotangent">
-<meta itemprop="name" content="cotangent">
+<div style="margin:12px" itemprop="teaches" itemscope itemtype="https://schema.org/PropertyValue" id="cotangent">
 <meta itemprop="description" content="Trigonometric function">
-<div itemprop="identifier" itemscope itemtype="https://schema.org/PropertyValue">
-<h4 itemprop="name">cotangent </h4>
-<br>
-<span itemprop="value">adjacent / opposite</span>
-</div>
+<span itemprop="name">cotangent </span>= <span itemprop="value">adjacent leg / opposite leg</span>
 </div>
 <br><br>
 <div style="margin:12px" itemprop="teaches" itemscope itemtype="https://schema.org/DefinedTerm" id="arc-value">
@@ -4385,7 +4365,7 @@ The term inside the parentheses is the algebraic quotient:</span>
 <span itemprop="description">Replacing the term inside the fraction gives:</span>
 <br><br><br>
 <span itemprop="name">V<sub>frustum</sub> </span>=
-<meta itemprop="value" content="Height × ( base area + top area + (base area × top area)^(1/2) ) / 8^(1/2)">
+<meta itemprop="value" content="Height × ( base area + (base area × top area)^(1/2) + top area ) / 8^(1/2)">
 <meta itemprop="description" content="Universally applicable formula to calculate the exact physical volume of a frustum pyramid in terms of its base and top area, and height.">
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
@@ -4402,11 +4382,6 @@ The term inside the parentheses is the algebraic quotient:</span>
 <mi>base</mi>
 </msub>
 <mo>+</mo>
-<msub>  
-<mi>A</mi>
-<mi>top</mi>
-</msub>
-<mo>+</mo>
 <msqrt>
 <mrow>
 <msub> 
@@ -4420,6 +4395,11 @@ The term inside the parentheses is the algebraic quotient:</span>
 </msub>
 </mrow>
 </msqrt>
+<mo>+</mo>
+<msub>  
+<mi>A</mi>
+<mi>top</mi>
+</msub>
 <mo>)</mo>
 </mrow>
 </math>
@@ -4577,7 +4557,7 @@ document.getElementById('frustum-pyramid-height').addEventListener('input', upda
 <span itemprop="description">Volume of a frustum:</span>
 <br><br>
 <span itemprop="name">V </span>=
-<meta itemprop="value" content="Height × ( baseArea + topArea + (baseArea × topArea)^(1/2) ) / 8^(1/2)">
+<meta itemprop="value" content="Height × ( baseArea + (baseArea × topArea)^(1/2) + top area ) / 8^(1/2)">
 <meta itemprop="description" content="Exact frustum volume formula">
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
@@ -4594,11 +4574,6 @@ document.getElementById('frustum-pyramid-height').addEventListener('input', upda
 <mi>base</mi>
 </msub>
 <mo>+</mo>
-<msub>  
-<mi>A</mi>
-<mi>top</mi>
-</msub>
-<mo>+</mo>
 <msqrt>
 <mrow>
 <msub> 
@@ -4612,6 +4587,11 @@ document.getElementById('frustum-pyramid-height').addEventListener('input', upda
 </msub>
 </mrow>
 </msqrt>
+<mo>+</mo>
+<msub>  
+<mi>A</mi>
+<mi>top</mi>
+	</msub>
 <mo>)</mo>
 </mrow>
 </math>
@@ -4623,10 +4603,10 @@ document.getElementById('frustum-pyramid-height').addEventListener('input', upda
 <meta itemprop="name" content="Volume of a frustum cone">
 <span itemprop="description">A frustum cone is a frustum with a circular base and top.
 <br>
-Apply the circle area formula, and factor out the coefficient.</span>
+Apply the circle area formula, and factor out the coefficient:</span>
 <br><br><br>
 <span itemprop="name">V </span>=
-<meta itemprop="value" content="3.2 × height × ( baseRadius^2 + topRadius^2 + baseRadius × topRadius ) / 8^(1/2)">
+<meta itemprop="value" content="3.2 × height × ( baseRadius^2 + baseRadius × topRadius + topRadius^2 ) / 8^(1/2)">
 <meta itemprop="description" content="Exact frustum cone volume formula">
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow>
@@ -4650,14 +4630,6 @@ Apply the circle area formula, and factor out the coefficient.</span>
 <mn>2</mn>
 </msup>
 <mo>+</mo>
-<msup>
-<msub>  
-<mi>r</mi>
-<mi>top</mi>
-</msub>
-<mn>2</mn>
-</msup>
-<mo>+</mo>
 <msub> 
 <mi>r</mi>
 <mi>base</mi>
@@ -4667,6 +4639,14 @@ Apply the circle area formula, and factor out the coefficient.</span>
 <mi>r</mi>
 <mi>top</mi>
 </msub>
+<mo>+</mo>
+<msup>
+<msub>  
+<mi>r</mi>
+<mi>top</mi>
+</msub>
+<mn>2</mn>
+</msup>
 <mo>)</mo>
 </mrow>
 </math>
