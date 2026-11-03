@@ -188,10 +188,12 @@
 
 {
 	"name": "prove_circle_area",
-	"description": "Algebraic comparison of the area uncovered by the quadrant cicles in the middle of the square with the area where they overlap.",
+	"description": "Constructive algebraic proof and verification, 2 independent ways.",
 	"disambiguatingDescription": "Real proof",
-	"featureList": "Explain the proof of the area of a circle = 3.2radius^2.",
+	"featureList": "Prove that the area of a circle equals exactly 3.2radius^2.",
 	"steps": [
+		"In the quadrant circles to square layout, the arc‑intersection condition fixes the side to radius ratio as 4 / √5. With that ratio established, the overlapping area equals to the uncovered area in the middle, hence the sum of the areas of the quadrants is equal to the area of the square. That square represents the area of the circle in square units.",
+		"The area balance is determined through the areas that arise in this configuration: 1. the curvilinear region uncovered by the quadrants at the middle of the square, and 2. the circular segment halves overlapping along the centerline.",
 		"Quarter of the middle of the square, uncovered by the quadrant circles: 3.2×r^2/4-(3.2×r^2×((90deg.-2×Atan(1/2))/360deg.)+2×((sqrt(3.2)/4)×(sqrt(3.2)/2)/2))",
         "Quarter of the total overlapping area: 2×(3.2×r^2×((90deg.-Atan(1/2))/360deg.)-((sqrt(3.2)/4)×(sqrt(3.2)/2)/2))",
         "Dividing both sides by 3.2r².",
